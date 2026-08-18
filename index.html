@@ -1,51 +1,1087 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rheindorf Digital | High-End Webdesign & KI-Automationen Köln & NRW</title>
-    <meta name="description" content="Maßgeschneiderte High-End Websites & 24/7 KI-Telefonassistenten für Handwerker, Salons & lokale Marktführer in Köln & NRW. Kein Agentur-Overhead – direkt, schnell, messbare Ergebnisse." />
-    <meta name="keywords" content="Website erstellen Köln, Webdesign NRW, KI-Automation Handwerk, Website Handwerker Köln, KI Telefonassistent, Webdesign lokale Unternehmen" />
+<html lang="de" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Alexander Rheindorf - Rheindorf Digital">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Webdesign Köln, Webdesign Kerpen, KI-Telefonassistent, High-End Webdesign, Local SEO, Handwerker Website, Rheindorf Digital">
+    <meta name="description" content="Rheindorf Digital – High-End Webdesign & 24/7 KI-Telefonassistenten für lokale Marktführer in Köln, Kerpen & NRW. 100% Festpreisgarantie, < 0.4s Ladezeit & DSGVO-konform.">
+    <meta property="og:title" content="Rheindorf Digital | High-End Webdesign & 24/7 KI-Telefonie Köln & NRW">
+    <meta property="og:description" content="Moderne Websites und smarte KI-Telefonassistenten für lokale Handwerks- und Dienstleistungsbetriebe in Köln, Kerpen und NRW.">
+    <meta property="og:image" content="assets/images/profile.jpg">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Rheindorf Digital | High-End Webdesign & 24/7 KI-Telefonie</title>
+    
+    <!-- FAVICONS ICON -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    
+    <!-- STYLESHEETS (Plexify 1-to-1) -->
+    <link rel="stylesheet" href="assets/vendor/animate/animate.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/icons/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/icons/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Custom Style Enhancements for High Performance & Dark Theme -->
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-hover: #059669;
+        }
+        body {
+            background-color: #04060A !important;
+            color: #f1f5f9;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        .border-emerald-glow {
+            border-color: rgba(16, 185, 129, 0.4) !important;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.15) !important;
+        }
+        .gradient-text-emerald {
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .interactive-tool-card {
+            background: rgba(8, 12, 20, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            transition: all 0.3s ease;
+        }
+        .interactive-tool-card:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+        /* Custom modal */
+        .legal-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .legal-modal-backdrop.active {
+            display: flex;
+        }
+    </style>
+</head>
 
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="Rheindorf Digital | High-End Webdesign & KI-Automationen" />
-    <meta property="og:description" content="Maßgeschneiderte Websites & KI-Automationen für Handwerker, Friseure & lokale Betriebe in Köln & NRW." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://moebss.github.io/rheindorf-digital/" />
-    <meta property="og:image" content="https://moebss.github.io/rheindorf-digital/og-image.jpg" />
+<body class="selection:bg-emerald-500 selection:text-slate-950">
 
-    <!-- Schema.org ProfessionalService Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Rheindorf Digital",
-      "image": "https://moebss.github.io/rheindorf-digital/hero_rheindorf.jpg",
-      "@id": "https://moebss.github.io/rheindorf-digital/#agency",
-      "url": "https://moebss.github.io/rheindorf-digital/",
-      "telephone": "+4916096351750",
-      "email": "hello@rheindorf.digital",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kerpen",
-        "addressRegion": "NRW",
-        "postalCode": "50169",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.9167,
-        "longitude": 6.7000
-      },
-      "areaServed": ["Köln", "Kerpen", "Erftkreis", "Bergheim", "Frechen", "NRW", "Nordrhein-Westfalen"],
-      "serviceType": ["Webdesign", "KI-Automation", "KI-Telefonassistent", "Local SEO", "Badsanierungs-Rechner", "Online-Buchungssysteme"]
-    }
+    <!-- Preloader (Plexify Standard) -->
+    <div id="loading-area" class="loading-page-1 flex items-center justify-center bg-[#04060A]">
+        <div class="loading-dot-spinner">
+            <div class="loading-dot" style="background-color: #10b981;"></div>
+        </div>
+    </div>
+
+    <div class="page-wraper">
+        
+        <!-- HEADER (Plexify 1-to-1) -->
+        <header class="absolute top-0 left-0 w-full z-9999 site-header">
+            <div class="main-bar-wraper">
+                <div class="container-fluid px-6 sm:px-12 py-6">
+                    <div class="flex items-center justify-between">
+                        
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="#home" class="flex items-center gap-3 group">
+                                <div class="w-11 h-11 rounded-2xl overflow-hidden border-2 border-emerald-500/40 shrink-0 group-hover:border-emerald-400 transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                                    <img src="assets/images/profile.jpg" alt="Alexander Rheindorf" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none block">
+                                        RHEINDORF<span class="text-emerald-400">.DIGITAL</span>
+                                    </span>
+                                    <span class="text-[9px] font-mono tracking-widest text-emerald-400/90 font-bold uppercase block mt-1">
+                                        Webdesign & KI-Voice Studio
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Right Nav & Actions -->
+                        <div class="flex items-center gap-6">
+                            
+                            <!-- Discuss Project Action Button -->
+                            <a href="#kontakt" class="btn p-0 h-auto text-white font-mono text-xs uppercase tracking-wider font-bold group max-lg:hidden flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-5 py-3 rounded-full transition-all">
+                                <span class="pxl-button-text">Projekt Besprechen</span>
+                                <span class="block overflow-hidden">
+                                    <svg class="group-hover:animate-toTopFromBottom" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.83337 14.1667L14.1667 5.83334" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M5.83337 5.83334H14.1667V14.1667" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </a>
+
+                            <!-- Menu Hamburger Button -->
+                            <span class="menu-btn bg-white hover:bg-emerald-400 h-45 sm:w-92 w-70 rounded-6xl cursor-pointer flex items-center justify-center group transition-colors duration-300 shadow-xl">
+                                <span class="space-y-3 flex flex-col items-end">
+                                    <span class="bg-black block h-2 w-19 duration-200 group-hover:w-28"></span>
+                                    <span class="bg-black block h-2 w-28 duration-200 group-hover:w-19"></span>
+                                </span>
+                            </span>
+                        </div>
+
+                        <!-- FULL-SCREEN SIDENAV DRAWER (Plexify 1-to-1) -->
+                        <div class="header-nav navbar-collapse full-sidenav navbar custom-scroll">
+                            <div class="flsbg pointer-events-none">
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                                <span class="bg-wrap"><span class="noice-overlay"></span></span>
+                            </div>
+                            <div class="container-fluid size-full flex flex-col">
+                                <div class="row flex-1 lg:h-[calc(100px-130px)]">
+                                    
+                                    <!-- Left Contact Col -->
+                                    <div class="xl:w-[40%] lg:w-1/2 w-full flex flex-col justify-center lg:order-0 order-1">
+                                        <div class="3xl:ps-170 xl:ps-60 lg:py-0 py-40">
+                                            <div class="space-y-8 font-mono">
+                                                <div class="text-white">
+                                                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">// DIREKTER DRAHT</span>
+                                                    <h2 class="text-2xl font-bold font-sans mb-3 text-white">Alexander Rheindorf</h2>
+                                                    <p class="text-xs text-slate-400 max-w-sm mb-4">Inhaber & Lead Developer für High-End Webauftritte und 24/7 KI-Systeme.</p>
+                                                    
+                                                    <a class="text-base text-slate-200 block hover:text-emerald-400 transition-colors mb-2" href="tel:016096351750">
+                                                        <i class="fa-solid fa-phone me-2 text-emerald-400"></i> +49 (0) 160 96351750
+                                                    </a>
+                                                    <a class="text-base text-slate-200 block hover:text-emerald-400 transition-colors" href="mailto:hello@rheindorf.digital">
+                                                        <i class="fa-solid fa-envelope me-2 text-emerald-400"></i> hello@rheindorf.digital
+                                                    </a>
+                                                </div>
+
+                                                <div class="text-white pt-4 border-t border-white/10">
+                                                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold block mb-2">// STUDIO & REGION</span>
+                                                    <p class="text-sm text-slate-300">50169 Kerpen · Köln & ganz Nordrhein-Westfalen</p>
+                                                    <p class="text-xs text-slate-500 mt-1">100% Festpreisgarantie · Keine monatlichen Knebelverträge</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Nav Links Col -->
+                                    <div class="xl:w-[60%] lg:w-1/2 w-full flex flex-col justify-center lg:h-full">
+                                        <div class="3xl:pe-260 lg:pe-60 lg:ps-70 lg:pt-0 pt-60 h-full lg:overflow-y-auto custom-scroll flex items-center">
+                                            <ul class="nav navbar-nav lg:pb-0 pb-30 lg:border-b-0 border-b border-white/20 w-full font-sans">
+                                                <li><a href="#home" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>01. Home</span></a></li>
+                                                <li><a href="#prozess" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>02. 4-Schritte-Prozess</span></a></li>
+                                                <li><a href="#portfolio" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>03. Showcase & Referenzen</span></a></li>
+                                                <li><a href="#ki-voice" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>04. KI-Voice Terminal</span></a></li>
+                                                <li><a href="#leistungen" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>05. Leistungen & Stack</span></a></li>
+                                                <li><a href="#vergleich" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>06. Rheindorf vs. 08/15</span></a></li>
+                                                <li><a href="#rechner" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>07. Projekt-Kalkulator</span></a></li>
+                                                <li><a href="#faq" class="menu-link text-3xl sm:text-5xl font-black py-3 block hover:text-emerald-400 transition-colors"><span>08. Häufige Fragen</span></a></li>
+                                                <li><a href="#kontakt" class="menu-link text-3xl sm:text-5xl font-black py-3 block text-emerald-400 hover:underline"><span>09. Kontakt aufnehmen</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Drawer Bottom Bar -->
+                                <div class="lg:py-38 pt-20 sm:pb-50 pb-80 lg:px-0 sm:px-20 border-t border-white/20 flex items-center justify-between">
+                                    <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
+                                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                        <span>Aktuell verfügbar für neue Projekte in Q3/Q4</span>
+                                    </div>
+                                    <div class="flex items-center gap-6 font-mono text-xs text-slate-400">
+                                        <a href="https://wa.me/4916096351750" target="_blank" class="hover:text-emerald-400 transition-colors">WhatsApp ↗</a>
+                                        <a href="tel:016096351750" class="hover:text-emerald-400 transition-colors">Telefon ↗</a>
+                                        <a href="mailto:hello@rheindorf.digital" class="hover:text-emerald-400 transition-colors">E-Mail ↗</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <!-- Drawer Close Button -->
+                            <button type="button" class="menu-close absolute rounded-full size-70 lg:bg-white bg-white lg:top-40 top-20 lg:right-50 right-20 group cursor-pointer magneticBtn flex items-center justify-center shadow-2xl">
+                                <i class="fa-solid fa-xmark text-2xl text-slate-950"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SMOOTH WRAPPER (GSAP ScrollSmoother 1-to-1) -->
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <div class="page-content">
+
+                    <!-- 1. HERO MAIN BANNER (Plexify 1-to-1) -->
+                    <section id="home" class="main-banner 2xl:pt-200 sm:pt-170 pt-130 relative overflow-hidden bg-[#04060A] bg-[url('assets/images/background/bg1.png')] bg-no-repeat bg-bottom after:content-[''] after:absolute after:top-0 after:left-0 after:size-full after:bg-no-repeat after:pointer-events-none after:bg-cover after:opacity-40 after:bg-[url('assets/images/background/bg2.png')]">
+                        <div class="container-fluid px-4 sm:px-12 relative z-2">
+                            
+                            <!-- Main Big Headline -->
+                            <div class="text-center xl:px-80">
+                                <h1 class="2xl:text-8xxl lg:text-7xxl sm:text-5xl text-[38px]/48 font-black tracking-tight headline text-white">
+                                    Empower Your Brand with Next-Gen
+                                    <span class="inline-flex whitespace-nowrap relative typewrite align-middle my-1">
+                                        <span class="pxl-item--text bg-emerald-500 text-slate-950 rounded-full lg:p-20 sm:p-10 px-6 lg:text-7xxl/56 text-3xl/36 font-black uppercase shadow-[0_0_30px_rgba(16,185,129,0.5)]">Web & KI</span>
+                                        <span class="pxl-item--text bg-white text-slate-950 rounded-full lg:p-20 sm:p-10 px-6 lg:text-7xxl/56 text-3xl/36 font-black uppercase">Highspeed</span>
+                                    </span>
+                                    für lokale Marktführer.
+                                </h1>
+                            </div>
+
+                            <!-- Banner Interactive Tabs & Image Stacking (Plexify 1-to-1) -->
+                            <div class="relative xl:pt-100 sm:pt-40 pt-20">
+                                <div class="custom-tab banner-tab xl:flex justify-between items-center">
+                                    
+                                    <div class="tab-content active justify-between w-full max-xl:flex-col flex items-center">
+                                        
+                                        <!-- Left Spec Pill -->
+                                        <div class="flex flex-col justify-between 2xl:pb-80 lg:pb-50 pb-40 xl:gap-50 gap-20 max-xl:items-center">
+                                            <p class="sm:text-xl text-sm font-mono text-slate-300 uppercase lg:max-w-280 max-w-320 headline banner-subtitle">
+                                                EIN BOUTIQUE DIGITAL & AI STUDIO AUS KÖLN / KERPEN
+                                            </p>
+                                            
+                                            <!-- Trust Avatar Pill -->
+                                            <div class="inline-flex items-center gap-14 bg-[#080C14] border border-white/10 xl:p-15 xl:pe-35 px-10 py-5 pe-15 rounded-full shadow-2xl">
+                                                <div class="flex -space-x-3">
+                                                    <img src="assets/images/profile.jpg" alt="Alexander Rheindorf" class="inline-block xl:size-60 size-40 rounded-full border-2 border-emerald-400 relative object-cover">
+                                                    <div class="xl:size-60 size-40 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-xs border-2 border-card">
+                                                        100%
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span class="xl:text-base sm:text-sm text-xs text-white block font-mono font-bold"><strong class="text-emerald-400">&lt; 0.4s</strong> Ladezeit</span>
+                                                    <span class="text-[11px] font-mono text-slate-400 block">Google 100/100 PageSpeed</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Center Showcase Visual Mockup Stack -->
+                                        <div class="flex flex-col justify-between max-xl:overflow-hidden my-6 xl:my-0">
+                                            <div class="relative pxl-group-image flex items-center justify-center">
+                                                <div class="item-image rounded-2xl overflow-hidden relative z-2 lg:w-[28vw] lg:h-[22vw] w-[80vw] h-[55vw] flex shadow-2xl border border-white/20 bg-[#080C14]">
+                                                    <img src="assets/images/home/pic5.webp" class="size-full object-cover" alt="Nawrath Badmanufaktur">
+                                                    <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-black/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                                                        <div>
+                                                            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase">Live Flaggschiff</span>
+                                                            <h4 class="text-sm font-bold text-white">AZ Heizung & Badmanufaktur</h4>
+                                                        </div>
+                                                        <a href="https://moebss.github.io/az-heizung-sanitaer/" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-950 flex items-center justify-center hover:bg-emerald-400 transition-colors">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Right Action Flair Button -->
+                                        <div class="flex xl:flex-col flex-row justify-between 2xl:pb-80 lg:pb-50 pb-40 xl:gap-50 sm:gap-20 lg:mt-0 mt-20 max-xl:items-center">
+                                            <a href="#kontakt" class="btn btn-light flairBtn group h-auto capitalize lg:text-3xl sm:text-xl text-base font-bold inline-block py-6 sm:px-35 px-20 rounded-6xl bg-white hover:bg-emerald-400 text-slate-950 transition-all duration-300 shadow-2xl">
+                                                <span class="button-flair-wrapper">
+                                                    <span class="button-flair"></span>
+                                                </span>
+                                                <span class="button-label relative group-hover:text-slate-950 flex items-center gap-3">
+                                                    <span>Projekt Anfragen</span>
+                                                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 2. MARQUEE & METRICS COUNTER (Plexify 1-to-1) -->
+                    <section class="2xl:py-140 lg:py-100 sm:py-80 py-50 hover-wrapper counter bg-[#04060A] border-t border-b border-white/10">
+                        
+                        <!-- Continuous Ticker -->
+                        <div class="overflow-hidden pb-12">
+                            <div class="flex items-center sm:gap-80 gap-40 flex-nowrap animate-ticker font-mono text-sm uppercase tracking-widest text-slate-400">
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 01</span><span>UX/UI BRANDING & HEADLESS REACT</span></div>
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 02</span><span>24/7 KI-VOICE TELEFONASSISTENT</span></div>
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 03</span><span>GOOGLE MAPS 3-PACK SEO</span></div>
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 04</span><span>100% FESTPREISGARANTIE</span></div>
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 01</span><span>UX/UI BRANDING & HEADLESS REACT</span></div>
+                                <div class="flex items-center gap-4 shrink-0"><span class="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-bold border border-white/10">// 02</span><span>24/7 KI-VOICE TELEFONASSISTENT</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Large Number Cards -->
+                        <div class="container-fluid px-4 sm:px-12 pt-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                
+                                <div class="interactive-tool-card p-8 text-center space-y-2">
+                                    <span class="text-5xl sm:text-6xl font-black font-sans text-emerald-400 block">100%</span>
+                                    <h4 class="text-base font-bold text-white">Google PageSpeed</h4>
+                                    <p class="text-xs font-mono text-slate-400">Schlanker nativer React-Code statt träger WordPress-Plugins.</p>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 text-center space-y-2">
+                                    <span class="text-5xl sm:text-6xl font-black font-sans text-white block">24/7</span>
+                                    <h4 class="text-base font-bold text-white">KI-Telefonist</h4>
+                                    <p class="text-xs font-mono text-slate-400">Nimmt jeden Kundenanruf entgegen & qualifiziert Aufträge automatisch.</p>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 text-center space-y-2">
+                                    <span class="text-5xl sm:text-6xl font-black font-sans text-emerald-400 block">&lt; 0.4s</span>
+                                    <h4 class="text-base font-bold text-white">Blitzschnelle Ladezeit</h4>
+                                    <p class="text-xs font-mono text-slate-400">Keine Ladehemmung, 0% Absprungrate auf Smartphones.</p>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 text-center space-y-2">
+                                    <span class="text-5xl sm:text-6xl font-black font-sans text-white block">+340%</span>
+                                    <h4 class="text-base font-bold text-white">Messbar Mehr Leads</h4>
+                                    <p class="text-xs font-mono text-slate-400">Durch 1-Klick-Anrufe, WhatsApp-Routing & optimierte Conversion.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- 3. WORK PROCESS [1]..[4] (Plexify 1-to-1) -->
+                    <section id="prozess" class="2xl:py-180 lg:py-120 md:py-80 py-60 overflow-hidden bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12">
+                            
+                            <!-- Header -->
+                            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-code-branch"></i>
+                                    <span>// Der Rheindorf 4-Schritte-Standard</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                                    Von der Idee zum <br>
+                                    <span class="text-emerald-400">digitalen Marktführer.</span>
+                                </h2>
+                                <p class="text-xs sm:text-sm font-mono text-slate-400">
+                                    Keine monatelangen Agentur-Meetings. Wir liefern deinen interaktiven Prototyp in 7 Tagen und schalten dein fertiges System nach 14 Tagen live.
+                                </p>
+                            </div>
+
+                            <!-- 4 Steps Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                
+                                <div class="interactive-tool-card p-8 flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                            <span class="text-2xl font-black font-mono text-emerald-400">[ 01 ]</span>
+                                            <span class="text-[10px] font-mono uppercase bg-white/5 px-2.5 py-1 rounded-full text-slate-300">Tag 1</span>
+                                        </div>
+                                        <h3 class="text-xl font-bold text-white mt-4 mb-2">15-Min. Potenzial-Audit</h3>
+                                        <p class="text-xs font-mono text-slate-400 leading-relaxed">
+                                            Analyse deines Betriebs, deiner Wettbewerber in Köln/NRW und Definition deiner profitabelsten Dienstleistungen.
+                                        </p>
+                                    </div>
+                                    <div class="text-xs font-mono text-emerald-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>100% Unverbindlich</span>
+                                    </div>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                            <span class="text-2xl font-black font-mono text-white">[ 02 ]</span>
+                                            <span class="text-[10px] font-mono uppercase bg-white/5 px-2.5 py-1 rounded-full text-slate-300">Tag 2–7</span>
+                                        </div>
+                                        <h3 class="text-xl font-bold text-white mt-4 mb-2">High-End Prototyping</h3>
+                                        <p class="text-xs font-mono text-slate-400 leading-relaxed">
+                                            Design & handcodierte Programmierung deines Auftritts im Live-Browser inklusive maßgeschneidertem Farbsystem & Typografie.
+                                        </p>
+                                    </div>
+                                    <div class="text-xs font-mono text-emerald-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>Interaktiver Klick-Test</span>
+                                    </div>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                            <span class="text-2xl font-black font-mono text-emerald-400">[ 03 ]</span>
+                                            <span class="text-[10px] font-mono uppercase bg-white/5 px-2.5 py-1 rounded-full text-slate-300">Tag 8–12</span>
+                                        </div>
+                                        <h3 class="text-xl font-bold text-white mt-4 mb-2">KI-Voice & Automation</h3>
+                                        <p class="text-xs font-mono text-slate-400 leading-relaxed">
+                                            Training deines 24/7 KI-Telefonassistenten mit deinen Leistungsdaten, Anruf-Routing und Kalender-Synchronisation.
+                                        </p>
+                                    </div>
+                                    <div class="text-xs font-mono text-emerald-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>24/7 Erreichbarkeit</span>
+                                    </div>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 flex flex-col justify-between space-y-6">
+                                    <div>
+                                        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                            <span class="text-2xl font-black font-mono text-white">[ 04 ]</span>
+                                            <span class="text-[10px] font-mono uppercase bg-white/5 px-2.5 py-1 rounded-full text-slate-300">Tag 14</span>
+                                        </div>
+                                        <h3 class="text-xl font-bold text-white mt-4 mb-2">Go-Live & Dominanz</h3>
+                                        <p class="text-xs font-mono text-slate-400 leading-relaxed">
+                                            Rollout mit Google Maps 3-Pack Schema.org JSON-LD, SSL-Verschlüsselung, DSGVO-Test & Quellcode-Übergabe.
+                                        </p>
+                                    </div>
+                                    <div class="text-xs font-mono text-emerald-400 flex items-center gap-2">
+                                        <i class="fa-solid fa-check"></i>
+                                        <span>100% Dein Eigentum</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 4. SIGNATURE CARD STACKING SHOWCASE (Plexify 1-to-1) -->
+                    <section id="portfolio" class="pt-20 lg:pb-120 pb-80 cardStacking bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12">
+                            
+                            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <span>// Live Showcase & Referenzen</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                                    Echte Resultate für <br>
+                                    <span class="text-emerald-400">echte Betriebe.</span>
+                                </h2>
+                                <p class="text-xs sm:text-sm font-mono text-slate-400">
+                                    Entdecke unsere handcodierten High-End Systeme in Aktion.
+                                </p>
+                            </div>
+
+                            <!-- Stacking Cards Container -->
+                            <div class="space-y-12 max-w-5xl mx-auto">
+                                
+                                <!-- Card 1: Nawrath -->
+                                <div class="interactive-tool-card p-8 sm:p-12 border-emerald-500/40 relative overflow-hidden">
+                                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                        <div class="lg:col-span-6 space-y-6">
+                                            <div class="flex items-center gap-3">
+                                                <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">01 / SHK-MEISTERBETRIEB</span>
+                                                <span class="font-mono text-xs text-slate-400">Kerpen & Köln</span>
+                                            </div>
+                                            <h3 class="text-2xl sm:text-4xl font-black text-white">AZ Heizung & Badmanufaktur Nawrath</h3>
+                                            <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                                Kompletter Relaunch mit interaktivem Bad-Budgetrechner, Notdienst-Schnellwahl und dominanter Google Maps Platzierung.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2 pt-2">
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">Bad-Kalkulator</span>
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">24/7 Notdienst</span>
+                                                <span class="text-[11px] font-mono bg-emerald-500/20 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-400 font-bold">+280% Anfragen</span>
+                                            </div>
+                                            <div class="pt-4">
+                                                <a href="https://moebss.github.io/az-heizung-sanitaer/" target="_blank" class="inline-flex items-center gap-3 bg-white hover:bg-emerald-400 text-slate-950 font-bold text-xs font-mono uppercase tracking-wider px-6 py-3.5 rounded-full transition-colors shadow-xl">
+                                                    <span>Live Website ansehen</span>
+                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-white/10 bg-[#04060A]">
+                                            <img src="assets/images/home/pic5.webp" alt="Nawrath Badmanufaktur" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2: Alyas Barbershop -->
+                                <div class="interactive-tool-card p-8 sm:p-12 relative overflow-hidden">
+                                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                        <div class="lg:col-span-6 space-y-6">
+                                            <div class="flex items-center gap-3">
+                                                <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">02 / HERRENSALON</span>
+                                                <span class="font-mono text-xs text-slate-400">Kerpen-Horrem</span>
+                                            </div>
+                                            <h3 class="text-2xl sm:text-4xl font-black text-white">Alyas Barbershop Horrem</h3>
+                                            <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                                High-End Gentleman-Design mit nahtloser 1-Klick-Online-Terminbuchung und 0.3s Ladezeit auf allen Smartphones.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2 pt-2">
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">1-Klick Buchung</span>
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">Gentleman UI</span>
+                                                <span class="text-[11px] font-mono bg-emerald-500/20 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-400 font-bold">100/100 PageSpeed</span>
+                                            </div>
+                                            <div class="pt-4">
+                                                <a href="https://moebss.github.io/alyas-barbershop-horrem/" target="_blank" class="inline-flex items-center gap-3 bg-white hover:bg-emerald-400 text-slate-950 font-bold text-xs font-mono uppercase tracking-wider px-6 py-3.5 rounded-full transition-colors shadow-xl">
+                                                    <span>Live Website ansehen</span>
+                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-white/10 bg-[#04060A]">
+                                            <img src="assets/images/home/pic4.webp" alt="Alyas Barbershop" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3: The Burning Bandit Tattoo -->
+                                <div class="interactive-tool-card p-8 sm:p-12 relative overflow-hidden">
+                                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                                        <div class="lg:col-span-6 space-y-6">
+                                            <div class="flex items-center gap-3">
+                                                <span class="font-mono text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">03 / TATTOO & CRAFT STUDIO</span>
+                                                <span class="font-mono text-xs text-slate-400">Kerpen</span>
+                                            </div>
+                                            <h3 class="text-2xl sm:text-4xl font-black text-white">The Burning Bandit Kerpen</h3>
+                                            <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                                Dunkles Tattoo-Studio Design mit interaktivem Cover-Up Transformations-Slider und automatischem Style-Rechner.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2 pt-2">
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">Cover-Up Slider</span>
+                                                <span class="text-[11px] font-mono bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">Artist Portfolio</span>
+                                                <span class="text-[11px] font-mono bg-emerald-500/20 border border-emerald-500/40 px-3 py-1 rounded-full text-emerald-400 font-bold">+420% Anfragen</span>
+                                            </div>
+                                            <div class="pt-4">
+                                                <a href="https://moebss.github.io/the-burning-bandit-kerpen/" target="_blank" class="inline-flex items-center gap-3 bg-white hover:bg-emerald-400 text-slate-950 font-bold text-xs font-mono uppercase tracking-wider px-6 py-3.5 rounded-full transition-colors shadow-xl">
+                                                    <span>Live Website ansehen</span>
+                                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-white/10 bg-[#04060A]">
+                                            <img src="assets/images/home/pic1.webp" alt="The Burning Bandit Tattoo" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 5. 24/7 AI-VOICE TERMINAL SIMULATOR (Custom Plexify Studio Component) -->
+                    <section id="ki-voice" class="2xl:py-180 lg:py-120 py-80 bg-[#04060A] border-b border-white/10 relative overflow-hidden">
+                        <div class="container-fluid px-4 sm:px-12">
+                            
+                            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                    <span>// Live Voice AI Studio Terminal</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                                    Nie wieder Kunden verlieren, <br>
+                                    <span class="text-emerald-400">während du arbeitest.</span>
+                                </h2>
+                                <p class="text-xs sm:text-sm font-mono text-slate-400">
+                                    Teste unseren intelligenten KI-Telefonassistenten live im Simulator.
+                                </p>
+                            </div>
+
+                            <!-- Voice Terminal Box -->
+                            <div class="max-w-4xl mx-auto interactive-tool-card p-6 sm:p-12 border-emerald-500/30 shadow-2xl">
+                                <div class="flex items-center justify-between pb-6 border-b border-white/10">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                                        <span class="font-mono text-xs font-bold uppercase text-white">Rheindorf Voice AI 2.0 (Live)</span>
+                                    </div>
+                                    <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Latenz: 420ms</span>
+                                </div>
+
+                                <!-- Audio Waveform Visualization -->
+                                <div class="my-8 py-8 px-6 rounded-2xl bg-[#04060A] border border-white/10 text-center space-y-4">
+                                    <div class="flex items-center justify-center gap-1.5 h-16">
+                                        <span class="w-1.5 h-6 bg-emerald-400 rounded-full animate-bounce"></span>
+                                        <span class="w-1.5 h-12 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.1s]"></span>
+                                        <span class="w-1.5 h-16 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                                        <span class="w-1.5 h-10 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.3s]"></span>
+                                        <span class="w-1.5 h-14 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.15s]"></span>
+                                        <span class="w-1.5 h-8 bg-emerald-400 rounded-full animate-bounce [animation-delay:0.25s]"></span>
+                                    </div>
+                                    <p class="font-mono text-xs text-emerald-300">
+                                        „Guten Tag! Meisterbetrieb Nawrath – mein Name ist Sarah, Ihr digitaler Assistent. Möchten Sie einen Notdienst melden oder ein Angebot für eine Badsanierung anfragen?“
+                                    </p>
+                                </div>
+
+                                <!-- Features Grid -->
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 font-mono text-xs">
+                                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                                        <div class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400"></i> Sofort-Notdienst</div>
+                                        <p class="text-slate-400 text-[11px]">Leitet Notfälle nach Dringlichkeit direkt an den Notdienst weiter.</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                                        <div class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-calendar-check text-emerald-400"></i> Kalenderbuchung</div>
+                                        <p class="text-slate-400 text-[11px]">Trägt Besichtigungstermine vollautomatisch in Google/Outlook ein.</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                                        <div class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-comment-sms text-emerald-400"></i> SMS / WhatsApp</div>
+                                        <p class="text-slate-400 text-[11px]">Sendet nach jedem Anruf eine fertige Zusammenfassung aufs Smartphone.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 6. CAPABILITIES & SERVICES (Plexify 1-to-1) -->
+                    <section id="leistungen" class="lg:pb-120 pt-120 hover-wrapper bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12">
+                            
+                            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-cubes"></i>
+                                    <span>// Leistungen & Kernkompetenzen</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                                    Alles aus einer Hand. <br>
+                                    <span class="text-emerald-400">Ohne Agentur-Overhead.</span>
+                                </h2>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                                
+                                <div class="interactive-tool-card p-8 sm:p-10 space-y-6">
+                                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                        <span class="font-mono text-xs font-bold text-emerald-400">[ 01 ]</span>
+                                        <span class="font-mono text-xs text-slate-400">Bestseller</span>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-white">High-End Webdesign Relaunch</h3>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                        Modernste Single Page & Multi Page Webauftritte auf Basis von React 19 und Tailwind CSS 4. Blitzschnell, responsive und conversion-optimiert.
+                                    </p>
+                                    <ul class="space-y-2 font-mono text-xs text-slate-400">
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> 100% PageSpeed Garantie (&lt; 0.4s FCP)</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> 100% DSGVO & § 5 DDG Abmahnschutz</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Schema.org JSON-LD für Google Maps</li>
+                                    </ul>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 sm:p-10 space-y-6">
+                                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                        <span class="font-mono text-xs font-bold text-emerald-400">[ 02 ]</span>
+                                        <span class="font-mono text-xs text-slate-400">Automation</span>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-white">24/7 KI-Telefonassistenten</h3>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                        Maßgeschneiderte Sprach-KI für deinen Betrieb, die Anrufe auf der Baustelle oder am Wochenende entgegennimmt, Notdienst abwickelt und Termine bucht.
+                                    </p>
+                                    <ul class="space-y-2 font-mono text-xs text-slate-400">
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Natürliche deutsche Sprachausgabe</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Automatische Kalender-Synchronisation</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> SMS- & WhatsApp-Benachrichtigung</li>
+                                    </ul>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 sm:p-10 space-y-6">
+                                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                        <span class="font-mono text-xs font-bold text-emerald-400">[ 03 ]</span>
+                                        <span class="font-mono text-xs text-slate-400">Reichweite</span>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-white">Local Google Maps 3-Pack Turbo</h3>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                        Regionale Suchmaschinenoptimierung für Köln, Kerpen und NRW. Damit Kunden in deiner Region bei dringendem Bedarf sofort deinen Betrieb finden.
+                                    </p>
+                                    <ul class="space-y-2 font-mono text-xs text-slate-400">
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Google Unternehmensprofil Audit</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> NAP-Konsistenz & Local Citations</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Lokale Keyword-Landingpages</li>
+                                    </ul>
+                                </div>
+
+                                <div class="interactive-tool-card p-8 sm:p-10 space-y-6">
+                                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                        <span class="font-mono text-xs font-bold text-emerald-400">[ 04 ]</span>
+                                        <span class="font-mono text-xs text-slate-400">Lead-Magnet</span>
+                                    </div>
+                                    <h3 class="text-2xl font-black text-white">Interaktive Tools & Rechner</h3>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed">
+                                        Individuelle Budget-Kalkulatoren, Vorher/Nachher-Slider und Anfragemasken, die Besucher spielerisch in qualifizierte Neukunden-Anfragen verwandeln.
+                                    </p>
+                                    <ul class="space-y-2 font-mono text-xs text-slate-400">
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Sofortige Richtwert-Berechnung</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Direkter 1-Klick WhatsApp-Export</li>
+                                        <li><i class="fa-solid fa-check text-emerald-400 me-2"></i> Höhere Abschlussraten ab Tag 1</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 7. INSTANT 60-SEC PROJECT ESTIMATOR (Interactive Tool) -->
+                    <section id="rechner" class="2xl:py-180 lg:py-120 py-80 bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12">
+                            
+                            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-calculator"></i>
+                                    <span>// Kostenfreier Sofort-Kalkulator</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                                    Projekt-Kosten in <br>
+                                    <span class="text-emerald-400">60 Sekunden</span> schätzen.
+                                </h2>
+                                <p class="text-xs sm:text-sm font-mono text-slate-400">
+                                    100% Festpreisgarantie inklusive Quellcode-Übergabe.
+                                </p>
+                            </div>
+
+                            <!-- Calculator Form Card -->
+                            <div class="max-w-3xl mx-auto interactive-tool-card p-6 sm:p-12 space-y-8">
+                                
+                                <div class="space-y-4">
+                                    <label class="font-mono text-xs uppercase font-bold text-white block">1. Projekt-Schwerpunkt wählen:</label>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+                                        <button type="button" onclick="setFocus('web', 1490)" class="focus-btn p-4 rounded-2xl border border-emerald-500 bg-[#0D1322] text-white text-left active-focus shadow-lg">
+                                            <div class="font-bold text-emerald-400 mb-1">Webdesign</div>
+                                            <div class="text-[11px] text-slate-400">High-End React Auftritt</div>
+                                        </button>
+                                        <button type="button" onclick="setFocus('ki', 1890)" class="focus-btn p-4 rounded-2xl border border-white/10 bg-[#04060A] text-slate-300 text-left hover:border-white/20">
+                                            <div class="font-bold text-white mb-1">KI-Telefonie</div>
+                                            <div class="text-[11px] text-slate-400">24/7 Anrufannahme</div>
+                                        </button>
+                                        <button type="button" onclick="setFocus('bundle', 2890)" class="focus-btn p-4 rounded-2xl border border-white/10 bg-[#04060A] text-slate-300 text-left hover:border-white/20">
+                                            <div class="font-bold text-white mb-1">Komplettpaket</div>
+                                            <div class="text-[11px] text-slate-400">Web + KI-Assistent</div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Result Display -->
+                                <div class="p-8 rounded-3xl bg-[#04060A] border border-emerald-500/40 text-center space-y-3 shadow-2xl">
+                                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">Geschätzter Richtwert (Festpreis / Einmalig)</span>
+                                    <div id="calc-price-display" class="text-4xl sm:text-6xl font-black text-white font-sans">1.415 € – 1.610 €</div>
+                                    <p class="text-xs font-mono text-slate-400">Inklusive 14 Tagen Umsetzungszeit, Responsive Design, SSL & Quellcode-Übergabe.</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <a id="calc-wa-btn" href="https://wa.me/4916096351750?text=Hallo%20Alexander!%20Ich%20habe%20den%20Kalkulator%20auf%20rheindorf.digital%20genutzt." target="_blank" class="p-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all">
+                                        <i class="fa-brands fa-whatsapp text-base"></i>
+                                        <span>Per WhatsApp Anfragen</span>
+                                    </a>
+                                    <a href="#kontakt" class="p-4 rounded-full bg-white hover:bg-emerald-400 text-slate-950 font-bold font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all">
+                                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                                        <span>Erstgespräch vereinbaren</span>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 8. FAQ SECTION (Plexify 1-to-1) -->
+                    <section id="faq" class="2xl:py-180 lg:py-120 py-80 bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12 max-w-4xl mx-auto">
+                            
+                            <div class="text-center mb-16 space-y-4">
+                                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold uppercase">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span>// Häufig Gestellte Fragen</span>
+                                </div>
+                                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                                    Transparenz & Details.
+                                </h2>
+                            </div>
+
+                            <div class="space-y-4">
+                                
+                                <div class="interactive-tool-card p-6 sm:p-8 space-y-3">
+                                    <h4 class="text-lg font-bold text-white flex items-center gap-3">
+                                        <span class="font-mono text-xs text-emerald-400">[01]</span>
+                                        <span>Wie lange dauert die Umsetzung?</span>
+                                    </h4>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed pl-8">
+                                        In der Regel steht dein interaktiver Klick-Prototyp innerhalb von 7 Tagen im echten Browser. Der vollständige Go-Live erfolgt nach maximal 14 Tagen. Durch den direkten Draht zum Inhaber Alexander Rheindorf entfallen zeitraubende Agentur-Schleifen.
+                                    </p>
+                                </div>
+
+                                <div class="interactive-tool-card p-6 sm:p-8 space-y-3">
+                                    <h4 class="text-lg font-bold text-white flex items-center gap-3">
+                                        <span class="font-mono text-xs text-emerald-400">[02]</span>
+                                        <span>Gibt es versteckte monatliche Kosten?</span>
+                                    </h4>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed pl-8">
+                                        Nein, niemals. Wir arbeiten mit 100% Festpreisgarantie. Der gesamte React-Quellcode und alle Inhalte gehören nach Projektabschluss vollständig dir. Optionale Wartungs- & Highspeed-Hosting-Pakete sind monatlich flexibel kündbar.
+                                    </p>
+                                </div>
+
+                                <div class="interactive-tool-card p-6 sm:p-8 space-y-3">
+                                    <h4 class="text-lg font-bold text-white flex items-center gap-3">
+                                        <span class="font-mono text-xs text-emerald-400">[03]</span>
+                                        <span>Ist die Website rechtssicher nach DSGVO & § 5 DDG?</span>
+                                    </h4>
+                                    <p class="font-mono text-xs text-slate-300 leading-relaxed pl-8">
+                                        Ja, zu 100%. Alle Schriftarten werden lokal gehostet (keine externen Font-Server), es gibt ein geprüftes Impressum nach dem neuen Digitale-Dienste-Gesetz (§ 5 DDG) sowie eine vollständige Datenschutzerklärung.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 9. CONTACT SECTION (Plexify 1-to-1) -->
+                    <section id="kontakt" class="xl:pt-150 xl:pb-100 lg:py-100 py-80 bg-[#04060A] border-b border-white/10">
+                        <div class="container-fluid px-4 sm:px-12 max-w-6xl mx-auto">
+                            
+                            <div class="interactive-tool-card p-8 sm:p-14 border-white/20 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+                                
+                                <!-- Left Info Panel (5 cols) -->
+                                <div class="lg:col-span-5 bg-[#04060A] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-8">
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 border border-white/10 w-fit">
+                                            <img src="assets/images/profile.jpg" alt="Alexander Rheindorf" class="w-12 h-12 rounded-xl object-cover border border-emerald-400">
+                                            <div>
+                                                <span class="font-bold text-white text-sm block">Alexander Rheindorf</span>
+                                                <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Inhaber & Lead Developer</span>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="text-2xl sm:text-3xl font-black text-white">Let's make something great work together.</h3>
+                                        <p class="font-mono text-xs text-slate-400 leading-relaxed">
+                                            Kein Vorzimmer, keine Account-Manager. Du sprichst direkt mit mir über deine neue Website oder deinen 24/7 KI-Telefonassistenten.
+                                        </p>
+
+                                        <div class="space-y-3 font-mono text-xs">
+                                            <a href="tel:016096351750" class="flex items-center gap-3.5 p-3.5 bg-[#080C14] border border-white/10 rounded-2xl hover:border-emerald-500 transition-colors">
+                                                <i class="fa-solid fa-phone text-emerald-400 text-sm"></i>
+                                                <span class="font-bold text-white">+49 (0) 160 96351750</span>
+                                            </a>
+                                            <a href="https://wa.me/4916096351750" target="_blank" class="flex items-center gap-3.5 p-3.5 bg-[#080C14] border border-white/10 rounded-2xl hover:border-emerald-500 transition-colors">
+                                                <i class="fa-brands fa-whatsapp text-[#25D366] text-base"></i>
+                                                <span class="font-bold text-white">WhatsApp Chat starten ➔</span>
+                                            </a>
+                                            <a href="mailto:hello@rheindorf.digital" class="flex items-center gap-3.5 p-3.5 bg-[#080C14] border border-white/10 rounded-2xl hover:border-emerald-500 transition-colors">
+                                                <i class="fa-solid fa-envelope text-emerald-400 text-sm"></i>
+                                                <span class="font-bold text-white">hello@rheindorf.digital</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-4 border-t border-white/10 font-mono text-xs text-slate-500">
+                                        <i class="fa-solid fa-location-dot text-emerald-400 me-2"></i> 50169 Kerpen · Köln & NRW
+                                    </div>
+                                </div>
+
+                                <!-- Right Form Panel (7 cols) -->
+                                <div class="lg:col-span-7">
+                                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5 font-mono text-xs">
+                                        <div class="space-y-2">
+                                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block">// UNVERBINDLICHE ANFRAGE</span>
+                                            <h3 class="text-2xl font-black font-sans text-white">Beschreibe kurz dein Vorhaben</h3>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div class="space-y-1">
+                                                <label class="text-slate-400">Name / Betrieb *</label>
+                                                <input type="text" required placeholder="z.B. Markus Schmitz" class="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white outline-none">
+                                            </div>
+                                            <div class="space-y-1">
+                                                <label class="text-slate-400">Telefonnummer *</label>
+                                                <input type="tel" required placeholder="z.B. 0172 1234567" class="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white outline-none">
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-1">
+                                            <label class="text-slate-400">E-Mail-Adresse</label>
+                                            <input type="email" placeholder="z.B. info@betrieb-schmitz.de" class="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white outline-none">
+                                        </div>
+
+                                        <div class="space-y-1">
+                                            <label class="text-slate-400">Nachricht / aktuelle Website (optional)</label>
+                                            <textarea rows="3" placeholder="Erzähle kurz von deinen Zielen oder aktuellen Herausforderungen..." class="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3 text-white outline-none resize-none"></textarea>
+                                        </div>
+
+                                        <div class="flex items-start gap-2.5 pt-1">
+                                            <input type="checkbox" id="privacy-check" required checked class="mt-1 accent-emerald-500">
+                                            <label for="privacy-check" class="text-[11px] text-slate-400 leading-relaxed cursor-pointer select-none">
+                                                Ich willige ein, dass meine Daten gemäß der <a href="javascript:void(0);" onclick="openLegalModal('datenschutz')" class="text-emerald-400 underline">Datenschutzerklärung</a> verarbeitet werden.
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" class="w-full bg-white hover:bg-emerald-400 text-slate-950 font-bold font-mono text-xs uppercase tracking-wider py-4 rounded-full shadow-2xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                                            <span>Kostenloses Erstgespräch anfordern</span>
+                                        </button>
+
+                                        <p id="form-success" class="text-center text-emerald-400 font-bold hidden pt-2">
+                                            ✓ Vielen Dank! Ich melde mich innerhalb von 24 Stunden persönlich bei dir.
+                                        </p>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 10. CURVED STUDIO FOOTER (Plexify 1-to-1) -->
+                    <footer class="pt-16 pb-12 bg-[#04060A] text-slate-400 text-xs overflow-hidden">
+                        <div class="container-fluid px-4 sm:px-12">
+                            <div class="interactive-tool-card p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
+                                
+                                <div class="max-w-3xl mb-16 space-y-4">
+                                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05]">
+                                        Let's make something <br>
+                                        <span class="text-emerald-400">great work together.</span>
+                                    </h2>
+                                    <p class="font-mono text-xs sm:text-sm text-slate-400">
+                                        Bespoke Webdesign & 24/7 Voice AI für führende Betriebe in Köln, Kerpen & NRW.
+                                    </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-white/10 font-mono text-xs">
+                                    <div class="space-y-3">
+                                        <h4 class="font-sans font-bold text-white text-base">Direktkontakt</h4>
+                                        <p><a href="tel:016096351750" class="text-slate-300 hover:text-emerald-400">+49 (0) 160 96351750</a></p>
+                                        <p class="text-slate-500">Mo – Sa: 08:00 – 19:00 Uhr</p>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <h4 class="font-sans font-bold text-white text-base">E-Mail & Chat</h4>
+                                        <p><a href="mailto:hello@rheindorf.digital" class="text-slate-300 hover:text-emerald-400 underline">hello@rheindorf.digital</a></p>
+                                        <p><a href="https://wa.me/4916096351750" target="_blank" class="text-emerald-400 hover:underline">WhatsApp Direkt ➔</a></p>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <h4 class="font-sans font-bold text-white text-base">Studio</h4>
+                                        <p><a href="#portfolio" class="hover:text-white">Showcase & Referenzen</a></p>
+                                        <p><a href="#prozess" class="hover:text-white">4-Schritte-Prozess</a></p>
+                                        <p><a href="#ki-voice" class="hover:text-white">KI-Voice Terminal</a></p>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <h4 class="font-sans font-bold text-white text-base">Standort & Trust</h4>
+                                        <p class="text-slate-300">Köln · Kerpen · Bergheim · NRW</p>
+                                        <p class="text-emerald-400 font-bold">100% Festpreisgarantie</p>
+                                        <p class="text-slate-500">DSGVO & § 5 DDG konform</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-[11px]">
+                                    <p class="text-slate-500 uppercase">
+                                        © 2026 RHEINDORF DIGITAL · INHABER ALEXANDER RHEINDORF · ALL RIGHTS RESERVED
+                                    </p>
+                                    <div class="flex items-center gap-6">
+                                        <button onclick="openLegalModal('impressum')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Impressum (§ 5 DDG)</button>
+                                        <button onclick="openLegalModal('datenschutz')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Datenschutz (DSGVO)</button>
+                                        
+                                        <!-- Long-stem back-to-top button (Plexify Signature) -->
+                                        <a id="scrolltopbtn" href="javascript:void(0);" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="w-10 h-10 rounded-full bg-white text-slate-950 hover:bg-emerald-400 flex items-center justify-center transition-all shadow-xl cursor-pointer">
+                                            <i class="fa-solid fa-arrow-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Footer Bottom Big Marquee Ticker (Plexify 1-to-1) -->
+                        <div class="md:mt-100 sm:mt-60 mt-40 overflow-hidden">
+                            <div class="flex items-center sm:gap-100 gap-60 flex-nowrap animate-ticker">
+                                <div class="text-center inline-block -mb-10"><span class="md:text-14xxl text-8xxl/87 text-white/20 font-bold uppercase">RHEINDORF</span></div>
+                                <div class="text-center inline-block -mb-10"><span class="md:text-14xxl text-8xxl/87 text-emerald-500/30 font-bold uppercase">DIGITAL</span></div>
+                                <div class="text-center inline-block -mb-10"><span class="md:text-14xxl text-8xxl/87 text-white/20 font-bold uppercase">RHEINDORF</span></div>
+                                <div class="text-center inline-block -mb-10"><span class="md:text-14xxl text-8xxl/87 text-emerald-500/30 font-bold uppercase">DIGITAL</span></div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Floating Scroll Progress Button (Plexify 1-to-1) -->
+    <button id="scrollProgress" title="Scroll to top" class="fixed z-999 right-20 bottom-20 size-40 rounded-full bg-white text-black cursor-pointer opacity-0 pointer-events-none duration-500 flex items-center justify-center shadow-2xl">
+        <span class="icon text-xs relative z-1"><i class="fa-solid fa-chevron-up"></i></span>
+    </button>
+
+    <!-- LEGAL MODALS (DSGVO & § 5 DDG) -->
+    <div id="legal-modal" class="legal-modal-backdrop" onclick="closeLegalModal()">
+        <div class="interactive-tool-card max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8 relative" onclick="event.stopPropagation()">
+            <button onclick="closeLegalModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="legal-modal-content" class="text-slate-300 text-xs font-mono space-y-4">
+                <!-- Injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS (Plexify 1-to-1 with all animations) -->
+    <script src="assets/vendor/gsap/gsap.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/vendor/gsap/MotionPathPlugin.min.js"></script>
+    <script src="assets/vendor/gsap/ScrollSmoother.js"></script>
+    <script src="assets/vendor/SplitText/SplitText.min.js"></script>
+    <script src="assets/vendor/wow/wow.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/custom.carousel.js"></script>
+    <script src="assets/js/dz.carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- Calculator & Interactive Scripts -->
+    <script>
+        let currentBase = 1490;
+        function setFocus(type, price) {
+            currentBase = price;
+            document.querySelectorAll('.focus-btn').forEach(b => {
+                b.classList.remove('border-emerald-500', 'bg-[#0D1322]', 'text-white');
+                b.classList.add('border-white/10', 'bg-[#04060A]', 'text-slate-300');
+            });
+            event.currentTarget.classList.add('border-emerald-500', 'bg-[#0D1322]', 'text-white');
+            event.currentTarget.classList.remove('border-white/10', 'bg-[#04060A]', 'text-slate-300');
+            
+            const low = Math.round(price * 0.95);
+            const high = Math.round(price * 1.08);
+            document.getElementById('calc-price-display').innerText = `${low.toLocaleString('de-DE')} € – ${high.toLocaleString('de-DE')} €`;
+            document.getElementById('calc-wa-btn').href = `https://wa.me/4916096351750?text=Hallo%20Alexander!%20Ich%20interessiere%20mich%20f%C3%BCr%20ein%20${type}%20Projekt%20(ca.%20${low}-${high}€).`;
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+
+        function openLegalModal(type) {
+            const modal = document.getElementById('legal-modal');
+            const content = document.getElementById('legal-modal-content');
+            if (type === 'impressum') {
+                content.innerHTML = `
+                    <h2 class="text-xl font-bold font-sans text-white mb-4">Impressum (§ 5 DDG)</h2>
+                    <p><strong>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG):</strong></p>
+                    <p>Alexander Rheindorf<br>Rheindorf Digital<br>50169 Kerpen / Raum Köln<br>Deutschland</p>
+                    <p><strong>Kontakt:</strong><br>Telefon: 0160 96351750<br>E-Mail: hello@rheindorf.digital</p>
+                    <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>Alexander Rheindorf, Kerpen</p>
+                `;
+            } else {
+                content.innerHTML = `
+                    <h2 class="text-xl font-bold font-sans text-white mb-4">Datenschutzerklärung (DSGVO)</h2>
+                    <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Alle Daten werden vertraulich und nach den gesetzlichen Vorschriften behandelt.</p>
+                    <p><strong>Server-Logfiles & Hosting:</strong><br>Alle Webseiten & Schriftarten werden lokal gehostet. Es erfolgt keine Weitergabe von Daten an unbefugte Dritte.</p>
+                    <p><strong>Kontaktaufnahme:</strong><br>Bei Anfragen über das Formular oder WhatsApp werden Ihre Angaben ausschließlich zur Bearbeitung der Anfrage verwendet.</p>
+                `;
+            }
+            modal.classList.add('active');
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legal-modal').classList.remove('active');
+        }
     </script>
-  </head>
-  <body class="bg-[#080c14] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+</body>
 </html>
