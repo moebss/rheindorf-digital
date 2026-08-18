@@ -1,113 +1,274 @@
-import { ArrowRight, Phone, Sparkles, CheckCircle2, ShieldCheck, Zap, Bot, Code2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowUpRight, Sparkles, PhoneCall, ShieldCheck, Zap, Star, Flame, Scissors, Bath, CheckCircle2, ChevronRight } from 'lucide-react';
+import alexanderHeroImg from '../images/hero_no_bg.png';
 import alexanderProfileImg from '../images/profile.jpg';
-import heroImg from '../images/hero_rheindorf.jpg';
 
 interface HeroProps {
   onOpenContact: () => void;
 }
 
 export default function Hero({ onOpenContact }: HeroProps) {
-  const scrollToEstimator = () => {
-    document.getElementById('rechner')?.scrollIntoView({ behavior: 'smooth' });
+  const [activeTab, setActiveTab] = useState<'nawrath' | 'alyas' | 'bandit' | 'nails'>('nawrath');
+
+  const cases = {
+    nawrath: {
+      client: 'Nawrath Badsanierung',
+      location: 'Köln & Bergheim',
+      tag: 'Handwerk & Badplanung',
+      result: '+340% qualifizierte Anfragen',
+      tech: '3D-Bad-Konfigurator + Headless React',
+      speed: '0.4s',
+      color: 'from-blue-500/20 to-emerald-500/20',
+      icon: Bath,
+    },
+    alyas: {
+      client: 'Alyas Barbershop',
+      location: 'Köln-Ehrenfeld',
+      tag: 'Premium Friseur & Barbershop',
+      result: '100% automatisierte Terminbuchung',
+      tech: '24/7 KI-Voice-Telefonist',
+      speed: '0.3s',
+      color: 'from-amber-500/20 to-orange-500/20',
+      icon: Scissors,
+    },
+    bandit: {
+      client: 'The Burning Bandit',
+      location: 'Frechen & Köln',
+      tag: 'Smashburger & BBQ Brand',
+      result: 'Viraler Hype & Tischreservierung',
+      tech: '4K Cinema Video + Instant Ordering',
+      speed: '0.4s',
+      color: 'from-red-500/20 to-amber-500/20',
+      icon: Flame,
+    },
+    nails: {
+      client: 'The Nails Shop',
+      location: 'Horrem (Erftkreis)',
+      tag: 'Beauty Studio & Nageldesign',
+      result: '#1 Ranking im Google Maps 3-Pack',
+      tech: 'Local SEO + WhatsApp Express Lead',
+      speed: '0.3s',
+      color: 'from-rose-500/20 to-purple-500/20',
+      icon: Star,
+    },
   };
 
-  return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#080c14] pt-32 pb-20 sm:pt-36 sm:pb-24 border-b border-[#1e2c4a]/80">
-      
-      {/* 100vh Full Bleed Tech Photography with Dark Obsidian Vignette */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImg}
-          alt="Alexander Rheindorf – Rheindorf Digital"
-          className="w-full h-full object-cover object-center filter brightness-[0.28] contrast-[1.18] scale-105"
-        />
-        {/* Deep Ambient Emerald / Navy Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080c14] via-[#080c14]/75 to-[#080c14]/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500/15 via-teal-900/10 to-transparent pointer-events-none" />
-      </div>
+  const currentCase = cases[activeTab];
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center space-y-8">
+  return (
+    <section className="relative pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 overflow-hidden">
+      
+      {/* Background Studio Light Orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[400px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Eyebrow Founder Pill */}
-        <div className="inline-flex items-center gap-3 bg-[#0e1626]/90 border border-emerald-500/40 px-4 py-2 rounded-full text-xs font-semibold tracking-wider text-emerald-400 backdrop-blur-md shadow-xl">
-          <div className="w-5 h-5 rounded-full overflow-hidden border border-emerald-400 shrink-0">
-            <img src={alexanderProfileImg} alt="Alexander Rheindorf" className="w-full h-full object-cover" />
+        {/* Top Plexify Studio Eyebrow Pill */}
+        <div className="flex flex-col items-center text-center mb-8">
+          <div className="inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-[#0D1322]/90 border border-white/12 shadow-2xl backdrop-blur-xl">
+            <span className="px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-mono font-bold text-[10px] uppercase tracking-wider">
+              Bespoke Studio
+            </span>
+            <span className="text-xs font-mono text-slate-300 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Kein WordPress-Baukasten · 100% Handcoded & KI-integriert
+            </span>
           </div>
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-          <span className="uppercase tracking-widest text-[11px] sm:text-xs">
-            ALEXANDER RHEINDORF • WEBDESIGN & KI-AUTOMATIONEN KÖLN / NRW
-          </span>
         </div>
 
-        {/* Massive Outfit Display Headline */}
-        <h1 className="font-outfit text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.05] max-w-5xl mx-auto">
-          High-End Websites & <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-            KI-Automationen
-          </span>.
-        </h1>
+        {/* Main Massive Editorial Headline (Plexify Style) */}
+        <div className="text-center max-w-5xl mx-auto mb-10">
+          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white leading-[1.05] mb-6">
+            Empower Your Brand with Next-Gen{' '}
+            <span className="inline-flex items-center align-middle my-1">
+              <span className="bg-white text-slate-950 px-4 sm:px-6 py-1 sm:py-2 rounded-full font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:bg-emerald-400 transition-colors duration-300">
+                Web & KI
+              </span>
+            </span>{' '}
+            für lokale Marktführer.
+          </h1>
 
-        {/* Atmospheric Subtitle */}
-        <p className="text-slate-300 text-base sm:text-xl lg:text-2xl font-normal leading-relaxed max-w-3xl mx-auto">
-          Ich entwickle maßgeschneiderte Websites mit messbarem Neukundenstrom und 24/7 KI-Telefonassistenten für Handwerker, Salons & lokale Marktführer in Köln & NRW. 
-          <span className="text-emerald-400 font-semibold block mt-1">Kein teurer Agentur-Overhead – direkt, schnell, messbare Ergebnisse.</span>
-        </p>
+          <p className="font-mono text-xs sm:text-sm md:text-base text-slate-400 uppercase tracking-widest max-w-3xl mx-auto">
+            High-End Webdesign, interaktive Rechner & 24/7 KI-Telefonassistenten für Handwerker & Dienstleister im Raum Köln & NRW.
+          </p>
+        </div>
 
-        {/* Action CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+        {/* Action Buttons & Social Proof Strip */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button
             onClick={onOpenContact}
-            aria-label="Kostenloses Erstgespräch vereinbaren"
-            className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-950 font-bold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-xl shadow-[0_8px_30px_rgba(16,185,129,0.35)] transition-all transform active:scale-98 flex items-center gap-3 cursor-pointer group uppercase tracking-wider"
+            className="group w-full sm:w-auto plexify-btn plexify-btn-primary shadow-[0_0_35px_rgba(16,185,129,0.35)]"
           >
-            <span>Erstgespräch Buchen</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-
-          <button
-            onClick={scrollToEstimator}
-            aria-label="Projekt-Kosten berechnen"
-            className="bg-[#0e1626]/90 hover:bg-[#131d33] text-white font-semibold text-base sm:text-lg px-7 py-4 sm:py-5 rounded-xl border border-[#1e2c4a] hover:border-emerald-500/40 backdrop-blur-md transition-all flex items-center gap-2.5 cursor-pointer"
-          >
-            <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>Projekt-Kosten Rechner</span>
+            <span>15-Min. Potenzialanalyse buchen</span>
+            <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center group-hover:bg-slate-950 group-hover:text-emerald-400 transition-colors">
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
           </button>
 
           <a
-            href="tel:016096351750"
-            className="bg-[#0e1626]/90 hover:bg-[#131d33] text-slate-300 hover:text-white font-semibold text-base sm:text-lg px-6 py-4 sm:py-5 rounded-xl border border-[#1e2c4a] transition-all flex items-center gap-2"
+            href="#ki-telefonie"
+            className="w-full sm:w-auto plexify-btn plexify-btn-secondary"
           >
-            <Phone className="w-4 h-4 text-emerald-400" />
-            <span className="tabular-nums font-mono">0160 96351750</span>
+            <PhoneCall className="w-4 h-4 text-emerald-400" />
+            <span>KI-Voice live testen</span>
           </a>
         </div>
 
-        {/* High-Impact Metric Strip */}
-        <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-[#1e2c4a]/80 max-w-4xl mx-auto">
-          <div className="bg-[#0e1626]/80 backdrop-blur-sm p-4 rounded-2xl border border-[#1e2c4a]">
-            <span className="font-outfit text-2xl font-bold text-emerald-400 block">100%</span>
-            <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Festpreisgarantie</span>
-          </div>
+        {/* Central Plexify Interactive Showcase Card (The Flagship Visual Stack) */}
+        <div className="relative max-w-5xl mx-auto">
+          <div className="plexify-card p-6 sm:p-10 border-white/15 bg-gradient-to-b from-[#0D1322]/90 to-[#080C14]/90 shadow-2xl">
+            
+            {/* Header / Tabs Row */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-8">
+              <div>
+                <span className="font-mono text-xs text-emerald-400 uppercase tracking-wider block mb-1">
+                  // Live Case Study Switcher
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                  Echte Marktführer aus der Region
+                </h3>
+              </div>
 
-          <div className="bg-[#0e1626]/80 backdrop-blur-sm p-4 rounded-2xl border border-[#1e2c4a]">
-            <span className="font-outfit text-2xl font-bold text-white block">14 Tage</span>
-            <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Express-Umsetzung</span>
-          </div>
+              {/* Case Tabs */}
+              <div className="flex items-center gap-1.5 bg-[#04060A]/80 p-1.5 rounded-2xl border border-white/10 overflow-x-auto no-scrollbar">
+                {(['nawrath', 'alyas', 'bandit', 'nails'] as const).map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setActiveTab(key)}
+                    className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                      activeTab === key
+                        ? 'bg-emerald-500 text-slate-950 shadow-lg'
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {cases[key].client.split(' ')[0]}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-          <div className="bg-[#0e1626]/80 backdrop-blur-sm p-4 rounded-2xl border border-[#1e2c4a]">
-            <span className="font-outfit text-2xl font-bold text-white block flex items-center justify-center gap-1 text-slate-100">
-              <Zap className="w-4 h-4 text-emerald-400" />
-              <span>&lt; 0.8s</span>
-            </span>
-            <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Ladezeit (Lighthouse 98+)</span>
-          </div>
+            {/* Main Interactive Showcase Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              {/* Left Case Details Column */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                    <currentCase.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-xl sm:text-2xl font-bold text-white">
+                      {currentCase.client}
+                    </h4>
+                    <span className="text-xs font-mono text-slate-400">{currentCase.location} · {currentCase.tag}</span>
+                  </div>
+                </div>
 
-          <div className="bg-[#0e1626]/80 backdrop-blur-sm p-4 rounded-2xl border border-[#1e2c4a]">
-            <span className="font-outfit text-2xl font-bold text-white block flex items-center justify-center gap-1 text-slate-200">
-              <Bot className="w-4 h-4 text-emerald-400" />
-              <span>24/7</span>
-            </span>
-            <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">KI-Telefonassistent</span>
+                <div className="p-5 rounded-2xl bg-[#04060A]/60 border border-white/10 space-y-3">
+                  <div className="flex items-center justify-between border-b border-white/5 pb-2">
+                    <span className="text-xs font-mono text-slate-400">Ergebnis:</span>
+                    <span className="text-sm font-mono font-bold text-emerald-400">{currentCase.result}</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/5 pb-2">
+                    <span className="text-xs font-mono text-slate-400">Architektur:</span>
+                    <span className="text-xs font-mono text-white">{currentCase.tech}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-slate-400">Ladezeit (FCP):</span>
+                    <span className="text-xs font-mono font-bold text-cyan-400 flex items-center gap-1">
+                      <Zap className="w-3 h-3 fill-current" /> {currentCase.speed}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 pt-2">
+                  <a
+                    href="#projekte"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-white hover:text-emerald-400 transition-colors"
+                  >
+                    <span>Vollständige Case Study ansehen</span>
+                    <ChevronRight className="w-4 h-4 text-emerald-400" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Live Device Mockup Column */}
+              <div className="lg:col-span-6">
+                <div className={`relative p-6 sm:p-8 rounded-3xl bg-gradient-to-br ${currentCase.color} border border-white/15 overflow-hidden group`}>
+                  
+                  {/* Performance 100 Badge Floating */}
+                  <div className="absolute top-4 right-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#04060A]/90 border border-emerald-500/30 backdrop-blur-md">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="font-mono text-[11px] font-bold text-emerald-400">100/100 SPEED</span>
+                  </div>
+
+                  {/* Visual Preview Graphic */}
+                  <div className="relative rounded-2xl bg-[#080C14] border border-white/20 p-5 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-amber-500/80" />
+                        <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                      </div>
+                      <span className="text-[10px] font-mono text-slate-500">https://{activeTab}.rheindorf.digital</span>
+                    </div>
+
+                    <div className="space-y-3 py-4 text-left">
+                      <div className="inline-block px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-[10px] font-mono font-bold uppercase">
+                        Active Production Deployment
+                      </div>
+                      <div className="font-display font-bold text-lg sm:text-xl text-white">
+                        {currentCase.client}
+                      </div>
+                      <p className="text-xs text-slate-400 font-mono">
+                        {currentCase.tech} mit nativer Lead-Erfassung & automatisierter CRM-Synchronisation.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/10 font-mono text-[10px]">
+                      <div className="p-2 rounded-xl bg-white/5 text-slate-300">
+                        <span className="text-slate-500 block">SEO-INDEX</span>
+                        <span className="text-emerald-400 font-bold">100% PageSpeed</span>
+                      </div>
+                      <div className="p-2 rounded-xl bg-white/5 text-slate-300">
+                        <span className="text-slate-500 block">STATUS</span>
+                        <span className="text-cyan-400 font-bold">24/7 Live Lead-Flow</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            {/* Bottom Founder & Studio Trust Banner */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+              <div className="flex items-center gap-3">
+                <img
+                  src={alexanderHeroImg}
+                  alt="Alexander Rheindorf"
+                  className="w-10 h-10 rounded-full object-cover border border-white/20 bg-emerald-500/10"
+                />
+                <div>
+                  <span className="text-white font-bold block">Alexander Rheindorf</span>
+                  <span className="text-[10px] text-slate-500">Founder & Leitender Entwickler</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <span className="flex items-center gap-1.5 text-slate-300">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  DSGVO & § 5 DDG Konform
+                </span>
+                <span className="flex items-center gap-1.5 text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  Festpreisgarantie
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
 

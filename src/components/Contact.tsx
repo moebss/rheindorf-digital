@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, Bot, Sparkles, MessageSquare, Clock, ShieldCheck, Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, Bot, Sparkles, MessageSquare, Clock, ShieldCheck, Lock, ArrowUpRight } from 'lucide-react';
 import alexanderProfileImg from '../images/profile.jpg';
 
 interface ContactProps {
@@ -24,51 +24,63 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
   };
 
   return (
-    <section id="kontakt" className="py-24 bg-[#080c14] border-b border-[#1e2c4a]/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="kontakt" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+      
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="bg-[#0e1626] rounded-3xl border border-[#1e2c4a] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        {/* Plexify Big Headline Box */}
+        <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-2">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>// Direkter Draht zum Entwickler</span>
+          </div>
+
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05]">
+            Let's make something <br />
+            <span className="text-emerald-400">great work together.</span>
+          </h2>
+
+          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
+            Keine Account-Manager, kein Vorzimmer. Du sprichst direkt mit Alexander Rheindorf über deine neue High-End Website oder deinen 24/7 KI-Telefonassistenten.
+          </p>
+        </div>
+
+        {/* Contact Layout Box */}
+        <div className="plexify-card bg-[#080C14] border-white/15 p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Left Info Panel (5 cols) */}
-          <div className="lg:col-span-5 bg-[#080c14] text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden border-r border-[#1e2c4a]">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
+          <div className="lg:col-span-5 bg-[#04060A] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-8">
+            
             <div className="space-y-6">
-              
-              <div className="flex items-center gap-3 bg-[#131d33] border border-emerald-500/40 p-3 rounded-2xl w-fit">
+              <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 border border-white/10 w-fit">
                 <img
                   src={alexanderProfileImg}
                   alt="Alexander Rheindorf"
-                  className="w-10 h-10 rounded-xl object-cover border border-emerald-400"
+                  className="w-11 h-11 rounded-xl object-cover border border-emerald-400"
                 />
                 <div>
-                  <span className="text-xs font-bold text-white block">Alexander Rheindorf</span>
-                  <span className="text-[10px] text-emerald-400 font-semibold uppercase tracking-wider">Persönlicher Entwickler</span>
+                  <span className="font-display font-bold text-white text-sm block">Alexander Rheindorf</span>
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Inhaber & Lead Developer</span>
                 </div>
               </div>
 
-              <h2 className="font-outfit text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                Lass uns über dein <span className="text-emerald-400">Projekt</span> sprechen.
-              </h2>
-              
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Egal ob neue Website, 24/7 KI-Telefonassistent oder Relaunch – ruf mich direkt an, schreib mir auf WhatsApp oder nutze das Kontaktformular.
-              </p>
-
-              <div className="space-y-4 pt-2 text-sm">
+              <div className="space-y-3 font-mono text-xs">
                 
                 {/* Phone */}
                 <a
                   href="tel:016096351750"
-                  className="flex items-center gap-3.5 p-3.5 bg-[#0e1626] border border-[#1e2c4a] rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#131d33] text-emerald-400 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-white/5 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">Direkt anrufen:</span>
-                    <span className="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors font-mono">
-                      0160 96351750
+                    <span className="text-[10px] text-slate-500 block">DIREKTER ANRUF:</span>
+                    <span className="font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      +49 (0) 160 96351750
                     </span>
                   </div>
                 </a>
@@ -78,14 +90,14 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                   href="https://wa.me/4916096351750?text=Hallo%20Alexander!%20Ich%20interessiere%20mich%20f%C3%BCr%20ein%20Webdesign-%20oder%20KI-Projekt."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3.5 bg-[#0e1626] border border-[#1e2c4a] rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0">
-                    <MessageSquare className="w-5 h-5" />
+                    <MessageSquare className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">WhatsApp Direktchat:</span>
-                    <span className="text-sm sm:text-base font-bold text-white group-hover:text-[#25D366] transition-colors">
+                    <span className="text-[10px] text-slate-500 block">WHATSAPP CHAT:</span>
+                    <span className="font-bold text-white group-hover:text-[#25D366] transition-colors">
                       Jetzt Chat Starten ➔
                     </span>
                   </div>
@@ -94,14 +106,14 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 {/* Email */}
                 <a
                   href="mailto:hello@rheindorf.digital"
-                  className="flex items-center gap-3.5 p-3.5 bg-[#0e1626] border border-[#1e2c4a] rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#131d33] text-emerald-400 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-white/5 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-400 block font-medium">E-Mail:</span>
-                    <span className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                    <span className="text-[10px] text-slate-500 block">E-MAIL:</span>
+                    <span className="font-bold text-white group-hover:text-emerald-400 transition-colors">
                       hello@rheindorf.digital
                     </span>
                   </div>
@@ -110,27 +122,28 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#1e2c4a] flex items-center gap-2 text-xs text-slate-400">
+            <div className="pt-6 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-slate-400">
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>50169 Kerpen • Köln & ganz NRW</span>
+              <span>Studio: 50169 Kerpen · Köln & ganz NRW</span>
             </div>
+
           </div>
 
           {/* Right Form Panel (7 cols) */}
-          <div className="lg:col-span-7 p-8 sm:p-12">
+          <div className="lg:col-span-7">
             {submitted ? (
-              <div className="bg-[#080c14] border border-emerald-500/40 p-8 rounded-3xl text-center space-y-4 animate-in fade-in">
+              <div className="bg-[#04060A] border border-emerald-500/40 p-8 sm:p-12 rounded-3xl text-center space-y-4 animate-in fade-in">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-outfit text-2xl font-bold text-white">Vielen Dank für deine Anfrage!</h3>
-                <p className="text-slate-300 text-sm leading-relaxed max-w-md mx-auto">
+                <h3 className="font-display text-2xl font-bold text-white">Vielen Dank für deine Anfrage!</h3>
+                <p className="font-mono text-slate-300 text-xs leading-relaxed max-w-md mx-auto">
                   Ich habe deine Nachricht erhalten und melde mich innerhalb von 24 Stunden persönlich bei dir.
                 </p>
                 <div className="pt-4">
                   <a
                     href="tel:016096351750"
-                    className="inline-flex items-center gap-2 bg-emerald-500 text-slate-950 font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-lg"
+                    className="plexify-btn plexify-btn-primary text-xs"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Dringend? Direkt anrufen (0160 96351750)</span>
@@ -152,33 +165,33 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 />
 
                 <div className="space-y-2">
-                  <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider block">
-                    Unverbindliche Projektanfrage
+                  <span className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider block">
+                    Schnell-Anfrage
                   </span>
-                  <h3 className="font-outfit text-2xl font-bold text-white">
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                     Beschreibe kurz dein Vorhaben
                   </h3>
                 </div>
 
                 {/* Interest Selector */}
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
-                    Woran hast du Interesse?
+                  <label className="font-mono text-xs text-slate-400 uppercase tracking-wider block">
+                    Interesse an:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     {[
-                      { id: 'webdesign', label: 'High-End Webdesign' },
-                      { id: 'ki', label: 'KI-Telefonassistent' },
+                      { id: 'webdesign', label: 'High-End Web' },
+                      { id: 'ki', label: 'KI-Telefonie' },
                       { id: 'komplett', label: 'Komplettpaket' }
                     ].map((opt) => (
                       <button
                         type="button"
                         key={opt.id}
                         onClick={() => setInterest(opt.id)}
-                        className={`py-2.5 px-3 rounded-xl text-xs font-semibold uppercase tracking-wider border transition-all cursor-pointer ${
+                        className={`py-3 px-3 rounded-2xl font-mono text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                           interest === opt.id
-                            ? 'bg-emerald-500 text-slate-950 font-bold border-emerald-400 shadow-md'
-                            : 'bg-[#080c14] text-slate-300 border-[#1e2c4a] hover:border-slate-700'
+                            ? 'bg-white text-slate-950 border-white shadow-xl'
+                            : 'bg-[#04060A] text-slate-300 border-white/10 hover:border-white/20'
                         }`}
                       >
                         {opt.label}
@@ -190,51 +203,51 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 {/* Name & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300">Name / Ansprechpartner *</label>
+                    <label className="font-mono text-xs text-slate-400">Name / Ansprechpartner *</label>
                     <input
                       type="text"
                       required
                       placeholder="z.B. Markus Schmitz"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#080c14] border border-[#1e2c4a] focus:border-emerald-500 rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-colors"
+                      className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300">Telefonnummer (für Rückruf) *</label>
+                    <label className="font-mono text-xs text-slate-400">Telefonnummer *</label>
                     <input
                       type="tel"
                       required
                       placeholder="z.B. 0172 1234567"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#080c14] border border-[#1e2c4a] focus:border-emerald-500 rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-colors"
+                      className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-300">E-Mail-Adresse</label>
+                  <label className="font-mono text-xs text-slate-400">E-Mail-Adresse</label>
                   <input
                     type="email"
-                    placeholder="z.B. info@meisterbetrieb-schmitz.de"
+                    placeholder="z.B. info@betrieb-schmitz.de"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#080c14] border border-[#1e2c4a] focus:border-emerald-500 rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-colors"
+                    className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-300">Nachricht / aktuelle Website (optional)</label>
+                  <label className="font-mono text-xs text-slate-400">Nachricht / aktuelle Website (optional)</label>
                   <textarea
                     rows={3}
                     placeholder="Erzähle kurz von deinem Betrieb oder deinen aktuellen Herausforderungen..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full bg-[#080c14] border border-[#1e2c4a] focus:border-emerald-500 rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors resize-none"
+                    className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3 text-white font-mono text-xs outline-none transition-colors resize-none"
                   />
                 </div>
 
@@ -246,10 +259,10 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                     required
                     checked={acceptedPrivacy}
                     onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-                    className="mt-1 w-4 h-4 rounded border-slate-700 bg-[#080c14] text-emerald-500 focus:ring-emerald-500 cursor-pointer accent-emerald-500"
+                    className="mt-1 w-4 h-4 rounded border-slate-700 bg-[#04060A] text-emerald-500 focus:ring-emerald-500 cursor-pointer accent-emerald-500"
                   />
-                  <label htmlFor="privacy-check" className="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
-                    Ich willige ein, dass meine Angaben zur Kontaktaufnahme und Bearbeitung der Anfrage gemäß der{' '}
+                  <label htmlFor="privacy-check" className="font-mono text-[11px] text-slate-400 leading-relaxed cursor-pointer select-none">
+                    Ich willige ein, dass meine Angaben zur Kontaktaufnahme gemäß der{' '}
                     <button
                       type="button"
                       onClick={onOpenDatenschutz}
@@ -257,22 +270,22 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                     >
                       Datenschutzerklärung
                     </button>{' '}
-                    verarbeitet werden. Diese Einwilligung kann ich jederzeit widerrufen.
+                    verarbeitet werden.
                   </label>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button (Plexify Style) */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-950 font-bold text-sm uppercase tracking-wider py-4 rounded-xl shadow-xl shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="plexify-btn plexify-btn-primary w-full shadow-2xl"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Kostenloses Erstgespräch anfragen</span>
+                  <span>Kostenloses Erstgespräch anfordern</span>
                 </button>
 
-                <p className="text-[11px] text-slate-500 text-center flex items-center justify-center gap-1.5">
+                <p className="font-mono text-[10px] text-slate-500 text-center flex items-center justify-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>100% unverbindlich • DSGVO-konform • Antwort innerhalb 24h</span>
+                  <span>100% unverbindlich · DSGVO-konform · Rückmeldung in &lt; 24h</span>
                 </p>
 
               </form>

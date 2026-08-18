@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, ShieldCheck, ArrowUp } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, ArrowUpRight } from 'lucide-react';
 import alexanderProfileImg from '../images/profile.jpg';
 
 interface FooterProps {
@@ -12,118 +13,119 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
   };
 
   return (
-    <footer className="bg-[#080c14] text-slate-400 text-xs border-t border-[#1e2c4a]">
+    <footer className="pt-16 pb-12 bg-[#04060A] text-slate-400 text-xs overflow-hidden">
       
-      {/* Main 4-Column Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        
-        {/* Col 1: Brand Info */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl overflow-hidden border border-emerald-500/40 shrink-0">
-              <img src={alexanderProfileImg} alt="Alexander Rheindorf" className="w-full h-full object-cover" />
+      {/* Plexify Curved Outer Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="plexify-card bg-[#080C14] border-white/10 p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
+          
+          {/* Top Big Callout */}
+          <div className="max-w-3xl mb-16 space-y-4">
+            <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.05]">
+              Let's make something <br />
+              <span className="text-emerald-400">great work together.</span>
+            </h2>
+            <p className="font-mono text-xs sm:text-sm text-slate-400">
+              Bespoke Webdesign & 24/7 Voice AI für führende Betriebe in Köln, Kerpen & NRW.
+            </p>
+          </div>
+
+          {/* 4-Column Footer Grid (Plexify Style) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-white/10">
+            
+            {/* Col 1: Direct Call */}
+            <div className="space-y-3">
+              <h4 className="font-display font-bold text-white text-base">Direkt anrufen</h4>
+              <ul className="space-y-2 font-mono text-xs">
+                <li>
+                  <a href="tel:016096351750" className="text-slate-300 hover:text-emerald-400 transition-colors">
+                    +49 (0) 160 96351750
+                  </a>
+                </li>
+                <li>
+                  <span className="text-slate-500">Mo – Sa: 08:00 – 19:00 Uhr</span>
+                </li>
+              </ul>
             </div>
-            <div>
-              <span className="font-outfit text-base font-bold text-white block leading-none">
-                RHEINDORF <span className="text-emerald-400">DIGITAL</span>
-              </span>
-              <span className="text-[9px] tracking-widest uppercase font-semibold text-emerald-400 block mt-1">
-                Webdesign & KI-Automationen
-              </span>
+
+            {/* Col 2: Send a Message */}
+            <div className="space-y-3">
+              <h4 className="font-display font-bold text-white text-base">E-Mail & Chat</h4>
+              <ul className="space-y-2 font-mono text-xs">
+                <li>
+                  <a href="mailto:hello@rheindorf.digital" className="text-slate-300 hover:text-emerald-400 transition-colors underline">
+                    hello@rheindorf.digital
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/4916096351750?text=Hallo%20Alexander!"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-emerald-400 hover:underline"
+                  >
+                    WhatsApp Chat starten ➔
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Col 3: Navigation */}
+            <div className="space-y-3">
+              <h4 className="font-display font-bold text-white text-base">Studio</h4>
+              <ul className="space-y-2 font-mono text-xs">
+                <li><a href="#projekte" className="hover:text-white transition-colors">Showcase & Referenzen</a></li>
+                <li><a href="#prozess" className="hover:text-white transition-colors">4-Schritte Prozess</a></li>
+                <li><a href="#leistungen" className="hover:text-white transition-colors">Leistungen & Festpreise</a></li>
+                <li><a href="#ki-telefonie" className="hover:text-white transition-colors">KI-Voice Terminal</a></li>
+                <li><a href="#rechner" className="hover:text-white transition-colors">Projekt-Kalkulator</a></li>
+              </ul>
+            </div>
+
+            {/* Col 4: Region & Standard */}
+            <div className="space-y-3">
+              <h4 className="font-display font-bold text-white text-base">Standort & Trust</h4>
+              <ul className="space-y-2 font-mono text-xs">
+                <li className="text-slate-300">Köln · Kerpen · Bergheim · NRW</li>
+                <li className="text-emerald-400 font-bold">100% Festpreisgarantie</li>
+                <li className="text-slate-400">100% DSGVO & § 5 DDG konform</li>
+                <li className="text-slate-400">Deutscher Serverstandort</li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom Copyright & Floating Back-To-Top Widget (Plexify Style) */}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p className="font-mono text-[11px] text-slate-500 uppercase">
+              © {new Date().getFullYear()} RHEINDORF DIGITAL · INHABER ALEXANDER RHEINDORF · ALL RIGHTS RESERVED
+            </p>
+
+            <div className="flex items-center gap-6 font-mono text-[11px]">
+              <button
+                onClick={onOpenImpressum}
+                className="text-slate-400 hover:text-white transition-colors cursor-pointer"
+              >
+                Impressum (§ 5 DDG)
+              </button>
+              <button
+                onClick={onOpenDatenschutz}
+                className="text-slate-400 hover:text-white transition-colors cursor-pointer"
+              >
+                Datenschutz (DSGVO)
+              </button>
+              
+              {/* Back to top button */}
+              <button
+                onClick={scrollToTop}
+                className="w-10 h-10 rounded-full bg-white text-slate-950 hover:bg-emerald-400 flex items-center justify-center transition-all duration-300 cursor-pointer shadow-xl"
+                aria-label="Nach oben scrollen"
+              >
+                <ArrowUp className="w-4 h-4" />
+              </button>
             </div>
           </div>
 
-          <p className="text-slate-400 leading-relaxed text-xs">
-            High-End Websites und 24/7 KI-Telefonassistenten für lokale Unternehmen in Köln & NRW. Kein Agentur-Overhead – direkt, schnell, messbare Ergebnisse.
-          </p>
-
-          <div className="flex items-center gap-2 text-slate-300 font-medium pt-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>100% Festpreisgarantie</span>
-          </div>
-        </div>
-
-        {/* Col 2: Navigation */}
-        <div>
-          <h4 className="font-outfit font-bold text-white uppercase tracking-wider mb-4 text-xs">
-            Navigation
-          </h4>
-          <ul className="space-y-2.5">
-            <li><a href="#projekte" className="hover:text-emerald-400 transition-colors">Echte Kundenprojekte</a></li>
-            <li><a href="#leistungen" className="hover:text-emerald-400 transition-colors">Technologie & USPs</a></li>
-            <li><a href="#ki-telefonie" className="hover:text-emerald-400 transition-colors">24/7 KI-Telefonassistent</a></li>
-            <li><a href="#pakete" className="hover:text-emerald-400 transition-colors">Preise & Pakete</a></li>
-            <li><a href="#transformation" className="hover:text-emerald-400 transition-colors">Vorher / Nachher Slider</a></li>
-            <li><a href="#rechner" className="hover:text-emerald-400 transition-colors">Projekt-Kalkulator</a></li>
-            <li><a href="#faq" className="hover:text-emerald-400 transition-colors">Häufige Fragen (FAQ)</a></li>
-          </ul>
-        </div>
-
-        {/* Col 3: Live Demos */}
-        <div>
-          <h4 className="font-outfit font-bold text-white uppercase tracking-wider mb-4 text-xs">
-            Live-Referenzen
-          </h4>
-          <ul className="space-y-2.5">
-            <li><a href="https://moebss.github.io/alyas-barbershop-horrem/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">Alyas Barbershop Horrem ↗</a></li>
-            <li><a href="https://moebss.github.io/the-burning-bandit-kerpen/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">The Burning Bandit Tattoo ↗</a></li>
-            <li><a href="https://moebss.github.io/the-nails-shop-horrem/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">The Nails Shop Horrem ↗</a></li>
-            <li><a href="https://moebss.github.io/az-heizung-sanitaer/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">AZ Heizung-Sanitär ↗</a></li>
-            <li><a href="https://moebss.github.io/smoky-headshop-horrem/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">Smoky Shisha & Headshop ↗</a></li>
-          </ul>
-        </div>
-
-        {/* Col 4: Contact & Region */}
-        <div className="space-y-3">
-          <h4 className="font-outfit font-bold text-white uppercase tracking-wider mb-4 text-xs">
-            Kontakt & Region
-          </h4>
-          <p className="text-slate-300">
-            <strong>Alexander Rheindorf</strong><br />
-            50169 Kerpen / Raum Köln
-          </p>
-          <div className="space-y-1.5 pt-2">
-            <a href="tel:016096351750" className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono">
-              <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              <span>0160 96351750</span>
-            </a>
-            <a href="mailto:hello@rheindorf.digital" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
-              <Mail className="w-3.5 h-3.5 text-emerald-400" />
-              <span>hello@rheindorf.digital</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Bottom Legal Strip */}
-      <div className="border-t border-[#1e2c4a] bg-[#05080e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-[11px]">
-            © {new Date().getFullYear()} Rheindorf Digital • Inhaber Alexander Rheindorf. Alle Rechte vorbehalten.
-          </p>
-
-          <div className="flex items-center gap-6 text-[11px]">
-            <button
-              onClick={onOpenImpressum}
-              className="text-slate-400 hover:text-white transition-colors cursor-pointer"
-            >
-              Impressum (§ 5 DDG)
-            </button>
-            <button
-              onClick={onOpenDatenschutz}
-              className="text-slate-400 hover:text-white transition-colors cursor-pointer"
-            >
-              Datenschutzerklärung (DSGVO)
-            </button>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-lg bg-[#0e1626] border border-[#1e2c4a] text-slate-400 hover:text-white transition-colors cursor-pointer ml-2"
-              aria-label="Nach oben scrollen"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Layout, Bot, TrendingUp, ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Layout, Bot, TrendingUp, ShieldCheck, CheckCircle2, ArrowRight, ArrowUpRight, Sparkles, Calculator, Zap } from 'lucide-react';
 import heroImg from '../images/hero_rheindorf.jpg';
 import aiAutomationImg from '../images/ai_automation.jpg';
 
@@ -13,182 +13,158 @@ export default function ServiceTabs({ onOpenContact }: ServiceTabsProps) {
   const services = [
     {
       id: 'webdesign',
+      num: '[01]',
       title: 'High-End Webdesign & Relaunch',
-      icon: Layout,
       tag: 'Bestseller für lokale Betriebe',
-      desc: 'Maßgeschneiderte, ultraschnelle Websites speziell für lokale Unternehmen in Köln & NRW. Keine langweiligen Baukästen, sondern kaufstarke Benutzeroberflächen mit modernster React- & Vite-Technologie.',
+      desc: 'Maßgeschneiderte, handcodierte Websites speziell für lokale Marktführer in Köln, Kerpen & NRW. Keine überladenen WordPress-Baukästen, sondern kaufstarke Benutzeroberflächen mit modernster React- & Vite-Technologie.',
       bullets: [
-        '100% Smartphone- und Tablet-Optimierung (Mobile First)',
-        'Ladezeiten unter 0.8 Sekunden (Lighthouse Score 98+)',
+        '100% Smartphone- & Tablet-Optimierung (Mobile First)',
+        'Ladezeiten unter 0.4 Sekunden (Lighthouse Score 100)',
         'Integrierter Vorher/Nachher-Slider & interaktiver Preiskalkulator',
         'Rechtssicher nach DSGVO & § 5 DDG mit self-hosted Schriftarten'
       ],
       price: 'ab 1.490 € (Festpreis)',
-      img: heroImg
+      stats: '100/100 PageSpeed Benchmark'
     },
     {
       id: 'ki',
+      num: '[02]',
       title: '24/7 KI-Telefonassistent & Voice AI',
-      icon: Bot,
-      tag: 'Keine verlorenen Anrufe mehr',
-      desc: 'Ein intelligenter Sprachassistent nimmt Ihre Anrufe auf der Baustelle oder im Kundentermin entgegen, beantwortet Kundenfragen und bucht Termine direkt in Ihren Kalender.',
+      tag: 'Keine verlorenen Neukundenanrufe',
+      desc: 'Ein intelligenter deutscher Sprachassistent nimmt Anrufe auf der Baustelle oder im Kundentermin entgegen, beantwortet Detailfragen zu Preisen und bucht Termine direkt in deinen Meister-Kalender.',
       bullets: [
-        '24/7 telefonische Erreichbarkeit auch nach Feierabend',
+        '24/7 telefonische Erreichbarkeit auch nach Feierabend & am Wochenende',
         'Direkte Kalender-Synchronisation (Google/Outlook)',
         'Natürlich klingende deutsche KI-Stimme mit Fachvokabular',
-        'SMS/WhatsApp-Zusammenfassung nach jedem Anruf an Sie'
+        'Sofortige WhatsApp- & SMS-Zusammenfassung nach jedem Anruf'
       ],
       price: 'ab 1.890 € (Einmalig)',
-      img: aiAutomationImg
+      stats: '0 verpasste Notfall-Anrufe'
+    },
+    {
+      id: 'rechner',
+      num: '[03]',
+      title: 'Interaktive Rechner & Lead-Funnels',
+      tag: '3x höhere Anfrage-Quote',
+      desc: 'Verwandle passive Website-Besucher in kaufbereite Leads mit interaktiven 3D-Badsanierungs-Kalkulatoren, Friseur-Preisfindern und Schritt-für-Schritt Angebots-Konfiguratoren.',
+      bullets: [
+        'Kunden konfigurieren ihr Projekt vorab online',
+        'Gefilterte, hochqualifizierte Anfragen mit Budgetangabe',
+        'Automatische PDF- oder Mail-Zusammenfassung an den Meister',
+        'Massive Zeitersparnis bei der Erstberatung'
+      ],
+      price: 'im Web-Paket enthalten',
+      stats: '+340% Anfrage-Qualität'
     },
     {
       id: 'seo',
-      title: 'Lokale SEO & Google Maps 3-Pack',
-      icon: TrendingUp,
-      tag: 'Mehr Neukunden aus der Region',
-      desc: 'Gezielte Suchmaschinenoptimierung für Köln, Kerpen, Erftkreis & NRW. Damit Neukunden aus Ihrer Region bei Google ganz oben landen.',
+      num: '[04]',
+      title: 'Local SEO & Google Maps 3-Pack Dominanz',
+      tag: 'Platz #1 in deiner Region',
+      desc: 'Gezielte lokale Suchmaschinenoptimierung für Köln, Kerpen, Bergheim, Frechen & ganz NRW. Damit Kunden aus deinem Einzugsgebiet bei Google ganz oben landen.',
       bullets: [
         'Schema.org ProfessionalService & LocalBusiness JSON-LD',
-        'Keyword-Strategie für Ihre lokale Stadt & Dienstleistungen',
-        'Google My Business & Bewertungs-Integration',
-        'Nachhaltige Top-Platzierungen ohne teure Google Ads'
+        'Geo-Targeting Keyword-Cluster für deine Städte & Leistungen',
+        'Google My Business & Google Maps 3-Pack Optimierung',
+        'Nachhaltige Top-Rankings ohne teure Google Ads Budgets'
       ],
       price: 'im Web-Paket enthalten',
-      img: heroImg
-    },
-    {
-      id: 'wartung',
-      title: 'Rundum-Sorglos Wartung & Support',
-      icon: ShieldCheck,
-      tag: 'Maximale Zuverlässigkeit',
-      desc: 'Regelmäßige Sicherheits-Updates, Hosting auf deutschen High-Speed Servern, Domain-Verwaltung und schnelle Content-Anpassungen innerhalb von 24 Stunden.',
-      bullets: [
-        'Superschnelles Hosting auf deutschen Servern',
-        'Laufende Sicherheits- & Performance-Überwachung',
-        'Änderungswünsche per WhatsApp innerhalb 24h erledigt',
-        'Monatlich kündbar – keine Knebelverträge'
-      ],
-      price: 'ab 49 € / Monat',
-      img: heroImg
+      stats: '#1 Google 3-Pack Ranking'
     }
   ];
 
-  const current = services.find(s => s.id === activeTab) || services[0];
-  const CurrentIcon = current.icon;
-
   return (
-    <section id="pakete" className="py-24 bg-[#0e1626] border-b border-[#1e2c4a]/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="leistungen" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+      
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <span className="text-xs font-semibold tracking-widest text-emerald-400 uppercase bg-[#080c14] border border-emerald-500/30 px-3.5 py-1.5 rounded-full inline-block">
-            Leistungspakete & Festpreise
-          </span>
-          <h2 className="font-outfit text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-            Transparente Preise, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-              maximale Wirkung
-            </span>.
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg font-normal">
-            Wählen Sie den passenden Baustein für Ihren Betrieb. 100% Festpreisgarantie ohne versteckte Zusatzkosten.
-          </p>
-        </div>
-
-        {/* Tab Selector Buttons */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto mb-12">
-          {services.map((service) => {
-            const Icon = service.icon;
-            const isActive = activeTab === service.id;
-            return (
-              <button
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
-                className={`p-4 sm:p-5 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between gap-3 ${
-                  isActive
-                    ? 'bg-[#080c14] border-emerald-500 shadow-xl shadow-emerald-500/10 ring-1 ring-emerald-500'
-                    : 'bg-[#080c14]/60 border-[#1e2c4a] hover:border-slate-700 text-slate-400 hover:text-white'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <div className={`p-2 rounded-xl ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'bg-[#131d33] text-slate-400'}`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  {isActive && (
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  )}
-                </div>
-                <div>
-                  <span className={`font-outfit text-sm font-bold block ${isActive ? 'text-white' : 'text-slate-300'}`}>
-                    {service.title.split('&')[0]}
-                  </span>
-                  <span className="text-[11px] text-emerald-400 font-semibold block mt-0.5">
-                    {service.price}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Active Tab Showcase Card */}
-        <div className="bg-[#080c14] border border-[#1e2c4a] rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-bold text-emerald-400 uppercase tracking-wider">
+        {/* Section Header (Plexify Style) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10 mb-16">
+          <div className="space-y-4 max-w-2xl">
+            <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{current.tag}</span>
+              <span>// Studio Leistungen & Systeme</span>
             </div>
 
-            <h3 className="font-outfit text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-              {current.title}
-            </h3>
+            <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.05]">
+              Bespoke Digital & <br />
+              <span className="text-emerald-400">AI Capabilities.</span>
+            </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              {current.desc}
+            <p className="font-mono text-xs sm:text-sm text-slate-400">
+              Schlüsselfertige Systeme für Handwerker & Dienstleister. 100% Festpreisgarantie, voller Quellcode-Besitz, keine Agentur-Zwischenstufen.
             </p>
+          </div>
 
-            {/* Bullets */}
-            <div className="space-y-3 pt-2">
-              {current.bullets.map((bullet, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <span className="text-sm font-medium text-slate-200">{bullet}</span>
+          <button
+            onClick={onOpenContact}
+            className="plexify-btn plexify-btn-primary shrink-0"
+          >
+            <span>Projekt besprechen</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Plexify 4 Service Cards Grid (Wide & Impactful) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((srv, idx) => (
+            <div
+              key={srv.id}
+              className="plexify-card p-8 sm:p-10 bg-[#080C14] border-white/12 hover:border-emerald-500/40 flex flex-col justify-between group transition-all duration-500"
+            >
+              <div>
+                {/* Top Number & Tag Row */}
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
+                  <span className="font-display font-black text-3xl sm:text-4xl text-white group-hover:text-emerald-400 transition-colors">
+                    {srv.num}
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">
+                    {srv.tag}
+                  </span>
                 </div>
-              ))}
-            </div>
 
-            <div className="pt-6 border-t border-[#1e2c4a] flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenContact}
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-950 font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all flex items-center gap-2 cursor-pointer"
-              >
-                <span>Paket unverbindlich anfragen</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                {/* Title & Desc */}
+                <div className="space-y-3 mb-6">
+                  <h3 className="font-display font-bold text-2xl sm:text-3xl text-white leading-tight">
+                    {srv.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-mono text-slate-400 leading-relaxed">
+                    {srv.desc}
+                  </p>
+                </div>
 
-              <div className="text-xs text-slate-400 font-mono">
-                Richtpreis: <strong className="text-white font-bold">{current.price}</strong>
+                {/* Bullets */}
+                <div className="space-y-2.5 pt-2 border-t border-white/5 mb-8">
+                  {srv.bullets.map((b, bIdx) => (
+                    <div key={bIdx} className="flex items-start gap-2.5 text-xs font-mono text-slate-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{b}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#1e2c4a] shadow-xl">
-            <img
-              src={current.img}
-              alt={current.title}
-              className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.08]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/80 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 bg-[#0e1626]/90 backdrop-blur-md p-4 rounded-xl border border-[#1e2c4a]">
-              <span className="text-xs font-bold text-white block">Rheindorf Digital Qualitäts-Standard</span>
-              <span className="text-[11px] text-emerald-400">100% maßgeschneidert • Keine monatlichen Lizenzgebühren</span>
-            </div>
-          </div>
+              {/* Bottom Price & Action Row (Plexify Style) */}
+              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-slate-500 block uppercase">FESTPREIS:</span>
+                  <span className="font-display font-bold text-sm sm:text-base text-emerald-400">{srv.price}</span>
+                </div>
 
+                <button
+                  onClick={onOpenContact}
+                  className="w-12 h-12 rounded-full bg-white text-slate-950 hover:bg-emerald-400 hover:scale-105 flex items-center justify-center transition-all duration-300 shadow-xl cursor-pointer"
+                  title="Jetzt unverbindlich anfragen"
+                >
+                  <ArrowUpRight className="w-5 h-5" />
+                </button>
+              </div>
+
+            </div>
+          ))}
         </div>
 
       </div>

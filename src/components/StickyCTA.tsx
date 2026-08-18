@@ -1,4 +1,5 @@
-import { Phone, MessageSquare, Sparkles } from 'lucide-react';
+import React from 'react';
+import { Phone, MessageSquare, Sparkles, ArrowUpRight } from 'lucide-react';
 
 interface StickyCTAProps {
   onOpenContact: () => void;
@@ -6,13 +7,13 @@ interface StickyCTAProps {
 
 export default function StickyCTA({ onOpenContact }: StickyCTAProps) {
   return (
-    <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#080c14]/95 backdrop-blur-lg border-t border-[#1e2c4a] p-3 px-4 flex items-center gap-3 shadow-2xl">
+    <div className="sm:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#080C14]/95 backdrop-blur-2xl border border-white/15 p-2.5 rounded-full flex items-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
       <a
         href="tel:016096351750"
         aria-label="Alexander Rheindorf anrufen"
-        className="flex-1 bg-[#0e1626] hover:bg-[#131d33] text-white border border-[#1e2c4a] py-3 rounded-xl flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider"
+        className="flex-1 bg-[#0D1322] hover:bg-[#131D33] text-white border border-white/10 py-2.5 rounded-full flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-wider"
       >
-        <Phone className="w-4 h-4 text-emerald-400" />
+        <Phone className="w-3.5 h-3.5 text-emerald-400" />
         <span>Anrufen</span>
       </a>
 
@@ -21,17 +22,17 @@ export default function StickyCTA({ onOpenContact }: StickyCTAProps) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Chat öffnen"
-        className="bg-[#25D366] text-slate-950 p-3 rounded-xl flex items-center justify-center shrink-0 shadow-md"
+        className="w-10 h-10 bg-[#25D366] text-slate-950 rounded-full flex items-center justify-center shrink-0 shadow-lg"
       >
-        <MessageSquare className="w-5 h-5" />
+        <MessageSquare className="w-4 h-4 fill-current" />
       </a>
 
       <button
         onClick={onOpenContact}
-        className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 py-3 rounded-xl flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider shadow-lg cursor-pointer"
+        className="flex-1 bg-white hover:bg-emerald-400 text-slate-950 py-2.5 rounded-full flex items-center justify-center gap-1.5 font-display font-black text-xs uppercase tracking-wider shadow-lg cursor-pointer transition-colors"
       >
-        <Sparkles className="w-3.5 h-3.5" />
         <span>Anfragen</span>
+        <ArrowUpRight className="w-3.5 h-3.5" />
       </button>
     </div>
   );

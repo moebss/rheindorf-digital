@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
+import ProcessSteps from './components/ProcessSteps';
 import Portfolio from './components/Portfolio';
 import AiVoiceDemo from './components/AiVoiceDemo';
-import BentoGrid from './components/BentoGrid';
 import ServiceTabs from './components/ServiceTabs';
+import ComparisonMatrix from './components/ComparisonMatrix';
 import RoiCalculator from './components/RoiCalculator';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import TechBenchmark from './components/TechBenchmark';
@@ -28,60 +29,64 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080c14] text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950 pb-16 sm:pb-0 overflow-x-hidden">
+    <div className="min-h-screen bg-[#04060A] text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950 pb-16 sm:pb-0 overflow-x-hidden">
       
-      {/* 1. Header Navbar */}
+      {/* 1. Header Navbar (Plexify Standard) */}
       <Navbar onOpenContact={scrollToContact} />
 
       {/* Main Content Sections */}
       <main className="flex-grow">
-        {/* 2. Hero Section (100vh Atmospheric Cinematic Canvas) */}
+        
+        {/* 2. Hero Section with Interactive Case Study Switcher */}
         <Hero onOpenContact={scrollToContact} />
 
-        {/* 3. Tech & Trust Strip */}
+        {/* 3. Tech & Trust Strip (Numbers Counter + Continuous Marquee) */}
         <TrustStrip />
 
-        {/* 4. Live Portfolio Showcase (Alyas Barbershop, Burning Bandit, Nails Shop, AZ Heizung) */}
+        {/* 4. The 4-Step Work Process [1], [2], [3], [4] */}
+        <ProcessSteps onOpenContact={scrollToContact} />
+
+        {/* 5. Live Portfolio Showcase (Plexify Card Stacking) */}
         <Portfolio onOpenContact={scrollToContact} />
 
-        {/* 5. Live Interactive Voice AI Phone Assistant Simulator */}
+        {/* 6. Live Interactive Voice AI Studio Terminal */}
         <AiVoiceDemo />
 
-        {/* 6. Bento Grid: Why Rheindorf Digital & Tech Pillars */}
-        <BentoGrid />
-
-        {/* 7. Service Packages & Transparent Pricing */}
+        {/* 7. Service Packages & 4 Capabilities */}
         <ServiceTabs onOpenContact={scrollToContact} />
 
-        {/* 8. Interactive "Verpasster Umsatz" ROI Calculator for Handwerker & Salons */}
+        {/* 8. Comparison Tear-Down: Rheindorf Standard vs Traditional Agencies (Sticky Pinned Split) */}
+        <ComparisonMatrix onOpenContact={scrollToContact} />
+
+        {/* 9. Interactive "Verpasster Umsatz" ROI Calculator */}
         <RoiCalculator onOpenContact={scrollToContact} />
 
-        {/* 9. Interactive Before/After Transformation Slider */}
+        {/* 10. Interactive Before/After Transformation Slider */}
         <BeforeAfterSlider />
 
-        {/* 10. Performance & Lighthouse 100 Benchmark */}
+        {/* 11. Performance & Lighthouse 100 Benchmark */}
         <TechBenchmark />
 
-        {/* 11. Interactive 60-Second Project Cost Estimator */}
+        {/* 12. Interactive 60-Second Project Cost Estimator */}
         <CostEstimator onOpenContact={scrollToContact} />
 
-        {/* 12. Local Business Testimonials & Social Proof */}
+        {/* 13. Local Business Testimonials & Social Proof */}
         <Testimonials />
 
-        {/* 13. FAQ Sektion */}
+        {/* 14. FAQ Sektion */}
         <FAQ />
 
-        {/* 14. Direct High-Converting Contact with DSGVO Trigger */}
+        {/* 15. Direct High-Converting Contact with DSGVO Trigger */}
         <Contact onOpenDatenschutz={() => setLegalModal('datenschutz')} />
       </main>
 
-      {/* 15. Structured 4-Column Footer */}
+      {/* 16. Structured Curved Studio Footer with Back-To-Top */}
       <Footer
         onOpenImpressum={() => setLegalModal('impressum')}
         onOpenDatenschutz={() => setLegalModal('datenschutz')}
       />
 
-      {/* 16. Mobile Sticky Action Bar */}
+      {/* 17. Mobile Sticky Action Bar */}
       <StickyCTA onOpenContact={scrollToContact} />
 
       {/* Legal Modals (§ 5 DDG & DSGVO) */}
