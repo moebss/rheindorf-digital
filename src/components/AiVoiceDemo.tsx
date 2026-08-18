@@ -69,16 +69,16 @@ export default function AiVoiceDemo() {
   };
 
   return (
-    <section id="ki-telefonie" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+    <section id="ki-telefonie" className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[650px] h-[550px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
+          <div className="luxury-pill mb-4">
             <Bot className="w-3.5 h-3.5" />
             <span>// Live Voice AI Studio Terminal</span>
           </div>
@@ -88,13 +88,13 @@ export default function AiVoiceDemo() {
             <span className="text-emerald-400">KI-Telefonassistenten</span> live.
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
+          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
             Kein Anrufbeantworter, kein Band. Natürliche Dialoge in fließendem Deutsch, die Notfälle filtern, Termine direkt buchen und Kunden begeistern.
           </p>
         </div>
 
-        {/* Live Audio & Transcript Terminal Card (Plexify Dark Studio Design) */}
-        <div className="max-w-4xl mx-auto plexify-card bg-[#080C14] border-white/15 p-6 sm:p-10 shadow-2xl">
+        {/* Live Audio & Transcript Terminal Card */}
+        <div className="max-w-4xl mx-auto luxury-card p-6 sm:p-10 shadow-2xl">
           
           {/* Top Console Controls & Scenario Switcher */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
@@ -102,7 +102,7 @@ export default function AiVoiceDemo() {
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-inner">
                 <PhoneCall className="w-6 h-6 animate-pulse" />
-                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#080C14]" />
+                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#030712]" />
               </div>
               <div>
                 <h3 className="font-display text-lg font-bold text-white flex items-center gap-2">
@@ -116,12 +116,12 @@ export default function AiVoiceDemo() {
             </div>
 
             {/* Scenario Buttons */}
-            <div className="flex items-center gap-1.5 bg-[#04060A] p-1.5 rounded-2xl border border-white/10 overflow-x-auto no-scrollbar">
+            <div className="flex items-center gap-1.5 bg-[#030712] p-1.5 rounded-2xl border border-white/10 overflow-x-auto no-scrollbar">
               {(['sanitaer', 'barber', 'beratung'] as const).map((key) => (
                 <button
                   key={key}
                   onClick={() => handleScenarioChange(key)}
-                  className={`px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
                     scenario === key
                       ? 'bg-emerald-500 text-slate-950 shadow-md'
                       : 'text-slate-400 hover:text-white hover:bg-white/5'
@@ -162,7 +162,7 @@ export default function AiVoiceDemo() {
                   setIsPlaying(true);
                 }
               }}
-              className="plexify-btn plexify-btn-primary shrink-0 text-xs px-6 py-3"
+              className="luxury-btn-primary shrink-0 text-xs px-6 py-3"
             >
               {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-slate-950" />}
               <span>{isPlaying ? 'Simulation pausieren' : 'Audio-Dialog abspielen'}</span>
@@ -180,8 +180,8 @@ export default function AiVoiceDemo() {
                   key={idx}
                   className={`p-4 sm:p-5 rounded-2xl border transition-all duration-300 ${
                     isAi
-                      ? 'bg-[#04060A] border-emerald-500/30 ml-4 sm:ml-10 shadow-lg'
-                      : 'bg-[#0D1322] border-white/10 mr-4 sm:mr-10'
+                      ? 'bg-[#030712] border-emerald-500/30 ml-4 sm:ml-10 shadow-lg'
+                      : 'bg-[#0D1527] border-white/10 mr-4 sm:mr-10'
                   } ${isCurrent ? 'ring-2 ring-emerald-400 shadow-[0_0_25px_rgba(16,185,129,0.25)] scale-[1.01]' : 'opacity-90'}`}
                 >
                   <div className="flex items-center justify-between text-xs mb-2">

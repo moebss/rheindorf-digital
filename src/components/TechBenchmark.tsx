@@ -3,16 +3,16 @@ import { Zap, Gauge, Cpu, ShieldCheck, CheckCircle2, XCircle, Code2, ArrowUpRigh
 
 export default function TechBenchmark() {
   return (
-    <section className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+    <section className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/4 w-[600px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
+          <div className="luxury-pill mb-4">
             <Gauge className="w-3.5 h-3.5" />
             <span>// Lighthouse Benchmark & Speed</span>
           </div>
@@ -22,16 +22,16 @@ export default function TechBenchmark() {
             <span className="text-emerald-400">Kauf oder Absprung.</span>
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
+          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
             53% aller Smartphone-Nutzer verlassen eine Website, wenn sie länger als 3 Sekunden lädt. Rheindorf Digital Websites laden in unter 0.4 Sekunden.
           </p>
         </div>
 
-        {/* Comparison Grid (Plexify Cards) */}
+        {/* Comparison Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          {/* Legacy WordPress / Template Card */}
-          <div className="plexify-card bg-[#080C14] border-rose-500/20 p-8 sm:p-10 space-y-6 shadow-xl relative overflow-hidden">
+          {/* Legacy WordPress Card */}
+          <div className="luxury-card border-rose-500/20 p-8 sm:p-10 space-y-6 shadow-xl relative overflow-hidden">
             <div className="flex items-center justify-between pb-4 border-b border-white/5">
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 08/15 Agentur (WordPress)
@@ -40,7 +40,7 @@ export default function TechBenchmark() {
             </div>
 
             {/* Score Ring */}
-            <div className="flex items-center gap-6 p-6 bg-[#04060A] rounded-2xl border border-rose-500/20">
+            <div className="flex items-center gap-6 p-6 bg-[#030712] rounded-2xl border border-rose-500/20">
               <div className="w-20 h-20 rounded-full border-4 border-rose-500/60 flex items-center justify-center font-display text-3xl font-black text-rose-400 shrink-0">
                 38
               </div>
@@ -68,7 +68,7 @@ export default function TechBenchmark() {
           </div>
 
           {/* Rheindorf Digital Stack Card */}
-          <div className="plexify-card bg-[#080C14] border-emerald-500/40 p-8 sm:p-10 space-y-6 shadow-2xl relative overflow-hidden">
+          <div className="luxury-card border-emerald-500/40 p-8 sm:p-10 space-y-6 shadow-2xl relative overflow-hidden">
             <div className="flex items-center justify-between pb-4 border-b border-white/5">
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/40 flex items-center gap-1.5">
                 <Zap className="w-3.5 h-3.5 fill-current" />
@@ -78,7 +78,7 @@ export default function TechBenchmark() {
             </div>
 
             {/* Score Ring */}
-            <div className="flex items-center gap-6 p-6 bg-[#04060A] rounded-2xl border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+            <div className="flex items-center gap-6 p-6 bg-[#030712] rounded-2xl border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
               <div className="w-20 h-20 rounded-full border-4 border-emerald-400 flex items-center justify-center font-display text-3xl font-black text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.5)] shrink-0">
                 100
               </div>

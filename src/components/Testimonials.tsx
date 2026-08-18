@@ -30,16 +30,16 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="kundenstimmen" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+    <section id="kundenstimmen" className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/3 w-[600px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 space-y-4">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
+          <div className="luxury-pill mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>// Kundenstimmen & Feedback</span>
           </div>
@@ -49,17 +49,17 @@ export default function Testimonials() {
             <span className="text-emerald-400">Rheindorf Digital</span> sagen.
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
+          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
             Echte Bewertungen von Betrieben, die mit handcodierten Systemen online messbar gewachsen sind.
           </p>
         </div>
 
-        {/* Reviews Grid (Plexify Cards) */}
+        {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="plexify-card bg-[#080C14] border-white/10 p-8 sm:p-10 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 space-y-8"
+              className="luxury-card p-8 sm:p-10 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300 space-y-8"
             >
               <div className="space-y-6">
                 
@@ -72,7 +72,7 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                <p className="font-mono text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                <p className="font-mono text-xs sm:text-sm text-slate-200 leading-relaxed italic">
                   „{rev.text}“
                 </p>
               </div>

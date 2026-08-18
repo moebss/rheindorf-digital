@@ -1,129 +1,107 @@
 import React from 'react';
-import { Search, PenTool, Bot, TrendingUp, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Sparkles, ArrowRight, Code2, Bot, Rocket, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 interface ProcessStepsProps {
-  onOpenContact?: () => void;
+  onOpenContact: () => void;
 }
 
 export default function ProcessSteps({ onOpenContact }: ProcessStepsProps) {
   const steps = [
     {
-      num: '[1]',
+      num: '[01]',
+      day: 'Tag 1',
       title: '15-Min. Potenzial-Audit',
-      subtitle: 'Analyse & Hebel-Identifikation',
-      desc: 'Wir prüfen deine aktuelle Website, Ladezeiten, Google-Maps-Sichtbarkeit und errechnen deinen verpassten Umsatz durch unbeantwortete Anrufe.',
-      icon: Search,
-      badge: 'Schritt 1',
+      desc: 'Wir analysieren deinen Betrieb, deine Wettbewerber im Raum Köln/NRW und deine profitabelsten Dienstleistungen.',
+      highlight: '100% Unverbindlich'
     },
     {
-      num: '[2]',
+      num: '[02]',
+      day: 'Tag 2 – 7',
       title: 'High-End Prototyping',
-      subtitle: 'Maßgeschneidert in 7 Tagen',
-      desc: 'Keine PDF-Konzepte. Du erhältst einen voll interaktiven, hochmodernen Klick-Prototyp im echten Browser – exakt auf deine Zielgruppe im Raum Köln/NRW abgestimmt.',
-      icon: PenTool,
-      badge: 'Schritt 2',
+      desc: 'Wir entwickeln deinen individuellen Klick-Prototyp im echten Live-Browser mit handcodierter React-Performance.',
+      highlight: 'Live Klick-Test'
     },
     {
-      num: '[3]',
-      title: 'KI-Voice & Deployment',
-      subtitle: '24/7 Anruf-Assistent & Headless Build',
-      desc: 'Wir trainieren deinen KI-Telefonassistenten auf deine Preise & Notdienste, binden WhatsApp & Kalender an und deployen dein Web-System mit 100/100 PageSpeed.',
-      icon: Bot,
-      badge: 'Schritt 3',
+      num: '[03]',
+      day: 'Tag 8 – 12',
+      title: 'KI-Voice & Automation',
+      desc: 'Einrichtung deines 24/7 KI-Telefonassistenten mit Anruf-Routing, Kalenderabgleich und automatischer Lead-Zusammenfassung.',
+      highlight: '24/7 Erreichbarkeit'
     },
     {
-      num: '[4]',
-      title: 'Dominante Marktführerschaft',
-      subtitle: 'Automatisierte Neukundengewinnung',
-      desc: 'Dein Betrieb gewinnt planbar lukrative Aufträge, während du auf der Baustelle oder im Kundentermin bist. 100% Eigentum ohne monatliche Knebel-Abos.',
-      icon: TrendingUp,
-      badge: 'Schritt 4',
-    },
+      num: '[04]',
+      day: 'Tag 14',
+      title: 'Go-Live & Dominanz',
+      desc: 'Vollständiger Rollout mit Google Maps 3-Pack Schema.org JSON-LD, DSGVO-Test, SSL & Quellcode-Übergabe.',
+      highlight: '100% Dein Eigentum'
+    }
   ];
 
   return (
-    <section id="prozess" className="py-24 sm:py-32 bg-[#04060A] relative overflow-hidden">
+    <section id="prozess" className="py-24 sm:py-32 bg-[#030712] relative overflow-hidden">
       
-      {/* Background Subtle Gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[400px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Plexify Style) */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
-            <span>// Der 4-Schritte-Standard</span>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 space-y-4">
+          <div className="luxury-pill">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>// Der Rheindorf 4-Schritte-Standard</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight mb-4">
-            Explore Our Work Process
+
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
+            Von der Idee zur <br />
+            <span className="text-emerald-400">digitalen Marktführerschaft.</span>
           </h2>
-          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
-            Von der ersten Potenzialanalyse bis zum schlüsselfertigen High-End Web- & KI-System – schnell, transparent, ohne Agentur-Blabla.
+
+          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
+            Keine wochenlangen Agentur-Schleifen. Wir liefern deinen interaktiven Prototyp in 7 Tagen und schalten dein System nach 14 Tagen live.
           </p>
         </div>
 
-        {/* 4 Process Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="plexify-card p-8 bg-[#080C14]/90 border-white/10 hover:border-emerald-500/40 flex flex-col justify-between group relative min-h-[380px]"
+              className="luxury-card p-8 flex flex-col justify-between space-y-6 relative group"
             >
-              {/* Top Step Pill & Number */}
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-display font-black text-4xl sm:text-5xl text-white group-hover:text-emerald-400 transition-colors">
-                    {step.num}
+                <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <span className="font-mono font-black text-2xl text-emerald-400">{step.num}</span>
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-300">
+                    {step.day}
                   </span>
-                  <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all duration-300">
-                    <step.icon className="w-5 h-5" />
-                  </div>
                 </div>
 
-                <div className="space-y-2 mb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-emerald-400 block font-bold">
-                    {step.subtitle}
-                  </span>
-                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white leading-snug">
-                    {step.title}
-                  </h3>
-                </div>
+                <h3 className="font-display font-bold text-xl text-white mt-5 mb-2.5">
+                  {step.title}
+                </h3>
 
-                <p className="text-xs font-mono text-slate-400 leading-relaxed">
+                <p className="font-mono text-xs text-slate-300 leading-relaxed">
                   {step.desc}
                 </p>
               </div>
 
-              {/* Bottom Subtle Milestone Indicator */}
-              <div className="pt-6 border-t border-white/5 flex items-center justify-between text-slate-500 font-mono text-[11px]">
-                <span>Phase 0{idx + 1}</span>
-                <span className="group-hover:text-emerald-400 flex items-center gap-1 transition-colors">
-                  Details <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </span>
+              <div className="pt-4 border-t border-white/5 flex items-center gap-2 font-mono text-xs text-emerald-400 font-bold">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>{step.highlight}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Fast Track CTA Box */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#090D18] border border-white/12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="font-display font-bold text-lg sm:text-xl text-white">
-              Bereit, deinen Betrieb auf das nächste Level zu heben?
-            </h4>
-            <p className="font-mono text-xs text-slate-400">
-              Kostenlose 15-Minuten-Analyse für Betriebe im Raum Köln, Kerpen & Erftkreis.
-            </p>
-          </div>
-
+        {/* CTA Bar */}
+        <div className="text-center pt-4">
           <button
             onClick={onOpenContact}
-            className="group shrink-0 plexify-btn plexify-btn-primary"
+            className="luxury-btn-primary text-xs"
           >
-            <span>Jetzt Potenzial prüfen</span>
-            <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center group-hover:bg-slate-950 group-hover:text-emerald-400 transition-colors">
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </div>
+            <span>Jetzt unverbindliches Potenzial-Audit starten</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 

@@ -33,16 +33,16 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+    <section id="faq" className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 space-y-4">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
+          <div className="luxury-pill mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>// Häufig gestellte Fragen</span>
           </div>
@@ -51,19 +51,19 @@ export default function FAQ() {
             Transparenz & Details.
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400">
+          <p className="font-mono text-xs sm:text-sm text-slate-300">
             Alles, was du über Ablauf, Festpreise und moderne Web- & KI-Technologie wissen musst.
           </p>
         </div>
 
-        {/* Accordion (Plexify Style) */}
+        {/* Accordion */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="plexify-card bg-[#080C14] border-white/10 overflow-hidden transition-all duration-300"
+                className="luxury-card overflow-hidden transition-all duration-300"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}

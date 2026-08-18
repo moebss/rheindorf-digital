@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, ArrowUpRight, Zap, Star, ShieldCheck, MapPin } from 'lucide-react';
 
-import userImg1 from '../images/media_1786244763224.png';
-import userImg2 from '../images/media_1786244838088.png';
-import userImg3 from '../images/media_1786244996672.png';
-import userImg4 from '../images/media_1786372914462.png';
-import userImg5 from '../images/media_1786374893160.png';
+import nawrathImg from '../images/media_1786374893160.png';
+import alyasImg from '../images/media_1786244838088.png';
+import banditImg from '../images/media_1786244763224.png';
+import nailsImg from '../images/media_1786372914462.png';
 
 interface PortfolioProps {
   onOpenContact: () => void;
@@ -28,7 +27,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       stats: '100/100 PageSpeed · 0.38s FCP',
       tags: ['Badsanierungs-Rechner', '3-Sek. Notdienst Routing', 'Local SEO #1', 'Headless React'],
       liveUrl: 'https://moebss.github.io/az-heizung-sanitaer/',
-      img: userImg1,
+      img: nawrathImg,
     },
     {
       id: 'alyas-barber',
@@ -43,7 +42,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       stats: '4.9 ★ Google Top-Rank #1',
       tags: ['Cinematic Hero', 'WhatsApp Bot', 'Local SEO 3-Pack', 'Zero No-Shows'],
       liveUrl: 'https://moebss.github.io/alyas-barbershop-horrem/',
-      img: userImg2,
+      img: alyasImg,
     },
     {
       id: 'burning-bandit',
@@ -58,7 +57,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       stats: '4.8 ★ bei 160+ Reviews',
       tags: ['Transformations-Slider', 'Artist Showcase', 'Next-Gen UI', '100% DSGVO'],
       liveUrl: 'https://moebss.github.io/the-burning-bandit-kerpen/',
-      img: userImg4,
+      img: banditImg,
     },
     {
       id: 'nails-shop',
@@ -73,7 +72,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       stats: '4.9 ★ bei 100+ Reviews',
       tags: ['Spa Ästhetik', 'Babyboomer Slider', 'WhatsApp Express', '0.3s Speed'],
       liveUrl: 'https://moebss.github.io/the-nails-shop-horrem/',
-      img: userImg5,
+      img: nailsImg,
     },
   ];
 
@@ -89,27 +88,27 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <section id="projekte" className="py-24 sm:py-32 bg-[#04060A] relative overflow-hidden border-t border-white/10">
+    <section id="projekte" className="py-24 sm:py-32 bg-[#030712] relative overflow-hidden border-t border-white/10">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-1/3 left-10 w-[600px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10">
           <div className="space-y-4 max-w-2xl">
-            <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
+            <div className="luxury-pill">
               <Sparkles className="w-3.5 h-3.5" />
               <span>// Live Client Showcase</span>
             </div>
 
             <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.05]">
               OUR INNOVATIVE <br />
-              <span className="text-slate-400 font-extrabold">LOCAL PROJECTS.</span>
+              <span className="text-emerald-400">LOCAL PROJECTS.</span>
             </h2>
 
-            <p className="text-xs sm:text-sm font-mono text-slate-400">
+            <p className="text-xs sm:text-sm font-mono text-slate-300">
               Echte Kundenbetriebe im Raum Köln & NRW. Keine austauschbaren Standard-Templates, sondern maßgeschneiderte High-Conversion-Architektur.
             </p>
           </div>
@@ -120,10 +119,10 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
               <button
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
-                className={`px-4 py-2 rounded-full font-mono text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-5 py-2.5 rounded-full font-mono text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
                   activeFilter === cat.id
                     ? 'bg-white text-slate-950 shadow-xl'
-                    : 'bg-[#080C14] text-slate-400 hover:text-white border border-white/10'
+                    : 'bg-[#070D1B] text-slate-400 hover:text-white border border-white/10'
                 }`}
               >
                 {cat.label}
@@ -132,20 +131,20 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
           </div>
         </div>
 
-        {/* Plexify Card Stacking Vertical List */}
+        {/* Card Stacking Vertical List */}
         <div className="space-y-12 sm:space-y-16">
           {filteredProjects.map((proj) => (
             <div
               key={proj.id}
-              className="plexify-card bg-[#080C14] border-white/12 p-6 sm:p-10 hover:border-emerald-500/40 group transition-all duration-500"
+              className="luxury-card p-6 sm:p-10 group transition-all duration-500"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
                 {/* Left Large Visual Browser Frame */}
-                <div className="lg:col-span-7 overflow-hidden rounded-3xl bg-[#04060A] border border-white/15 relative shadow-2xl">
+                <div className="lg:col-span-7 overflow-hidden rounded-3xl bg-[#030712] border border-white/15 relative shadow-2xl">
                   
                   {/* Browser Shell Top Bar */}
-                  <div className="px-4 py-3 bg-[#0D1322] border-b border-white/10 flex items-center justify-between">
+                  <div className="px-4 py-3 bg-[#0D1527] border-b border-white/10 flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2.5 h-2.5 rounded-full bg-rose-500/70" />
                       <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
@@ -167,11 +166,11 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
                       alt={proj.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#04060A] via-transparent to-transparent opacity-70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-70" />
 
                     {/* Floating Live Impact Pill */}
                     <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
-                      <div className="bg-[#04060A]/90 backdrop-blur-md border border-emerald-500/40 px-4 py-2 rounded-2xl shadow-xl">
+                      <div className="bg-[#030712]/90 backdrop-blur-md border border-emerald-500/40 px-4 py-2 rounded-2xl shadow-xl">
                         <span className="text-xs font-mono font-bold text-emerald-400 flex items-center gap-2">
                           <Zap className="w-3.5 h-3.5 fill-current" />
                           <span>{proj.impact}</span>
@@ -192,7 +191,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
 
                 </div>
 
-                {/* Right Editorial Info Column (Plexify Style) */}
+                {/* Right Editorial Info Column */}
                 <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
                   
                   <div className="space-y-4">
@@ -229,7 +228,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
                     ))}
                   </div>
 
-                  {/* Bottom Action & Stats Row with Signature Plexify Arrow Button */}
+                  {/* Bottom Action & Stats Row */}
                   <div className="pt-4 flex items-center justify-between border-t border-white/10">
                     <div className="text-xs font-mono text-slate-400">
                       <span className="text-slate-500 block text-[10px]">BENCHMARK:</span>
@@ -240,10 +239,10 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
                       href={proj.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white text-slate-950 hover:bg-emerald-400 font-display font-bold text-xs uppercase tracking-wider transition-all duration-300 group/btn"
+                      className="luxury-btn-primary text-xs py-2.5 px-5 !shadow-none"
                     >
                       <span>Live ansehen</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
 
@@ -261,7 +260,7 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
           </p>
           <button
             onClick={onOpenContact}
-            className="plexify-btn plexify-btn-primary"
+            className="luxury-btn-primary"
           >
             <span>Projekt unverbindlich anfragen</span>
             <ArrowUpRight className="w-4 h-4" />

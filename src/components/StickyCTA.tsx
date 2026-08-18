@@ -7,11 +7,11 @@ interface StickyCTAProps {
 
 export default function StickyCTA({ onOpenContact }: StickyCTAProps) {
   return (
-    <div className="sm:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#080C14]/95 backdrop-blur-2xl border border-white/15 p-2.5 rounded-full flex items-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+    <div className="sm:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#070D1B]/95 backdrop-blur-2xl border border-white/15 p-2.5 rounded-full flex items-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
       <a
         href="tel:016096351750"
         aria-label="Alexander Rheindorf anrufen"
-        className="flex-1 bg-[#0D1322] hover:bg-[#131D33] text-white border border-white/10 py-2.5 rounded-full flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-wider"
+        className="flex-1 bg-[#0D1527] hover:bg-[#131D33] text-white border border-white/10 py-2.5 rounded-full flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-wider"
       >
         <Phone className="w-3.5 h-3.5 text-emerald-400" />
         <span>Anrufen</span>

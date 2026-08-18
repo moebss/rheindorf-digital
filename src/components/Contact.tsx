@@ -24,16 +24,16 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
   };
 
   return (
-    <section id="kontakt" className="py-24 sm:py-32 bg-[#04060A] border-t border-white/10 relative overflow-hidden">
+    <section id="kontakt" className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Plexify Big Headline Box */}
+        {/* Headline Box */}
         <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-2">
+          <div className="luxury-pill mb-2">
             <Sparkles className="w-3.5 h-3.5" />
             <span>// Direkter Draht zum Entwickler</span>
           </div>
@@ -43,16 +43,16 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
             <span className="text-emerald-400">great work together.</span>
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
+          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
             Keine Account-Manager, kein Vorzimmer. Du sprichst direkt mit Alexander Rheindorf über deine neue High-End Website oder deinen 24/7 KI-Telefonassistenten.
           </p>
         </div>
 
         {/* Contact Layout Box */}
-        <div className="plexify-card bg-[#080C14] border-white/15 p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="luxury-card p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Left Info Panel (5 cols) */}
-          <div className="lg:col-span-5 bg-[#04060A] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-8">
+          <div className="lg:col-span-5 bg-[#030712] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-8">
             
             <div className="space-y-6">
               <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 border border-white/10 w-fit">
@@ -72,7 +72,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 {/* Phone */}
                 <a
                   href="tel:016096351750"
-                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1527] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 text-emerald-400 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
@@ -90,7 +90,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                   href="https://wa.me/4916096351750?text=Hallo%20Alexander!%20Ich%20interessiere%20mich%20f%C3%BCr%20ein%20Webdesign-%20oder%20KI-Projekt."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1527] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0">
                     <MessageSquare className="w-4 h-4" />
@@ -106,7 +106,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 {/* Email */}
                 <a
                   href="mailto:hello@rheindorf.digital"
-                  className="flex items-center gap-3.5 p-4 bg-[#0D1322] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
+                  className="flex items-center gap-3.5 p-4 bg-[#0D1527] border border-white/10 rounded-2xl hover:border-emerald-500/40 transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white/5 text-emerald-400 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
           {/* Right Form Panel (7 cols) */}
           <div className="lg:col-span-7">
             {submitted ? (
-              <div className="bg-[#04060A] border border-emerald-500/40 p-8 sm:p-12 rounded-3xl text-center space-y-4 animate-in fade-in">
+              <div className="bg-[#030712] border border-emerald-500/40 p-8 sm:p-12 rounded-3xl text-center space-y-4 animate-in fade-in">
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
@@ -143,7 +143,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                 <div className="pt-4">
                   <a
                     href="tel:016096351750"
-                    className="plexify-btn plexify-btn-primary text-xs"
+                    className="luxury-btn-primary text-xs"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Dringend? Direkt anrufen (0160 96351750)</span>
@@ -191,7 +191,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                         className={`py-3 px-3 rounded-2xl font-mono text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                           interest === opt.id
                             ? 'bg-white text-slate-950 border-white shadow-xl'
-                            : 'bg-[#04060A] text-slate-300 border-white/10 hover:border-white/20'
+                            : 'bg-[#030712] text-slate-300 border-white/10 hover:border-white/20'
                         }`}
                       >
                         {opt.label}
@@ -210,7 +210,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                       placeholder="z.B. Markus Schmitz"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
+                      className="w-full bg-[#030712] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                     />
                   </div>
 
@@ -222,7 +222,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                       placeholder="z.B. 0172 1234567"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
+                      className="w-full bg-[#030712] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                     placeholder="z.B. info@betrieb-schmitz.de"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
+                    className="w-full bg-[#030712] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3.5 text-white font-mono text-xs outline-none transition-colors"
                   />
                 </div>
 
@@ -247,7 +247,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                     placeholder="Erzähle kurz von deinem Betrieb oder deinen aktuellen Herausforderungen..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full bg-[#04060A] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3 text-white font-mono text-xs outline-none transition-colors resize-none"
+                    className="w-full bg-[#030712] border border-white/10 focus:border-emerald-500 rounded-2xl px-4 py-3 text-white font-mono text-xs outline-none transition-colors resize-none"
                   />
                 </div>
 
@@ -259,7 +259,7 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                     required
                     checked={acceptedPrivacy}
                     onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-                    className="mt-1 w-4 h-4 rounded border-slate-700 bg-[#04060A] text-emerald-500 focus:ring-emerald-500 cursor-pointer accent-emerald-500"
+                    className="mt-1 w-4 h-4 rounded border-slate-700 bg-[#030712] text-emerald-500 focus:ring-emerald-500 cursor-pointer accent-emerald-500"
                   />
                   <label htmlFor="privacy-check" className="font-mono text-[11px] text-slate-400 leading-relaxed cursor-pointer select-none">
                     Ich willige ein, dass meine Angaben zur Kontaktaufnahme gemäß der{' '}
@@ -274,10 +274,10 @@ export default function Contact({ onOpenDatenschutz }: ContactProps) {
                   </label>
                 </div>
 
-                {/* Submit Button (Plexify Style) */}
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="plexify-btn plexify-btn-primary w-full shadow-2xl"
+                  className="luxury-btn-primary w-full shadow-2xl text-xs py-4"
                 >
                   <Send className="w-4 h-4" />
                   <span>Kostenloses Erstgespräch anfordern</span>

@@ -44,16 +44,16 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
   };
 
   return (
-    <section id="kalkulator" className="py-24 sm:py-32 bg-[#04060A] text-white relative overflow-hidden border-t border-white/10">
+    <section id="kalkulator" className="py-24 sm:py-32 bg-[#030712] text-white relative overflow-hidden border-t border-white/10">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header (Plexify Style) */}
+        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 space-y-4">
-          <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20 mb-4">
+          <div className="luxury-pill mb-4">
             <Calculator className="w-3.5 h-3.5" />
             <span>// Sofortiger Projekt-Kalkulator</span>
           </div>
@@ -63,13 +63,13 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
             <span className="text-emerald-400">60 Sekunden</span> schätzen.
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-400">
+          <p className="font-mono text-xs sm:text-sm text-slate-300">
             Wähle deine Anforderungen für eine transparente Richtwert-Kalkulation inklusive 100% Festpreisgarantie.
           </p>
         </div>
 
-        {/* Calculator Main Box (Plexify Style) */}
-        <div className="plexify-card bg-[#080C14] border-white/15 p-6 sm:p-10 shadow-2xl">
+        {/* Calculator Main Box */}
+        <div className="luxury-card p-6 sm:p-10 shadow-2xl">
           
           {/* Progress Indicators */}
           <div className="flex items-center justify-between gap-2 mb-8 pb-6 border-b border-white/10">
@@ -95,8 +95,8 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     step === s.num
                       ? 'bg-emerald-500 text-slate-950 shadow-md'
                       : step > s.num
-                      ? 'bg-[#0D1322] text-emerald-400 border border-emerald-500/30'
-                      : 'bg-[#04060A] text-slate-600 border border-white/10'
+                      ? 'bg-[#0D1527] text-emerald-400 border border-emerald-500/30'
+                      : 'bg-[#030712] text-slate-600 border border-white/10'
                   }`}
                 >
                   {s.num}
@@ -139,8 +139,8 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setProjectFocus(item.id)}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                       projectFocus === item.id
-                        ? 'bg-[#0D1322] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
-                        : 'bg-[#04060A] border-white/10 hover:border-white/20'
+                        ? 'bg-[#0D1527] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
+                        : 'bg-[#030712] border-white/10 hover:border-white/20'
                     }`}
                   >
                     <div>
@@ -148,7 +148,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                         {item.tag}
                       </span>
                       <h4 className="font-display font-bold text-base text-white mb-1.5">{item.title}</h4>
-                      <p className="font-mono text-xs text-slate-400 leading-relaxed">{item.sub}</p>
+                      <p className="font-mono text-xs text-slate-300 leading-relaxed">{item.sub}</p>
                     </div>
                   </div>
                 ))}
@@ -157,7 +157,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
               <div className="flex justify-end pt-4">
                 <button
                   onClick={() => setStep(2)}
-                  className="plexify-btn plexify-btn-primary text-xs"
+                  className="luxury-btn-primary text-xs"
                 >
                   <span>Weiter zu Schritt 2</span>
                   <ArrowRight className="w-4 h-4" />
@@ -196,13 +196,13 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setCompanySize(item.id)}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                       companySize === item.id
-                        ? 'bg-[#0D1322] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
-                        : 'bg-[#04060A] border-white/10 hover:border-white/20'
+                        ? 'bg-[#0D1527] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
+                        : 'bg-[#030712] border-white/10 hover:border-white/20'
                     }`}
                   >
                     <div>
                       <h4 className="font-display font-bold text-base text-white mb-1.5">{item.title}</h4>
-                      <p className="font-mono text-xs text-slate-400 leading-relaxed">{item.sub}</p>
+                      <p className="font-mono text-xs text-slate-300 leading-relaxed">{item.sub}</p>
                     </div>
                   </div>
                 ))}
@@ -211,13 +211,13 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
               <div className="flex justify-between pt-4">
                 <button
                   onClick={() => setStep(1)}
-                  className="plexify-btn plexify-btn-secondary text-xs"
+                  className="luxury-btn-secondary text-xs"
                 >
                   Zurück
                 </button>
                 <button
                   onClick={() => setStep(3)}
-                  className="plexify-btn plexify-btn-primary text-xs"
+                  className="luxury-btn-primary text-xs"
                 >
                   <span>Weiter zu Schritt 3</span>
                   <ArrowRight className="w-4 h-4" />
@@ -256,13 +256,13 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setExtraFeatures(item.id)}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                       extraFeatures === item.id
-                        ? 'bg-[#0D1322] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
-                        : 'bg-[#04060A] border-white/10 hover:border-white/20'
+                        ? 'bg-[#0D1527] border-emerald-500 ring-1 ring-emerald-500 shadow-xl'
+                        : 'bg-[#030712] border-white/10 hover:border-white/20'
                     }`}
                   >
                     <div>
                       <h4 className="font-display font-bold text-base text-white mb-1.5">{item.title}</h4>
-                      <p className="font-mono text-xs text-slate-400 leading-relaxed">{item.sub}</p>
+                      <p className="font-mono text-xs text-slate-300 leading-relaxed">{item.sub}</p>
                     </div>
                   </div>
                 ))}
@@ -271,13 +271,13 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
               <div className="flex justify-between pt-4">
                 <button
                   onClick={() => setStep(2)}
-                  className="plexify-btn plexify-btn-secondary text-xs"
+                  className="luxury-btn-secondary text-xs"
                 >
                   Zurück
                 </button>
                 <button
                   onClick={() => setStep(4)}
-                  className="plexify-btn plexify-btn-primary text-xs"
+                  className="luxury-btn-primary text-xs"
                 >
                   <span>Ergebnis Berechnen</span>
                   <Sparkles className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
           {step === 4 && (
             <div className="space-y-8 animate-in fade-in">
               
-              <div className="text-center bg-[#04060A] border border-emerald-500/40 p-8 rounded-3xl space-y-3 shadow-2xl">
+              <div className="text-center bg-[#030712] border border-emerald-500/40 p-8 rounded-3xl space-y-3 shadow-2xl">
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">
                   Geschätzter Richtwert (Pauschal / Einmalig)
                 </span>
@@ -318,7 +318,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
 
                 <button
                   onClick={onOpenContact}
-                  className="plexify-btn plexify-btn-primary text-xs"
+                  className="luxury-btn-primary text-xs"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Unverbindliches Erstgespräch anfragen</span>

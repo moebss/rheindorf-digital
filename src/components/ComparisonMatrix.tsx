@@ -45,35 +45,35 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
   ];
 
   return (
-    <section id="vergleich" className="py-24 sm:py-32 bg-[#04060A] relative overflow-hidden border-t border-white/10">
+    <section id="vergleich" className="py-24 sm:py-32 bg-[#030712] relative overflow-hidden border-t border-white/10">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 right-10 w-[550px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Plexify Split Sticky Grid */}
+        {/* Split Sticky Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Left Column (Sticky Headline & Studio Overview) */}
           <div className="lg:col-span-5 space-y-8">
             <div className="lg:sticky lg:top-32 space-y-6">
               
-              <div className="plexify-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
+              <div className="luxury-pill">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>// Der Qualitäts-Standard</span>
               </div>
 
               <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.05]">
                 Der Rheindorf Standard vs. <br />
-                <span className="text-slate-500">Klassische Agenturen.</span>
+                <span className="text-slate-400">08/15 Agenturen.</span>
               </h2>
 
-              <p className="font-mono text-xs sm:text-sm text-slate-400 leading-relaxed">
+              <p className="font-mono text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Warum zukunftsorientierte Handwerker & Dienstleister in Köln & NRW auf maßgeschneiderte Headless-Architektur und KI-Voice setzen, statt sich mit veralteten Baukästen abspeisen zu lassen.
               </p>
 
-              <div className="p-6 rounded-3xl bg-[#080C14] border border-white/10 space-y-4">
+              <div className="p-6 rounded-3xl bg-[#070D1B] border border-white/10 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-xs">
                     ✓
@@ -87,7 +87,7 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
 
               <button
                 onClick={onOpenContact}
-                className="plexify-btn plexify-btn-primary w-full sm:w-auto"
+                className="luxury-btn-primary w-full sm:w-auto text-xs"
               >
                 <span>Jetzt Potenzialanalyse anfordern</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -96,13 +96,13 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
             </div>
           </div>
 
-          {/* Right Column (Plexify Comparison Cards) */}
+          {/* Right Column (Comparison Cards) */}
           <div className="lg:col-span-7 space-y-6">
             {comparisons.map((item, idx) => (
               <div
                 key={idx}
-                className={`plexify-card p-6 sm:p-8 bg-[#080C14] border-white/10 hover:border-emerald-500/30 transition-all ${
-                  item.highlight ? 'border-emerald-500/30 bg-emerald-500/[0.02]' : ''
+                className={`luxury-card p-6 sm:p-8 ${
+                  item.highlight ? 'border-emerald-500/30' : ''
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">

@@ -13,11 +13,10 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
   };
 
   return (
-    <footer className="pt-16 pb-12 bg-[#04060A] text-slate-400 text-xs overflow-hidden">
+    <footer className="pt-16 pb-12 bg-[#030712] text-slate-400 text-xs overflow-hidden">
       
-      {/* Plexify Curved Outer Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="plexify-card bg-[#080C14] border-white/10 p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
+        <div className="luxury-card p-8 sm:p-14 lg:p-20 relative overflow-hidden shadow-2xl">
           
           {/* Top Big Callout */}
           <div className="max-w-3xl mb-16 space-y-4">
@@ -25,12 +24,12 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
               Let's make something <br />
               <span className="text-emerald-400">great work together.</span>
             </h2>
-            <p className="font-mono text-xs sm:text-sm text-slate-400">
+            <p className="font-mono text-xs sm:text-sm text-slate-300">
               Bespoke Webdesign & 24/7 Voice AI für führende Betriebe in Köln, Kerpen & NRW.
             </p>
           </div>
 
-          {/* 4-Column Footer Grid (Plexify Style) */}
+          {/* 4-Column Footer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-white/10">
             
             {/* Col 1: Direct Call */}
@@ -78,7 +77,7 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
                 <li><a href="#prozess" className="hover:text-white transition-colors">4-Schritte Prozess</a></li>
                 <li><a href="#leistungen" className="hover:text-white transition-colors">Leistungen & Festpreise</a></li>
                 <li><a href="#ki-telefonie" className="hover:text-white transition-colors">KI-Voice Terminal</a></li>
-                <li><a href="#rechner" className="hover:text-white transition-colors">Projekt-Kalkulator</a></li>
+                <li><a href="#kalkulator" className="hover:text-white transition-colors">Projekt-Kalkulator</a></li>
               </ul>
             </div>
 
@@ -95,7 +94,7 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
 
           </div>
 
-          {/* Bottom Copyright & Floating Back-To-Top Widget (Plexify Style) */}
+          {/* Bottom Copyright & Back-To-Top */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p className="font-mono text-[11px] text-slate-500 uppercase">
               © {new Date().getFullYear()} RHEINDORF DIGITAL · INHABER ALEXANDER RHEINDORF · ALL RIGHTS RESERVED
@@ -115,7 +114,6 @@ export default function Footer({ onOpenImpressum, onOpenDatenschutz }: FooterPro
                 Datenschutz (DSGVO)
               </button>
               
-              {/* Back to top button */}
               <button
                 onClick={scrollToTop}
                 className="w-10 h-10 rounded-full bg-white text-slate-950 hover:bg-emerald-400 flex items-center justify-center transition-all duration-300 cursor-pointer shadow-xl"
