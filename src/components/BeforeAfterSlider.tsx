@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Sparkles, MoveHorizontal, AlertTriangle, CheckCircle2, Zap, ShieldCheck } from 'lucide-react';
+import { playClickSound, playHoverSound } from '../utils/soundEffects';
 import nawrathImg from '../images/media_1786374893160.png';
 import alyasImg from '../images/media_1786244838088.png';
 
@@ -59,8 +60,12 @@ export default function BeforeAfterSlider() {
         <div className="max-w-4xl mx-auto">
           <div
             ref={containerRef}
+            data-cursor="drag"
             className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl border border-white/15 select-none cursor-ew-resize touch-none bg-[#070D1B]"
-            onMouseDown={() => setIsDragging(true)}
+            onMouseDown={() => {
+              setIsDragging(true);
+              playClickSound();
+            }}
             onMouseUp={() => setIsDragging(false)}
             onMouseLeave={() => setIsDragging(false)}
             onMouseMove={handleMouseMove}
@@ -101,7 +106,7 @@ export default function BeforeAfterSlider() {
               className="absolute top-0 bottom-0 w-0.5 bg-white cursor-ew-resize shadow-[0_0_20px_rgba(255,255,255,0.9)]"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-slate-950 border-2 border-white shadow-2xl flex items-center justify-center text-emerald-400">
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-slate-950 border-2 border-white shadow-2xl flex items-center justify-center text-emerald-400">
                 <MoveHorizontal className="w-5 h-5" />
               </div>
             </div>
@@ -111,7 +116,7 @@ export default function BeforeAfterSlider() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
             <div className="luxury-card p-5 rounded-2xl text-center">
               <span className="text-[11px] font-mono text-slate-400 uppercase block">Ladezeit-Optimierung</span>
-              <span className="font-display font-black text-2xl text-emerald-400 mt-1 block">4.8s ➔ 0.4s</span>
+              <span className="font-display font-black text-2xl text-emerald-400 mt-1 block">4.8s ➔ 0.38s</span>
             </div>
 
             <div className="luxury-card p-5 rounded-2xl text-center">

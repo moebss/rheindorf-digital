@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, ArrowUpRight, Zap, Star, ShieldCheck, MapPin } from 'lucide-react';
+import { Sparkles, ArrowUpRight, Zap, Star, ShieldCheck, MapPin, X, CheckCircle2, TrendingUp, Layers, Code2 } from 'lucide-react';
+import { playClickSound, playHoverSound, playSuccessSound } from '../utils/soundEffects';
 
 import nawrathImg from '../images/media_1786374893160.png';
 import alyasImg from '../images/media_1786244838088.png';
@@ -10,10 +11,31 @@ interface PortfolioProps {
   onOpenContact: () => void;
 }
 
+interface Project {
+  id: string;
+  num: string;
+  category: string;
+  categoryLabel: string;
+  year: string;
+  title: string;
+  location: string;
+  impact: string;
+  desc: string;
+  stats: string;
+  tags: string[];
+  liveUrl: string;
+  img: string;
+  problem: string;
+  solution: string;
+  techHighlights: string[];
+  metrics: { label: string; value: string }[];
+}
+
 export default function Portfolio({ onOpenContact }: PortfolioProps) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 'nawrath-bad',
       num: '[01]',
@@ -28,6 +50,15 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       tags: ['Badsanierungs-Rechner', '3-Sek. Notdienst Routing', 'Local SEO #1', 'Headless React'],
       liveUrl: 'https://moebss.github.io/az-heizung-sanitaer/',
       img: nawrathImg,
+      problem: 'Alte, langsame WordPress-Website ohne mobile Nutzerführung. Notdienst-Anrufe gingen im Feierabend verloren und Komplettbad-Anfragen waren unqualifiziert.',
+      solution: 'Kompletter React 19 Relaunch mit interaktivem 6-Schritte Bad-Budget-Kalkulator, automatischer Vor-Qualifikation und 3-Sekunden Notdienst-Routing für maximale Conversion.',
+      techHighlights: ['React 19 + Vite + Tailwind 4', 'Schema.org JSON-LD LocalBusiness Rich Snippets', '0 Cookie Banner (100% DSGVO-konform ohne Tracking-Bloat)', 'Sub-0.4s First Contentful Paint'],
+      metrics: [
+        { label: 'Anfragen-Uplift', value: '+340%' },
+        { label: 'Google PageSpeed', value: '100/100' },
+        { label: 'FCP Ladezeit', value: '0.38s' },
+        { label: 'Local Maps Rank', value: '#1 3-Pack' }
+      ]
     },
     {
       id: 'alyas-barber',
@@ -43,6 +74,15 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       tags: ['Cinematic Hero', 'WhatsApp Bot', 'Local SEO 3-Pack', 'Zero No-Shows'],
       liveUrl: 'https://moebss.github.io/alyas-barbershop-horrem/',
       img: alyasImg,
+      problem: 'Telefonklingeln während des Haareschneidens führte zu Stress und verpassten Kundenanrufen. Viele Terminausfälle ohne Vorauszahlung/Erinnerung.',
+      solution: 'Entwicklung einer immersiven Dark-Luxury Salon-Präsenz mit direktem WhatsApp-Buchungsflow und automatisierten SMS/WhatsApp Terminerinnerungen.',
+      techHighlights: ['Dark Obsidian Ästhetik mit Goldakzenten', 'Nahtlose 1-Klick WhatsApp API Integration', 'Mobile-First Thumb-Zone Optimierung', 'Extrem komprimierte WebP Bildarchitektur'],
+      metrics: [
+        { label: 'Auto-Termine / Mo', value: '120+' },
+        { label: 'No-Show Quote', value: '0%' },
+        { label: 'Google Bewertung', value: '4.9 ★' },
+        { label: 'Mobile Conversion', value: '68%' }
+      ]
     },
     {
       id: 'burning-bandit',
@@ -58,6 +98,15 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       tags: ['Transformations-Slider', 'Artist Showcase', 'Next-Gen UI', '100% DSGVO'],
       liveUrl: 'https://moebss.github.io/the-burning-bandit-kerpen/',
       img: banditImg,
+      problem: 'Kunden waren unsicher bezüglich Preisen, Cover-Ups und Hygiene-Standards. Lange Wartezeiten bei E-Mail-Rückmeldungen führten zu Absprüngen.',
+      solution: 'Interaktiver Cover-Up Vorher/Nachher-Slider, Vorstellung der Resident Artists und ein 3-Schritt Motiv- & Größenkonfigurator mit Sofort-Termin-Slotting.',
+      techHighlights: ['Custom Before/After Canvas Slider', 'Framer Motion Staggered Fade-Ins', 'Mobile-Responsive Artist Wall', 'DSGVO-konforme Google Maps Einbettung'],
+      metrics: [
+        { label: 'Ersttermine Uplift', value: '+180%' },
+        { label: 'Kundenbewertungen', value: '160+' },
+        { label: 'PageSpeed Mobile', value: '99/100' },
+        { label: 'Conversion Rate', value: '14.2%' }
+      ]
     },
     {
       id: 'nails-shop',
@@ -73,6 +122,15 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
       tags: ['Spa Ästhetik', 'Babyboomer Slider', 'WhatsApp Express', '0.3s Speed'],
       liveUrl: 'https://moebss.github.io/the-nails-shop-horrem/',
       img: nailsImg,
+      problem: 'Unprofessioneller Auftritt auf sozialen Medien ohne eigene Homepage. Neukunden konnten sich über Behandlungsarten und Preise nicht transparent informieren.',
+      solution: 'Elegante Spa- & Studio-Homepage mit warmen Farbtönen, übersichtlicher Behandlungstabelle und 1-Klick WhatsApp Express-Buchung.',
+      techHighlights: ['Subtile Glassmorphism-Cards', 'Perfekte Farbhierarchie nach OKLCH-Standard', 'Schnelle Bildoptimierung unter 80kB', 'Local SEO Schema.org BeautySalon'],
+      metrics: [
+        { label: 'Auslastung', value: '3 W. Vorlauf' },
+        { label: 'Google Rezensionen', value: '100+ (4.9★)' },
+        { label: 'Ladezeit Mobil', value: '0.35s' },
+        { label: 'Stammkunden-Zuwachs', value: '+65%' }
+      ]
     },
   ];
 
@@ -118,10 +176,15 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActiveFilter(cat.id)}
+                onClick={() => {
+                  setActiveFilter(cat.id);
+                  playClickSound();
+                }}
+                onMouseEnter={playHoverSound}
+                data-cursor="pointer"
                 className={`px-5 py-2.5 rounded-full font-mono text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
                   activeFilter === cat.id
-                    ? 'bg-white text-slate-950 shadow-xl'
+                    ? 'bg-white text-slate-950 shadow-xl scale-105'
                     : 'bg-[#070D1B] text-slate-400 hover:text-white border border-white/10'
                 }`}
               >
@@ -136,7 +199,8 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
           {filteredProjects.map((proj) => (
             <div
               key={proj.id}
-              className="luxury-card p-6 sm:p-10 group transition-all duration-500"
+              data-cursor="view"
+              className="luxury-card p-6 sm:p-10 group transition-all duration-500 hover:border-emerald-500/40"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
@@ -181,7 +245,10 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
                         href={proj.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-3 rounded-2xl bg-white text-slate-950 hover:bg-emerald-400 transition-colors shadow-2xl"
+                        onClick={playSuccessSound}
+                        onMouseEnter={playHoverSound}
+                        data-cursor="pointer"
+                        className="p-3 rounded-2xl bg-white text-slate-950 hover:bg-emerald-400 transition-colors shadow-2xl cursor-pointer"
                         title="Live-Website im neuen Tab öffnen"
                       >
                         <ArrowUpRight className="w-4 h-4" />
@@ -229,19 +296,30 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
                   </div>
 
                   {/* Bottom Action & Stats Row */}
-                  <div className="pt-4 flex items-center justify-between border-t border-white/10">
-                    <div className="text-xs font-mono text-slate-400">
-                      <span className="text-slate-500 block text-[10px]">BENCHMARK:</span>
-                      <span className="text-white font-bold">{proj.stats}</span>
-                    </div>
+                  <div className="pt-4 flex items-center justify-between border-t border-white/10 gap-3">
+                    <button
+                      onClick={() => {
+                        setSelectedCaseStudy(proj);
+                        playSuccessSound();
+                      }}
+                      onMouseEnter={playHoverSound}
+                      data-cursor="pointer"
+                      className="luxury-btn-secondary text-xs py-2.5 px-4 cursor-pointer"
+                    >
+                      <Layers className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Case Study</span>
+                    </button>
 
                     <a
                       href={proj.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="luxury-btn-primary text-xs py-2.5 px-5 !shadow-none"
+                      onClick={playSuccessSound}
+                      onMouseEnter={playHoverSound}
+                      data-cursor="pointer"
+                      className="luxury-btn-primary text-xs py-2.5 px-5 !shadow-none cursor-pointer"
                     >
-                      <span>Live ansehen</span>
+                      <span>Live testen</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
@@ -259,8 +337,13 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
             Möchtest du eine vergleichbare High-End Präsenz für deinen Betrieb?
           </p>
           <button
-            onClick={onOpenContact}
-            className="luxury-btn-primary"
+            onClick={() => {
+              playSuccessSound();
+              onOpenContact();
+            }}
+            onMouseEnter={playHoverSound}
+            data-cursor="pointer"
+            className="luxury-btn-primary cursor-pointer"
           >
             <span>Projekt unverbindlich anfragen</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -268,6 +351,109 @@ export default function Portfolio({ onOpenContact }: PortfolioProps) {
         </div>
 
       </div>
+
+      {/* Case Study Deep-Dive Modal */}
+      {selectedCaseStudy && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in">
+          <div className="bg-[#070D1B] border border-emerald-500/40 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl relative space-y-8">
+            
+            {/* Modal Header */}
+            <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-6">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider block mb-1">
+                  Case Study // {selectedCaseStudy.categoryLabel}
+                </span>
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-white">
+                  {selectedCaseStudy.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => {
+                  setSelectedCaseStudy(null);
+                  playClickSound();
+                }}
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer shrink-0"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Metrics Row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {selectedCaseStudy.metrics.map((m, mIdx) => (
+                <div key={mIdx} className="p-4 rounded-2xl bg-[#030712] border border-white/10 text-center">
+                  <span className="font-mono text-[10px] text-slate-400 uppercase block">{m.label}</span>
+                  <span className="font-display font-black text-xl text-emerald-400 mt-1 block">{m.value}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Problem & Solution Breakdown */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="p-5 rounded-2xl bg-rose-500/5 border border-rose-500/20 space-y-2">
+                <span className="font-mono text-xs font-bold text-rose-400 uppercase tracking-wider block">
+                  // Die Ausgangslage
+                </span>
+                <p className="font-mono text-xs text-slate-300 leading-relaxed">
+                  {selectedCaseStudy.problem}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 space-y-2">
+                <span className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider block">
+                  // Die Rheindorf Lösung
+                </span>
+                <p className="font-mono text-xs text-slate-300 leading-relaxed">
+                  {selectedCaseStudy.solution}
+                </p>
+              </div>
+            </div>
+
+            {/* Tech Architecture Highlights */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-slate-300 uppercase font-bold tracking-wider">
+                <Code2 className="w-4 h-4 text-cyan-400" />
+                <span>Technische Exzellenz & Architektur</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {selectedCaseStudy.techHighlights.map((th, thIdx) => (
+                  <div key={thIdx} className="flex items-center gap-2 text-xs font-mono text-slate-300 p-3 rounded-xl bg-[#030712] border border-white/10">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>{th}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Actions */}
+            <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <a
+                href={selectedCaseStudy.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={playSuccessSound}
+                className="luxury-btn-primary w-full sm:w-auto text-xs"
+              >
+                <span>Live-System im neuen Tab testen</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+
+              <button
+                onClick={() => {
+                  setSelectedCaseStudy(null);
+                  onOpenContact();
+                  playSuccessSound();
+                }}
+                className="luxury-btn-secondary w-full sm:w-auto text-xs"
+              >
+                <span>Ähnliches Projekt anfragen</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }
