@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Space Grotesk", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-syne: "Syne", sans-serif;
+  --font-display: "Bebas Neue", "Anton", sans-serif;
   --font-mono: "Space Mono", monospace;
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   
-  --color-studio-dark: #030712;
-  --color-studio-card: #070D1B;
-  --color-studio-elevated: #0D1527;
-  --color-studio-border: rgba(255, 255, 255, 0.08);
-  --color-studio-border-hover: rgba(16, 185, 129, 0.4);
+  --color-neo-black: #050505;
+  --color-neo-dark: #0A0A0A;
+  --color-neo-card: #0F0F0F;
+  --color-neo-border: rgba(255, 255, 255, 0.14);
   
-  --color-accent-green: #10b981;
-  --color-accent-cyan: #06b6d4;
+  --color-neo-lime: #D4FF00;
+  --color-neo-blue: #0044FF;
+  --color-neo-blue-light: #2563EB;
 }
 
 /* Base resets & smooth scrolling */
@@ -22,8 +25,8 @@ html {
 }
 
 body {
-  background-color: #030712;
-  color: #f1f5f9;
+  background-color: #050505;
+  color: #f8fafc;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
@@ -33,125 +36,140 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #262626;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #D4FF00;
 }
 
-/* Luxury Studio Design System Classes */
-.luxury-card {
-  background: linear-gradient(135deg, rgba(13, 21, 39, 0.7) 0%, rgba(7, 13, 27, 0.9) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  border-radius: 28px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+/* Neo-Brutalist Utility Classes */
+.font-bebas {
+  font-family: var(--font-bebas);
 }
 
-.luxury-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(16, 185, 129, 0.12);
+.font-anton {
+  font-family: var(--font-anton);
+}
+
+.font-syne {
+  font-family: var(--font-syne);
+}
+
+.neo-container {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0A0A0A;
+}
+
+.neo-card {
+  background: #0F0F0F;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-card:hover {
+  border-color: #D4FF00;
   transform: translateY(-2px);
 }
 
-.luxury-pill {
+.neo-btn-blue {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 6px 16px;
-  border-radius: 9999px;
+  background-color: #0044FF;
+  color: #ffffff;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34d399;
-}
-
-.luxury-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: 9999px;
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  background: #ffffff;
-  color: #030712;
-  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.25);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 10px 18px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.luxury-btn-primary:hover {
-  background: #10b981;
-  color: #030712;
-  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.4);
+.neo-btn-blue:hover {
+  background-color: #1D4ED8;
   transform: scale(1.02);
 }
 
-.luxury-btn-secondary {
+.neo-btn-lime {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
+  gap: 8px;
+  background-color: #D4FF00;
+  color: #050505;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.neo-btn-lime:hover {
+  background-color: #E2FF33;
+  box-shadow: 0 0 25px rgba(212, 255, 0, 0.4);
+  transform: scale(1.02);
+}
+
+.neo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
   border-radius: 9999px;
-  font-family: var(--font-display);
-  font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #0A0A0A;
+  font-family: var(--font-mono);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  color: #E2E8F0;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.luxury-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  transform: scale(1.02);
+.neo-chip:hover {
+  border-color: #D4FF00;
+  color: #D4FF00;
+  background: rgba(212, 255, 0, 0.05);
 }
 
-/* Continuous Marquee Ticker Animation */
-@keyframes ticker {
-  0% {
-    transform: translateX(0);
+/* Stamped Circular Badge Animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: rotate(360deg);
   }
 }
 
-.animate-ticker-smooth {
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Continuous Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
   display: flex;
   width: max-content;
-  animation: ticker 35s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
-.animate-ticker-smooth:hover {
+.animate-marquee:hover {
   animation-play-state: paused;
-}
-
-/* Subtle glow effects */
-.glow-emerald {
-  box-shadow: 0 0 50px rgba(16, 185, 129, 0.2);
-}
-
-.glow-gradient {
-  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, rgba(3, 7, 18, 0) 70%);
 }
