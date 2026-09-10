@@ -7,6 +7,7 @@ import PhilosophyManifesto from './components/PhilosophyManifesto';
 import ProcessRoadmap from './components/ProcessRoadmap';
 import MinimalInquiry from './components/MinimalInquiry';
 import MinimalFooter from './components/MinimalFooter';
+import StickyCTA from './components/StickyCTA';
 import LegalModals from './components/LegalModals';
 
 export default function App() {
@@ -20,7 +21,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-white selection:text-black overflow-x-hidden">
+    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-emerald-400 selection:text-zinc-950 overflow-x-hidden pb-16 sm:pb-0">
       
       {/* 1. Minimal Navigation Bar */}
       <MinimalNavbar onOpenContact={scrollToContact} />
@@ -53,6 +54,9 @@ export default function App() {
         onOpenImpressum={() => setLegalModal('impressum')}
         onOpenDatenschutz={() => setLegalModal('datenschutz')}
       />
+
+      {/* 9. Mobile Sticky Action Bar (Direct Call, WhatsApp, Inquiry) */}
+      <StickyCTA onOpenContact={scrollToContact} />
 
       {/* Legal Modals (§ 5 DDG & DSGVO) */}
       <LegalModals type={legalModal} onClose={() => setLegalModal(null)} />

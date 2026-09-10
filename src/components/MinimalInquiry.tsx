@@ -23,27 +23,27 @@ export default function MinimalInquiry() {
   };
 
   return (
-    <section id="kontakt" className="py-24 sm:py-32 border-b border-white/[0.07] bg-[#09090b]">
+    <section id="kontakt" className="py-20 sm:py-32 border-b border-white/[0.07] bg-[#09090b]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="max-w-2xl">
-          <span className="text-[11px] font-mono tracking-widest uppercase text-zinc-500">
+          <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
             [ KONTAKT ]
           </span>
-          <h2 className="mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
             Projekt anfragen oder kurz sprechen.
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Schreib mir eine Nachricht oder ruf mich direkt an. Ich antworte dir verlässlich innerhalb von 24 Stunden.
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
+            Schreib mir eine Nachricht oder melde dich direkt per WhatsApp oder Anruf. Ich antworte dir verlässlich innerhalb von 24 Stunden.
           </p>
         </div>
 
         {/* Two Columns: Inquiry Form & Direct Channels */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Col: Scope-Based Intake Form */}
-          <div className="lg:col-span-7 rounded-3xl border border-white/[0.08] bg-[#111114] p-8 sm:p-10 shadow-2xl">
+          <div className="lg:col-span-7 rounded-3xl border border-white/[0.08] bg-[#111114] p-5 sm:p-8 lg:p-10 shadow-2xl">
             {submitted ? (
               <div className="py-12 flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
@@ -76,10 +76,10 @@ export default function MinimalInquiry() {
                         key={s.id}
                         type="button"
                         onClick={() => setSelectedScope(s.id)}
-                        className={`p-3 rounded-xl text-left font-mono text-xs transition-all border cursor-pointer ${
+                        className={`p-3 min-h-[44px] rounded-xl text-left font-mono text-xs transition-all border cursor-pointer ${
                           selectedScope === s.id
-                            ? 'bg-white text-zinc-950 border-white font-bold'
-                            : 'bg-[#09090b] text-zinc-400 border-white/5 hover:border-white/20 hover:text-white'
+                            ? 'bg-emerald-950/60 border-emerald-500 text-emerald-300 font-bold shadow-[0_0_15px_rgba(16,185,129,0.15)]'
+                            : 'bg-[#09090b] text-zinc-400 border-white/10 hover:border-white/20 hover:text-white'
                         }`}
                       >
                         {s.label}
@@ -88,7 +88,7 @@ export default function MinimalInquiry() {
                   </div>
                 </div>
 
-                {/* 2. Contact Details */}
+                {/* 2. Contact Details with iOS Safari 16px font-size protection */}
                 <div className="space-y-4 pt-2 border-t border-white/[0.06]">
                   <div>
                     <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
@@ -100,7 +100,7 @@ export default function MinimalInquiry() {
                       placeholder="Dein Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-base sm:text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
                     />
                   </div>
 
@@ -115,7 +115,7 @@ export default function MinimalInquiry() {
                         placeholder="name@beispiel.de"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-base sm:text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
                       />
                     </div>
                     <div>
@@ -127,7 +127,7 @@ export default function MinimalInquiry() {
                         placeholder="+49 170 1234567"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-base sm:text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
                       />
                     </div>
                   </div>
@@ -141,14 +141,14 @@ export default function MinimalInquiry() {
                       placeholder="Worum geht es bei deinem Projekt? Was soll gebaut oder automatisiert werden?"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-base sm:text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
                     />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-white text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold hover:bg-zinc-200 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-md"
+                  className="w-full py-4 min-h-[48px] rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold hover:from-emerald-300 hover:to-emerald-400 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-lg shadow-emerald-500/25"
                 >
                   <span>Nachricht absenden</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -158,56 +158,62 @@ export default function MinimalInquiry() {
           </div>
 
           {/* Right Col: Direct Channels */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
             
             {/* Direct Channels Card */}
-            <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-8 space-y-6">
+            <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-5 sm:p-8 space-y-4 sm:space-y-6">
               <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">
                 Direktkontakt
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <a 
                   href="mailto:hello@rheindorf.digital" 
-                  className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] hover:border-white/20 transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] hover:border-emerald-500/30 transition-all group min-h-[48px]"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-white group-hover:text-emerald-400 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-[11px] font-mono text-zinc-500">E-Mail</div>
-                    <div className="text-sm font-sans font-medium text-white">hello@rheindorf.digital</div>
+                    <div className="text-sm font-sans font-medium text-white group-hover:text-emerald-400 transition-colors">
+                      hello@rheindorf.digital
+                    </div>
                   </div>
                 </a>
 
                 <a 
                   href="tel:+4916096351750" 
-                  className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] hover:border-white/20 transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] hover:border-emerald-500/30 transition-all group min-h-[48px]"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-white group-hover:text-emerald-400 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-[11px] font-mono text-zinc-500">Telefon / WhatsApp</div>
-                    <div className="text-sm font-sans font-medium text-white">+49 160 96351750</div>
+                    <div className="text-sm font-sans font-medium text-white group-hover:text-emerald-400 transition-colors">
+                      +49 160 96351750
+                    </div>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b]">
+                <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] min-h-[48px]">
                   <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-zinc-400">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-[11px] font-mono text-zinc-500">Standort</div>
-                    <div className="text-sm font-sans font-medium text-white">Kerpen &amp; Köln (NRW) • Bundesweit</div>
+                    <div className="text-sm font-sans font-medium text-white">
+                      Kerpen &amp; Köln (NRW) • Bundesweit
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Direct Dev Promise */}
-            <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-8">
-              <div className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2">
+            <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-5 sm:p-8">
+              <div className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2 font-semibold">
                 Direktkontakt
               </div>
               <h4 className="text-lg font-sans font-semibold text-white">
