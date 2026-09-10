@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import MinimalNavbar from './components/MinimalNavbar';
 import MinimalHero from './components/MinimalHero';
-import PhilosophyManifesto from './components/PhilosophyManifesto';
 import DualOffering from './components/DualOffering';
 import InteractiveProcessVisualizer from './components/InteractiveProcessVisualizer';
-import CuratedWorks from './components/CuratedWorks';
+import PhilosophyManifesto from './components/PhilosophyManifesto';
 import ProcessRoadmap from './components/ProcessRoadmap';
 import MinimalInquiry from './components/MinimalInquiry';
 import MinimalFooter from './components/MinimalFooter';
@@ -29,30 +28,27 @@ export default function App() {
       {/* Main Content Flow */}
       <main className="flex-grow">
         
-        {/* 2. Typographic Hero with Positioning Statement & Baseline Metrics */}
+        {/* 2. Typographic Hero with Positioning Statement & Real Guarantees */}
         <MinimalHero onOpenContact={scrollToContact} />
 
-        {/* 3. The 3 Core Theses / Anti-Bloat Philosophy */}
-        <PhilosophyManifesto />
-
-        {/* 4. The Dual Offering: Webdesign & Intelligent Processes */}
+        {/* 3. The Dual Offering: Webdesign & Automation (What I build / What I don't build) */}
         <DualOffering onOpenContact={scrollToContact} />
 
-        {/* 5. Signature Interactive Flow Visualizer (Frontend + Backend Synergy) */}
+        {/* 4. Signature Interactive Workflow Simulator (React + n8n + Webhooks) */}
         <InteractiveProcessVisualizer />
 
-        {/* 6. Selected Curated Works with Hard Metrics */}
-        <CuratedWorks onOpenContact={scrollToContact} />
+        {/* 5. Four Honest Principles for Solid Software */}
+        <PhilosophyManifesto />
 
-        {/* 7. 4-Week Sprint Roadmap & Method */}
+        {/* 6. Realistic 4-Step Process Roadmap */}
         <ProcessRoadmap />
 
-        {/* 8. Frictionless Scope-Based Inquiry & Direct Contact */}
+        {/* 7. Frictionless Scope-Based Inquiry & Direct Contact */}
         <MinimalInquiry />
 
       </main>
 
-      {/* 9. Editorial Minimalist Footer */}
+      {/* 8. Editorial Minimalist Footer */}
       <MinimalFooter
         onOpenImpressum={() => setLegalModal('impressum')}
         onOpenDatenschutz={() => setLegalModal('datenschutz')}

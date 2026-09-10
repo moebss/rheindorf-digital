@@ -1,52 +1,52 @@
 import React from 'react';
-import { Search, PenTool, Terminal, Rocket, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export default function ProcessRoadmap() {
   const steps = [
     {
       num: '01',
-      title: 'Audit & System-Architektur',
-      timeframe: 'Woche 1',
-      desc: 'Wir analysieren Ihre Positionierung, Zielgruppe und bestehende Schnittstellen. Wo verlieren Sie Anfragen? Welche manuellen Arbeitsschritte kosten Ihr Team täglich wertvolle Stunden?',
-      deliverables: ['Prozess-Mapping & Engpassanalyse', 'Content- & Informationsarchitektur', 'Technologie- & API-Stack Blueprint']
+      title: 'Erstgespräch & Vorprüfung',
+      timeframe: 'Tag 1–3',
+      desc: 'Wir sprechen 20–30 Minuten via Videocall oder Telefon. Wir klären, was du brauchst, welche Tools du nutzt und wo Automatisierung Sinn macht.',
+      deliverables: ['Anforderungs-Check', 'Konkrete Machbarkeitsprüfung', 'Transparenter Festpreis']
     },
     {
       num: '02',
-      title: 'Design-System & Prototyping',
-      timeframe: 'Woche 2',
-      desc: 'Wir entwickeln eine minimalistische, hochkarätige Designsprache in Figma. Typografie, Abstände und visuelle Hierarchie werden millimetergenau auf Ihre Markenidentität kalibriert.',
-      deliverables: ['Interaktiver Klick-Prototyp', 'Figma Design-System & Token-Library', 'Conversion- & Intake-Flow-Design']
+      title: 'Design & Prototyp',
+      timeframe: 'Woche 1',
+      desc: 'Ich erstelle einen klaren, reduzierten Entwurf. Keine endlosen Schleifen, sondern ein abgestimmtes Layout, das du direkt im Browser begutachten kannst.',
+      deliverables: ['Interaktiver Layout-Entwurf', 'Struktur der Inhaltsblöcke', 'Festlegung der Formulardaten']
     },
     {
       num: '03',
-      title: 'Code & Pipeline-Engineering',
-      timeframe: 'Woche 3',
-      desc: 'Handcodierte Umsetzung mit modernem React, Tailwind und TypeScript. Parallel binden wir n8n-Workflows, Webhooks und CRM-Pipelines an, damit das System ab Tag 1 autonom arbeitet.',
-      deliverables: ['100/100 Lighthouse Performance Code', 'End-to-End Automatisierungs-Pipelines', 'Strikte Zero-Cookie DSGVO-Architektur']
+      title: 'Code & Automation',
+      timeframe: 'Woche 2–3',
+      desc: 'Umsetzung mit modernem React und Tailwind. Parallel richte ich die n8n-Workflows ein, damit Formulareingaben fehlerfrei in deinen Zieltools landen.',
+      deliverables: ['Handgeschriebenes Frontend', 'Verdrahtete Webhook-Pipelines', 'DSGVO-Basiskonfiguration']
     },
     {
       num: '04',
-      title: 'Launch & Autonomie',
+      title: 'Launch & Übergabe',
       timeframe: 'Woche 4',
-      desc: 'Staging-Prüfung, finale Domain-Aufschaltung und Live-Schaltung aller Daten-Pipelines. Sie erhalten ein schlüsselfertiges System, das ohne teure Agentur-Wartungsverträge autark läuft.',
-      deliverables: ['Production Deployment & DNS Sync', 'Dokumentiertes System-Dashboard', 'Volle Code- & Datenhoheit bei Ihnen']
+      desc: 'Finale Prüfung aller Abläufe, Live-Schaltung auf deiner Domain und Übergabe des vollständigen Codes. Du hast ab Tag 1 die volle Kontrolle.',
+      deliverables: ['Live-Schaltung auf deiner Domain', 'Git-Repository-Zugang', 'Kurze Video-Einweisung']
     }
   ];
 
   return (
-    <section id="methode" className="py-24 sm:py-32 border-b border-white/[0.07] bg-[#09090b]">
+    <section id="ablauf" className="py-24 sm:py-32 border-b border-white/[0.07] bg-[#09090b]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-zinc-500">
-            [ DER PROZESS ]
+            [ DER ABLAUF ]
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
-            Vorhersehbar. Transparent. In 4 Wochen live.
+            Klarer Ablauf. Keine Hängepartie.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Keine monatelangen Meetings ohne Ergebnis. Ein klar strukturierter Sprint vom ersten Gespräch bis zum schlüsselfertigen System.
+            In 4 Schritten von der Idee zur fertigen Website mit funktionierenden Prozessen.
           </p>
         </div>
 

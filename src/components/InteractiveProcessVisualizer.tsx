@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, CheckCircle2, ArrowRight, Zap, Database, Send, Calendar, Cpu, Sparkles, Sliders } from 'lucide-react';
+import { Play, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface Scenario {
   id: string;
@@ -11,101 +11,101 @@ interface Scenario {
     system: string;
     action: string;
   }[];
-  metric: string;
+  benefit: string;
 }
 
 export default function InteractiveProcessVisualizer() {
   const scenarios: Scenario[] = [
     {
-      id: 'lead-triage',
-      title: 'High-Ticket Lead Triage & Qualifizierung',
-      tag: 'Vertriebs-Automation',
-      description: 'Ein Interessent füllt das maßgeschneiderte Interface aus. Das System qualifiziert das Budget, prüft die Kapazität und plant das Erstgespräch vollautomatisch ein.',
+      id: 'lead-routing',
+      title: 'Anfrage-Qualifizierung & CRM-Sync',
+      tag: 'Vertrieb & Intake',
+      description: 'Ein Interessent stellt eine strukturierte Anfrage. Das System prüft die Daten, legt den Kontakt im CRM an und benachrichtigt dich sofort auf dem Smartphone.',
       nodes: [
         {
-          title: '01 / Touchpoint',
-          system: 'Custom React Form',
-          action: 'Eingabe von Budget, Scope & Timeline in sub-0.3s Ladezeit'
+          title: '01 / Eingabe',
+          system: 'React Formular',
+          action: 'Strukturierte Erfassung von Scope, Timeline und Kontaktdaten'
         },
         {
-          title: '02 / Logic Engine',
-          system: 'n8n & AI Scoring',
-          action: 'Validierung der Unternehmensdaten, Budget-Scoring & Filterung'
+          title: '02 / Automation',
+          system: 'n8n Webhook',
+          action: 'Echtzeit-Validierung und Aufbereitung der Formulardaten'
         },
         {
           title: '03 / CRM Sync',
-          system: 'HubSpot / Notion',
-          action: 'Automatisches Anlegen von Deal, Kontaktdaten & Dossier'
+          system: 'Notion / HubSpot',
+          action: 'Automatisches Erstellen von Kontaktkarte und Deal-Eintrag'
         },
         {
-          title: '04 / Abschluss',
-          system: 'Cal.com & Slack Alert',
-          action: 'Echtzeit-Push an Alexander & Kalendereinladung an Kunden'
+          title: '04 / Benachrichtigung',
+          system: 'Slack / WhatsApp',
+          action: 'Sofortiger Alert mit allen Details direkt aufs Smartphone'
         }
       ],
-      metric: '0 Minuten manuelle Sortierung • 100% lückenlose Erfassung'
+      benefit: 'Kein Copy-Paste aus E-Mails • Sofortige Erfassung aller Kontaktdaten'
     },
     {
       id: 'onboarding',
-      title: 'Autonomes Client-Onboarding & Projekt-Kickoff',
-      tag: 'Operations & Delivery',
-      description: 'Nach digitaler Unterschrift erstellt das Backend automatisiert alle Projekt-Räume, generiert Verträge und sendet den Onboarding-Fragebogen.',
+      title: 'Automatisches Kunden-Onboarding',
+      tag: 'Projektstart & Übergabe',
+      description: 'Nach Projektzusage wird automatisch ein gemeinsamer Projekt-Workspace erstellt und der Kunde erhält alle Unterlagen ohne manuelles Versenden.',
       nodes: [
         {
-          title: '01 / Trigger',
-          system: 'Digitaler Vertragsabschluss',
-          action: 'DocuSign / Stripe Webhook feuert Signatur-Event'
+          title: '01 / Zusage',
+          system: 'Auftragsbestätigung',
+          action: 'Auslösen des Workflows nach Angebotsfreigabe'
         },
         {
-          title: '02 / Workspace Setup',
-          system: 'Notion API Automation',
-          action: 'Projekt-Hub, Kanban-Board & Milestone-Timeline werden geklont'
+          title: '02 / Workspace',
+          system: 'Notion / Drive API',
+          action: 'Automatisches Anlegen von Projekt-Board und Asset-Ordner'
         },
         {
-          title: '03 / Communication',
-          system: 'Slack & Drive Engine',
-          action: 'Gemeinsamer Kunden-Channel & Asset-Ordner angelegt'
+          title: '03 / Briefing-Link',
+          system: 'Auto-E-Mail',
+          action: 'Kunde erhält Upload-Link für Texte, Bilder und Zugangsdaten'
         },
         {
-          title: '04 / Welcome Pack',
-          system: 'Auto-Mailer & Kickoff',
-          action: 'Kunde erhält interaktiven Asset-Upload-Link & Vorbereitung'
+          title: '04 / Status-Update',
+          system: 'Team-Ping',
+          action: 'Projekt auf Status „In Vorbereitung“ gesetzt'
         }
       ],
-      metric: 'Von 3 Tagen Wartezeit auf 90 Sekunden Initialisierung'
+      benefit: 'Reibungsloser Start ohne langes Hin- und Herschreiben'
     },
     {
-      id: 'quote-engine',
-      title: 'Interaktiver Self-Service Angebots-Konfigurator',
-      tag: 'Conversion Engine',
-      description: 'Kunden konfigurieren ihren Leistungsumfang im Browser. Das System generiert in Echtzeit ein detailliertes Leistungsverzeichnis als PDF.',
+      id: 'quote-configurator',
+      title: 'Interaktiver Projekt-Konfigurator',
+      tag: 'Kundenführung',
+      description: 'Kunden wählen ihren Bedarf interaktiv aus und erhalten eine saubere Zusammenfassung statt einer vagen Anfrage ohne Details.',
       nodes: [
         {
-          title: '01 / Konfiguration',
-          system: 'Interactive UI Slider',
-          action: 'Kunde selektiert Features, Integrationen & Design-Tiefe'
+          title: '01 / Auswahl',
+          system: 'Interaktiver Slider',
+          action: 'Kunde wählt gewünschte Features und Integrationen'
         },
         {
-          title: '02 / Kalkulation',
-          system: 'Dynamic Pricing Logic',
-          action: 'Berechnung von Entwicklungsaufwand & API-Komplexität'
+          title: '02 / Zusammenfassung',
+          system: 'Berechnungs-Logik',
+          action: 'Automatische Zusammenstellung der Projektbausteine'
         },
         {
-          title: '03 / PDF Generator',
-          system: 'Headless Document API',
-          action: 'Kompilierung eines individuellen Projekt-Briefings'
+          title: '03 / Datenübergabe',
+          system: 'Webhook',
+          action: 'Gefilterte Übertragung der Parameter an dein Backend'
         },
         {
-          title: '04 / Follow-Up',
-          system: 'Multi-Channel Sequenz',
-          action: 'Automatischer PDF-Versand & Erinnerungs-Sequenz'
+          title: '04 / Vorbereitung',
+          system: 'Erstgesprächs-Dossier',
+          action: 'Du gehst mit klaren Anforderungen in das erste Telefonat'
         }
       ],
-      metric: '+240% Konvertierungsrate im Vergleich zu statischen PDFs'
+      benefit: 'Vollständige Anforderungsprofile statt unpräziser E-Mails'
     }
   ];
 
-  const [activeScenarioId, setActiveScenarioId] = useState<string>('lead-triage');
+  const [activeScenarioId, setActiveScenarioId] = useState<string>('lead-routing');
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
   const [simulationFinished, setSimulationFinished] = useState<boolean>(false);
@@ -118,7 +118,7 @@ export default function InteractiveProcessVisualizer() {
     setSimulationFinished(false);
     setActiveStepIndex(0);
 
-    const stepInterval = 650;
+    const stepInterval = 600;
     currentScenario.nodes.forEach((_, idx) => {
       setTimeout(() => {
         setActiveStepIndex(idx);
@@ -139,13 +139,13 @@ export default function InteractiveProcessVisualizer() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-zinc-500">
-            [ INTERAKTIVER SYSTEM-FLOW ]
+            [ SYSTEM-ARCHITEKTUR &amp; WORKFLOWS ]
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
-            So greifen Webdesign &amp; Prozesse ineinander.
+            Wie Website &amp; Prozesse ineinandergreifen.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Wählen Sie ein Szenario und starten Sie die Simulation, um zu sehen, wie ein reibungsloser Datenfluss zwischen modernem Frontend und automatisiertem Backend aussieht.
+            Keine Theorie: Wähle ein typisches Szenario und starte die Simulation, um den Datenfluss zwischen Webformular und Backend-Tools live zu sehen.
           </p>
         </div>
 
@@ -196,7 +196,7 @@ export default function InteractiveProcessVisualizer() {
               }`}
             >
               <Play className={`w-3.5 h-3.5 ${isSimulating ? 'animate-spin' : ''}`} />
-              <span>{isSimulating ? 'Pipeline läuft...' : 'Flow simulieren'}</span>
+              <span>{isSimulating ? 'Ablauf läuft...' : 'Workflow simulieren'}</span>
             </button>
           </div>
 
@@ -217,7 +217,6 @@ export default function InteractiveProcessVisualizer() {
                       : 'bg-[#0d0d0f] border-white/[0.06] text-zinc-400'
                   }`}
                 >
-                  {/* Top System Tag */}
                   <div>
                     <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 mb-2">
                       <span>{node.title}</span>
@@ -241,7 +240,6 @@ export default function InteractiveProcessVisualizer() {
                     </p>
                   </div>
 
-                  {/* Flow Arrow for Desktop */}
                   {idx < currentScenario.nodes.length - 1 && (
                     <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-zinc-600">
                       <ArrowRight className="w-4 h-4" />
@@ -257,12 +255,12 @@ export default function InteractiveProcessVisualizer() {
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
               <span className="text-xs font-mono text-zinc-400">
-                Messbarer Hebel: <strong className="text-white font-semibold">{currentScenario.metric}</strong>
+                Praktischer Nutzen: <strong className="text-white font-semibold">{currentScenario.benefit}</strong>
               </span>
             </div>
 
             <div className="text-xs font-mono text-zinc-500">
-              Latenz: <span className="text-emerald-400 font-semibold">240ms</span> • Fehlerquote: <span className="text-white font-semibold">0.0%</span>
+              Tech-Stack: <span className="text-emerald-400 font-semibold">React + n8n + Webhooks</span>
             </div>
           </div>
 

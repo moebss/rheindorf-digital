@@ -1,28 +1,20 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 
 export default function MinimalInquiry() {
   const [selectedScope, setSelectedScope] = useState<string>('full-system');
-  const [selectedTimeline, setSelectedTimeline] = useState<string>('immediate');
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    company: '',
     message: ''
   });
 
   const scopes = [
-    { id: 'webdesign', label: 'Webdesign & Interfaces' },
-    { id: 'automation', label: 'Prozess- & API-Automation' },
-    { id: 'full-system', label: 'Ganzheitliches System (Web + Prozess)' }
-  ];
-
-  const timelines = [
-    { id: 'immediate', label: 'Sofort (nächster Sprint)' },
-    { id: '1-2-months', label: 'In 1–2 Monaten' },
-    { id: 'advisory', label: 'Strategische Beratung' }
+    { id: 'webdesign', label: 'Website / Web-App' },
+    { id: 'automation', label: 'Prozess-Automation' },
+    { id: 'full-system', label: 'Beides kombiniert' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -37,13 +29,13 @@ export default function MinimalInquiry() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-zinc-500">
-            [ DIALOG &amp; PROJEKTSTART ]
+            [ KONTAKT ]
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
-            Lassen Sie uns Ihr System bauen.
+            Projekt anfragen oder kurz sprechen.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Keine Verkaufsfloskeln. Ein direktes, technisches Gespräch auf Augenhöhe mit Alexander Rheindorf.
+            Schreib mir eine Nachricht oder ruf mich direkt an. Ich antworte dir verlässlich innerhalb von 24 Stunden.
           </p>
         </div>
 
@@ -58,25 +50,25 @@ export default function MinimalInquiry() {
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-sans font-semibold text-white">
-                  Anfrage erfolgreich übermittelt.
+                  Nachricht erhalten.
                 </h3>
                 <p className="mt-2 text-sm text-zinc-400 font-sans max-w-md">
-                  Vielen Dank! Ihre Angaben wurden in unsere Pipeline eingespeist. Alexander Rheindorf meldet sich innerhalb von 24 Stunden persönlich bei Ihnen.
+                  Vielen Dank! Ich schaue mir deine Angaben an und melde mich zeitnah bei dir zurück.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-6 text-xs font-mono text-emerald-400 underline cursor-pointer"
                 >
-                  Neue Anfrage absenden
+                  Neue Nachricht schreiben
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 
                 {/* 1. Scope Selection */}
                 <div>
                   <label className="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-3">
-                    01 / Welcher Bereich hat Priorität?
+                    Was hast du vor?
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {scopes.map((s) => (
@@ -96,57 +88,20 @@ export default function MinimalInquiry() {
                   </div>
                 </div>
 
-                {/* 2. Timeline Selection */}
-                <div>
-                  <label className="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-3">
-                    02 / Geplanter Zeithorizont
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    {timelines.map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => setSelectedTimeline(t.id)}
-                        className={`p-3 rounded-xl text-left font-mono text-xs transition-all border cursor-pointer ${
-                          selectedTimeline === t.id
-                            ? 'bg-white text-zinc-950 border-white font-bold'
-                            : 'bg-[#09090b] text-zinc-400 border-white/5 hover:border-white/20 hover:text-white'
-                        }`}
-                      >
-                        {t.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 3. Contact Details */}
-                <div className="space-y-4 pt-4 border-t border-white/[0.06]">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Max Mustermann"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
-                        Unternehmen
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Firma / Brand GmbH"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
-                      />
-                    </div>
+                {/* 2. Contact Details */}
+                <div className="space-y-4 pt-2 border-t border-white/[0.06]">
+                  <div>
+                    <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Dein Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
+                    />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -157,7 +112,7 @@ export default function MinimalInquiry() {
                       <input
                         type="email"
                         required
-                        placeholder="max@unternehmen.de"
+                        placeholder="name@beispiel.de"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
@@ -165,7 +120,7 @@ export default function MinimalInquiry() {
                     </div>
                     <div>
                       <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
-                        Telefon / Mobil
+                        Telefon / WhatsApp
                       </label>
                       <input
                         type="tel"
@@ -179,11 +134,11 @@ export default function MinimalInquiry() {
 
                   <div>
                     <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
-                      Projekt-Beschreibung / Zielsetzung
+                      Kurze Beschreibung
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Erzählen Sie kurz von Ihren Zielen, bestehenden Prozessen oder Pain Points..."
+                      placeholder="Worum geht es bei deinem Projekt? Was soll gebaut oder automatisiert werden?"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-sm focus:outline-none focus:border-white/30"
@@ -195,20 +150,20 @@ export default function MinimalInquiry() {
                   type="submit"
                   className="w-full py-4 rounded-xl bg-white text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold hover:bg-zinc-200 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-md"
                 >
-                  <span>Anfrage absenden</span>
+                  <span>Nachricht absenden</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </form>
             )}
           </div>
 
-          {/* Right Col: Direct Channels & Guarantee */}
+          {/* Right Col: Direct Channels */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Direct Contact Card */}
+            {/* Direct Channels Card */}
             <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-8 space-y-6">
               <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">
-                Direkte Kanäle
+                Direktkontakt
               </div>
 
               <div className="space-y-4">
@@ -244,22 +199,22 @@ export default function MinimalInquiry() {
                   </div>
                   <div>
                     <div className="text-[11px] font-mono text-zinc-500">Standort</div>
-                    <div className="text-sm font-sans font-medium text-white">Köln &amp; Kerpen (NRW) • Bundesweit</div>
+                    <div className="text-sm font-sans font-medium text-white">Kerpen &amp; Köln (NRW) • Bundesweit</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Direct Cal Booking Guarantee */}
+            {/* Direct Dev Promise */}
             <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-8">
               <div className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-2">
-                Senior Sparringspartner
+                Direktkontakt
               </div>
               <h4 className="text-lg font-sans font-semibold text-white">
-                Direktkontakt ohne Junior-Filter
+                Kein Agentur-Filter
               </h4>
               <p className="mt-2 text-xs sm:text-sm text-zinc-400 font-sans leading-relaxed">
-                Sie sprechen bei jedem Schritt direkt mit Alexander Rheindorf — dem Strategen und Entwickler, der Ihr System plant und baut.
+                Du sprichst bei jedem Schritt direkt mit Alexander Rheindorf — dem Entwickler, der dein Projekt plant, gestaltet und programmiert.
               </p>
             </div>
 
