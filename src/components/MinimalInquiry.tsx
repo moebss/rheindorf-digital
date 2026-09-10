@@ -14,7 +14,8 @@ export default function MinimalInquiry() {
   const scopes = [
     { id: 'webdesign', label: 'Website / Web-App' },
     { id: 'automation', label: 'Prozess-Automation' },
-    { id: 'full-system', label: 'Beides kombiniert' }
+    { id: 'full-system', label: 'Beides kombiniert' },
+    { id: 'maintenance', label: 'Laufende Wartung & Support' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -70,7 +71,7 @@ export default function MinimalInquiry() {
                   <label className="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-3">
                     Was hast du vor?
                   </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {scopes.map((s) => (
                       <button
                         key={s.id}

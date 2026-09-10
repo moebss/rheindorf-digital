@@ -27,7 +27,7 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
   const noGos = [
     'Keine überladenen WordPress-Themes mit 40 anfälligen Plugins',
     'Keine 200€-Wix-Baukästen mit versteckten Folgekosten',
-    'Keine Agentur-Wartungsverträge mit künstlicher Abhängigkeit',
+    'Keine anonymen Ticket-Systeme — du erreichst mich direkt',
     'Keine wochenlangen Meetings ohne handfeste Ergebnisse'
   ];
 

@@ -22,9 +22,9 @@ export default function PhilosophyManifesto() {
     },
     {
       index: '04',
-      title: '100% Unabhängigkeit.',
-      desc: 'Der Code und das Git-Repository gehören vollständig dir. Keine künstliche Bindung, keine monatlichen Zwangsabos für simple Wartung. Volle Kontrolle bei dir.',
-      tag: 'Eigentum'
+      title: 'Verlässliche Partnerschaft.',
+      desc: 'Nach dem Launch lasse ich dich nicht allein. Auf Wunsch übernehme ich die monatliche Wartung, technisches Monitoring und die stetige Weiterentwicklung deiner Systeme.',
+      tag: 'Service'
     }
   ];
 
