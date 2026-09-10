@@ -38,13 +38,13 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
       
       {/* Modal Card */}
       <div 
-        className="relative w-full max-w-3xl max-h-[88vh] bg-[#0e1626] border border-[#1e2c4a] text-slate-200 rounded-3xl shadow-2xl flex flex-col z-10 overflow-hidden"
+        className="relative w-full max-w-3xl max-h-[88vh] bg-[#111114] border border-white/10 text-zinc-200 rounded-3xl shadow-2xl flex flex-col z-10 overflow-hidden"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#1e2c4a] bg-[#080c14]">
+        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/10 bg-[#09090b]">
           <div className="flex items-center gap-2.5">
             <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
               {type === 'impressum' ? <Scale className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
