@@ -7,8 +7,8 @@ interface MinimalHeroProps {
 }
 
 export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
-  const scrollToArchitecture = () => {
-    const el = document.getElementById('architektur');
+  const scrollToServices = () => {
+    const el = document.getElementById('angebot');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -28,7 +28,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
         {/* Monospace System Tag */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-950/20 text-emerald-400 text-[11px] font-mono tracking-widest uppercase mb-6 sm:mb-8 shadow-[0_0_15px_rgba(16,185,129,0.08)]">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Entwickler &amp; Designer</span>
+          <span>Webdesign &amp; Prozess-Automation</span>
           <span className="text-zinc-600">•</span>
           <span className="text-zinc-400">Köln / Kerpen &amp; Remote</span>
         </div>
@@ -39,14 +39,14 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           {/* Main Statement */}
           <div className="lg:col-span-8 flex flex-col">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-sans font-semibold tracking-[-0.035em] text-white leading-[1.1] text-balance">
-              Websites &amp; automatisierte Prozesse.
+              Webdesign &amp; Prozess-Automation.
             </h1>
 
             <p className="mt-4 sm:mt-8 text-base sm:text-xl text-zinc-300 font-sans leading-relaxed max-w-2xl text-pretty">
-              Ich baue schnelle Websites und automatisiere die Abläufe dahinter. Designer und Programmierer in einer Person — ohne Agentur-Wasserkopf, ohne 40 WordPress-Plugins und ohne Stille-Post-Management.
+              Zwei spezialisierte Schwerpunkte: Ich entwickle kompromisslos schnelle Websites und automatisiere interne Unternehmensprozesse mit n8n, APIs und Webhooks. Beide Bereiche kannst du unabhängig oder kombiniert buchen.
             </p>
 
-            {/* CTAs with Mobile Optimization */}
+            {/* CTAs */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenContact}
@@ -57,10 +57,10 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
               </button>
 
               <button
-                onClick={scrollToArchitecture}
+                onClick={scrollToServices}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-emerald-500/30 text-zinc-200 font-mono text-xs uppercase tracking-wider font-medium active:scale-[0.98] transition-all cursor-pointer min-h-[48px]"
               >
-                <span>System-Architektur</span>
+                <span>Leistungen ansehen</span>
                 <ArrowDown className="w-4 h-4" />
               </button>
             </div>
@@ -88,7 +88,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
               <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/[0.08]">
                 <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-                  „Eine Website bringt wenig, wenn Anfragen im Postfach verstauben. Ich verbinde sauberes Design mit automatisierten Abläufen.“
+                  „Kein Agentur-Wasserkopf: Ich baue moderne Websites für deinen Auftritt und automatisiere interne Arbeitsabläufe in deinen Systemen.“
                 </p>
               </div>
             </div>
@@ -96,41 +96,41 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
         </div>
 
-        {/* 4 Honest Baseline Guarantees */}
+        {/* 4 Core Focus Benchmarks */}
         <div className="mt-12 sm:mt-20 pt-6 sm:pt-8 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-white tracking-tight">
-              &lt; 0.5s
+              Webdesign
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Ladezeit Mobil &amp; Desktop
+              React &bull; Schnell &bull; Mobil
+            </div>
+          </div>
+
+          <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
+            <div className="text-xl sm:text-3xl font-mono font-bold text-emerald-400 tracking-tight">
+              n8n &amp; APIs
+            </div>
+            <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
+              Prozess- &amp; Workflow-Automation
             </div>
           </div>
 
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-white tracking-tight">
-              100%
-            </div>
-            <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Dein Code (Volle Rechte &amp; Git)
-            </div>
-          </div>
-
-          <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
-            <div className="text-xl sm:text-3xl font-mono font-bold text-emerald-400 tracking-tight">
               1:1
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Direktkontakt zum Entwickler
+              Direkt mit dem Entwickler
             </div>
           </div>
 
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-emerald-400 tracking-tight">
-              DSGVO
+              Service
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Ohne Cookie-Banner-Zwang
+              Laufende Wartung &amp; Betreuung
             </div>
           </div>
         </div>

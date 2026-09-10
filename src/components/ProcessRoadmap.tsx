@@ -5,31 +5,31 @@ export default function ProcessRoadmap() {
   const steps = [
     {
       num: '01',
-      title: 'Erstgespräch & Vorprüfung',
+      title: 'Scope & Bedarfsanalyse',
       timeframe: 'Tag 1–3',
-      desc: 'Wir sprechen 20–30 Minuten via Videocall oder Telefon. Wir klären, was du brauchst, welche Tools du nutzt und wo Automatisierung Sinn macht.',
-      deliverables: ['Anforderungs-Check', 'Konkrete Machbarkeitsprüfung', 'Transparenter Festpreis']
+      desc: 'Wir sprechen 20–30 Minuten via Videocall oder Telefon. Wir definieren den konkreten Schwerpunkt: Reines Webdesign, interne Prozess-Automation oder beides kombiniert.',
+      deliverables: ['Präzise Zieldefinition', 'Technische Machbarkeitsprüfung', 'Transparenter Festpreis']
     },
     {
       num: '02',
-      title: 'Design & Prototyp',
+      title: 'Konzeption & Architektur',
       timeframe: 'Woche 1',
-      desc: 'Ich erstelle einen klaren, reduzierten Entwurf. Keine endlosen Schleifen, sondern ein abgestimmtes Layout, das du direkt im Browser begutachten kannst.',
-      deliverables: ['Interaktiver Layout-Entwurf', 'Struktur der Inhaltsblöcke', 'Festlegung der Formulardaten']
+      desc: 'Bei Webdesign: Struktur, Typografie und interaktiver Entwurf im Browser. Bei Prozessen: Mapping der Datenfelder und APIs zwischen deinen bestehenden Tools.',
+      deliverables: ['Layout- oder Workflow-Konzept', 'Definition aller Schnittstellen', 'Direktes Feedback ohne Schleifen']
     },
     {
       num: '03',
-      title: 'Code & Automation',
+      title: 'Umsetzung & Setup',
       timeframe: 'Woche 2–3',
-      desc: 'Umsetzung mit modernem React und Tailwind. Parallel richte ich die n8n-Workflows ein, damit Formulareingaben fehlerfrei in deinen Zieltools landen.',
-      deliverables: ['Handgeschriebenes Frontend', 'Verdrahtete Webhook-Pipelines', 'DSGVO-Basiskonfiguration']
+      desc: 'Bei Webdesign: Kompromisslos schneller React- und Tailwind-Code. Bei Prozessen: Aufbau und Testen der n8n-Workflows, Webhooks und Benachrichtigungen.',
+      deliverables: ['Saubere Code-Basis / n8n-Nodes', 'Umfassende Praxistests', 'DSGVO-konforme Datenwege']
     },
     {
       num: '04',
-      title: 'Launch & Übergabe',
+      title: 'Go-Live, Übergabe & Wartung',
       timeframe: 'Woche 4',
-      desc: 'Finale Prüfung aller Abläufe, Live-Schaltung auf deiner Domain und Übergabe des vollständigen Codes. Du hast ab Tag 1 die volle Kontrolle.',
-      deliverables: ['Live-Schaltung auf deiner Domain', 'Git-Repository-Zugang', 'Kurze Video-Einweisung']
+      desc: 'Live-Schaltung auf deiner Domain bzw. Aktivierung der Pipelines im Produktivbetrieb. Vollständige Übergabe aller Zugänge plus optionaler monatlicher Wartungsservice.',
+      deliverables: ['Produktivbetrieb ab Tag 1', 'Volle Kontrolle & alle Zugänge', 'Optionale monatliche Betreuung']
     }
   ];
 
@@ -46,7 +46,7 @@ export default function ProcessRoadmap() {
             Klarer Ablauf. Keine Hängepartie.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            In 4 Schritten von der Idee zur fertigen Website mit funktionierenden Prozessen.
+            Ob neue Website, interne Prozess-Automation oder das kombinierte Gesamtpaket: In 4 Phasen vom ersten Gespräch bis zum reibungslosen Produktivbetrieb.
           </p>
         </div>
 

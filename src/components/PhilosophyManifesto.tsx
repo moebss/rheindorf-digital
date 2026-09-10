@@ -16,14 +16,14 @@ export default function PhilosophyManifesto() {
     },
     {
       index: '03',
-      title: 'Prozesse statt Abtippen.',
-      desc: 'Eine Website muss Arbeit abnehmen, nicht neue erzeugen. Formulare werden automatisch validiert und direkt an dein CRM, Slack oder E-Mail-Postfach übergeben.',
+      title: 'Automation statt Copy-Paste.',
+      desc: 'Wiederkehrende Datenübertragungen zwischen CRM, E-Mail, Buchhaltung und Tools gehören automatisiert. Software soll deinen Alltag entlasten — verlässlich, lautlos und ohne manuelle Fleißarbeit.',
       tag: 'Effizienz'
     },
     {
       index: '04',
-      title: 'Verlässliche Partnerschaft.',
-      desc: 'Nach dem Launch lasse ich dich nicht allein. Auf Wunsch übernehme ich die monatliche Wartung, technisches Monitoring und die stetige Weiterentwicklung deiner Systeme.',
+      title: 'Verlässliche Partnerschaft & Wartung.',
+      desc: 'Nach dem Projektstart lasse ich dich nicht allein. Ob monatliche Pflege deiner Website oder laufendes Monitoring und Ausbau deiner n8n-Workflows: Ich halte deine Systeme dauerhaft stabil.',
       tag: 'Service'
     }
   ];

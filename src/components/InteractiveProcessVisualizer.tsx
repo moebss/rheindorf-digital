@@ -17,95 +17,95 @@ interface Scenario {
 export default function InteractiveProcessVisualizer() {
   const scenarios: Scenario[] = [
     {
-      id: 'lead-routing',
-      title: 'Anfrage & CRM-Sync',
-      tag: 'Vertrieb & Intake',
-      description: 'Ein Interessent stellt eine strukturierte Anfrage. Das System prüft die Daten, legt den Kontakt im CRM an und benachrichtigt dich sofort auf dem Smartphone.',
+      id: 'internal-crm',
+      title: 'CRM- & Kontakt-Sync',
+      tag: 'Interne Tool-Automation',
+      description: 'Neue Kontakte aus Terminen, E-Mails oder Partner-Portalen werden automatisch im CRM synchronisiert, angereichert und dem richtigen Status zugewiesen – ganz ohne neue Website.',
       nodes: [
         {
-          title: '01 / Eingabe',
-          system: 'React Formular',
-          action: 'Strukturierte Erfassung von Scope, Timeline und Kontaktdaten'
+          title: '01 / Ereignis',
+          system: 'Cal.com / Mail-Intake',
+          action: 'Neuer Termin oder Kontaktanfrage trifft im System ein'
         },
         {
           title: '02 / Automation',
-          system: 'n8n Webhook',
-          action: 'Echtzeit-Validierung und Aufbereitung der Formulardaten'
+          system: 'n8n Workflow Engine',
+          action: 'Duplikatsprüfung, Adressvalidierung und Datenanreicherung'
         },
         {
-          title: '03 / CRM Sync',
+          title: '03 / CRM Update',
           system: 'Notion / HubSpot',
-          action: 'Automatisches Erstellen von Kontaktkarte und Deal-Eintrag'
+          action: 'Automatisches Anlegen von Kontaktkarte und nächstem To-Do'
         },
         {
-          title: '04 / Alert',
+          title: '04 / Benachrichtigung',
           system: 'Slack / WhatsApp',
-          action: 'Sofortige Benachrichtigung mit allen Details aufs Smartphone'
+          action: 'Sofortige Zusammenfassung aller Details auf dein Smartphone'
         }
       ],
-      benefit: 'Kein Copy-Paste aus E-Mails • Sofortige Erfassung aller Kontaktdaten'
+      benefit: 'Kein Copy-Paste zwischen Postfach und CRM • 100% Datenkonsistenz'
     },
     {
-      id: 'onboarding',
-      title: 'Kunden-Onboarding',
-      tag: 'Projektstart & Übergabe',
-      description: 'Nach Projektzusage wird automatisch ein gemeinsamer Projekt-Workspace erstellt und der Kunde erhält alle Unterlagen ohne manuelles Versenden.',
+      id: 'internal-finance',
+      title: 'Beleg- & Rechnungs-Flow',
+      tag: 'Interne Büro-Automation',
+      description: 'Eingegangene Rechnungen und Belege werden automatisch aus Mails oder Cloud-Ordnern extrahiert, im Buchhaltungstool abgelegt und für den Steuerberater vorbereitet.',
       nodes: [
         {
-          title: '01 / Zusage',
-          system: 'Auftragsbestätigung',
-          action: 'Auslösen des Workflows nach digitaler Freigabe'
+          title: '01 / Eingang',
+          system: 'Mail-Postfach / Drive',
+          action: 'PDF-Rechnung trifft ein oder wird in Cloud-Ordner gelegt'
         },
         {
-          title: '02 / Workspace',
-          system: 'Notion / Drive API',
-          action: 'Automatisches Anlegen von Projekt-Board und Asset-Ordner'
+          title: '02 / Auslesen',
+          system: 'n8n Parser & OCR',
+          action: 'Automatische Erkennung von Rechnungsbetrag, Datum & USt-ID'
         },
         {
-          title: '03 / Briefing',
-          system: 'Auto-E-Mail',
-          action: 'Kunde erhält Upload-Link für Texte, Bilder und Zugangsdaten'
+          title: '03 / Buchhaltung',
+          system: 'Lexoffice / SevDesk',
+          action: 'Beleg wird automatisch zugeordnet und verbucht'
         },
         {
-          title: '04 / Status',
-          system: 'Team-Ping',
-          action: 'Projekt auf Status „In Vorbereitung“ gesetzt'
+          title: '04 / Ablage',
+          system: 'Archiv / Steuer-Export',
+          action: 'Monatsordner aktualisiert und Freigabe-Ping versendet'
         }
       ],
-      benefit: 'Reibungsloser Start ohne langes Hin- und Herschreiben'
+      benefit: 'Nie wieder am Monatsende Quittungen und PDFs zusammensuchen'
     },
     {
-      id: 'quote-configurator',
-      title: 'Projekt-Konfigurator',
-      tag: 'Kundenführung',
-      description: 'Kunden wählen ihren Bedarf interaktiv aus und erhalten eine saubere Zusammenfassung statt einer vagen Anfrage ohne Details.',
+      id: 'integrated-web',
+      title: 'Website-to-CRM Intake',
+      tag: 'Kombiniertes System (Web + Prozess)',
+      description: 'Wenn Website und Automation kombiniert werden: Formulardaten auf deiner Website werden in Echtzeit geprüft und direkt in deine bestehenden Arbeitstools übergeben.',
       nodes: [
         {
-          title: '01 / Auswahl',
-          system: 'Interaktiver Slider',
-          action: 'Kunde wählt gewünschte Features und Integrationen'
+          title: '01 / Anfrage',
+          system: 'React Frontend Formular',
+          action: 'Strukturierte Erfassung von Projektumfang und Kontaktdaten'
         },
         {
-          title: '02 / Logik',
-          system: 'Berechnungs-Engine',
-          action: 'Automatische Zusammenstellung der Projektbausteine'
+          title: '02 / Webhook',
+          system: 'n8n Webhook API',
+          action: 'Echtzeit-Validierung und Spam-Filterung ohne lästige Captchas'
         },
         {
-          title: '03 / Übergabe',
-          system: 'Webhook API',
-          action: 'Gefilterte Übertragung der Parameter an dein Backend'
+          title: '03 / Workspace',
+          system: 'Notion / Pipeline',
+          action: 'Projektordner wird angelegt und Status auf „Neu“ gesetzt'
         },
         {
-          title: '04 / Dossier',
-          system: 'Erstgesprächs-Briefing',
-          action: 'Du gehst mit klaren Anforderungen in das erste Telefonat'
+          title: '04 / Sofort-Alert',
+          system: 'Push / Messenger',
+          action: 'Kunde erhält Bestätigung; du wirst sekundenschnell alarmiert'
         }
       ],
-      benefit: 'Vollständige Anforderungsprofile statt unpräziser E-Mails'
+      benefit: 'Website und interne Tools arbeiten als geschlossene Einheit'
     }
   ];
 
-  const [activeScenarioId, setActiveScenarioId] = useState<string>('lead-routing');
+  const [activeScenarioId, setActiveScenarioId] = useState<string>('internal-crm');
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
   const [simulationFinished, setSimulationFinished] = useState<boolean>(false);
@@ -139,13 +139,13 @@ export default function InteractiveProcessVisualizer() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
-            [ SYSTEM-ARCHITEKTUR &amp; WORKFLOWS ]
+            [ PRAXIS-BEISPIELE &amp; WORKFLOWS ]
           </span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
-            Wie Website &amp; Prozesse ineinandergreifen.
+            Automatisierung in der Praxis.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Keine Theorie: Wähle ein typisches Szenario und starte die Simulation, um den Datenfluss zwischen Webformular und Backend-Tools live zu sehen.
+            Ob interne Workflows zwischen deinen bestehenden Tools (Notion, Buchhaltung, CRM) oder die direkte Anbindung an eine neue Website: Hier siehst du, wie n8n und APIs manuelle Arbeit im Hintergrund eliminieren.
           </p>
         </div>
 
@@ -269,7 +269,9 @@ export default function InteractiveProcessVisualizer() {
             </div>
 
             <div className="text-xs font-mono text-zinc-500">
-              Tech-Stack: <span className="text-emerald-400 font-semibold">React + n8n + Webhooks</span>
+              Tech-Stack: <span className="text-emerald-400 font-semibold">
+                {activeScenarioId === 'integrated-web' ? 'React + n8n + Webhooks' : 'n8n Engine + REST-APIs & Webhooks'}
+              </span>
             </div>
           </div>
 

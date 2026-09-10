@@ -73,7 +73,7 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
             onClick={() => scrollToSection('architektur')} 
             className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
           >
-            System-Architektur
+            Workflows
           </button>
           <button 
             onClick={() => scrollToSection('prinzipien')} 
@@ -140,8 +140,8 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
               onClick={() => scrollToSection('architektur')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
             >
-              <span>02 — System-Architektur</span>
-              <span className="text-zinc-600 text-xs">Workflows</span>
+              <span>02 — Workflows</span>
+              <span className="text-zinc-600 text-xs">Automation</span>
             </button>
 
             <button 

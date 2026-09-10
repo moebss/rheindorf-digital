@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowUpRight, Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 
 export default function MinimalInquiry() {
-  const [selectedScope, setSelectedScope] = useState<string>('full-system');
+  const [selectedScope, setSelectedScope] = useState<string>('webdesign');
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -12,10 +12,10 @@ export default function MinimalInquiry() {
   });
 
   const scopes = [
-    { id: 'webdesign', label: 'Website / Web-App' },
-    { id: 'automation', label: 'Prozess-Automation' },
-    { id: 'full-system', label: 'Beides kombiniert' },
-    { id: 'maintenance', label: 'Laufende Wartung & Support' }
+    { id: 'webdesign', label: 'Website / Web-App', sub: 'Design & schnelles Frontend' },
+    { id: 'automation', label: 'Prozess-Automation', sub: 'n8n & Schnittstellen' },
+    { id: 'full-system', label: 'Beides kombiniert', sub: 'Website + interne Workflows' },
+    { id: 'maintenance', label: 'Laufende Wartung', sub: 'Monitoring & Support' }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -77,13 +77,14 @@ export default function MinimalInquiry() {
                         key={s.id}
                         type="button"
                         onClick={() => setSelectedScope(s.id)}
-                        className={`p-3 min-h-[44px] rounded-xl text-left font-mono text-xs transition-all border cursor-pointer ${
+                        className={`p-3 min-h-[50px] rounded-xl text-left font-mono transition-all border cursor-pointer flex flex-col justify-center ${
                           selectedScope === s.id
                             ? 'bg-emerald-950/60 border-emerald-500 text-emerald-300 font-bold shadow-[0_0_15px_rgba(16,185,129,0.15)]'
                             : 'bg-[#09090b] text-zinc-400 border-white/10 hover:border-white/20 hover:text-white'
                         }`}
                       >
-                        {s.label}
+                        <span className="text-xs">{s.label}</span>
+                        <span className="text-[10px] text-zinc-400 font-sans mt-0.5">{s.sub}</span>
                       </button>
                     ))}
                   </div>
