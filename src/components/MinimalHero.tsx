@@ -80,7 +80,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 <img 
                   src={heroPortrait} 
                   alt="Alexander Rheindorf" 
-                  className="w-full h-full object-cover grayscale contrast-110 hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover object-[center_18%] hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111114] via-transparent to-transparent opacity-60" />
                 

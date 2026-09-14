@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Mail, Phone, MapPin, CheckCircle2 } from 'lucide-react';
+import alexanderProfileImg from '../images/profile.jpg';
 
 export default function MinimalInquiry() {
   const [selectedScope, setSelectedScope] = useState<string>('webdesign');
@@ -164,6 +165,21 @@ export default function MinimalInquiry() {
             
             {/* Direct Channels Card */}
             <div className="rounded-3xl border border-white/[0.08] bg-[#111114] p-5 sm:p-8 space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3.5 pb-4 border-b border-white/[0.08]">
+                <div className="relative">
+                  <img
+                    src={alexanderProfileImg}
+                    alt="Alexander Rheindorf"
+                    className="w-12 h-12 rounded-xl object-cover object-[center_18%] border border-emerald-500/40 shadow-md shadow-emerald-500/10"
+                  />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#111114]" />
+                </div>
+                <div>
+                  <div className="text-sm font-sans font-semibold text-white">Alexander Rheindorf</div>
+                  <div className="text-[11px] font-mono text-emerald-400">Direkter Ansprechpartner • Inhaber</div>
+                </div>
+              </div>
+
               <div className="text-xs font-mono uppercase tracking-widest text-zinc-500">
                 Direktkontakt
               </div>
