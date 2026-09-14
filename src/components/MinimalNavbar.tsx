@@ -62,24 +62,30 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           <button 
             onClick={() => scrollToSection('angebot')} 
             className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
           >
-            Angebot
+            Leistungen
           </button>
           <button 
-            onClick={() => scrollToSection('architektur')} 
+            onClick={() => scrollToSection('portfolio')} 
             className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
           >
-            Workflows
+            Case Studies
           </button>
           <button 
-            onClick={() => scrollToSection('prinzipien')} 
+            onClick={() => scrollToSection('vergleich')} 
             className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
           >
-            Prinzipien
+            Standard
+          </button>
+          <button 
+            onClick={() => scrollToSection('rechner')} 
+            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
+          >
+            ROI-Cockpit
           </button>
           <button 
             onClick={() => scrollToSection('ablauf')} 
@@ -103,7 +109,7 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
             onClick={onOpenContact}
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 text-zinc-950 text-xs font-mono uppercase tracking-wider font-bold hover:from-emerald-300 hover:to-emerald-400 transition-all cursor-pointer shadow-md shadow-emerald-500/20 active:scale-[0.98]"
           >
-            <span>Projekt anfragen</span>
+            <span>Audit anfragen</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -119,45 +125,48 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
 
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[61px] bottom-0 bg-[#09090b]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-6 flex flex-col justify-between overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200 z-50">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-xs font-mono text-emerald-400 w-fit mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Verfügbar für Projekte</span>
-            </div>
-
+        <div className="md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#09090b]/98 backdrop-blur-2xl border-t border-white/10 px-6 py-8 flex flex-col justify-between overflow-y-auto z-50">
+          <div className="space-y-2">
             <button 
               onClick={() => scrollToSection('angebot')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
             >
-              <span>01 — Angebot</span>
+              <span>01 — Leistungen</span>
               <span className="text-zinc-600 text-xs">Web &amp; Automation</span>
             </button>
 
             <button 
-              onClick={() => scrollToSection('architektur')} 
+              onClick={() => scrollToSection('portfolio')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
             >
-              <span>02 — Workflows</span>
-              <span className="text-zinc-600 text-xs">Automation</span>
+              <span>02 — Case Studies</span>
+              <span className="text-zinc-600 text-xs">Echte Projekte</span>
             </button>
 
             <button 
-              onClick={() => scrollToSection('prinzipien')} 
+              onClick={() => scrollToSection('vergleich')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
             >
-              <span>03 — Prinzipien</span>
-              <span className="text-zinc-600 text-xs">Klartext</span>
+              <span>03 — Der Standard</span>
+              <span className="text-zinc-600 text-xs">vs. Agentur</span>
+            </button>
+
+            <button 
+              onClick={() => scrollToSection('rechner')} 
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
+            >
+              <span>04 — ROI-Cockpit</span>
+              <span className="text-zinc-600 text-xs">Diagnostik</span>
             </button>
 
             <button 
               onClick={() => scrollToSection('ablauf')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
             >
-              <span>04 — Ablauf</span>
-              <span className="text-zinc-600 text-xs">4 Wochen</span>
+              <span>05 — Ablauf</span>
+              <span className="text-zinc-600 text-xs">4 Phasen</span>
             </button>
           </div>
 

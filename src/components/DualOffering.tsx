@@ -39,7 +39,7 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
-              [ ZWEI UNABHÄNGIGE LEISTUNGSBEREICHE ]
+              Zwei spezialisierte Leistungsbereiche
             </span>
             <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
               Webdesign &amp; Prozesse.

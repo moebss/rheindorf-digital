@@ -64,11 +64,14 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
   const current = studies[activeTab] || studies['nawrath-bad'];
 
   return (
-    <section id="case-study" className="border-b border-white/15 bg-[#050505] text-white">
+    <section id="portfolio" className="border-b border-white/[0.07] bg-[#09090b] text-white">
       
       {/* Project Switcher Bar */}
-      <div className="flex items-center gap-2 px-6 py-3 bg-[#0A0A0A] border-b border-white/10 overflow-x-auto no-scrollbar font-mono text-xs">
-        <span className="text-[#D4FF00] font-bold mr-2 uppercase tracking-wider">// CASE STUDY AUSWÄHLEN:</span>
+      <div className="flex items-center gap-2 px-6 py-4 bg-[#111114] border-b border-white/[0.08] overflow-x-auto no-scrollbar font-mono text-xs">
+        <span className="text-emerald-400 font-bold mr-2 uppercase tracking-wider text-[11px] flex items-center gap-1.5 shrink-0">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Ausgewählte Arbeiten:
+        </span>
         {Object.keys(studies).map((key) => (
           <button
             key={key}
@@ -77,11 +80,10 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
               playClickSound();
             }}
             onMouseEnter={playHoverSound}
-            data-cursor="pointer"
-            className={`px-4 py-1.5 rounded transition-all cursor-pointer whitespace-nowrap font-bold ${
+            className={`px-4 py-2 rounded-xl transition-all cursor-pointer whitespace-nowrap font-mono text-xs uppercase tracking-wider ${
               activeTab === key
-                ? 'bg-[#D4FF00] text-black shadow-md'
-                : 'bg-white/5 text-slate-400 hover:text-white'
+                ? 'bg-emerald-500 text-zinc-950 font-bold shadow-md shadow-emerald-500/20'
+                : 'bg-white/[0.03] text-zinc-400 hover:text-white border border-white/5 hover:border-white/20'
             }`}
           >
             {studies[key].title.split(' ')[0]} {studies[key].title.split(' ')[1] || ''}
@@ -91,87 +93,85 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
 
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
         
-        {/* 1. Left Acid Lime Vertical Block */}
-        <div className="lg:col-span-2 bg-[#D4FF00] text-black p-6 sm:p-8 flex flex-col justify-between items-start border-b lg:border-b-0 lg:border-r border-black select-none">
-          <div className="space-y-1">
-            <h3 className="font-anton text-4xl sm:text-5xl lg:text-6xl tracking-tight uppercase leading-[0.85]">
-              CASE <br />
-              STUDY
+        {/* 1. Left Editorial Label Block */}
+        <div className="lg:col-span-2 bg-[#0d0d10] text-white p-6 sm:p-8 flex flex-col justify-between items-start border-b lg:border-b-0 lg:border-r border-white/[0.08] select-none">
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-bold">
+              Case Study
+            </span>
+            <h3 className="font-sans font-bold text-3xl sm:text-4xl tracking-tight uppercase leading-[0.95] text-white">
+              Real <br />
+              Proof.
             </h3>
           </div>
 
-          <div className="text-4xl font-black mt-8">
-            ↗
+          <div className="text-2xl font-mono text-emerald-400 mt-8 hidden lg:block">
+            0{Object.keys(studies).indexOf(activeTab) + 1}
           </div>
         </div>
 
         {/* 2. Middle Visual Screenshot Block */}
-        <div className="lg:col-span-4 p-6 sm:p-8 bg-[#0F0F0F] border-b lg:border-b-0 lg:border-r border-white/15 flex items-center justify-center">
-          <div className="w-full rounded-lg overflow-hidden border border-white/20 bg-black shadow-2xl relative group">
+        <div className="lg:col-span-5 p-6 sm:p-8 bg-[#111114] border-b lg:border-b-0 lg:border-r border-white/[0.08] flex items-center justify-center">
+          <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl relative group">
             <img
               src={current.img}
               alt={current.title}
               className="w-full aspect-[4/3] object-cover object-top group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
         </div>
 
         {/* 3. Breakdown Details Block */}
-        <div className="lg:col-span-5 p-6 sm:p-8 md:p-10 flex flex-col justify-between space-y-6 bg-[#0A0A0A]">
+        <div className="lg:col-span-4 p-6 sm:p-8 md:p-10 flex flex-col justify-between space-y-6 bg-[#0d0d10]">
           <div>
-            <span className="font-mono text-[10px] text-[#D4FF00] font-bold uppercase tracking-widest block mb-1">
+            <span className="font-mono text-[11px] text-emerald-400 font-bold uppercase tracking-widest block mb-2">
               {current.category}
             </span>
-            <h4 className="font-anton text-2xl sm:text-3xl text-white uppercase tracking-wide">
+            <h4 className="font-sans text-xl sm:text-2xl font-semibold text-white tracking-tight">
               {current.title}
             </h4>
           </div>
 
           {/* 3 Pillars: Challenge, Solution, Result */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-xs font-mono">
+          <div className="space-y-4 pt-4 border-t border-white/[0.08] text-xs font-sans">
             
-            <div className="space-y-2">
-              <div className="w-7 h-7 rounded bg-[#0044FF] text-white flex items-center justify-center font-bold">
-                🎯
-              </div>
-              <span className="font-bold text-white uppercase block text-[11px]">THE CHALLENGE</span>
-              <p className="text-slate-400 text-[11px] leading-relaxed">
+            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+              <span className="font-mono font-bold text-rose-400 uppercase block text-[10px] tracking-wider mb-1">
+                Ausgangssituation &amp; Problem:
+              </span>
+              <p className="text-zinc-400 text-xs leading-relaxed">
                 {current.challenge}
               </p>
             </div>
 
-            <div className="space-y-2">
-              <div className="w-7 h-7 rounded bg-[#0044FF] text-white flex items-center justify-center font-bold">
-                ⚡
-              </div>
-              <span className="font-bold text-white uppercase block text-[11px]">THE SOLUTION</span>
-              <p className="text-slate-400 text-[11px] leading-relaxed">
+            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+              <span className="font-mono font-bold text-emerald-400 uppercase block text-[10px] tracking-wider mb-1">
+                Architektur &amp; Lösung:
+              </span>
+              <p className="text-zinc-300 text-xs leading-relaxed">
                 {current.solution}
               </p>
             </div>
 
-            <div className="space-y-2">
-              <div className="w-7 h-7 rounded bg-[#D4FF00] text-black flex items-center justify-center font-bold">
-                🚀
-              </div>
-              <span className="font-bold text-[#D4FF00] uppercase block text-[11px]">THE RESULT</span>
-              <p className="text-slate-300 text-[11px] leading-relaxed font-semibold">
+            <div className="p-3 rounded-xl bg-emerald-950/20 border border-emerald-500/25">
+              <span className="font-mono font-bold text-emerald-300 uppercase block text-[10px] tracking-wider mb-1">
+                Messbares Ergebnis:
+              </span>
+              <p className="text-white text-xs leading-relaxed font-semibold">
                 {current.result}
               </p>
             </div>
 
           </div>
 
-          <div className="pt-4 flex items-center gap-3">
+          <div className="pt-2 flex items-center gap-3">
             <button
               onClick={() => {
                 playSuccessSound();
                 onOpenContact();
               }}
-              onMouseEnter={playHoverSound}
-              data-cursor="pointer"
-              className="neo-btn-lime text-xs"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
             >
               <span>Projekt anfragen</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -179,21 +179,19 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
           </div>
         </div>
 
-        {/* 4. Right Vertical Cobalt Blue Action Bar */}
+        {/* 4. Right Vertical Action Bar */}
         <a
           href={current.liveUrl}
           target="_blank"
           rel="noreferrer"
           onClick={playSuccessSound}
-          onMouseEnter={playHoverSound}
-          data-cursor="pointer"
-          className="lg:col-span-1 bg-[#0044FF] hover:bg-[#1D4ED8] text-white p-6 flex lg:flex-col items-center justify-between transition-colors cursor-pointer text-center group"
+          className="lg:col-span-1 bg-[#151518] hover:bg-emerald-950/40 hover:border-emerald-500/40 border-t lg:border-t-0 lg:border-l border-white/[0.08] text-white p-6 flex lg:flex-col items-center justify-between transition-all cursor-pointer text-center group"
           title="Live-Projekt im neuen Tab öffnen"
         >
-          <span className="font-anton text-lg tracking-wider uppercase lg:[writing-mode:vertical-rl] lg:rotate-180 select-none">
-            VIEW PROJECT
+          <span className="font-mono text-xs font-bold tracking-wider uppercase lg:[writing-mode:vertical-rl] lg:rotate-180 select-none text-zinc-400 group-hover:text-emerald-300 transition-colors">
+            Live-Demo ansehen ↗
           </span>
-          <ArrowUpRight className="w-6 h-6 group-hover:scale-125 transition-transform" />
+          <ArrowUpRight className="w-5 h-5 text-emerald-400 group-hover:scale-125 transition-transform" />
         </a>
 
       </div>

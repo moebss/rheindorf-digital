@@ -30,32 +30,34 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="kundenstimmen" className="py-24 sm:py-32 bg-[#030712] border-t border-white/10 relative overflow-hidden">
+    <section id="kundenstimmen" className="py-20 sm:py-32 bg-[#09090b] border-t border-white/[0.07] relative overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/3 w-[600px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 space-y-4">
           <div className="luxury-pill mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>// Kundenstimmen & Feedback</span>
+            <span>Kundenstimmen &amp; Feedback</span>
           </div>
 
-          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
-            Was lokale Inhaber über <br />
-            <span className="text-emerald-400">Rheindorf Digital</span> sagen.
+          <h2 className="font-sans font-semibold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+            Was Inhaber über <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">
+              Rheindorf Digital
+            </span> sagen.
           </h2>
 
-          <p className="font-mono text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto">
-            Echte Bewertungen von Betrieben, die mit handcodierten Systemen online messbar gewachsen sind.
+          <p className="font-sans text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+            Echte Erfahrungen von Betrieben und Unternehmen, die mit maßgeschneiderten Systemen online messbar gewachsen sind.
           </p>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {reviews.map((rev, idx) => (
             <div
               key={idx}

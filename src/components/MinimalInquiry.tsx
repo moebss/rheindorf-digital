@@ -30,13 +30,13 @@ export default function MinimalInquiry() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
-            [ KONTAKT ]
+            Unverbindliche Erstberatung
           </span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
-            Projekt anfragen oder kurz sprechen.
+            15-Min. System-Audit oder Projekt anfragen.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Schreib mir eine Nachricht oder melde dich direkt per WhatsApp oder Anruf. Ich antworte dir verlässlich innerhalb von 24 Stunden.
+            Schreib mir kurz, wo dein Engpass liegt (Website-Performance, Absprungraten oder zeitraubende manuelle Büro-Workflows). Ich analysiere deine Situation und melde mich innerhalb von 24 Stunden mit konkreten Hebeln bei dir.
           </p>
         </div>
 

@@ -45,15 +45,15 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
   ];
 
   return (
-    <section id="vergleich" className="py-24 sm:py-32 bg-[#030712] relative overflow-hidden border-t border-white/10">
+    <section id="vergleich" className="py-20 sm:py-32 bg-[#09090b] relative overflow-hidden border-t border-white/[0.07]">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 right-10 w-[550px] h-[450px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Split Sticky Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
           {/* Left Column (Sticky Headline & Studio Overview) */}
           <div className="lg:col-span-5 space-y-8">
@@ -61,35 +61,35 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
               
               <div className="luxury-pill">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>// Der Qualitäts-Standard</span>
+                <span>Der Qualitäts-Standard</span>
               </div>
 
-              <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.05]">
+              <h2 className="font-sans font-semibold text-3xl sm:text-5xl text-white tracking-tight leading-[1.1]">
                 Der Rheindorf Standard vs. <br />
-                <span className="text-slate-400">08/15 Agenturen.</span>
+                <span className="text-zinc-400">08/15 Agenturen.</span>
               </h2>
 
-              <p className="font-mono text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Warum zukunftsorientierte Handwerker & Dienstleister in Köln & NRW auf maßgeschneiderte Headless-Architektur und KI-Voice setzen, statt sich mit veralteten Baukästen abspeisen zu lassen.
+              <p className="font-sans text-sm sm:text-base text-zinc-300 leading-relaxed">
+                Warum anspruchsvolle Unternehmen im Rheinland und remote auf performante React-Architektur und automatisierte Backend-Pipelines setzen, statt sich mit veralteten WordPress-Baukästen und Junior-Zwischenstufen abspeisen zu lassen.
               </p>
 
-              <div className="p-6 rounded-3xl bg-[#070D1B] border border-white/10 space-y-4">
+              <div className="p-6 rounded-3xl bg-[#111114] border border-white/[0.08] space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-xs">
                     ✓
                   </div>
-                  <span className="font-display font-bold text-white text-sm">Direkter Inhaber-Kontakt</span>
+                  <span className="font-sans font-bold text-white text-sm">Direkter Senior-Entwickler-Kontakt</span>
                 </div>
-                <p className="text-xs font-mono text-slate-400">
-                  Keine Junior-Projektmanager oder Support-Warteschlangen. Du sprichst direkt mit dem leitenden Entwickler.
+                <p className="text-xs text-zinc-400 font-sans leading-relaxed">
+                  Keine Junior-Projektmanager oder Support-Warteschlangen. Du sprichst und arbeitest direkt mit Alexander Rheindorf.
                 </p>
               </div>
 
               <button
                 onClick={onOpenContact}
-                className="luxury-btn-primary w-full sm:w-auto text-xs"
+                className="luxury-btn-primary w-full sm:w-auto"
               >
-                <span>Jetzt Potenzialanalyse anfordern</span>
+                <span>15-Min. Audit anfordern</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 

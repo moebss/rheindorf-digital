@@ -28,7 +28,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
         {/* Monospace System Tag */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-950/20 text-emerald-400 text-[11px] font-mono tracking-widest uppercase mb-6 sm:mb-8 shadow-[0_0_15px_rgba(16,185,129,0.08)]">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Webdesign &amp; Prozess-Automation</span>
+          <span>Digitale Wertschöpfungs-Systeme</span>
           <span className="text-zinc-600">•</span>
           <span className="text-zinc-400">Köln / Kerpen &amp; Remote</span>
         </div>
@@ -39,11 +39,14 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           {/* Main Statement */}
           <div className="lg:col-span-8 flex flex-col">
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-sans font-semibold tracking-[-0.035em] text-white leading-[1.1] text-balance">
-              Webdesign &amp; Prozess-Automation.
+              High-Performance Frontends.<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">
+                Nahtlos verdrahtet mit Backend-Infrastruktur.
+              </span>
             </h1>
 
             <p className="mt-4 sm:mt-8 text-base sm:text-xl text-zinc-300 font-sans leading-relaxed max-w-2xl text-pretty">
-              Zwei spezialisierte Schwerpunkte: Ich entwickle kompromisslos schnelle Websites und automatisiere interne Unternehmensprozesse mit n8n, APIs und Webhooks. Beide Bereiche kannst du unabhängig oder kombiniert buchen.
+              Ich befreie B2B-Unternehmen und Dienstleister von langsamen Websites und zeitraubender manueller Datenübertragung. Kompromisslos schnelle Web-Plattformen, synchronisiert mit n8n-Workflows und REST-APIs. Direkt vom Senior-Entwickler aus Köln/Kerpen – ohne Agentur-Wasserkopf.
             </p>
 
             {/* CTAs */}
@@ -52,15 +55,19 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 onClick={onOpenContact}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold shadow-lg shadow-emerald-500/25 active:scale-[0.98] transition-all cursor-pointer min-h-[48px]"
               >
-                <span>Projekt anfragen</span>
+                <span>15-Min. System-Audit anfragen</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 
               <button
-                onClick={scrollToServices}
+                onClick={() => {
+                  const el = document.getElementById('rechner');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  else scrollToServices();
+                }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-emerald-500/30 text-zinc-200 font-mono text-xs uppercase tracking-wider font-medium active:scale-[0.98] transition-all cursor-pointer min-h-[48px]"
               >
-                <span>Leistungen ansehen</span>
+                <span>Einsparpotenzial berechnen ↓</span>
                 <ArrowDown className="w-4 h-4" />
               </button>
             </div>
@@ -100,10 +107,10 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
         <div className="mt-12 sm:mt-20 pt-6 sm:pt-8 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-white tracking-tight">
-              Webdesign
+              &lt; 0.4s FCP
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              React &bull; Schnell &bull; Mobil
+              100/100 Google Lighthouse
             </div>
           </div>
 
@@ -118,19 +125,19 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-white tracking-tight">
-              1:1
+              1:1 Senior
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Direkt mit dem Entwickler
+              Direkt mit Alexander Rheindorf
             </div>
           </div>
 
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-emerald-400 tracking-tight">
-              Service
+              100% Code
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Laufende Wartung &amp; Betreuung
+              Volle Übergabe via GitHub
             </div>
           </div>
         </div>

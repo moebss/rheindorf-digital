@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import MinimalNavbar from './components/MinimalNavbar';
 import MinimalHero from './components/MinimalHero';
+import TechBenchmark from './components/TechBenchmark';
 import DualOffering from './components/DualOffering';
-import InteractiveProcessVisualizer from './components/InteractiveProcessVisualizer';
-import PhilosophyManifesto from './components/PhilosophyManifesto';
+import ComparisonMatrix from './components/ComparisonMatrix';
+import NeoCaseStudy from './components/NeoCaseStudy';
+import RoiCalculator from './components/RoiCalculator';
+import Testimonials from './components/Testimonials';
 import ProcessRoadmap from './components/ProcessRoadmap';
 import MinimalInquiry from './components/MinimalInquiry';
 import MinimalFooter from './components/MinimalFooter';
@@ -29,33 +32,42 @@ export default function App() {
       {/* Main Content Flow */}
       <main className="flex-grow">
         
-        {/* 2. Typographic Hero with Positioning Statement & Real Guarantees */}
+        {/* 2. Typographic Hero with Symbiosis Positioning & 15-Min Audit */}
         <MinimalHero onOpenContact={scrollToContact} />
 
-        {/* 3. The Dual Offering: Webdesign & Automation (What I build / What I don't build) */}
+        {/* 3. Google Lighthouse & Speed Benchmark (< 0.4s FCP vs 3.8s WP) */}
+        <TechBenchmark />
+
+        {/* 4. The Dual Offering: Webdesign & Automation */}
         <DualOffering onOpenContact={scrollToContact} />
 
-        {/* 4. Signature Interactive Workflow Simulator (React + n8n + Webhooks) */}
-        <InteractiveProcessVisualizer />
+        {/* 5. Comparison Matrix: Rheindorf Standard vs. 08/15 Agentur */}
+        <ComparisonMatrix onOpenContact={scrollToContact} />
 
-        {/* 5. Four Honest Principles for Solid Software */}
-        <PhilosophyManifesto />
+        {/* 6. Real Proof: Interactive Case Studies with Live Results (AZ Badmanufaktur, Alyas, etc.) */}
+        <NeoCaseStudy onOpenContact={scrollToContact} />
 
-        {/* 6. Realistic 4-Step Process Roadmap */}
+        {/* 7. Automation & Performance Impact Cockpit (ROI Diagnostic) */}
+        <RoiCalculator onOpenContact={scrollToContact} />
+
+        {/* 8. Client Reviews & Social Proof */}
+        <Testimonials />
+
+        {/* 9. Realistic 4-Step Process Roadmap */}
         <ProcessRoadmap />
 
-        {/* 7. Frictionless Scope-Based Inquiry & Direct Contact */}
+        {/* 10. Low-Friction 15-Min. Audit & Direct Contact */}
         <MinimalInquiry />
 
       </main>
 
-      {/* 8. Editorial Minimalist Footer */}
+      {/* 11. Editorial Minimalist Footer */}
       <MinimalFooter
         onOpenImpressum={() => setLegalModal('impressum')}
         onOpenDatenschutz={() => setLegalModal('datenschutz')}
       />
 
-      {/* 9. Mobile Sticky Action Bar (Direct Call, WhatsApp, Inquiry) */}
+      {/* 12. Mobile Sticky Action Bar (Direct Call, WhatsApp, Inquiry) */}
       <StickyCTA onOpenContact={scrollToContact} />
 
       {/* Legal Modals (§ 5 DDG & DSGVO) */}

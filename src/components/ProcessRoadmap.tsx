@@ -40,7 +40,7 @@ export default function ProcessRoadmap() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
-            [ DER ABLAUF ]
+            4-Schritte Roadmap
           </span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
             Klarer Ablauf. Keine Hängepartie.
