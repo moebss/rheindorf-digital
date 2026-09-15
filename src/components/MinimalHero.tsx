@@ -93,10 +93,14 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 </div>
               </div>
 
-              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/[0.08]">
+              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/[0.08] space-y-2">
                 <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-                  „Kein Agentur-Wasserkopf: Ich baue moderne Websites für deinen Auftritt und automatisiere interne Arbeitsabläufe in deinen Systemen.“
+                  „Kein Agentur-Wasserkopf: Ich baue moderne Web-Plattformen für deinen Auftritt und automatisiere interne Arbeitsabläufe in deinen Systemen.“
                 </p>
+                <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Verfügbar für Q3/Q4 Projekte</span>
+                </div>
               </div>
             </div>
           </div>
@@ -134,10 +138,10 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
           <div className="p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-0">
             <div className="text-xl sm:text-3xl font-mono font-bold text-emerald-400 tracking-tight">
-              100% Code
+              100% Eigentum
             </div>
             <div className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 mt-1">
-              Volle Übergabe via GitHub
+              Code, Workflows &amp; Daten gehören dir
             </div>
           </div>
         </div>

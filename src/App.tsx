@@ -38,17 +38,17 @@ export default function App() {
         {/* 3. Google Lighthouse & Speed Benchmark (< 0.4s FCP vs 3.8s WP) */}
         <TechBenchmark />
 
-        {/* 4. The Dual Offering: Webdesign & Automation */}
+        {/* 4. Automation & Performance Impact Cockpit (ROI Diagnostic) */}
+        <RoiCalculator onOpenContact={scrollToContact} />
+
+        {/* 5. The Dual Offering: Webdesign & Automation */}
         <DualOffering onOpenContact={scrollToContact} />
 
-        {/* 5. Comparison Matrix: Rheindorf Standard vs. 08/15 Agentur */}
+        {/* 6. Comparison Matrix: Rheindorf Standard vs. 08/15 Agentur */}
         <ComparisonMatrix onOpenContact={scrollToContact} />
 
-        {/* 6. Real Proof: Interactive Case Studies with Live Results (AZ Badmanufaktur, Alyas, etc.) */}
+        {/* 7. Real Proof: Interactive Case Studies with Live Results (AZ Badmanufaktur, Alyas, etc.) */}
         <NeoCaseStudy onOpenContact={scrollToContact} />
-
-        {/* 7. Automation & Performance Impact Cockpit (ROI Diagnostic) */}
-        <RoiCalculator onOpenContact={scrollToContact} />
 
         {/* 8. Client Reviews & Social Proof */}
         <Testimonials />

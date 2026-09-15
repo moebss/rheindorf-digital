@@ -17,6 +17,7 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
   const studies: Record<string, {
     title: string;
     category: string;
+    blueprint: string[];
     img: string;
     liveUrl: string;
     challenge: string;
@@ -25,39 +26,43 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
   }> = {
     'nawrath-bad': {
       title: 'AZ BADMANUFAKTUR & HEIZUNG',
-      category: 'SHK MEISTERBETRIEB · KÖLN & KERPEN',
+      category: 'SHK MEISTERBETRIEB · HANDWERK & FERTIGUNG',
+      blueprint: ['React 19 Frontend', '6-Schritt Badkalkulator', 'Notdienst-Routing'],
       img: nawrathImg,
       liveUrl: 'https://moebss.github.io/az-heizung-sanitaer/',
       challenge: 'Veraltete WordPress-Seite mit 8.4s Ladezeit. Notdienst-Anrufe im Feierabend gingen verloren und Komplettbad-Anfragen waren unqualifiziert.',
-      solution: 'Handcodierte React 19 Plattform mit interaktivem 6-Schritte Bad-Budget-Kalkulator, automatischer Vor-Qualifikation und 3-Sekunden Notdienst-Routing.',
+      solution: 'Handcodierte React 19 Plattform mit interaktivem Bad-Budget-Kalkulator, digitaler Vor-Qualifikation und 3-Sekunden Notdienst-Routing.',
       result: '+340% qualifizierte Komplettbad-Anfragen, 100/100 PageSpeed und Platz #1 im Google Maps 3-Pack.',
     },
     'alyas-barber': {
       title: 'ALYAS BARBERSHOP HORREM',
-      category: 'GENTLEMEN SALON · HORREM',
+      category: 'PREMIUM DIENSTLEISTER · TERMIN-AUTOMATION',
+      blueprint: ['Dark Luxury Frontend', 'WhatsApp Business API', '0% No-Show Sync'],
       img: alyasImg,
       liveUrl: 'https://moebss.github.io/alyas-barbershop-horrem/',
-      challenge: 'Telefonklingeln während des Haareschneidens verursachte Stress und verpasste Neukunden. Hohe Terminausfälle ohne Erinnerungen.',
-      solution: 'Dark Luxury Experience mit maßgeschneiderter Typografie, integriertem Style-Kalkulator und vollautomatisierter WhatsApp-Terminbuchung.',
-      result: '120+ automatisierte Termine pro Monat, 0% No-Show Ausfälle und Google Top-Rank #1.',
+      challenge: 'Telefonklingeln während der Behandlungen verursachte Stress und verpasste Neukunden. Hohe Terminausfälle ohne automatisierte Erinnerungen.',
+      solution: 'Dark Luxury Experience mit digitaler Service-Selektion, direkter WhatsApp-Terminbuchung und vollautomatisierten Erinnerungs-Workflows.',
+      result: '120+ automatisierte Termine pro Monat, 0% No-Show Ausfälle und #1 Google Ranking im Einzugsgebiet.',
     },
     'burning-bandit': {
       title: 'THE BURNING BANDIT INK',
-      category: 'HIGH-END TATTOO & CRAFT',
+      category: 'BRAND & CRAFT STUDIO · QUALIFIKATIONS-FUNNEL',
+      blueprint: ['Next-Gen Studio UI', 'Stil- & Motiv-Diagnostik', 'Automatischer Vorfilter'],
       img: banditImg,
       liveUrl: 'https://moebss.github.io/the-burning-bandit-kerpen/',
-      challenge: 'Kunden waren unsicher bezüglich Preisen, Cover-Ups und Hygiene. Lange E-Mail Wartezeiten führten zu Kundenabsprüngen.',
-      solution: 'Dark Craft Studio-Atmosphäre mit interaktivem Vorher/Nachher Transformations-Slider und transparentem Preiskalkulator.',
-      result: '+180% Neukunden-Ersttermine, 4.8★ bei 160+ Bewertungen und planbare Studio-Auslastung.',
+      challenge: 'Lange E-Mail-Absprachen über Motiv-Ideen, Größen und Preise führten zu zeitraubenden Beratungs-Flaschenhälsen.',
+      solution: 'Moderne Studio-Plattform mit interaktiver Projekt-Galerie, digitaler Stil-Vorqualifikation und transparentem Richtwert-Kalkulator.',
+      result: '65% weniger administrativer Beratungsaufwand, +180% qualifizierte Ersttermine und planbare Studio-Auslastung.',
     },
     'nails-shop': {
       title: 'THE NAILS SHOP HORREM',
-      category: 'BOUTIQUE NAIL SPA & STUDIO',
+      category: 'BOUTIQUE STUDIO · 1-KLICK TERMIN-FUNNEL',
+      blueprint: ['Ultra-Fast Frontend (0.35s)', 'WhatsApp-Direktbuchung', 'Local SEO Cluster'],
       img: nailsImg,
       liveUrl: 'https://moebss.github.io/the-nails-shop-horrem/',
-      challenge: 'Keine eigene Homepage, unübersichtliche Social Media Posts und zeitraubende manuelle Terminabsprachen.',
-      solution: 'Sinnliches Studio-Design in Leinen & Warm Rosé mit Babyboomer-Slider und WhatsApp-Express Buchungs-Funnel.',
-      result: 'Planbar 3 Wochen im Voraus ausgebucht, 100+ Top-Bewertungen und 0.35s Ladezeit.',
+      challenge: 'Keine eigene Homepage, unübersichtliche Social-Media-Direktnachrichten und zeitfressende manuelle Terminabsprachen.',
+      solution: 'Sinnliches Studio-Design in Leinen & Warm Rosé, mobiler Express-Buchungs-Funnel und lückenlose Google Maps Optimierung.',
+      result: 'Planbar 3 Wochen im Voraus ausgebucht, 100+ Top-Bewertungen und kompromisslose 0.35s Ladezeit.',
     },
   };
 
@@ -110,15 +115,50 @@ export default function NeoCaseStudy({ onOpenContact, selectedId = 'nawrath-bad'
           </div>
         </div>
 
-        {/* 2. Middle Visual Screenshot Block */}
-        <div className="lg:col-span-5 p-6 sm:p-8 bg-[#111114] border-b lg:border-b-0 lg:border-r border-white/[0.08] flex items-center justify-center">
-          <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl relative group">
-            <img
-              src={current.img}
-              alt={current.title}
-              className="w-full aspect-[4/3] object-cover object-top group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+        {/* 2. Middle Visual Screenshot Block with Browser Chrome & Blueprint */}
+        <div className="lg:col-span-5 p-5 sm:p-8 bg-[#111114] border-b lg:border-b-0 lg:border-r border-white/[0.08] flex flex-col justify-center space-y-4">
+          <div className="w-full rounded-2xl overflow-hidden border border-white/10 bg-[#09090b] shadow-2xl relative group">
+            {/* Browser Window Header */}
+            <div className="px-4 py-2.5 bg-[#16161a] border-b border-white/10 flex items-center justify-between select-none">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-rose-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
+              </div>
+              <div className="px-3 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-[10px] font-mono text-zinc-400 truncate max-w-[220px]">
+                {current.liveUrl.replace('https://', '')}
+              </div>
+              <div className="w-8" />
+            </div>
+
+            <div className="relative overflow-hidden aspect-[4/3]">
+              <img
+                src={current.img}
+                alt={current.title}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/60 via-transparent to-transparent opacity-60 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* System Blueprint Pipeline */}
+          <div className="p-3.5 rounded-xl bg-[#09090b] border border-white/[0.08]">
+            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>Verdrahtete System-Architektur:</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono">
+              {current.blueprint.map((step, idx) => (
+                <React.Fragment key={idx}>
+                  <span className="px-2 py-0.5 rounded bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 font-medium">
+                    {step}
+                  </span>
+                  {idx < current.blueprint.length - 1 && (
+                    <span className="text-zinc-600 font-bold">→</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         </div>
 

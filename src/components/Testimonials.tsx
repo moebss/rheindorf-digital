@@ -7,25 +7,25 @@ export default function Testimonials() {
       num: '[01]',
       name: 'Marco & Elena',
       role: 'Inhaber, The Burning Bandit Kerpen',
-      text: 'Alexander hat unser Tattoo-Studio online komplett neu aufgestellt. Der Transformations-Slider und der Style-Rechner bringen uns wöchentlich messbar mehr Terminanfragen von echten Tattoo-Liebhabern.',
+      text: 'Alexander hat unseren Auftritt online komplett neu aufgestellt. Die strukturierte Projekt-Galerie und die automatische Vorqualifikation sparen uns jede Woche Stunden an Beratungszeit und bringen messbar mehr kaufbereite Ersttermine.',
       rating: 5,
-      branch: 'Tattoo & Craft Brand'
+      branch: 'Handwerk & Custom Brand'
     },
     {
       num: '[02]',
       name: 'Alyas',
       role: 'Inhaber, Alyas Barbershop Horrem',
-      text: 'Die Seite sieht extrem stark aus und lädt blitzschnell auf jedem Handy. Unsere Kunden lieben die 1-Klick Terminbuchung und das hochklassige Gentleman-Design.',
+      text: 'Die Seite sieht extrem stark aus und lädt blitzschnell auf jedem Smartphone. Unsere Kunden lieben die 1-Klick WhatsApp-Terminbuchung und das hochklassige Gentleman-Design.',
       rating: 5,
-      branch: 'Herrensalon & Barbershop'
+      branch: 'Herrensalon & Barber Studio'
     },
     {
       num: '[03]',
       name: 'Mai & Team',
       role: 'Geschäftsleitung, The Nails Shop Horrem',
-      text: 'Das warme, elegante Design und die Google Maps Optimierung haben uns dauerhaft auf Platz #1 im Erftkreis gebracht. Wir sind planbar Wochen im Voraus ausgebucht.',
+      text: 'Das warme, elegante Design und die Google Maps Optimierung haben uns dauerhaft auf Platz #1 im Erftkreis gebracht. Wir sind planbar Wochen im Voraus ausgebucht und haben null Terminausfälle.',
       rating: 5,
-      branch: 'Boutique Nagelstudio'
+      branch: 'Boutique Beauty Studio'
     }
   ];
 

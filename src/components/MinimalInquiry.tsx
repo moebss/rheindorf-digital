@@ -136,12 +136,39 @@ export default function MinimalInquiry() {
                   </div>
 
                   <div>
-                    <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1.5">
-                      Kurze Beschreibung
-                    </label>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <label className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
+                        Worum geht es? (Optional)
+                      </label>
+                      <span className="text-[10px] font-mono text-zinc-500">Klick für Schnellauswahl ↓</span>
+                    </div>
+
+                    {/* Quick Prefill Pills */}
+                    <div className="flex flex-wrap gap-1.5 mb-2.5">
+                      {[
+                        '⚡ Website zu langsam / Schlechte Mobilansicht',
+                        '⚙️ Manuelle Büro-Workflows automatisieren',
+                        '🔍 15-Minuten System-Audit anfordern',
+                        '🚀 Neues Web-Projekt von Grund auf'
+                      ].map((pill) => (
+                        <button
+                          key={pill}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, message: pill })}
+                          className={`px-2.5 py-1 rounded-lg text-[10px] font-mono transition-all cursor-pointer border ${
+                            formData.message === pill
+                              ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 font-semibold'
+                              : 'bg-[#09090b] border-white/10 text-zinc-400 hover:text-white hover:border-white/20'
+                          }`}
+                        >
+                          {pill}
+                        </button>
+                      ))}
+                    </div>
+
                     <textarea
                       rows={3}
-                      placeholder="Worum geht es bei deinem Projekt? Was soll gebaut oder automatisiert werden?"
+                      placeholder="Beschreibe kurz dein Vorhaben oder deinen aktuellen Engpass..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-3.5 rounded-xl bg-[#09090b] border border-white/10 text-white placeholder:text-zinc-600 font-sans text-base sm:text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
@@ -153,9 +180,20 @@ export default function MinimalInquiry() {
                   type="submit"
                   className="w-full py-4 min-h-[48px] rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold hover:from-emerald-300 hover:to-emerald-400 transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] shadow-lg shadow-emerald-500/25"
                 >
-                  <span>Nachricht absenden</span>
+                  <span>Anfrage absenden &amp; Audit sichern</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
+
+                {/* Trust Footer */}
+                <div className="flex flex-wrap items-center justify-between text-[11px] font-mono text-zinc-500 pt-3 gap-2 border-t border-white/[0.06]">
+                  <div className="flex items-center gap-1.5 text-emerald-400">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>Persönliche Antwort garantiert &lt; 24h</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span>100% DSGVO-konform • Keine Weitergabe</span>
+                  </div>
+                </div>
               </form>
             )}
           </div>
@@ -215,6 +253,16 @@ export default function MinimalInquiry() {
                   </div>
                 </a>
 
+                <a 
+                  href="https://wa.me/4916096351750?text=Hallo%20Alexander,%20ich%20m%C3%B6chte%20einen%2015-Minuten%20System-Audit%20f%C3%BCr%20mein%20Unternehmen%20anfragen." 
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 p-3.5 rounded-xl border border-emerald-500/30 bg-emerald-950/40 hover:bg-emerald-900/50 text-emerald-300 font-mono text-xs uppercase tracking-wider font-semibold transition-all group cursor-pointer"
+                >
+                  <span>Direkt via WhatsApp schreiben</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+
                 <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#09090b] min-h-[48px]">
                   <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center text-zinc-400">
                     <MapPin className="w-4 h-4" />
@@ -226,6 +274,34 @@ export default function MinimalInquiry() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* 15-Min. Audit Deliverables Card */}
+            <div className="rounded-3xl border border-emerald-500/25 bg-gradient-to-b from-emerald-950/30 to-emerald-950/10 p-5 sm:p-7 space-y-4 shadow-xl">
+              <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Was du im 15-Min. System-Audit erhältst:</span>
+              </div>
+
+              <div className="space-y-3 text-xs text-zinc-300 font-sans">
+                <div className="flex items-start gap-2.5">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">1</div>
+                  <span><strong className="text-white">Live Performance &amp; Conversion Check:</strong> Analyse von Ladezeit (&lt; 0.4s FCP) und Absprungrisiken deiner aktuellen Website.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">2</div>
+                  <span><strong className="text-white">Automations-Potenziale:</strong> Aufdeckung von 2–3 manuellen Daten-Flaschenhälsen in deinen Büro-Workflows.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">3</div>
+                  <span><strong className="text-white">Konkrete ROI-Roadmap:</strong> Klare Schätzung, wie viele Stunden und Euro du jeden Monat einsparen kannst.</span>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-emerald-500/20 text-[11px] font-mono text-emerald-300 flex items-center justify-between">
+                <span>100% kostenfrei &bull; Direkt mit Alexander</span>
+                <span className="text-zinc-400 font-sans">0% Verkaufsdruck</span>
               </div>
             </div>
 
