@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Zap } from 'lucide-react';
 import heroPortrait from '../images/hero_rheindorf.jpg';
 
 interface MinimalHeroProps {
@@ -8,11 +8,11 @@ interface MinimalHeroProps {
 
 export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
   return (
-    <section className="relative pt-28 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
       {/* Subtle Ambient Emerald Depth */}
       <div 
         aria-hidden="true"
-        className="absolute top-10 left-1/2 -translate-x-1/2 w-[550px] h-[320px] bg-emerald-500/[0.09] rounded-full blur-[130px] pointer-events-none -z-10" 
+        className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[340px] bg-emerald-500/[0.09] rounded-full blur-[140px] pointer-events-none -z-10" 
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
@@ -22,7 +22,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           
           {/* Main Statement */}
           <div className="lg:col-span-8 flex flex-col">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-6 sm:mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
               <span>Webdesign &amp; Automation • Köln &amp; Remote</span>
             </div>
@@ -47,6 +47,40 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 <span>Projekt anfragen</span>
                 <ArrowUpRight className="w-4 h-4 text-zinc-950" />
               </button>
+
+              <a
+                href="#architektur"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/[0.1] hover:border-emerald-500/30 hover:bg-emerald-950/20 text-zinc-300 hover:text-emerald-300 font-sans text-sm font-medium transition-all min-h-[44px]"
+              >
+                <Zap className="w-4 h-4 text-emerald-400" />
+                <span>Live-Automation ansehen ↓</span>
+              </a>
+            </div>
+
+            {/* Live Trust & Tech Ticker */}
+            <div className="mt-10 pt-8 border-t border-white/[0.06] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
+              <div className="space-y-0.5">
+                <div className="text-xl sm:text-2xl font-bold text-white flex items-center gap-1.5">
+                  <span>&lt; 0.4s</span>
+                  <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-500/30 px-1.5 py-0.5 rounded">100/100</span>
+                </div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">PageSpeed FCP</div>
+              </div>
+
+              <div className="space-y-0.5">
+                <div className="text-xl sm:text-2xl font-bold text-emerald-400">n8n &amp; APIs</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Workflow-Engine</div>
+              </div>
+
+              <div className="space-y-0.5">
+                <div className="text-xl sm:text-2xl font-bold text-white">100% DSGVO</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">&sect; 5 DDG Konform</div>
+              </div>
+
+              <div className="space-y-0.5">
+                <div className="text-xl sm:text-2xl font-bold text-emerald-400">1:1 Senior</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Ohne Wasserkopf</div>
+              </div>
             </div>
           </div>
 
