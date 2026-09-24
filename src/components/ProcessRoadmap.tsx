@@ -42,7 +42,7 @@ export default function ProcessRoadmap() {
           <span className="text-[11px] font-mono tracking-widest uppercase text-emerald-400">
             4-Schritte Roadmap
           </span>
-          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-display font-bold tracking-tight text-white">
             Klarer Ablauf. Keine Hängepartie.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
@@ -67,7 +67,7 @@ export default function ProcessRoadmap() {
                   </span>
                 </div>
 
-                <h3 className="mt-5 sm:mt-6 text-base sm:text-lg font-sans font-semibold text-white tracking-tight">
+                <h3 className="mt-5 sm:mt-6 text-base sm:text-lg font-display font-bold text-white tracking-tight">
                   {s.title}
                 </h3>
 

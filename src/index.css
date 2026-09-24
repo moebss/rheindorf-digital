@@ -27,6 +27,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Studio Heading Defaults: Architectural Space Grotesk with tight tracking & balance */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
 ::selection {
   background: #10b981;
   color: #09090b;
@@ -56,56 +63,11 @@ body {
   scrollbar-width: none;
 }
 
-/* Reusable Design System Utilities */
-.luxury-card {
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%), #111114;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.card {
+  background: #111113;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
 }
-.luxury-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 25px rgba(16, 185, 129, 0.08);
+.card:hover {
+  background: #18181b;
 }
-
-.luxury-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  background-color: rgba(6, 78, 59, 0.2);
-  color: #34d399;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.luxury-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(to right, #34d399, #10b981);
-  color: #09090b;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2);
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-.luxury-btn-primary:hover {
-  background: linear-gradient(to right, #6ee7b7, #34d399);
-}
-.luxury-btn-primary:active {
-  transform: scale(0.98);
-}
-

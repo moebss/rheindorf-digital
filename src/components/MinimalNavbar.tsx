@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface MinimalNavbarProps {
   onOpenContact: () => void;
@@ -40,11 +40,11 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
     <header 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#09090b]/90 backdrop-blur-md border-b border-white/[0.08] py-3' 
+          ? 'bg-[#09090b]/80 backdrop-blur-md border-b border-white/[0.04] py-3' 
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         
         {/* Brand Name */}
         <a 
@@ -52,12 +52,12 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
           className="group flex flex-col focus:outline-none"
         >
           <div className="flex items-center gap-2">
-            <span className="font-sans font-semibold text-sm sm:text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+            <span className="font-display font-bold text-sm sm:text-base tracking-tight text-white transition-colors">
               Alexander Rheindorf
             </span>
           </div>
-          <span className="text-[11px] font-mono tracking-wider text-zinc-400 uppercase">
-            Webdesign &amp; Prozesse
+          <span className="text-xs font-sans text-zinc-500">
+            Webdesign & Prozesse
           </span>
         </a>
 
@@ -65,56 +65,41 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         <nav className="hidden md:flex items-center gap-7">
           <button 
             onClick={() => scrollToSection('angebot')} 
-            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
             Leistungen
           </button>
           <button 
             onClick={() => scrollToSection('portfolio')} 
-            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
-            Case Studies
+            Referenz
           </button>
           <button 
-            onClick={() => scrollToSection('vergleich')} 
-            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
+            onClick={() => scrollToSection('architektur')} 
+            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
-            Standard
+            Automation
           </button>
           <button 
-            onClick={() => scrollToSection('rechner')} 
-            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
+            onClick={() => scrollToSection('faq')} 
+            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
-            ROI-Cockpit
-          </button>
-          <button 
-            onClick={() => scrollToSection('ablauf')} 
-            className="text-xs font-mono tracking-wider uppercase text-zinc-400 hover:text-emerald-400 transition-colors cursor-pointer"
-          >
-            Ablauf
+            FAQ
           </button>
         </nav>
 
-        {/* Status & Emerald CTA */}
+        {/* Action */}
         <div className="hidden sm:flex items-center gap-4">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/25 bg-emerald-950/30 text-[11px] font-mono text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.12)]">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-            </span>
-            <span>Verfügbar für Projekte</span>
-          </div>
-
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 text-zinc-950 text-xs font-mono uppercase tracking-wider font-bold hover:from-emerald-300 hover:to-emerald-400 transition-all cursor-pointer shadow-md shadow-emerald-500/20 active:scale-[0.98]"
+            className="bg-white text-zinc-950 hover:bg-zinc-200 font-sans font-medium text-sm px-5 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
           >
-            <span>Audit anfragen</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            Projekt anfragen
           </button>
         </div>
 
-        {/* Mobile Menu Toggle - minimum 44x44px touch target */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-300 hover:text-white rounded-xl active:bg-zinc-800 focus:outline-none"
@@ -127,59 +112,43 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#09090b]/98 backdrop-blur-2xl border-t border-white/10 px-6 py-8 flex flex-col justify-between overflow-y-auto z-50">
+        <div className="md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#09090b]/98 backdrop-blur-2xl border-t border-white/[0.04] px-6 py-8 flex flex-col justify-between overflow-y-auto z-50">
           <div className="space-y-2">
             <button 
               onClick={() => scrollToSection('angebot')} 
-              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
             >
-              <span>01 — Leistungen</span>
-              <span className="text-zinc-600 text-xs">Web &amp; Automation</span>
+              Leistungen
             </button>
-
             <button 
               onClick={() => scrollToSection('portfolio')} 
-              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
             >
-              <span>02 — Case Studies</span>
-              <span className="text-zinc-600 text-xs">Echte Projekte</span>
+              Referenz
             </button>
-
             <button 
-              onClick={() => scrollToSection('vergleich')} 
-              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
+              onClick={() => scrollToSection('architektur')} 
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
             >
-              <span>03 — Der Standard</span>
-              <span className="text-zinc-600 text-xs">vs. Agentur</span>
+              Automation
             </button>
-
             <button 
-              onClick={() => scrollToSection('rechner')} 
-              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
+              onClick={() => scrollToSection('faq')} 
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
             >
-              <span>04 — ROI-Cockpit</span>
-              <span className="text-zinc-600 text-xs">Diagnostik</span>
-            </button>
-
-            <button 
-              onClick={() => scrollToSection('ablauf')} 
-              className="w-full text-left py-3.5 px-3 min-h-[44px] text-base font-mono tracking-wider uppercase text-zinc-200 hover:text-emerald-400 hover:bg-white/[0.03] rounded-xl flex items-center justify-between border-b border-white/5"
-            >
-              <span>05 — Ablauf</span>
-              <span className="text-zinc-600 text-xs">4 Phasen</span>
+              FAQ
             </button>
           </div>
 
-          <div className="pt-6 border-t border-white/10 pb-16 sm:pb-0">
+          <div className="pt-6 border-t border-white/[0.04] pb-16 sm:pb-0">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenContact();
               }}
-              className="w-full py-4 min-h-[48px] rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 text-zinc-950 font-mono uppercase tracking-wider font-bold text-center shadow-lg shadow-emerald-500/20 active:scale-[0.98] flex items-center justify-center gap-2"
+              className="w-full py-3 min-h-[44px] rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-sans font-medium text-sm text-center flex items-center justify-center transition-colors"
             >
-              <span>Projekt anfragen</span>
-              <ArrowUpRight className="w-4 h-4" />
+              Projekt anfragen
             </button>
           </div>
         </div>

@@ -64,7 +64,7 @@ export default function ComparisonMatrix({ onOpenContact }: ComparisonMatrixProp
                 <span>Der Qualitäts-Standard</span>
               </div>
 
-              <h2 className="font-sans font-semibold text-3xl sm:text-5xl text-white tracking-tight leading-[1.1]">
+              <h2 className="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight leading-[1.08]">
                 Der Rheindorf Standard vs. <br />
                 <span className="text-zinc-400">08/15 Agenturen.</span>
               </h2>

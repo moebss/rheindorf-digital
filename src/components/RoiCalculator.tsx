@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 interface RoiCalculatorProps {
-  onOpenContact: () => void;
+  onOpenContact: (scope?: string, message?: string) => void;
 }
 
 export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
@@ -58,7 +58,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
             <span>Impact Cockpit &bull; ROI-Diagnostik</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-sans font-semibold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
             Wie viel Zeit &amp; Umsatz <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">
               verlierst du jeden Monat?
@@ -229,7 +229,10 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                 </div>
 
                 <button
-                  onClick={onOpenContact}
+                  onClick={() => onOpenContact(
+                    'automation',
+                    `ROI-Diagnose Automation: Geschätztes Einsparpotenzial ca. ${potentialSavingsYearly.toLocaleString('de-DE')} € / Jahr bei ${teamSize} Mitarbeitern (~${weeklyHoursWasted}h/Woche manuelle Aufgaben).`
+                  )}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold shadow-lg shadow-emerald-500/25 active:scale-[0.98] transition-all cursor-pointer"
                 >
                   <span>15-Min. Audit für dein Team anfragen</span>
@@ -368,7 +371,10 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                 </div>
 
                 <button
-                  onClick={onOpenContact}
+                  onClick={() => onOpenContact(
+                    'webdesign',
+                    `ROI-Diagnose Web-Performance: Entgangener Umsatz ca. ${lostRevenueYearly.toLocaleString('de-DE')} € / Jahr durch ${loadTimeSeconds}s Ladezeit (~${lostLeadsMonthly * 12} verlorene Leads/Jahr).`
+                  )}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-300 hover:to-emerald-400 text-zinc-950 font-mono text-xs uppercase tracking-wider font-bold shadow-lg shadow-emerald-500/25 active:scale-[0.98] transition-all cursor-pointer"
                 >
                   <span>Website-Speed-Audit anfragen</span>

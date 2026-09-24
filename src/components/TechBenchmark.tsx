@@ -17,7 +17,7 @@ export default function TechBenchmark() {
             <span>Lighthouse Benchmark &amp; Ladezeiten</span>
           </div>
 
-          <h2 className="font-sans font-semibold text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-4">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-4">
             Performance entscheidet über <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-200">
               Kauf oder Absprung.
