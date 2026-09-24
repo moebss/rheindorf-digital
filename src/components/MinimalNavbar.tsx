@@ -52,12 +52,13 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
           className="group flex flex-col focus:outline-none"
         >
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-sm sm:text-base tracking-tight text-white transition-colors">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+            <span className="font-display font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors">
               Alexander Rheindorf
             </span>
           </div>
-          <span className="text-xs font-sans text-zinc-500">
-            Webdesign & Prozesse
+          <span className="text-xs font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors">
+            Webdesign &amp; Prozesse
           </span>
         </a>
 
@@ -65,25 +66,25 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         <nav className="hidden md:flex items-center gap-7">
           <button 
             onClick={() => scrollToSection('angebot')} 
-            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
           >
             Leistungen
           </button>
           <button 
             onClick={() => scrollToSection('portfolio')} 
-            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
           >
             Referenz
           </button>
           <button 
             onClick={() => scrollToSection('architektur')} 
-            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
           >
             Automation
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 
-            className="text-sm font-sans text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
           >
             FAQ
           </button>
@@ -93,7 +94,7 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         <div className="hidden sm:flex items-center gap-4">
           <button
             onClick={onOpenContact}
-            className="bg-white text-zinc-950 hover:bg-zinc-200 font-sans font-medium text-sm px-5 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+            className="bg-white hover:bg-zinc-100 text-zinc-950 font-sans font-semibold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer min-h-[44px]"
           >
             Projekt anfragen
           </button>

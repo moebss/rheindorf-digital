@@ -38,7 +38,7 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">Angebot</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Angebot &amp; Kompetenzen</span>
             <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
               Was ich für dich baue.
             </h2>
@@ -52,9 +52,9 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         <div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Pillar 1: Webdesign */}
-          <div className="rounded-2xl border border-white/[0.06] bg-[#111113] p-6 sm:p-8 hover:bg-[#18181b] transition-colors flex flex-col justify-between group">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 hover:border-emerald-500/30 hover:bg-[#151518] hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] transition-all flex flex-col justify-between group">
             <div>
-              <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-400 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
                 <Layout className="w-5 h-5" />
               </div>
 
@@ -65,10 +65,10 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
                 Moderne, kompromisslos schnelle Websites für Unternehmen und Selbstständige. Handgeschriebener Code, gestochen scharfe Typografie und optimiert für Mobilgeräte.
               </p>
 
-              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.04]">
+              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.06]">
                 {webDesignFeatures.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-500 shrink-0 mt-0.5">
+                    <div className="w-4 h-4 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
                       <Check className="w-2.5 h-2.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-zinc-300 font-sans">
@@ -79,13 +79,13 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
               </div>
             </div>
 
-            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-              <span className="text-xs font-sans text-zinc-600">
+            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <span className="text-xs font-mono text-zinc-500">
                 Stack: React &bull; Tailwind &bull; TypeScript
               </span>
               <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center justify-center gap-1.5 border border-white/[0.1] text-zinc-300 hover:text-white hover:bg-white/[0.04] font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 hover:text-emerald-200 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
               >
                 <span>Anfragen</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -94,9 +94,9 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
           </div>
 
           {/* Pillar 2: Prozesse & Automation */}
-          <div className="rounded-2xl border border-white/[0.06] bg-[#111113] p-6 sm:p-8 hover:bg-[#18181b] transition-colors flex flex-col justify-between group">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 hover:border-emerald-500/30 hover:bg-[#151518] hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] transition-all flex flex-col justify-between group">
             <div>
-              <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-400 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
                 <GitBranch className="w-5 h-5" />
               </div>
 
@@ -107,10 +107,10 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
                 Automatisierung deiner internen Unternehmensabläufe. Ich verbinde deine bestehende Software (CRM, Buchhaltung, E-Mail, Cloud-Tools) – ganz ohne neue Website.
               </p>
 
-              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.04]">
+              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.06]">
                 {processFeatures.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-500 shrink-0 mt-0.5">
+                    <div className="w-4 h-4 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
                       <Check className="w-2.5 h-2.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-zinc-300 font-sans">
@@ -121,13 +121,13 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
               </div>
             </div>
 
-            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-              <span className="text-xs font-sans text-zinc-600">
+            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <span className="text-xs font-mono text-zinc-500">
                 Toolchain: n8n &bull; REST-APIs &bull; Webhooks
               </span>
               <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center justify-center gap-1.5 border border-white/[0.1] text-zinc-300 hover:text-white hover:bg-white/[0.04] font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 hover:text-emerald-200 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
               >
                 <span>Anfragen</span>
                 <ArrowUpRight className="w-4 h-4" />

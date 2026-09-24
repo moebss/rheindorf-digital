@@ -23,7 +23,7 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">Referenz</span>
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Referenz &bull; Echte Praxis</span>
             <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-white leading-tight">
               Smoky Head&amp;Shisha Shop.
             </h2>
@@ -36,21 +36,21 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
 
         {/* 4 Core Highlight Badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10 font-mono">
-          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.06]">
-            <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">&lt; 0.35s FCP</div>
-            <div className="text-[10px] sm:text-xs text-zinc-500 uppercase mt-1">100/100 PageSpeed</div>
+          <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.06)]">
+            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">&lt; 0.35s FCP</div>
+            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">100/100 PageSpeed</div>
           </div>
-          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.06]">
+          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.08]">
             <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">Top #1</div>
-            <div className="text-[10px] sm:text-xs text-zinc-500 uppercase mt-1">Google Maps Kerpen</div>
+            <div className="text-[10px] sm:text-xs text-zinc-400 uppercase mt-1">Google Maps Kerpen</div>
           </div>
-          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.06]">
+          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.08]">
             <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">100% DSGVO</div>
-            <div className="text-[10px] sm:text-xs text-zinc-500 uppercase mt-1">§ 5 DDG &amp; Jugendschutz</div>
+            <div className="text-[10px] sm:text-xs text-zinc-400 uppercase mt-1">&sect; 5 DDG &amp; Jugendschutz</div>
           </div>
-          <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.06]">
-            <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">Zero Plugins</div>
-            <div className="text-[10px] sm:text-xs text-zinc-500 uppercase mt-1">Reiner React 19 Code</div>
+          <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/25">
+            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">Zero Plugins</div>
+            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">Reiner React 19 Code</div>
           </div>
         </div>
 
@@ -150,9 +150,9 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
               </div>
 
               {/* Result */}
-              <div className="bg-[#0a0a0c] rounded-xl p-4 border border-white/[0.08] space-y-1">
-                <span className="text-xs font-mono uppercase text-zinc-500 block tracking-wider">
-                  Ergebnis:
+              <div className="bg-emerald-950/20 rounded-xl p-4 border border-emerald-500/30 space-y-1">
+                <span className="text-xs font-mono uppercase text-emerald-400 font-bold block tracking-wider">
+                  Messbares Ergebnis:
                 </span>
                 <p className="text-white text-xs leading-relaxed font-medium">
                   100/100 PageSpeed-Score auf Mobilgeräten (&lt; 0.35s Ladezeit), Platz #1 bei Google für lokale Suchanfragen in Kerpen &amp; Erftkreis und reibungslose Kundenabwicklung vor Ort.
@@ -163,14 +163,15 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
 
             {/* Next Case Prompt */}
             <div className="pt-4 border-t border-white/[0.04] space-y-4 mt-auto">
-              <div className="text-xs font-sans text-zinc-400 leading-relaxed">
+              <div className="text-xs font-sans text-zinc-300 leading-relaxed">
                 <strong className="text-white">100% Echte Arbeit:</strong> Ich zeige hier keine Dummy-Logos. Smoky Headshop ist echt, live und nachprüfbar. Du bekommst meine volle Senior-Aufmerksamkeit als mein nächstes Vorzeige-Projekt.
               </div>
               <button
                 onClick={onOpenContact}
-                className="w-full inline-flex items-center justify-center gap-2 bg-white text-zinc-950 hover:bg-zinc-200 font-sans font-medium text-sm px-5 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+                className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 font-sans font-semibold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] cursor-pointer min-h-[44px]"
               >
-                <span>Projekt anfragen</span>
+                <span>Projekt als nächste Referenz anfragen</span>
+                <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
 

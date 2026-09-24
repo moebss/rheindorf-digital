@@ -37,7 +37,7 @@ export default function FAQ() {
         
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">FAQ</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">FAQ &bull; Transparenz</span>
 
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
             Häufige Fragen.
@@ -55,12 +55,16 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full py-5 text-left flex items-center justify-between gap-4 transition-colors hover:text-white"
+                  className="w-full py-5 text-left flex items-center justify-between gap-4 transition-colors group cursor-pointer"
                 >
-                  <span className="font-sans font-medium text-base text-white">
+                  <span className={`font-sans font-medium text-base transition-colors ${
+                    isOpen ? 'text-emerald-300' : 'text-white group-hover:text-emerald-200'
+                  }`}>
                     {faq.q}
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-zinc-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 transition-all duration-300 ${
+                    isOpen ? 'rotate-180 text-emerald-400' : 'text-zinc-500 group-hover:text-zinc-300'
+                  }`} />
                 </button>
 
                 {isOpen && (

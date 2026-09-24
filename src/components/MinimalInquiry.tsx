@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle2, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle2, MessageCircle, ArrowUpRight } from 'lucide-react';
 import alexanderProfileImg from '../images/profile.jpg';
 
 export default function MinimalInquiry() {
@@ -59,12 +59,12 @@ export default function MinimalInquiry() {
         
         {/* Section Header */}
         <div className="mb-12 sm:mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">Kontakt</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Kontakt &bull; Erstgespräch</span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
             Lass uns sprechen.
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Schreib mir, wo dein Engpass liegt. Ich melde mich innerhalb von 24 Stunden.
+            Schreib mir kurz, wo dein Engpass liegt. Ich analysiere dein Anliegen und melde mich innerhalb von 24 Stunden persönlich.
           </p>
         </div>
 
@@ -72,17 +72,17 @@ export default function MinimalInquiry() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Col: Scope-Based Intake Form */}
-          <div className="lg:col-span-7 rounded-2xl border border-white/[0.06] bg-[#111113] p-6 sm:p-8 transition-colors">
+          <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 transition-colors shadow-2xl">
             {submitted ? (
               <div className="py-10 flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-300 mb-4">
-                  <CheckCircle2 className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-white mb-2">
-                  Anfrage erfolgreich!
+                  Anfrage erfolgreich erfasst!
                 </h3>
-                <p className="text-sm text-zinc-400 font-sans max-w-sm">
-                  Vielen Dank{formData.name ? `, ${formData.name}` : ''}! Ich melde mich in Kürze bei dir.
+                <p className="text-sm text-zinc-300 font-sans max-w-sm">
+                  Vielen Dank{formData.name ? `, ${formData.name}` : ''}! Ich melde mich in Kürze persönlich bei dir.
                 </p>
 
                 <div className="mt-8 w-full space-y-3">
@@ -90,7 +90,7 @@ export default function MinimalInquiry() {
                     href={whatsappConfirmUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-5 bg-[#25D366] text-white font-sans font-medium text-sm rounded-lg flex items-center justify-center gap-2 transition-colors hover:bg-[#20ba59]"
+                    className="w-full py-3 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-sans font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Auf WhatsApp anpingen</span>
@@ -106,7 +106,7 @@ export default function MinimalInquiry() {
 
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-8 text-xs font-sans text-zinc-500 hover:text-white transition-colors"
+                  className="mt-8 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors cursor-pointer"
                 >
                   ← Zurück zum Formular
                 </button>
@@ -116,7 +116,7 @@ export default function MinimalInquiry() {
                 
                 {/* 1. Scope Selection */}
                 <div>
-                  <label className="text-xs font-sans text-zinc-500 uppercase tracking-wider block mb-3">
+                  <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-3 font-medium">
                     Worum geht es?
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -125,23 +125,23 @@ export default function MinimalInquiry() {
                         key={s.id}
                         type="button"
                         onClick={() => setSelectedScope(s.id)}
-                        className={`rounded-lg border p-3 text-left text-sm font-sans transition-colors ${
+                        className={`rounded-xl border p-3.5 text-left text-sm font-sans transition-all cursor-pointer ${
                           selectedScope === s.id
-                            ? 'border-white/[0.15] bg-white/[0.04] text-white'
-                            : 'border-white/[0.06] bg-[#0a0a0c] text-zinc-400 hover:border-white/[0.1]'
+                            ? 'border-emerald-500/60 bg-emerald-950/40 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.12)]'
+                            : 'border-white/[0.06] bg-[#0a0a0c] text-zinc-400 hover:border-white/[0.12] hover:text-zinc-200'
                         }`}
                       >
-                        <div className="font-medium">{s.label}</div>
-                        <div className="text-xs text-zinc-500 mt-1">{s.sub}</div>
+                        <div className="font-semibold text-white">{s.label}</div>
+                        <div className="text-xs text-zinc-400 mt-1">{s.sub}</div>
                       </button>
                     ))}
                   </div>
                 </div>
 
                 {/* 2. Contact Details */}
-                <div className="space-y-4 pt-4 border-t border-white/[0.04]">
+                <div className="space-y-4 pt-4 border-t border-white/[0.06]">
                   <div>
-                    <label className="text-xs font-sans text-zinc-500 uppercase tracking-wider block mb-2">
+                    <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
                       Name *
                     </label>
                     <input
@@ -150,13 +150,13 @@ export default function MinimalInquiry() {
                       placeholder="Dein Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#0a0a0c] border border-white/[0.06] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-white/[0.15] focus:ring-0 transition-colors placeholder:text-zinc-600"
+                      className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-sans text-zinc-500 uppercase tracking-wider block mb-2">
+                      <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
                         E-Mail *
                       </label>
                       <input
@@ -165,46 +165,50 @@ export default function MinimalInquiry() {
                         placeholder="name@beispiel.de"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#0a0a0c] border border-white/[0.06] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-white/[0.15] focus:ring-0 transition-colors placeholder:text-zinc-600"
+                        className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-sans text-zinc-500 uppercase tracking-wider block mb-2">
-                        Telefon (Optional)
+                      <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
+                        Telefon / WhatsApp (Optional)
                       </label>
                       <input
                         type="tel"
                         placeholder="+49 170 1234567"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#0a0a0c] border border-white/[0.06] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-white/[0.15] focus:ring-0 transition-colors placeholder:text-zinc-600"
+                        className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-sans text-zinc-500 uppercase tracking-wider block mb-2">
+                    <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
                       Nachricht (Optional)
                     </label>
                     <textarea
                       rows={4}
-                      placeholder="Beschreibe kurz dein Anliegen..."
+                      placeholder="Beschreibe kurz dein Anliegen oder deinen aktuellen Engpass..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#0a0a0c] border border-white/[0.06] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-white/[0.15] focus:ring-0 transition-colors placeholder:text-zinc-600"
+                      className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
                     />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-white text-zinc-950 hover:bg-zinc-200 font-sans font-medium text-sm py-3 rounded-lg transition-colors"
+                  className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 font-sans font-semibold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] cursor-pointer flex items-center justify-center gap-2"
                 >
-                  Anfrage senden
+                  <span>Anfrage senden</span>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
                 </button>
 
-                <div className="flex flex-wrap items-center justify-between text-xs font-sans text-zinc-600 pt-2 gap-2">
-                  <span>Persönliche Antwort &lt; 24h</span>
+                <div className="flex flex-wrap items-center justify-between text-xs font-sans text-zinc-400 pt-2 gap-2">
+                  <span className="flex items-center gap-1.5 text-emerald-400">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>Persönliche Antwort garantiert &lt; 24h</span>
+                  </span>
                   <span>100% DSGVO-konform</span>
                 </div>
               </form>
@@ -214,48 +218,51 @@ export default function MinimalInquiry() {
           {/* Right Col: Direct Channels */}
           <div className="lg:col-span-5 space-y-6 lg:pl-4 pt-2">
             
-            <div className="flex items-center gap-4 pb-6 border-b border-white/[0.04]">
-              <img
-                src={alexanderProfileImg}
-                alt="Alexander Rheindorf"
-                className="w-12 h-12 rounded-full object-cover object-[center_18%] border border-white/[0.06]"
-              />
+            <div className="flex items-center gap-4 pb-6 border-b border-white/[0.06]">
+              <div className="relative">
+                <img
+                  src={alexanderProfileImg}
+                  alt="Alexander Rheindorf"
+                  className="w-13 h-13 rounded-full object-cover object-[center_18%] border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                />
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#111113]" />
+              </div>
               <div>
-                <div className="text-base font-sans font-medium text-white">Alexander Rheindorf</div>
-                <div className="text-sm font-sans text-zinc-500">Direkter Ansprechpartner</div>
+                <div className="text-base font-sans font-semibold text-white">Alexander Rheindorf</div>
+                <div className="text-xs font-mono text-emerald-400">Direkter Ansprechpartner &bull; Inhaber</div>
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2.5">
+              <a 
+                href="https://wa.me/4916096351750?text=Hallo%20Alexander,%20ich%20m%C3%B6chte%20ein%20Projekt%20anfragen." 
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-emerald-500/25 bg-emerald-950/25 hover:bg-emerald-900/35 text-sm font-sans text-emerald-300 transition-all group"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span className="font-medium">Direkt via WhatsApp schreiben →</span>
+              </a>
+
               <a 
                 href="mailto:hello@rheindorf.digital" 
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/[0.03] text-sm font-sans text-zinc-300 transition-colors"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-white/[0.06] bg-[#0a0a0c] hover:border-emerald-500/30 hover:text-white text-sm font-sans text-zinc-300 transition-colors"
               >
-                <Mail className="w-4 h-4 text-zinc-500" />
+                <Mail className="w-4 h-4 text-emerald-400" />
                 <span>hello@rheindorf.digital</span>
               </a>
 
               <a 
                 href="tel:+4916096351750" 
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/[0.03] text-sm font-sans text-zinc-300 transition-colors"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-white/[0.06] bg-[#0a0a0c] hover:border-emerald-500/30 hover:text-white text-sm font-sans text-zinc-300 transition-colors"
               >
-                <Phone className="w-4 h-4 text-zinc-500" />
+                <Phone className="w-4 h-4 text-emerald-400" />
                 <span>+49 160 96351750</span>
               </a>
 
-              <a 
-                href="https://wa.me/4916096351750" 
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/[0.03] text-sm font-sans text-zinc-300 transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-zinc-500" />
-                <span>WhatsApp Nachricht senden</span>
-              </a>
-
-              <div className="flex items-center gap-3 p-3 text-sm font-sans text-zinc-300">
+              <div className="flex items-center gap-3 p-3.5 text-sm font-sans text-zinc-400 border border-white/[0.04] rounded-xl bg-[#0a0a0c]/50">
                 <MapPin className="w-4 h-4 text-zinc-500" />
-                <span>Kerpen &amp; Köln (NRW)</span>
+                <span>Kerpen &amp; Köln (NRW) &bull; Remote weltweit</span>
               </div>
             </div>
 

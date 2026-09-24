@@ -138,12 +138,12 @@ export default function InteractiveProcessVisualizer() {
         
         {/* Section Header */}
         <div className="max-w-2xl">
-          <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">Automation</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Automation &bull; Live Workflows</span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
             Prozesse, die im Hintergrund arbeiten.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
-            Hier siehst du, wie APIs und Workflows manuelle Arbeit im Hintergrund eliminieren.
+            Hier siehst du, wie n8n und APIs wiederkehrende manuelle Arbeit im Hintergrund eliminieren.
           </p>
         </div>
 
@@ -157,10 +157,10 @@ export default function InteractiveProcessVisualizer() {
                 setSimulationFinished(false);
                 setActiveStepIndex(0);
               }}
-              className={`px-4 py-2 rounded-lg font-sans text-sm font-medium transition-colors cursor-pointer ${
+              className={`px-4 py-2 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer ${
                 activeScenarioId === sc.id
-                  ? 'bg-white/[0.08] text-white'
-                  : 'text-zinc-500 hover:text-zinc-300'
+                  ? 'bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold shadow-[0_0_15px_rgba(16,185,129,0.1)]'
+                  : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
               }`}
             >
               {sc.title}
@@ -169,12 +169,12 @@ export default function InteractiveProcessVisualizer() {
         </div>
 
         {/* Interactive Simulation Dashboard */}
-        <div className="mt-6 sm:mt-8 rounded-2xl border border-white/[0.06] bg-[#111113] p-6 sm:p-8">
+        <div className="mt-6 sm:mt-8 rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 shadow-2xl">
           
           {/* Top Info Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.04]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.06]">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 font-medium uppercase tracking-wider">
                 {currentScenario.tag}
               </div>
               <p className="mt-1 text-sm text-zinc-300 font-sans max-w-xl">
@@ -186,10 +186,10 @@ export default function InteractiveProcessVisualizer() {
             <button
               onClick={runSimulation}
               disabled={isSimulating}
-              className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-sans font-medium text-sm transition-colors shrink-0 min-h-[44px] ${
+              className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-sans font-semibold text-sm transition-all shrink-0 min-h-[44px] ${
                 isSimulating
                   ? 'bg-white/[0.04] text-zinc-500 cursor-not-allowed border border-white/[0.04]'
-                  : 'bg-white text-zinc-950 hover:bg-zinc-200 cursor-pointer'
+                  : 'bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 shadow-[0_0_20px_rgba(16,185,129,0.25)] cursor-pointer'
               }`}
             >
               <Play className={`w-4 h-4 ${isSimulating ? 'animate-spin' : ''}`} />
@@ -208,26 +208,26 @@ export default function InteractiveProcessVisualizer() {
                   <div
                     className={`relative p-4 rounded-xl border transition-all duration-300 flex flex-col justify-between h-full ${
                       isActive
-                        ? 'opacity-100 bg-[#111113] border-white/[0.06] border-l-[2px] border-l-white/40'
+                        ? 'opacity-100 bg-[#16161a] border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.12)] border-l-[3px] border-l-emerald-400'
                         : isPast
-                        ? 'opacity-80 bg-[#111113] border-white/[0.06]'
-                        : 'opacity-50 bg-[#111113] border-white/[0.06]'
+                        ? 'opacity-90 bg-[#111113] border-white/[0.08]'
+                        : 'opacity-50 bg-[#111113] border-white/[0.04]'
                     }`}
                   >
                     <div>
-                      <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 mb-2">
+                      <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 mb-2">
                         <span>{node.title}</span>
                         {isPast ? (
-                          <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                         ) : isActive ? (
-                          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                          <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] animate-pulse" />
                         ) : (
                           <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
                         )}
                       </div>
 
                       <div className={`text-xs font-mono tracking-wide ${
-                        isActive ? 'text-white font-semibold' : isPast ? 'text-zinc-300' : 'text-zinc-400'
+                        isActive ? 'text-emerald-300 font-semibold' : isPast ? 'text-white' : 'text-zinc-400'
                       }`}>
                         {node.system}
                       </div>
@@ -239,7 +239,9 @@ export default function InteractiveProcessVisualizer() {
 
                     {/* Desktop horizontal flow arrow */}
                     {idx < currentScenario.nodes.length - 1 && (
-                      <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-zinc-700">
+                      <div className={`hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 ${
+                        isPast ? 'text-emerald-500/50' : 'text-zinc-700'
+                      }`}>
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     )}
@@ -247,7 +249,9 @@ export default function InteractiveProcessVisualizer() {
 
                   {/* Mobile vertical flow arrow between nodes */}
                   {idx < currentScenario.nodes.length - 1 && (
-                    <div className="md:hidden flex justify-center py-1.5 text-zinc-700">
+                    <div className={`md:hidden flex justify-center py-1.5 ${
+                      isPast ? 'text-emerald-500/50' : 'text-zinc-700'
+                    }`}>
                       <ArrowDown className="w-4 h-4" />
                     </div>
                   )}
