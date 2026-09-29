@@ -7,16 +7,16 @@ interface DualOfferingProps {
 
 export default function DualOffering({ onOpenContact }: DualOfferingProps) {
   const webDesignFeatures = [
-    'Handcodierte React- & Tailwind-Architektur',
+    'Wartungsfreie Architektur (React & Tailwind) – keine Plugin-Abstürze',
     'Ladezeiten unter 0.5s auf jedem Smartphone',
     'Klares, typografisches Design mit hoher Lesbarkeit',
     'Saubere SEO-Grundstruktur & strukturierte Daten',
     'Vollständige DSGVO-Konformität ohne Cookie-Banner-Zwang',
-    'Volle Code-Übergabe via GitHub — kein Lock-in'
+    '100 % dein Eigentum – kein Plattform-Abo, kein Lock-in'
   ];
 
   const processFeatures = [
-    'Automatisierte Workflows mit n8n, Make & Webhooks',
+    'Smarte Automatisierung (n8n & Schnittstellen) – verbindet deine vorhandenen Tools',
     'Direkte Weiterleitung ins CRM (Notion, HubSpot, Supabase)',
     'Sofortige Benachrichtigung via WhatsApp, Slack oder Mail',
     'Automatisierte Kalendersynchronisation (z.B. Cal.com)',

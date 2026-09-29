@@ -1,4 +1,5 @@
 import React from 'react';
+import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 interface MinimalFooterProps {
   onOpenImpressum: () => void;
@@ -14,7 +15,7 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
     <footer className="py-16 bg-[#09090b] border-t border-white/[0.04] text-zinc-400">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
           
           {/* Brand Info */}
           <div>
@@ -24,12 +25,24 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
               </span>
             </div>
             <p className="mt-1 text-sm font-sans text-zinc-500">
-              High-End Webdesign & Intelligente Prozesse • Köln & NRW
+              Webdesign & Intelligente Prozesse • Kerpen, Köln & NRW
             </p>
+
+            {/* Quick Contact */}
+            <div className="mt-4 space-y-1.5">
+              <a href="mailto:hello@rheindorf.digital" className="flex items-center gap-2 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors">
+                <Mail className="w-3.5 h-3.5" />
+                <span>hello@rheindorf.digital</span>
+              </a>
+              <a href="tel:+4916096351750" className="flex items-center gap-2 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors">
+                <Phone className="w-3.5 h-3.5" />
+                <span>+49 160 96351750</span>
+              </a>
+            </div>
           </div>
 
           {/* Legal Navigation */}
-          <div className="flex flex-wrap items-center gap-6 text-xs font-sans">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-xs font-sans">
             <button 
               onClick={onOpenImpressum} 
               className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
@@ -44,10 +57,10 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
             </button>
             <button
               onClick={scrollToTop}
-              className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer ml-auto md:ml-4"
+              className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
               aria-label="Nach oben scrollen"
             >
-              Nach oben
+              Nach oben ↑
             </button>
           </div>
 
@@ -59,7 +72,7 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
             © {new Date().getFullYear()} Alexander Rheindorf. Alle Rechte vorbehalten.
           </div>
           <div>
-            Handcodiert mit React, Tailwind & n8n Orchestrierung.
+            Handcodiert mit React & Tailwind.
           </div>
         </div>
 

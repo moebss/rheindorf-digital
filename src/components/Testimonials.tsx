@@ -25,19 +25,19 @@ export default function Testimonials() {
           {/* Left Card: Verified Client Review */}
           <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-emerald-500/20 transition-all shadow-xl">
             <p className="text-base sm:text-lg font-sans text-zinc-300 leading-relaxed italic">
-              "Alexander hat unseren Webauftritt für das Ladenlokal in Horrem von Grund auf neu gebaut. Die Seite lädt blitzschnell auf jedem Smartphone, sieht extrem hochwertig aus und wir werden im Erftkreis endlich ganz oben bei Google gefunden. Schnelle Abstimmung, direkte Umsetzung — genau so muss professionelle Zusammenarbeit laufen."
+              "Kunden finden uns jetzt sofort über Google Maps, und die meisten Fragen klären sich über die Website von selbst. Alles lädt blitzschnell auf jedem Handy, sieht extrem hochwertig aus und wir stehen im Erftkreis ganz oben. Die Zusammenarbeit war unkompliziert und direkt — so soll das laufen."
             </p>
 
             <div className="pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-sans font-medium text-white text-sm">Alexander (Inhaber)</span>
+                  <span className="font-sans font-medium text-white text-sm">Alexander K. (Inhaber)</span>
                   <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-500/30 px-2 py-0.5 rounded-full">
                     <CheckCircle2 className="w-2.5 h-2.5" />
                     <span>Verifiziert</span>
                   </span>
                 </div>
-                <div className="font-sans text-zinc-500 text-sm mt-0.5">Smoky Head&amp;Shisha Shop</div>
+                <div className="font-sans text-zinc-500 text-sm mt-0.5">Smoky Head&amp;Shisha Shop • Kerpen-Horrem</div>
               </div>
 
               <a

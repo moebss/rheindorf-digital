@@ -37,8 +37,8 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         {/* 4 Core Highlight Badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10 font-mono">
           <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.06)]">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">&lt; 0.35s FCP</div>
-            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">100/100 PageSpeed</div>
+            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">&lt; 0.35s</div>
+            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">100/100 Google Score</div>
           </div>
           <div className="p-4 rounded-2xl bg-[#111113] border border-white/[0.08]">
             <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">Top #1</div>
@@ -49,8 +49,8 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
             <div className="text-[10px] sm:text-xs text-zinc-400 uppercase mt-1">&sect; 5 DDG &amp; Jugendschutz</div>
           </div>
           <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/25">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">Zero Plugins</div>
-            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">Reiner React 19 Code</div>
+            <div className="text-xl sm:text-2xl font-bold text-emerald-400 tracking-tight">Wartungsfrei</div>
+            <div className="text-[10px] sm:text-xs text-emerald-300/80 uppercase mt-1 font-semibold">Keine Plugin-Abstürze</div>
           </div>
         </div>
 

@@ -1,16 +1,32 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle2, MessageCircle, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, Phone, MapPin, CheckCircle2, MessageCircle, ArrowUpRight, AlertCircle } from 'lucide-react';
 import alexanderProfileImg from '../images/profile.jpg';
 
-export default function MinimalInquiry() {
+interface MinimalInquiryProps {
+  prefill?: { scope?: string; message?: string };
+}
+
+export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
   const [selectedScope, setSelectedScope] = useState<string>('webdesign');
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+
+  useEffect(() => {
+    if (prefill?.scope) {
+      setSelectedScope(prefill.scope);
+    }
+    if (prefill?.message) {
+      setFormData(prev => ({ ...prev, message: prefill.message || prev.message }));
+    }
+  }, [prefill]);
 
   const scopes = [
     { id: 'webdesign', label: 'Website / Web-App', sub: 'Design & schnelles Frontend' },
@@ -21,24 +37,39 @@ export default function MinimalInquiry() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (honeypot) return; // Bot detected
+
+    setIsSubmitting(true);
+    setSubmitError(null);
 
     const webhookUrl = (import.meta as any).env?.VITE_INQUIRY_WEBHOOK_URL;
-    if (webhookUrl) {
-      try {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            timestamp: new Date().toISOString(),
-            scope: selectedScope,
-            ...formData,
-            source: 'rheindorf.digital'
-          })
-        });
-      } catch (err) {
-        console.warn('Webhook dispatch error:', err);
+
+    try {
+      if (!webhookUrl) {
+        throw new Error('Webhook nicht konfiguriert');
       }
+
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          scope: selectedScope,
+          ...formData,
+          source: 'rheindorf.digital'
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server-Fehler: Status ${res.status}`);
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error('Inquiry error:', err);
+      setSubmitError('Die Anfrage konnte leider nicht übertragen werden. Bitte kontaktiere mich direkt per WhatsApp oder E-Mail.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -196,12 +227,49 @@ export default function MinimalInquiry() {
                   </div>
                 </div>
 
+                {/* Honeypot - invisible to humans, catches bots */}
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  className="absolute -left-[9999px] opacity-0 h-0 w-0"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
+                {/* Error Message */}
+                {submitError && (
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-red-950/30 border border-red-500/30 text-red-300 text-sm font-sans">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                    <div>
+                      <p>{submitError}</p>
+                      <div className="mt-3 flex gap-3">
+                        <a href={whatsappConfirmUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-medium underline">
+                          → WhatsApp
+                        </a>
+                        <a href={mailtoConfirmUrl} className="text-emerald-400 hover:text-emerald-300 font-medium underline">
+                          → E-Mail
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 font-sans font-semibold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] cursor-pointer flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 font-sans font-semibold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Anfrage senden</span>
-                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
+                  {isSubmitting ? (
+                    <span>Wird gesendet…</span>
+                  ) : (
+                    <>
+                      <span>Anfrage senden</span>
+                      <ArrowUpRight className="w-4 h-4 text-zinc-950" />
+                    </>
+                  )}
                 </button>
 
                 <div className="flex flex-wrap items-center justify-between text-xs font-sans text-zinc-400 pt-2 gap-2">

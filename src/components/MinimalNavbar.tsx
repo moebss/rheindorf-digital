@@ -13,7 +13,7 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -63,7 +63,7 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-6">
           <button 
             onClick={() => scrollToSection('angebot')} 
             className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
@@ -77,10 +77,22 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
             Referenz
           </button>
           <button 
+            onClick={() => scrollToSection('rechner')} 
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
+          >
+            Rechner
+          </button>
+          <button 
             onClick={() => scrollToSection('architektur')} 
             className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
           >
             Automation
+          </button>
+          <button 
+            onClick={() => scrollToSection('ablauf')} 
+            className="text-sm font-sans text-zinc-400 hover:text-emerald-300 transition-colors cursor-pointer"
+          >
+            Ablauf
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 
@@ -128,10 +140,22 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
               Referenz
             </button>
             <button 
+              onClick={() => scrollToSection('rechner')} 
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
+            >
+              Rechner
+            </button>
+            <button 
               onClick={() => scrollToSection('architektur')} 
               className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
             >
               Automation
+            </button>
+            <button 
+              onClick={() => scrollToSection('ablauf')} 
+              className="w-full text-left py-3.5 px-3 min-h-[44px] text-lg font-sans text-zinc-300 hover:text-white hover:bg-white/[0.04] rounded-lg flex items-center justify-between border-b border-white/[0.04]"
+            >
+              Ablauf
             </button>
             <button 
               onClick={() => scrollToSection('faq')} 

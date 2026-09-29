@@ -38,7 +38,11 @@ interface Scenario {
   };
 }
 
-export default function InteractiveProcessVisualizer() {
+interface InteractiveProcessVisualizerProps {
+  onOpenContact?: () => void;
+}
+
+export default function InteractiveProcessVisualizer({ onOpenContact }: InteractiveProcessVisualizerProps = {}) {
   const scenarios: Scenario[] = [
     {
       id: 'crm-sync',
@@ -485,6 +489,38 @@ export default function InteractiveProcessVisualizer() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Conversion CTA Card */}
+          <div className="mt-8 p-6 sm:p-8 rounded-2xl border border-emerald-500/25 bg-gradient-to-r from-emerald-950/40 via-[#111114] to-[#111114] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-[0_0_30px_rgba(16,185,129,0.06)]">
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-semibold">
+                Individuelle Automation
+              </span>
+              <h3 className="text-base sm:text-lg font-sans font-semibold text-white tracking-tight">
+                Wie viel Zeit verliert dein Betrieb mit manuellem Abtippen?
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-400 font-sans max-w-xl">
+                Ob Lead-Intake, Angebotsversand oder Buchhaltungsbelege: Ich analysiere deine Tool-Landschaft und automatisiere deine zeitraubenden Schritte.
+              </p>
+            </div>
+            {onOpenContact ? (
+              <button
+                onClick={onOpenContact}
+                className="shrink-0 px-5 py-3 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-zinc-950 font-sans font-semibold text-sm transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] cursor-pointer flex items-center gap-2"
+              >
+                <span>Eigenen Workflow prüfen</span>
+                <ArrowRight className="w-4 h-4 text-zinc-950" />
+              </button>
+            ) : (
+              <a
+                href="#kontakt"
+                className="shrink-0 px-5 py-3 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-zinc-950 font-sans font-semibold text-sm transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] flex items-center gap-2"
+              >
+                <span>Eigenen Workflow prüfen</span>
+                <ArrowRight className="w-4 h-4 text-zinc-950" />
+              </a>
+            )}
           </div>
 
         </div>

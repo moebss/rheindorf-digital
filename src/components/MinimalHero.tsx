@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Zap } from 'lucide-react';
+import { ArrowUpRight, Zap, Calendar } from 'lucide-react';
 import heroPortrait from '../images/hero_rheindorf.jpg';
 
 interface MinimalHeroProps {
@@ -24,18 +24,18 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           <div className="lg:col-span-8 flex flex-col">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-6 sm:mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span>Webdesign &amp; Automation • Köln &amp; Remote</span>
+              <span>Webdesign &amp; Automation • Kerpen, Köln &amp; Remote</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-[-0.04em] text-white leading-[1.08] text-balance">
-              High-Performance Frontends.{' '}
+              Websites, die Kunden gewinnen.{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
-                Nahtlos verdrahtet mit Backend-Infrastruktur.
+                Workflows, die dir Stunden sparen.
               </span>
             </h1>
 
             <p className="mt-4 sm:mt-8 text-base sm:text-xl text-zinc-300 font-sans leading-relaxed max-w-2xl text-pretty">
-              Ich baue moderne Web-Plattformen und automatisiere zeitraubende Geschäftsprozesse mit n8n. Direkt vom Senior-Entwickler aus Köln – ohne Agentur-Overhead.
+              Ich baue moderne Web-Auftritte und automatisiere manuelle Abläufe für Unternehmen im Rheinland &amp; remote. Persönliche 1:1-Betreuung vom Senior-Entwickler – ohne Agentur-Overhead.
             </p>
 
             {/* CTAs */}
@@ -53,7 +53,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/[0.1] hover:border-emerald-500/30 hover:bg-emerald-950/20 text-zinc-300 hover:text-emerald-300 font-sans text-sm font-medium transition-all min-h-[44px]"
               >
                 <Zap className="w-4 h-4 text-emerald-400" />
-                <span>Live-Automation ansehen ↓</span>
+                <span>Live-Automation ansehen →</span>
               </a>
             </div>
 
@@ -64,17 +64,17 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                   <span>&lt; 0.4s</span>
                   <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-500/30 px-1.5 py-0.5 rounded">100/100</span>
                 </div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">PageSpeed FCP</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Ladezeit • Google Top-Score</div>
               </div>
 
               <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-emerald-400">n8n &amp; APIs</div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Workflow-Engine</div>
+                <div className="text-xl sm:text-2xl font-bold text-emerald-400">Automatisiert</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Keine Tipparbeit mehr</div>
               </div>
 
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-bold text-white">100% DSGVO</div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">&sect; 5 DDG Konform</div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">§ 5 DDG Konform</div>
               </div>
 
               <div className="space-y-0.5">
@@ -105,7 +105,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
               <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-2">
                 <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
-                  „Kein Agentur-Wasserkopf: Ich baue moderne Web-Plattformen für deinen Auftritt und automatisiere interne Arbeitsabläufe in deinen Systemen.“
+                  „In 2 bis 4 Wochen zur schlüsselfertigen Website – 100 % DSGVO-konform und ohne versteckte Folgekosten."
                 </p>
                 <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 pt-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />

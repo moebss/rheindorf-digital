@@ -50,7 +50,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               {type === 'impressum' ? <Scale className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
             </div>
             <div>
-              <h2 id="modal-title" className="font-outfit text-xl sm:text-2xl font-bold text-white leading-tight">
+              <h2 id="modal-title" className="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
                 {type === 'impressum' ? 'Impressum (§ 5 DDG & § 18 MStV)' : 'Datenschutzerklärung (DSGVO & TDDDG)'}
               </h2>
               <span className="text-[11px] text-emerald-400 font-semibold">
@@ -61,7 +61,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
 
           <button 
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
+            className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-full transition-colors cursor-pointer"
             aria-label="Schließen"
           >
             <X className="w-6 h-6" />
@@ -69,25 +69,26 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
         </div>
         
         {/* Modal Content (Scrollable) */}
-        <div className="p-6 sm:p-8 overflow-y-auto overscroll-contain text-slate-300 text-xs sm:text-sm leading-relaxed space-y-6">
+        <div className="p-6 sm:p-8 overflow-y-auto overscroll-contain text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-6">
           
           {type === 'impressum' ? (
             <>
               {/* Impressum Content */}
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base sm:text-lg">
+                <h3 className="font-display font-bold text-white text-base sm:text-lg">
                   1. Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)
                 </h3>
-                <p className="bg-[#080c14] p-4 rounded-xl border border-[#1e2c4a]">
+                <p className="bg-[#09090b] p-4 rounded-xl border border-white/10">
                   <strong className="text-white">Rheindorf Digital</strong><br />
                   Inhaber: Alexander Rheindorf<br />
+                  Stiftsstraße 18<br />
                   50169 Kerpen (Nordrhein-Westfalen)<br />
                   Deutschland
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   2. Kontaktmöglichkeiten
                 </h3>
                 <p>
@@ -98,17 +99,18 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   3. Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
                 </h3>
                 <p>
                   Alexander Rheindorf<br />
+                  Stiftsstraße 18<br />
                   50169 Kerpen
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   4. Umsatzsteuer
                 </h3>
                 <p>
@@ -118,7 +120,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   5. EU-Streitbeilegung & Verbraucherstreitbeilegung
                 </h3>
                 <p>
@@ -134,13 +136,13 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
                   </a>.<br />
                   Unsere E-Mail-Adresse finden Sie oben im Impressum.
                 </p>
-                <p className="text-slate-400 text-xs">
+                <p className="text-zinc-500 text-xs">
                   Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   6. Haftung für Inhalte und Links
                 </h3>
                 <p>
@@ -152,7 +154,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   7. Urheberrecht
                 </h3>
                 <p>
@@ -164,7 +166,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
             <>
               {/* Datenschutz Content */}
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base sm:text-lg">
+                <h3 className="font-display font-bold text-white text-base sm:text-lg">
                   1. Datenschutz auf einen Blick
                 </h3>
                 <p>
@@ -173,11 +175,12 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
+                <h3 className="font-display font-bold text-white text-base">
                   2. Verantwortliche Stelle
                 </h3>
-                <p className="bg-[#080c14] p-4 rounded-xl border border-[#1e2c4a]">
+                <p className="bg-[#09090b] p-4 rounded-xl border border-white/10">
                   <strong className="text-white">Alexander Rheindorf – Rheindorf Digital</strong><br />
+                  Stiftsstraße 18<br />
                   50169 Kerpen (Nordrhein-Westfalen)<br />
                   Telefon: 0160 96351750<br />
                   E-Mail: hello@rheindorf.digital
@@ -185,23 +188,32 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
-                  3. Datenerfassung auf dieser Website
+                <h3 className="font-display font-bold text-white text-base">
+                  3. Hosting & Server-Log-Dateien
                 </h3>
                 <p>
-                  <strong>Server-Log-Dateien:</strong> Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage: Art. 6 Abs. 1 lit. f DSGVO.
-                </p>
-                <p>
-                  <strong>Kontaktformular & Projekt-Kalkulator:</strong> Wenn Sie uns per Kontaktformular oder interaktivem Rechner Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Telefonnummer, E-Mail-Adresse, Vorhaben) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Grundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).
-                </p>
-                <p>
-                  <strong>Kontaktaufnahme per WhatsApp / Telefon:</strong> Bei einer freiwilligen Kontaktaufnahme über WhatsApp oder Telefon verarbeiten wir Ihre Telefonnummer und Nachrichteninhalte ausschließlich zur Abwicklung Ihrer Anfrage. Grundlage: Art. 6 Abs. 1 lit. b DSGVO.
+                  <strong>Hosting-Anbieter:</strong> Diese Website wird über Cloudflare Pages (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA) bereitgestellt. Cloudflare ist unter dem EU-U.S. Data Privacy Framework zertifiziert. Bei jedem Zugriff werden automatisch sogenannte Server-Log-Dateien erhoben: Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage: Art. 6 Abs. 1 lit. f DSGVO.
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
-                  4. Verzicht auf Tracking-Cookies & externe US-Schriftarten (TDDDG & DSGVO)
+                <h3 className="font-display font-bold text-white text-base">
+                  4. Kontaktformular & Datenverarbeitung
+                </h3>
+                <p>
+                  <strong>Kontaktformular & Projekt-Kalkulator:</strong> Wenn Sie uns per Kontaktformular oder interaktivem Rechner Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Telefonnummer, E-Mail-Adresse, Vorhaben) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Grundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).
+                </p>
+                <p>
+                  <strong>Kontaktaufnahme per WhatsApp:</strong> Bei einer freiwilligen Kontaktaufnahme über WhatsApp verarbeiten wir Ihre Telefonnummer und Nachrichteninhalte ausschließlich zur Abwicklung Ihrer Anfrage. WhatsApp wird betrieben von Meta Platforms Ireland Ltd. (4 Grand Canal Square, Dublin 2, Irland). Dabei können Daten an Server von Meta in den USA übertragen werden. Meta ist unter dem EU-U.S. Data Privacy Framework zertifiziert. Grundlage: Art. 6 Abs. 1 lit. b DSGVO.
+                </p>
+                <p>
+                  <strong>Kontaktaufnahme per Telefon:</strong> Bei einer Kontaktaufnahme per Telefon verarbeiten wir Ihre Rufnummer und Gesprächsinhalte ausschließlich zur Bearbeitung Ihrer Anfrage. Grundlage: Art. 6 Abs. 1 lit. b DSGVO.
+                </p>
+              </section>
+
+              <section className="space-y-2">
+                <h3 className="font-display font-bold text-white text-base">
+                  5. Verzicht auf Tracking-Cookies & externe US-Schriftarten (TDDDG & DSGVO)
                 </h3>
                 <p className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-300">
                   ✓ <strong>100% Lokale Schriftarten (@fontsource):</strong> Diese Seite nutzt ausschließlich lokal installierte Schriftarten. Es findet zu keinem Zeitpunkt eine Verbindung zu Servern von Google (Google Fonts) oder anderen Drittanbietern in den USA statt.<br />
@@ -210,11 +222,11 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
-                  5. Ihre Rechte als betroffene Person
+                <h3 className="font-display font-bold text-white text-base">
+                  6. Ihre Rechte als betroffene Person
                 </h3>
                 <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>
-                <ul className="list-disc list-inside space-y-1 text-slate-300 pl-2">
+                <ul className="list-disc list-inside space-y-1 text-zinc-300 pl-2">
                   <li><strong>Auskunft</strong> über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
                   <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
                   <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
@@ -228,11 +240,11 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-outfit font-bold text-white text-base">
-                  6. SSL- bzw. TLS-Verschlüsselung
+                <h3 className="font-display font-bold text-white text-base">
+                  7. SSL- bzw. TLS-Verschlüsselung
                 </h3>
                 <p>
-                  Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine moderne SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+                  Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine moderne SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
                 </p>
               </section>
             </>
@@ -241,13 +253,13 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 border-t border-[#1e2c4a] bg-[#080c14] flex items-center justify-between">
-          <span className="text-[11px] text-slate-400">
+        <div className="p-4 border-t border-white/10 bg-[#09090b] flex items-center justify-between">
+          <span className="text-[11px] text-zinc-500">
             Datenschutz & Rechtssicherheit nach DSGVO, DDG & TDDDG
           </span>
           <button
             onClick={onClose}
-            className="bg-[#0e1626] hover:bg-[#131d33] text-white border border-[#1e2c4a] px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+            className="bg-[#111114] hover:bg-zinc-800 text-white border border-white/10 px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
           >
             Schließen
           </button>
