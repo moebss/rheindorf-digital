@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MinimalNavbar from './components/MinimalNavbar';
 import MinimalHero from './components/MinimalHero';
 import DualOffering from './components/DualOffering';
+import WebsiteAuditChecker from './components/WebsiteAuditChecker';
 import PhilosophyManifesto from './components/PhilosophyManifesto';
 import NeoCaseStudy from './components/NeoCaseStudy';
 import RoiCalculator from './components/RoiCalculator';
@@ -65,28 +66,31 @@ export default function App() {
         {/* 2. Dual Offering (Webdesign vs. Automation) */}
         <DualOffering onOpenContact={() => scrollToContact()} />
 
-        {/* 3. Philosophy & Core Principles */}
+        {/* 3. Website Audit & Speed Check (Lead Magnet) */}
+        <WebsiteAuditChecker />
+
+        {/* 4. Philosophy & Core Principles */}
         <PhilosophyManifesto />
 
-        {/* 4. Real Verified Case Study */}
+        {/* 5. Real Verified Case Study */}
         <NeoCaseStudy onOpenContact={() => scrollToContact()} />
 
-        {/* 5. ROI & Impact Calculator */}
+        {/* 6. ROI, Price Configurator & Impact Calculator */}
         <RoiCalculator onOpenContact={scrollToContact} />
 
-        {/* 6. Interactive Process & Pipeline Visualizer */}
+        {/* 7. Interactive Process & Pipeline Visualizer */}
         <InteractiveProcessVisualizer onOpenContact={() => scrollToContact('automation', 'Ich möchte meine internen Workflows und Schnittstellen automatisieren.')} />
 
-        {/* 7. Collaboration Roadmap (4-Week Schedule) */}
+        {/* 8. Collaboration Roadmap (4-Week Schedule) */}
         <ProcessRoadmap />
 
-        {/* 8. Client Testimonials */}
+        {/* 9. Client Testimonials */}
         <Testimonials />
 
-        {/* 9. FAQ Section */}
+        {/* 10. FAQ Section */}
         <FAQ />
 
-        {/* 10. Inquiry / Contact Form */}
+        {/* 11. Inquiry / Contact Form */}
         <MinimalInquiry prefill={inquiryPrefill} />
 
       </main>

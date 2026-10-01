@@ -57,6 +57,16 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
               </a>
             </div>
 
+            <div className="mt-4 flex items-center gap-2 text-xs font-mono text-zinc-400">
+              <span className="text-zinc-600">Oder:</span>
+              <a 
+                href="#website-check" 
+                className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 font-medium transition-colors"
+              >
+                Bestehende Website kostenlos analysieren lassen →
+              </a>
+            </div>
+
             {/* Live Trust & Tech Ticker */}
             <div className="mt-10 pt-8 border-t border-white/[0.06] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
               <div className="space-y-0.5">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 interface MinimalNavbarProps {
   onOpenContact: () => void;
@@ -103,23 +103,42 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
         </nav>
 
         {/* Action */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-3 lg:gap-4">
+          <a
+            href="tel:+4916096351750"
+            className="hidden lg:inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-emerald-400 py-2 px-3 rounded-lg border border-white/[0.06] hover:border-emerald-500/30 transition-colors"
+            title="Direkt anrufen: 0160 96351750"
+          >
+            <Phone className="w-3.5 h-3.5 text-emerald-400" />
+            <span>0160 96351750</span>
+          </a>
+
           <button
             onClick={onOpenContact}
-            className="bg-white hover:bg-zinc-100 text-zinc-950 font-sans font-semibold text-sm px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer min-h-[44px]"
+            className="bg-white hover:bg-zinc-100 text-zinc-950 font-sans font-semibold text-sm px-4 lg:px-5 py-2.5 rounded-lg transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer min-h-[44px]"
           >
             Projekt anfragen
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-300 hover:text-white rounded-xl active:bg-zinc-800 focus:outline-none"
-          aria-label="Navigation umschalten"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Call Icon + Menu Toggle */}
+        <div className="flex md:hidden items-center gap-2">
+          <a
+            href="tel:+4916096351750"
+            aria-label="Direkt anrufen: 0160 96351750"
+            className="min-h-[42px] min-w-[42px] flex items-center justify-center p-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 active:scale-95 transition-transform"
+          >
+            <Phone className="w-4 h-4" />
+          </a>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2 text-zinc-300 hover:text-white rounded-xl active:bg-zinc-800 focus:outline-none"
+            aria-label="Navigation umschalten"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
 
       </div>
 
@@ -165,7 +184,26 @@ export default function MinimalNavbar({ onOpenContact }: MinimalNavbarProps) {
             </button>
           </div>
 
-          <div className="pt-6 border-t border-white/[0.04] pb-16 sm:pb-0">
+          <div className="pt-6 border-t border-white/[0.04] pb-16 sm:pb-0 space-y-3">
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="tel:+4916096351750"
+                className="py-3 px-3 rounded-lg border border-white/[0.08] bg-[#111114] text-zinc-300 hover:text-white font-sans text-xs flex items-center justify-center gap-2"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Anrufen</span>
+              </a>
+              <a
+                href="https://wa.me/4916096351750?text=Hallo%20Alexander,%20ich%20m%C3%B6chte%20ein%20Projekt%20besprechen."
+                target="_blank"
+                rel="noreferrer"
+                className="py-3 px-3 rounded-lg border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 font-sans text-xs flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
