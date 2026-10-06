@@ -5,31 +5,31 @@ export default function ProcessRoadmap() {
   const steps = [
     {
       num: '01',
-      title: 'Bedarf & Festpreis',
+      title: 'Kennenlernen & Festpreis',
       timeframe: 'Tag 1–3',
-      desc: 'Wir sprechen 20–30 Minuten via Telefon oder Video. Wir klären dein Ziel (Webseite, Schnittstellen oder beides) und du erhältst ein verbindliches Festpreis-Angebot.',
-      deliverables: ['Präzise Zieldefinition', 'Technische Prüfung', 'Verbindlicher Festpreis']
+      desc: 'Wir telefonieren 20–30 Minuten ganz unverbindlich. Wir klären, was du brauchst (neue Website, Schnittstellen oder beides) und du bekommst ein klares Festpreis-Angebot.',
+      deliverables: ['Echtes Verständnis für deinen Betrieb', 'Kein Fachchinesisch', 'Verbindlicher Festpreis ohne Überraschungen']
     },
     {
       num: '02',
-      title: 'Konzept & Klick-Entwurf',
+      title: 'Entwurf & Texte',
       timeframe: 'Woche 1',
-      desc: 'Bei Webdesign: Struktur, Texte und erster interaktiver Entwurf direkt im Browser. Bei Prozessen: Mapping deiner Felder und Schnittstellen zwischen deinen Tools.',
-      deliverables: ['Layout- oder Workflow-Konzept', 'Texte & Struktur geklärt', 'Direktes Feedback ohne Schleifen']
+      desc: 'Ich erstelle die Struktur, formuliere die Texte und baue den ersten Klick-Entwurf direkt im Browser. Du siehst sofort, wie deine Seite auf dem Smartphone aussieht.',
+      deliverables: ['Erster Entwurf direkt im echten Browser', 'Texte fertig formuliert', 'Feedback direkt mit mir besprechen']
     },
     {
       num: '03',
-      title: 'Umsetzung & Schnittstellen',
+      title: 'Umsetzung & Feinschliff',
       timeframe: 'Woche 2–3',
-      desc: 'Programmierung der blitzschnellen React- & Tailwind-Seiten oder Einrichtung der n8n-Workflows, Webhooks und automatischen E-Mail-/WhatsApp-Meldungen.',
-      deliverables: ['Saubere Code-Basis', 'Umfassende Praxistests', '100% DSGVO-Konformität']
+      desc: 'Ich programmiere deine Seite mit modernstem React-Code oder richte deine automatischen n8n-Workflows ein (WhatsApp-Meldungen, Terminkalender, CRM-Einträge).',
+      deliverables: ['Blitzschneller Code (< 0.5s)', 'Schnittstellen & Formulare getestet', '100% DSGVO-konform ohne Cookie-Banner']
     },
     {
       num: '04',
       title: 'Go-Live & Übergabe',
       timeframe: 'Woche 4',
-      desc: 'Live-Schaltung auf deiner Wunsch-Domain bzw. Produktivstart der Pipelines. Vollständige Übergabe aller Zugänge plus optionaler monatlicher Wartungsservice.',
-      deliverables: ['Produktivbetrieb ab Tag 1', 'Volle Kontrolle & alle Zugänge', 'Optionale laufende Betreuung']
+      desc: 'Deine Seite geht auf deiner Wunsch-Domain online. Du bekommst alle Zugänge, den vollen Quellcode und bist zu 100% unabhängig. Wenn du möchtest, übernehme ich auch die laufende Pflege.',
+      deliverables: ['Schlüsselfertig online ab Tag 1', 'Volles Eigentum am Code & Inhalten', 'Optionale laufende Betreuung']
     }
   ];
 
@@ -40,13 +40,13 @@ export default function ProcessRoadmap() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
-            4-Schritte Roadmap
+            Zusammenarbeit &bull; Schritt für Schritt
           </span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl font-display font-bold tracking-tight text-stone-900">
             Klarer Ablauf. Keine Hängepartie.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
-            Ob neue Website, interne Prozess-Automation oder das kombinierte Gesamtpaket: In 4 Phasen vom ersten Gespräch bis zum reibungslosen Produktivbetrieb.
+            Vom ersten Telefonat bis zur fertigen Website – ohne Agentur-Umwege, ohne endlose Meetings und ohne wochenlanges Warten.
           </p>
         </div>
 

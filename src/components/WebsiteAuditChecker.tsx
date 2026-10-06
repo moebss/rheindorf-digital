@@ -123,13 +123,20 @@ export default function WebsiteAuditChecker() {
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
-                  href={`https://wa.me/4916096351750?text=${encodeURIComponent(`Hallo Alexander! Ich habe gerade den Website-Check für ${url} gestartet.`)}`}
+                  href={`https://wa.me/4916096351750?text=${encodeURIComponent(`Hallo Alexander! Ich habe gerade den kostenlosen Website-Check für ${url} gestartet.\n\nMein Fokus: ${focusOptions.find(f => f.id === focusArea)?.label}\nKontakt: ${contact}`)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-sans font-semibold text-xs flex items-center justify-center gap-2 shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Direkt via WhatsApp nachhaken</span>
+                  <span>Auf WhatsApp nachhaken</span>
+                </a>
+
+                <a
+                  href={`mailto:hello@rheindorf.digital?subject=${encodeURIComponent(`Website-Check für ${url}`)}&body=${encodeURIComponent(`Hallo Alexander,\n\nich möchte den kostenlosen Website-Check anfordern:\n\nWebsite: ${url}\nMein Schwerpunkt: ${focusOptions.find(f => f.id === focusArea)?.label}\nMein Kontakt: ${contact}\n\nBitte sende mir dein kurzes Feedback zu.`)}`}
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-[#e7e3d8] bg-white hover:bg-stone-50 text-stone-800 font-sans font-medium text-xs flex items-center justify-center gap-2 shadow-xs"
+                >
+                  <span>Per E-Mail senden</span>
                 </a>
 
                 <button

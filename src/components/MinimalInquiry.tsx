@@ -120,10 +120,10 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-display font-bold text-stone-900 mb-2">
-                  Anfrage erfolgreich erfasst!
+                  Anfrage vorbereitet!
                 </h3>
-                <p className="text-sm text-stone-600 font-sans max-w-sm">
-                  Vielen Dank{formData.name ? `, ${formData.name}` : ''}! Ich melde mich in Kürze persönlich bei dir.
+                <p className="text-sm text-stone-600 font-sans max-w-md">
+                  Vielen Dank{formData.name ? `, ${formData.name}` : ''}! Deine Projektdaten sind zusammengestellt. Sende sie mir jetzt mit 1 Klick direkt über deinen bevorzugten Kanal:
                 </p>
 
                 <div className="mt-8 w-full space-y-3">
@@ -131,23 +131,27 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                     href={whatsappConfirmUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-sans font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
+                    className="w-full py-3.5 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-sans font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>Auf WhatsApp anpingen</span>
+                    <span>Jetzt per WhatsApp an Alexander senden</span>
                   </a>
                   <a
                     href={mailtoConfirmUrl}
-                    className="w-full py-2.5 px-5 border border-[#e7e3d8] text-stone-800 hover:text-stone-950 hover:bg-stone-50 font-sans font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors"
+                    className="w-full py-3 px-5 border border-[#e7e3d8] bg-white text-stone-800 hover:text-stone-950 hover:bg-stone-50 font-sans font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors shadow-2xs"
                   >
-                    <Mail className="w-4 h-4" />
-                    <span>Per E-Mail öffnen</span>
+                    <Mail className="w-4 h-4 text-emerald-700" />
+                    <span>Per E-Mail an hello@rheindorf.digital senden</span>
                   </a>
+                </div>
+
+                <div className="mt-6 p-3 rounded-xl bg-[#fbf9f5] border border-[#e7e3d8] text-xs font-sans text-stone-500 max-w-sm">
+                  💡 Du erreichst mich auch jederzeit direkt unter <strong className="text-stone-900">0160 96351750</strong>.
                 </div>
 
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-8 text-xs font-sans text-stone-500 hover:text-emerald-700 transition-colors cursor-pointer"
+                  className="mt-6 text-xs font-sans text-stone-500 hover:text-emerald-700 transition-colors cursor-pointer"
                 >
                   ← Zurück zum Formular
                 </button>

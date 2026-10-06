@@ -49,32 +49,32 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
       description: 'Jeder neue Kontakt aus Webformular, Terminkalender oder Mail wird in Millisekunden dedupliziert, im CRM angelegt und als Vorab-Dossier direkt auf dein Smartphone gesendet.',
       nodes: [
         {
-          step: '01 / Trigger',
+          step: '01 / Eingang',
           system: 'Web-Formular / Cal.com',
           iconName: 'trigger',
-          action: 'Eingehende Anfrage oder Terminbuchung',
-          badge: 'POST 200 OK'
+          action: 'Eingehende Anfrage oder Terminbuchung eines Neukunden',
+          badge: 'Eingegangen'
         },
         {
-          step: '02 / Logic Engine',
-          system: 'n8n Workflow Hub',
+          step: '02 / Prüfung',
+          system: 'Smarte n8n-Logik',
           iconName: 'logic',
-          action: 'Duplikatsprüfung, Spamfilter & Datenanreicherung',
-          badge: '18ms Latenz'
+          action: 'Duplikatsprüfung, Spamfilter & automatische Datenanreicherung',
+          badge: 'Sofort geprüft'
         },
         {
-          step: '03 / Database',
+          step: '03 / Datenbank',
           system: 'Notion / HubSpot CRM',
           iconName: 'database',
-          action: 'Automatisches Erstellen von Kundenkarte & Deal-Stage',
-          badge: 'Synced'
+          action: 'Automatisches Anlegen von Kundenkarte & Anfragedetails',
+          badge: 'Gespeichert'
         },
         {
-          step: '04 / Dispatch',
-          system: 'WhatsApp & Slack',
+          step: '04 / Benachrichtigung',
+          system: 'WhatsApp & Smartphone',
           iconName: 'notification',
-          action: 'Push-Alarm mit One-Click-Rückruf auf dein Handy',
-          badge: 'Sofort-Alert'
+          action: 'Sofortiger Alarm mit One-Click-Rückruf auf dein Handy',
+          badge: 'Direkt-Alert'
         }
       ],
       terminalLogs: [
@@ -92,36 +92,36 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
     {
       id: 'invoice-flow',
       title: 'Beleg- & Buchhaltungs-Flow',
-      tag: 'Lautlose Büro-Automation',
-      description: 'Eingangsrechnungen aus Mails oder Cloud-Ordnern werden via OCR ausgelesen, automatisch verbucht und steuerfertig im Monatsarchiv abgelegt.',
+      tag: 'Büro-Entlastung',
+      description: 'Eingangsrechnungen aus Mails oder Cloud-Ordnern werden automatisch ausgelesen, verbucht und steuerfertig im Monatsarchiv abgelegt.',
       nodes: [
         {
           step: '01 / Eingang',
           system: 'Mail-Inbox & Drive',
           iconName: 'trigger',
           action: 'Eingangsrechnung (PDF) wird erkannt',
-          badge: 'Mail Hook'
+          badge: 'Erkannt'
         },
         {
-          step: '02 / OCR Parser',
-          system: 'n8n Document Engine',
+          step: '02 / Texterkennung',
+          system: 'Automatische Belegerkennung',
           iconName: 'logic',
-          action: 'Extraktion von IBAN, USt-ID, Betrag & Datum',
-          badge: 'Regex / OCR'
+          action: 'Extraktion von IBAN, Betrag, Datum & Rechnungsnummer',
+          badge: 'Ausgelesen'
         },
         {
-          step: '03 / Buchung',
+          step: '03 / Buchhaltung',
           system: 'Lexoffice / SevDesk',
           iconName: 'database',
-          action: 'Automatischer Belegerstellungs-Entwurf',
-          badge: 'API Push'
+          action: 'Automatischer Entwurf zur Freigabe erstellt',
+          badge: 'Übertragen'
         },
         {
-          step: '04 / Status',
-          system: 'Telegram & Dashboard',
+          step: '04 / Freigabe',
+          system: 'Push-Nachricht',
           iconName: 'notification',
           action: 'Bestätigung mit Direktlink zum Zahlungsabgleich',
-          badge: 'Freigabe'
+          badge: 'Fertig'
         }
       ],
       terminalLogs: [
@@ -143,32 +143,32 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
       description: 'Sobald ein Neukunde unterschreibt, werden automatisch Projektordner angelegt, Zugangsdaten generiert, Willkommenspakete versendet und der Kickoff vorbereitet.',
       nodes: [
         {
-          step: '01 / Deal Won',
-          system: 'DocuSign / Angebot',
+          step: '01 / Zusage',
+          system: 'Digitale Signatur / Angebot',
           iconName: 'trigger',
-          action: 'Digitale Signatur oder Angebotsannahme',
-          badge: 'Signed'
+          action: 'Digitale Signatur oder Angebotsannahme des Kunden',
+          badge: 'Bestätigt'
         },
         {
-          step: '02 / Workspace',
-          system: 'n8n Orchestrator',
+          step: '02 / Projektraum',
+          system: 'Automatische Ordnerstruktur',
           iconName: 'logic',
-          action: 'Ordnerstruktur & Projekt-Kanban anlegen',
-          badge: 'Automated'
+          action: 'Kundenordner, Checklisten & Projekt-Board anlegen',
+          badge: 'Erstellt'
         },
         {
-          step: '03 / Auth & Vault',
-          system: 'Drive & Password Vault',
+          step: '03 / Zugänge',
+          system: 'Cloud & Dokumente',
           iconName: 'database',
-          action: 'Kunden-Upload-Link & Einladungen senden',
-          badge: 'Encrypted'
+          action: 'Sicherer Upload-Link für Kundenunterlagen versendet',
+          badge: 'Sicher'
         },
         {
-          step: '04 / Welcome',
+          step: '04 / Willkommen',
           system: 'E-Mail & SMS',
           iconName: 'notification',
-          action: 'Onboarding-Guide mit Kalenderlink versendet',
-          badge: 'Sent'
+          action: 'Persönlicher Onboarding-Guide mit Terminlink',
+          badge: 'Versendet'
         }
       ],
       terminalLogs: [
@@ -259,14 +259,14 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shadow-[0_0_8px_rgba(5,150,105,0.8)]" />
-              <span>Interaktive Automation Pipeline &bull; Live Simulation</span>
+              <span>Echte Praxis &bull; Büro-Automation</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-stone-900 leading-tight">
               Workflows, die lautlos für dich arbeiten.
             </h2>
           </div>
           <p className="max-w-md text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
-            Keine Theorie, sondern handfeste Datenflüsse. Klicke dich durch die Live-Szenarien und sieh zu, wie Webhooks, n8n und APIs manuelle Arbeit in Sekundenbruchteilen erledigen.
+            Keine graue Theorie. Klicke dich durch die 3 Praxisbeispiele und erlebe selbst, wie wiederkehrende Handgriffe (Lead-Erfassung, Rechnungsablage, Kundenbegrüßung) in Sekundenbruchteilen vollautomatisch erledigt werden.
           </p>
         </div>
 
@@ -306,7 +306,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
               title={isPlaying ? 'Auto-Cycle anhalten' : 'Auto-Cycle starten'}
             >
               {isPlaying ? <Pause className="w-3.5 h-3.5 text-emerald-700" /> : <Play className="w-3.5 h-3.5 text-stone-500" />}
-              <span className="hidden sm:inline text-[11px]">{isPlaying ? 'Auto-Play: ON' : 'Pausiert'}</span>
+              <span className="hidden sm:inline text-[11px]">{isPlaying ? 'Auto-Play: An' : 'Pausiert'}</span>
             </button>
 
             <button
@@ -328,7 +328,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
               <div className="text-xs font-mono text-emerald-800 uppercase tracking-widest font-semibold flex items-center gap-2">
                 <span>{currentScenario.tag}</span>
                 <span className="text-stone-400">&bull;</span>
-                <span className="text-stone-500 font-normal">End-to-End Testumgebung</span>
+                <span className="text-stone-500 font-normal">Live-Simulation</span>
               </div>
               <p className="mt-1 text-sm text-stone-600 font-sans max-w-2xl leading-relaxed">
                 {currentScenario.description}

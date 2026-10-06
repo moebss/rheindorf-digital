@@ -7,7 +7,7 @@ interface DualOfferingProps {
 
 export default function DualOffering({ onOpenContact }: DualOfferingProps) {
   const webDesignFeatures = [
-    'Wartungsfreie Architektur (React & Tailwind) – keine Plugin-Abstürze',
+    'Stabile Architektur (React) – keine Plugin-Abstürze oder Update-Schleifen',
     'Ladezeiten unter 0.5s auf jedem Smartphone',
     'Klares, typografisches Design mit hoher Lesbarkeit',
     'Saubere SEO-Grundstruktur & strukturierte Daten',

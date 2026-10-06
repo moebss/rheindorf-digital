@@ -4,27 +4,27 @@ export default function PhilosophyManifesto() {
   const principles = [
     {
       index: '01',
-      title: 'Form folgt Funktion.',
-      desc: 'Keine visuellen Spielereien, die vom Inhalt ablenken. Gute Gestaltung schafft sofortiges Vertrauen und sorgt dafür, dass Besucher ohne Reibung Kontakt aufnehmen.',
+      title: 'Klarheit vor Schnickschnack.',
+      desc: 'Keine verwirrenden Animationen, die von deinem Angebot ablenken. Gute Gestaltung schafft sofortiges Vertrauen und sorgt dafür, dass Besucher einfach zum Hörer greifen oder eine Anfrage abschicken.',
       tag: 'Klarheit'
     },
     {
       index: '02',
-      title: 'Code statt Plugin-Friedhof.',
-      desc: 'Kein überladenes WordPress, keine 40 Plugins mit Sicherheitslücken. Handgeschriebener Code lädt blitzschnell und funktioniert auch nach Jahren noch zuverlässig.',
+      title: 'Sauberer Code statt Plugin-Friedhof.',
+      desc: 'Kein überladenes WordPress mit 40 Plugins, die Sicherheitslücken aufreißen. Moderner React-Code lädt blitzschnell, stürzt nicht ab und funktioniert auch nach Jahren noch zuverlässig.',
       tag: 'Handwerk'
     },
     {
       index: '03',
-      title: 'Automation statt Copy-Paste.',
-      desc: 'Wiederkehrende Datenübertragungen zwischen CRM, E-Mail, Buchhaltung und Tools gehören automatisiert. Software soll deinen Alltag entlasten — verlässlich und ohne Fleißarbeit.',
+      title: 'Automation statt Tipparbeit.',
+      desc: 'Wiederkehrende Datenübertragungen zwischen Kontaktformular, Kalender, E-Mail und Buchhaltung gehören automatisiert. Software soll deinen Alltag entlasten — ohne händische Fleißarbeit.',
       tag: 'Effizienz'
     },
     {
       index: '04',
-      title: 'Verlässliche Partnerschaft.',
-      desc: 'Nach dem Projektstart lasse ich dich nicht allein. Ob monatliche Pflege deiner Website oder laufendes Monitoring und Ausbau deiner Workflows: Ich halte deine Systeme dauerhaft stabil.',
-      tag: 'Service'
+      title: 'Verlässlicher Partner vor Ort.',
+      desc: 'Ich sitze in Kerpen bei Köln und bin greifbar. Bei Fragen, Wartung oder neuen Ideen sprichst du direkt mit mir persönlich – ohne Callcenter, Agentur-Wasserkopf oder anonyme Tickets.',
+      tag: 'Persönlich'
     }
   ];
 
@@ -35,13 +35,13 @@ export default function PhilosophyManifesto() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
-            [ PRINZIPIEN ]
+            Arbeitsweise &bull; Mein Versprechen
           </span>
           <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-stone-900">
-            Vier Grundsätze für solide Websites.
+            Worauf du dich bei mir verlassen kannst.
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
-            Wie ich arbeite, worauf ich achte und warum ich typische Agentur-Methoden bewusst verwerfe.
+            Keine künstlichen Buzzwords, keine leeren Versprechungen. Vier handfeste Gründe, warum Unternehmen und Betriebe im Rheinland direkt mit mir zusammenarbeiten.
           </p>
         </div>
 

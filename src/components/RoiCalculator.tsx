@@ -123,7 +123,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
 
         {/* 3-Tab Switcher */}
         <div className="flex justify-center mb-8 sm:mb-10">
-          <div className="p-1.5 rounded-2xl bg-stone-200/70 border border-[#e7e3d8] flex flex-wrap justify-center gap-1.5">
+          <div className="p-1.5 rounded-2xl bg-[#ede8dc] border border-[#e7e3d8] flex flex-wrap justify-center gap-1.5 shadow-2xs">
             <button
               onClick={() => setActiveTab('pricing')}
               className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl font-mono text-xs uppercase tracking-wider transition-all cursor-pointer font-semibold ${
@@ -406,6 +406,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     min="1"
                     max="20"
                     value={teamSize}
+                    aria-label="Teamgröße mit Büroaufgaben"
                     onChange={(e) => setTeamSize(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
@@ -432,6 +433,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     min="1"
                     max="25"
                     value={manualHoursPerWeek}
+                    aria-label="Manuelle Fleißarbeit in Stunden pro Person und Woche"
                     onChange={(e) => setManualHoursPerWeek(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
@@ -459,6 +461,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     max="120"
                     step="5"
                     value={hourlyRate}
+                    aria-label="Durchschnittlicher interner Stundensatz in Euro"
                     onChange={(e) => setHourlyRate(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
@@ -540,6 +543,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     max="10000"
                     step="100"
                     value={monthlyVisitors}
+                    aria-label="Monatliche Besucher auf der Website"
                     onChange={(e) => setMonthlyVisitors(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
@@ -571,6 +575,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     max="8.0"
                     step="0.1"
                     value={loadTimeSeconds}
+                    aria-label="Aktuelle Ladezeit auf Smartphones in Sekunden"
                     onChange={(e) => setLoadTimeSeconds(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
@@ -598,6 +603,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
                     max="5000"
                     step="50"
                     value={avgCustomerValue}
+                    aria-label="Durchschnittlicher Auftragswert in Euro"
                     onChange={(e) => setAvgCustomerValue(Number(e.target.value))}
                     className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
                   />
