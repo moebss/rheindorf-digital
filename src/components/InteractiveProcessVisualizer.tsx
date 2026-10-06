@@ -467,7 +467,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
           )}
 
           {/* Real-Time Live Execution Terminal (High-Contrast Luxury Dark Console) */}
-          <div className="mt-6 rounded-xl bg-[#18181b] border border-stone-800 p-4 font-mono text-xs overflow-hidden shadow-sm">
+          <div className="mt-6 rounded-xl bg-[#18181b] border border-stone-800 p-4 font-[ui-monospace,monospace] text-xs overflow-hidden shadow-sm">
             <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-stone-800 text-stone-400 text-[11px]">
               <div className="flex items-center gap-2">
                 <Terminal className="w-3.5 h-3.5 text-emerald-400" />
@@ -477,7 +477,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
               <span className="text-stone-500">n8n Execution Engine v1.82</span>
             </div>
 
-            <div className="space-y-1.5 font-mono text-[11px] leading-relaxed">
+            <div className="space-y-1.5 font-[ui-monospace,monospace] text-[11px] leading-relaxed">
               {currentScenario.terminalLogs.slice(0, logIndex).map((log, lIdx) => (
                 <div 
                   key={lIdx} 
