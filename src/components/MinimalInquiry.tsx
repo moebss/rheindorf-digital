@@ -93,32 +93,32 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border border-emerald-300 bg-[#ecfdf5] hover:bg-[#d1fae5] text-sm sm:text-base font-sans text-emerald-900 font-semibold transition-all group shadow-2xs hover:shadow-xs cursor-pointer"
+              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-emerald-300 bg-[#ecfdf5] hover:bg-[#d1fae5] text-sm sm:text-base font-sans text-emerald-900 font-semibold transition-all group shadow-2xs hover:shadow-xs cursor-pointer min-h-[44px]"
             >
               <MessageCircle className="w-5 h-5 text-emerald-700 shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="flex-1">Direkt via WhatsApp schreiben &rarr;</span>
+              <span className="flex-1 truncate">Direkt via WhatsApp schreiben &rarr;</span>
             </a>
 
             {/* 2. E-Mail Button */}
             <a 
               href={mailtoUrl}
-              className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#faf8f3] text-sm sm:text-base font-sans text-stone-800 transition-all shadow-2xs group cursor-pointer"
+              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#faf8f3] text-sm sm:text-base font-sans text-stone-800 transition-all shadow-2xs group cursor-pointer min-h-[44px]"
             >
               <Mail className="w-5 h-5 text-emerald-700 shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">hello@rheindorf.digital</span>
+              <span className="font-medium truncate">hello@rheindorf.digital</span>
             </a>
 
             {/* 3. Phone Call Button */}
             <a 
               href="tel:+4916096351750"
-              className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#faf8f3] text-sm sm:text-base font-sans text-stone-800 transition-all shadow-2xs group cursor-pointer"
+              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#faf8f3] text-sm sm:text-base font-sans text-stone-800 transition-all shadow-2xs group cursor-pointer min-h-[44px]"
             >
               <Phone className="w-5 h-5 text-emerald-700 shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">+49 160 96351750</span>
+              <span className="font-medium truncate">+49 160 96351750</span>
             </a>
 
             {/* 4. Location Row */}
-            <div className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white text-sm sm:text-base font-sans text-stone-600 shadow-2xs">
+            <div className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-[#e7e3d8] bg-white text-xs sm:text-sm font-sans text-stone-600 shadow-2xs min-h-[44px]">
               <MapPin className="w-5 h-5 text-stone-400 shrink-0" />
               <span>Kerpen &amp; Köln (NRW) &bull; Remote weltweit</span>
             </div>

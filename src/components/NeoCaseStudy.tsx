@@ -37,22 +37,22 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         </div>
 
         {/* 4 Core Highlight Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10 font-mono">
-          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-700 tracking-tight">&lt; 0.35s</div>
-            <div className="text-[10px] sm:text-xs text-stone-600 uppercase mt-1 font-semibold">100/100 Google Score</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
+          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs min-w-0">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-700 tracking-tight truncate">&lt; 0.35s</div>
+            <div className="text-[10px] sm:text-xs text-stone-600 uppercase mt-1 font-semibold truncate">100/100 Google Score</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs">
-            <div className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">Top #1</div>
-            <div className="text-[10px] sm:text-xs text-stone-500 uppercase mt-1">Google Maps Kerpen</div>
+          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs min-w-0">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-stone-900 tracking-tight truncate">Top #1</div>
+            <div className="text-[10px] sm:text-xs text-stone-500 uppercase mt-1 truncate">Google Maps Kerpen</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs">
-            <div className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">100% DSGVO</div>
-            <div className="text-[10px] sm:text-xs text-stone-500 uppercase mt-1">&sect; 5 DDG &amp; Jugendschutz</div>
+          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs min-w-0">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-stone-900 tracking-tight truncate">100% DSGVO</div>
+            <div className="text-[10px] sm:text-xs text-stone-500 uppercase mt-1 truncate">&sect; 5 DDG &amp; Jugendschutz</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-700 tracking-tight">Wartungsfrei</div>
-            <div className="text-[10px] sm:text-xs text-stone-600 uppercase mt-1 font-semibold">Keine Plugin-Abstürze</div>
+          <div className="p-4 rounded-2xl bg-white border border-[#e7e3d8] shadow-xs min-w-0">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-700 tracking-tight truncate">0 Wartung</div>
+            <div className="text-[10px] sm:text-xs text-stone-600 uppercase mt-1 font-semibold truncate">Keine Plugin-Abstürze</div>
           </div>
         </div>
 

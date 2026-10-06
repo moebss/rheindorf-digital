@@ -95,7 +95,7 @@ export default function WebsiteAuditChecker() {
 
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-display font-bold text-stone-900">
-                  Analyse für <span className="text-emerald-700 font-mono text-lg">{url}</span> erfasst!
+                  Analyse für <span className="text-emerald-700 font-mono text-lg break-all">{url}</span> erfasst!
                 </h3>
                 <p className="text-sm text-stone-600 font-sans max-w-lg mx-auto">
                   Vielen Dank! Ich schaue mir deine Website persönlich an (PageSpeed, Mobil-Struktur, DSGVO-Basics) und melde mich mit konkreten Hebeln bei dir.

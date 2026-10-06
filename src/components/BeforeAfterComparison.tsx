@@ -187,7 +187,7 @@ export default function BeforeAfterComparison() {
               <div className="mt-6 space-y-6">
                 {filteredMetrics.map((item, idx) => (
                   <div key={idx} className="space-y-1.5 pb-5 border-b border-stone-200/80 last:border-0 last:pb-0">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-rose-500" />
                         <span>{item.before.title}</span>
@@ -241,7 +241,7 @@ export default function BeforeAfterComparison() {
               <div className="mt-6 space-y-6">
                 {filteredMetrics.map((item, idx) => (
                   <div key={idx} className="space-y-1.5 pb-5 border-b border-stone-100 last:border-0 last:pb-0">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
                         <span>{item.after.title}</span>

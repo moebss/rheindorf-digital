@@ -75,28 +75,28 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
             </div>
 
             {/* Live Trust & Tech Ticker */}
-            <div className="mt-10 pt-8 border-t border-[#e7e3d8] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
-              <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-stone-900 flex items-center gap-1.5">
+            <div className="mt-10 pt-8 border-t border-[#e7e3d8] grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="space-y-1 min-w-0">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-stone-900 flex items-center gap-1.5 flex-wrap">
                   <span>&lt; 0.4s</span>
                   <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">100/100</span>
                 </div>
-                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Ladezeit • Top-Score</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider font-medium">Ladezeit &bull; Top-Score</div>
               </div>
 
-              <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-emerald-700">Automatisiert</div>
-                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Keine Tipparbeit mehr</div>
+              <div className="space-y-1 min-w-0">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-700">Workflows</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider font-medium">Voll automatisiert</div>
               </div>
 
-              <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-stone-900">100% DSGVO</div>
-                <div className="text-[11px] text-stone-500 uppercase tracking-wider">§ 5 DDG Konform</div>
+              <div className="space-y-1 min-w-0">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-stone-900">100% DSGVO</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider font-medium">&sect; 5 DDG Konform</div>
               </div>
 
-              <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-emerald-700">1:1 Senior</div>
-                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Ohne Wasserkopf</div>
+              <div className="space-y-1 min-w-0">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-700">1:1 Senior</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider font-medium">Ohne Wasserkopf</div>
               </div>
             </div>
           </div>
