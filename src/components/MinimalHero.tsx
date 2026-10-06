@@ -109,7 +109,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
                 <img 
                   src={heroPortrait} 
                   alt="Alexander Rheindorf" 
-                  className="w-full h-full object-cover object-[center_25%]"
+                  className="w-full h-full object-cover object-[center_55%] scale-[1.25] origin-[50%_42%] transition-transform duration-500"
                 />
               </div>
 
