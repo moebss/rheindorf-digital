@@ -31,29 +31,29 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 animate-in fade-in duration-300">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/85 backdrop-blur-md" 
+        className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" 
         onClick={onClose}
         aria-hidden="true"
       />
       
       {/* Modal Card */}
       <div 
-        className="relative w-full max-w-3xl max-h-[88vh] bg-[#111114] border border-white/10 text-zinc-200 rounded-3xl shadow-2xl flex flex-col z-10 overflow-hidden"
+        className="relative w-full max-w-3xl max-h-[88vh] bg-[#fbf9f5] border border-[#e7e3d8] text-stone-800 rounded-3xl shadow-2xl flex flex-col z-10 overflow-hidden"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/10 bg-[#09090b]">
+        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#e7e3d8] bg-[#f5f2eb]">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+            <div className="p-2 rounded-xl bg-emerald-100 text-emerald-800 border border-emerald-300">
               {type === 'impressum' ? <Scale className="w-5 h-5" /> : <Lock className="w-5 h-5" />}
             </div>
             <div>
-              <h2 id="modal-title" className="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
+              <h2 id="modal-title" className="font-display text-xl sm:text-2xl font-bold text-stone-900 leading-tight">
                 {type === 'impressum' ? 'Impressum (§ 5 DDG & § 18 MStV)' : 'Datenschutzerklärung (DSGVO & TDDDG)'}
               </h2>
-              <span className="text-[11px] text-emerald-400 font-semibold">
+              <span className="text-[11px] text-emerald-800 font-semibold">
                 Rheindorf Digital • Rechtssicherer Stand 2026
               </span>
             </div>
@@ -61,7 +61,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
 
           <button 
             onClick={onClose}
-            className="p-2 text-zinc-400 hover:text-white hover:bg-zinc-800 rounded-full transition-colors cursor-pointer"
+            className="p-2 text-stone-500 hover:text-stone-900 hover:bg-stone-200/60 rounded-full transition-colors cursor-pointer"
             aria-label="Schließen"
           >
             <X className="w-6 h-6" />
@@ -69,17 +69,17 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
         </div>
         
         {/* Modal Content (Scrollable) */}
-        <div className="p-6 sm:p-8 overflow-y-auto overscroll-contain text-zinc-300 text-xs sm:text-sm leading-relaxed space-y-6">
+        <div className="p-6 sm:p-8 overflow-y-auto overscroll-contain text-stone-700 text-xs sm:text-sm leading-relaxed space-y-6">
           
           {type === 'impressum' ? (
             <>
               {/* Impressum Content */}
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base sm:text-lg">
+                <h3 className="font-display font-bold text-stone-900 text-base sm:text-lg">
                   1. Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)
                 </h3>
-                <p className="bg-[#09090b] p-4 rounded-xl border border-white/10">
-                  <strong className="text-white">Rheindorf Digital</strong><br />
+                <p className="bg-[#f5f2eb] p-4 rounded-xl border border-[#e7e3d8] text-stone-800">
+                  <strong className="text-stone-900">Rheindorf Digital</strong><br />
                   Inhaber: Alexander Rheindorf<br />
                   Stiftsstraße 18<br />
                   50169 Kerpen (Nordrhein-Westfalen)<br />
@@ -88,18 +88,18 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   2. Kontaktmöglichkeiten
                 </h3>
                 <p>
-                  Telefon: <a href="tel:016096351750" className="text-emerald-400 font-mono underline font-bold">0160 96351750</a><br />
-                  E-Mail: <a href="mailto:hello@rheindorf.digital" className="text-emerald-400 underline font-bold">hello@rheindorf.digital</a><br />
-                  Internet: <a href="https://rheindorf.digital" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline">https://rheindorf.digital</a>
+                  Telefon: <a href="tel:016096351750" className="text-emerald-700 font-mono underline font-bold">0160 96351750</a><br />
+                  E-Mail: <a href="mailto:hello@rheindorf.digital" className="text-emerald-700 underline font-bold">hello@rheindorf.digital</a><br />
+                  Internet: <a href="https://rheindorf.digital" target="_blank" rel="noopener noreferrer" className="text-emerald-700 underline font-semibold">https://rheindorf.digital</a>
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   3. Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
                 </h3>
                 <p>
@@ -110,7 +110,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   4. Umsatzsteuer
                 </h3>
                 <p>
@@ -120,7 +120,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   5. EU-Streitbeilegung & Verbraucherstreitbeilegung
                 </h3>
                 <p>
@@ -129,20 +129,20 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
                     href="https://ec.europa.eu/consumers/odr/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-emerald-400 underline inline-flex items-center gap-1 font-semibold"
+                    className="text-emerald-700 underline inline-flex items-center gap-1 font-semibold"
                   >
                     <span>https://ec.europa.eu/consumers/odr/</span>
                     <ExternalLink className="w-3 h-3 inline" />
                   </a>.<br />
                   Unsere E-Mail-Adresse finden Sie oben im Impressum.
                 </p>
-                <p className="text-zinc-500 text-xs">
+                <p className="text-stone-500 text-xs">
                   Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   6. Haftung für Inhalte und Links
                 </h3>
                 <p>
@@ -154,7 +154,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   7. Urheberrecht
                 </h3>
                 <p>
@@ -166,7 +166,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
             <>
               {/* Datenschutz Content */}
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base sm:text-lg">
+                <h3 className="font-display font-bold text-stone-900 text-base sm:text-lg">
                   1. Datenschutz auf einen Blick
                 </h3>
                 <p>
@@ -175,11 +175,11 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   2. Verantwortliche Stelle
                 </h3>
-                <p className="bg-[#09090b] p-4 rounded-xl border border-white/10">
-                  <strong className="text-white">Alexander Rheindorf – Rheindorf Digital</strong><br />
+                <p className="bg-[#f5f2eb] p-4 rounded-xl border border-[#e7e3d8] text-stone-800">
+                  <strong className="text-stone-900">Alexander Rheindorf – Rheindorf Digital</strong><br />
                   Stiftsstraße 18<br />
                   50169 Kerpen (Nordrhein-Westfalen)<br />
                   Telefon: 0160 96351750<br />
@@ -188,7 +188,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   3. Hosting & Server-Log-Dateien
                 </h3>
                 <p>
@@ -197,7 +197,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   4. Kontaktformular & Datenverarbeitung
                 </h3>
                 <p>
@@ -212,21 +212,21 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   5. Verzicht auf Tracking-Cookies & externe US-Schriftarten (TDDDG & DSGVO)
                 </h3>
-                <p className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-300">
+                <p className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900">
                   ✓ <strong>100% Lokale Schriftarten (@fontsource):</strong> Diese Seite nutzt ausschließlich lokal installierte Schriftarten. Es findet zu keinem Zeitpunkt eine Verbindung zu Servern von Google (Google Fonts) oder anderen Drittanbietern in den USA statt.<br />
                   ✓ <strong>Keine zustimmungspflichtigen Tracking-Cookies:</strong> Wir verzichten auf Google Analytics, Facebook-Pixel oder Marketing-Tracker. Eine Einwilligung über nervige Cookie-Banner nach § 25 TDDDG ist daher nicht erforderlich.
                 </p>
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   6. Ihre Rechte als betroffene Person
                 </h3>
                 <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>
-                <ul className="list-disc list-inside space-y-1 text-zinc-300 pl-2">
+                <ul className="list-disc list-inside space-y-1 text-stone-700 pl-2">
                   <li><strong>Auskunft</strong> über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
                   <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
                   <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
@@ -240,7 +240,7 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
               </section>
 
               <section className="space-y-2">
-                <h3 className="font-display font-bold text-white text-base">
+                <h3 className="font-display font-bold text-stone-900 text-base">
                   7. SSL- bzw. TLS-Verschlüsselung
                 </h3>
                 <p>
@@ -253,13 +253,13 @@ export default function LegalModals({ type, onClose }: LegalModalsProps) {
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 border-t border-white/10 bg-[#09090b] flex items-center justify-between">
-          <span className="text-[11px] text-zinc-500">
+        <div className="p-4 border-t border-[#e7e3d8] bg-[#f5f2eb] flex items-center justify-between">
+          <span className="text-[11px] text-stone-500">
             Datenschutz & Rechtssicherheit nach DSGVO, DDG & TDDDG
           </span>
           <button
             onClick={onClose}
-            className="bg-[#111114] hover:bg-zinc-800 text-white border border-white/10 px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+            className="bg-stone-900 hover:bg-stone-800 text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
           >
             Schließen
           </button>

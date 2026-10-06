@@ -7,7 +7,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: 'Wie lange dauert die Umsetzung eines Projekts?',
-      a: 'In der Regel steht dein erster interaktiver Klick-Prototyp innerhalb von 7 Tagen im Browser. Der vollständige Go-Live erfolgt nach maximal 14 Tagen. Durch den direkten Draht zu mir entfallen wochenlange Agentur-Schleifen.'
+      a: 'In der Regel steht dein erster interaktiver Klick-Prototyp innerhalb von 7 Tagen im Browser. Der vollständige Go-Live erfolgt nach maximal 14 bis 21 Tagen. Durch den direkten Draht zu mir entfallen wochenlange Agentur-Schleifen.'
     },
     {
       q: 'Gibt es versteckte Folgekosten oder Abos?',
@@ -15,7 +15,15 @@ export default function FAQ() {
     },
     {
       q: 'Ab welchem Budget starten Projekte?',
-      a: 'Websites starten ab ca. 2.500 €, reine Prozess-Automationen je nach Komplexität ab 1.500 €. Im kostenlosen Erstgespräch klären wir den Umfang und du bekommst ein verbindliches Festpreis-Angebot – ohne Überraschungen.'
+      a: 'Onepages starten ab 1.490 €, vollwertige mehrseitige Firmen-Websites ab ca. 2.490 € und reine Prozess-Automationen ab 1.500 €. Im unverbindlichen Erstgespräch klären wir deinen genauen Bedarf und du bekommst ein verbindliches Festpreis-Angebot – ohne Überraschungen.'
+    },
+    {
+      q: 'Was muss ich als Kunde vorbereiten? Was ist, wenn ich keine Texte habe?',
+      a: 'Du musst keine fertigen Texte liefern! Wenn du Notizen, ein Logo oder alte Unterlagen hast, reicht das völlig. Wir besprechen dein Angebot in 30 Minuten und ich formuliere verständliche, überzeugende Texte für dich. Bei Bedarf erstelle ich auch passende visuelle Assets.'
+    },
+    {
+      q: 'Kannst du eine bestehende, alte Website modernisieren?',
+      a: 'Ja. Wir übernehmen bestehende Texte, Bilder, Domains und gewonnene Google-Rankings und überführen sie in eine saubere, blitzschnelle Architektur. Das Ergebnis: sofortige Ladezeiten und mehr Kundenanfragen – ohne Ranking-Verlust.'
     },
     {
       q: 'Wie funktioniert die Prozess-Automatisierung?',
@@ -23,15 +31,7 @@ export default function FAQ() {
     },
     {
       q: 'Ist die Website DSGVO-konform?',
-      a: 'Ja, kompromisslos. Alle Schriftarten werden lokal gehostet – kein Google-Fonts-Ping in die USA. Ich verzichte auf invasive Tracking-Cookies, wodurch deine Besucher kein Cookie-Banner wegklicken müssen.'
-    },
-    {
-      q: 'Kannst du eine bestehende Seite modernisieren?',
-      a: 'Ja. Ich übernehme bestehende Texte, Bilder und Rankings und überführe sie in eine moderne Architektur. Das Ergebnis: extrem schnelle Ladezeiten und spürbar höhere Conversion-Raten – ohne dass Google dich vergisst.'
-    },
-    {
-      q: 'Was muss ich als Kunde vorbereiten?',
-      a: 'Idealerweise hast du grobe Texte, ein Logo und Bildmaterial parat. Falls nicht, ist das auch kein Problem – ich helfe dir beim Texten und erstelle bei Bedarf professionelle Bilder. Zugänge zu bestehenden Tools (Domain, Hosting, CRM) sollten vor Projektstart vorliegen.'
+      a: 'Ja, kompromisslos. Alle Schriftarten werden lokal gehostet – kein Google-Fonts-Ping in die USA. Ich verzichte auf invasive Tracking-Cookies, wodurch deine Besucher kein nerviges Cookie-Banner wegklicken müssen.'
     },
     {
       q: 'Mit wem arbeite ich zusammen?',
@@ -39,19 +39,21 @@ export default function FAQ() {
     },
     {
       q: 'Was passiert nach dem Launch?',
-      a: 'Ich biete optionale Wartungspakete für regelmäßige Updates, Sicherheits-Checks und Monitoring an. Du kannst die Website aber auch komplett eigenständig betreiben – der gesamte Code gehört dir.'
+      a: 'Ich biete optionale monatliche Pflegepakete (ab 49 €/Monat) für Updates, Sicherheits-Checks und Monitoring an. Du kannst die Website aber auch komplett eigenständig betreiben – der gesamte Code gehört dir.'
     }
   ];
 
   return (
-    <section id="faq" className="py-24 sm:py-32 bg-[#09090b] border-t border-white/[0.04]">
+    <section id="faq" className="py-24 sm:py-32 bg-[#fbf9f5] border-t border-[#e7e3d8]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">FAQ &bull; Transparenz</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+            FAQ &bull; Transparenz
+          </span>
 
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-stone-900 tracking-tight">
             Häufige Fragen.
           </h2>
         </div>
@@ -63,7 +65,7 @@ export default function FAQ() {
             return (
               <div
                 key={idx}
-                className="border-b border-white/[0.06] last:border-0"
+                className="border-b border-[#e7e3d8] last:border-0"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
@@ -72,12 +74,12 @@ export default function FAQ() {
                   aria-controls={`faq-answer-${idx}`}
                 >
                   <span className={`font-sans font-medium text-base transition-colors ${
-                    isOpen ? 'text-emerald-300' : 'text-white group-hover:text-emerald-200'
+                    isOpen ? 'text-emerald-800 font-semibold' : 'text-stone-900 group-hover:text-emerald-700'
                   }`}>
                     {faq.q}
                   </span>
-                  <ChevronDown className={`w-5 h-5 transition-all duration-300 ${
-                    isOpen ? 'rotate-180 text-emerald-400' : 'text-zinc-500 group-hover:text-zinc-300'
+                  <ChevronDown className={`w-5 h-5 transition-all duration-300 shrink-0 ${
+                    isOpen ? 'rotate-180 text-emerald-700' : 'text-stone-400 group-hover:text-stone-600'
                   }`} />
                 </button>
 
@@ -85,7 +87,7 @@ export default function FAQ() {
                   <div
                     id={`faq-answer-${idx}`}
                     role="region"
-                    className="pb-5 font-sans text-sm text-zinc-400 leading-relaxed animate-in fade-in duration-200"
+                    className="pb-5 font-sans text-sm text-stone-600 leading-relaxed animate-in fade-in duration-200"
                   >
                     {faq.a}
                   </div>

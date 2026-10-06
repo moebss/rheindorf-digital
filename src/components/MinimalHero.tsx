@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Zap, Calendar } from 'lucide-react';
+import { ArrowUpRight, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
 import heroPortrait from '../images/hero_rheindorf.jpg';
 
 interface MinimalHeroProps {
@@ -8,11 +8,11 @@ interface MinimalHeroProps {
 
 export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
   return (
-    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
-      {/* Subtle Ambient Emerald Depth */}
+    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#fbf9f5]">
+      {/* Subtle Warm Emerald Ambient Depth */}
       <div 
         aria-hidden="true"
-        className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[340px] bg-emerald-500/[0.09] rounded-full blur-[140px] pointer-events-none -z-10" 
+        className="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[360px] bg-emerald-500/[0.07] rounded-full blur-[140px] pointer-events-none -z-10" 
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
@@ -22,104 +22,111 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           
           {/* Main Statement */}
           <div className="lg:col-span-8 flex flex-col">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-6 sm:mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span>Webdesign &amp; Automation • Kerpen, Köln &amp; Remote</span>
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 px-3 py-1.5 rounded-full font-semibold mb-6 sm:mb-8 w-fit shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.7)]" />
+              <span>Webdesign &amp; Prozesse • Kerpen, Köln &amp; Rheinland</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-[-0.04em] text-white leading-[1.08] text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold tracking-[-0.04em] text-stone-900 leading-[1.08] text-balance">
               Websites, die Kunden gewinnen.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-700">
                 Workflows, die dir Stunden sparen.
               </span>
             </h1>
 
-            <p className="mt-4 sm:mt-8 text-base sm:text-xl text-zinc-300 font-sans leading-relaxed max-w-2xl text-pretty">
-              Ich baue moderne Web-Auftritte und automatisiere manuelle Abläufe für Unternehmen im Rheinland &amp; remote. Persönliche 1:1-Betreuung vom Senior-Entwickler – ohne Agentur-Overhead.
+            <p className="mt-4 sm:mt-8 text-base sm:text-xl text-stone-600 font-sans leading-relaxed max-w-2xl text-pretty">
+              Ich baue blitzschnelle Websites und automatisiere manuelle Büroabläufe für Handwerksbetriebe, Praxen, Fachbetriebe und Dienstleister. Persönliche 1:1-Betreuung vom Senior-Entwickler – ohne Agentur-Overhead.
             </p>
 
             {/* CTAs */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenContact}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-zinc-100 text-zinc-950 font-sans text-sm font-semibold transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] min-h-[44px] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-sans text-sm font-semibold transition-all shadow-[0_4px_20px_rgba(4,120,87,0.25)] hover:shadow-[0_6px_25px_rgba(4,120,87,0.35)] min-h-[44px] cursor-pointer"
               >
-                <span>Projekt anfragen</span>
-                <ArrowUpRight className="w-4 h-4 text-zinc-950" />
+                <span>Projekt unverbindlich anfragen</span>
+                <ArrowUpRight className="w-4 h-4 text-white" />
               </button>
 
               <a
-                href="#architektur"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/[0.1] hover:border-emerald-500/30 hover:bg-emerald-950/20 text-zinc-300 hover:text-emerald-300 font-sans text-sm font-medium transition-all min-h-[44px]"
+                href="#rechner"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-[#e7e3d8] bg-white hover:bg-[#f5f2eb] text-stone-800 hover:text-emerald-800 font-sans text-sm font-medium transition-all min-h-[44px] shadow-xs"
               >
-                <Zap className="w-4 h-4 text-emerald-400" />
-                <span>Live-Automation ansehen →</span>
+                <span>Preisfinder &amp; Rechner ansehen ↓</span>
               </a>
             </div>
 
-            <div className="mt-4 flex items-center gap-2 text-xs font-mono text-zinc-400">
-              <span className="text-zinc-600">Oder:</span>
+            {/* Anxiety-Relief Assurance Badges */}
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-sans text-stone-600">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <span>Keine Texte parat? Ich formuliere für dich</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                <span>Bestehende Seite? Relaunch ohne Google-Verlust</span>
+              </span>
               <a 
                 href="#website-check" 
-                className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 font-medium transition-colors"
+                className="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-4"
               >
-                Bestehende Website kostenlos analysieren lassen →
+                Kostenlosen Website-Check starten →
               </a>
             </div>
 
             {/* Live Trust & Tech Ticker */}
-            <div className="mt-10 pt-8 border-t border-white/[0.06] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
+            <div className="mt-10 pt-8 border-t border-[#e7e3d8] grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
               <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-white flex items-center gap-1.5">
+                <div className="text-xl sm:text-2xl font-bold text-stone-900 flex items-center gap-1.5">
                   <span>&lt; 0.4s</span>
-                  <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/40 border border-emerald-500/30 px-1.5 py-0.5 rounded">100/100</span>
+                  <span className="text-[10px] text-emerald-800 font-semibold bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">100/100</span>
                 </div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Ladezeit • Google Top-Score</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Ladezeit • Top-Score</div>
               </div>
 
               <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-emerald-400">Automatisiert</div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Keine Tipparbeit mehr</div>
+                <div className="text-xl sm:text-2xl font-bold text-emerald-700">Automatisiert</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Keine Tipparbeit mehr</div>
               </div>
 
               <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-white">100% DSGVO</div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">§ 5 DDG Konform</div>
+                <div className="text-xl sm:text-2xl font-bold text-stone-900">100% DSGVO</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider">§ 5 DDG Konform</div>
               </div>
 
               <div className="space-y-0.5">
-                <div className="text-xl sm:text-2xl font-bold text-emerald-400">1:1 Senior</div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider">Ohne Wasserkopf</div>
+                <div className="text-xl sm:text-2xl font-bold text-emerald-700">1:1 Senior</div>
+                <div className="text-[11px] text-stone-500 uppercase tracking-wider">Ohne Wasserkopf</div>
               </div>
             </div>
           </div>
 
           {/* Profile Card */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end mt-4 lg:mt-0">
-            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl border border-white/[0.08] bg-[#111113] p-5 sm:p-6 hover:border-emerald-500/30 transition-colors shadow-2xl">
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-zinc-900 border border-white/[0.06]">
+            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl border border-[#e7e3d8] bg-white p-5 sm:p-6 hover:border-emerald-300 transition-all shadow-[0_10px_35px_rgba(0,0,0,0.04)]">
+              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-stone-100 border border-[#e7e3d8]">
                 <img 
                   src={heroPortrait} 
                   alt="Alexander Rheindorf" 
                   className="w-full h-full object-cover object-[center_18%]"
                 />
                 
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between p-2.5 rounded-lg bg-[#09090b]/90 backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between p-2.5 rounded-lg bg-white/95 backdrop-blur-md border border-[#e7e3d8] shadow-sm">
                   <div>
-                    <div className="text-xs font-semibold text-white font-sans">Alexander Rheindorf</div>
-                    <div className="text-[10px] font-mono text-emerald-400">Webdesign &amp; Automation</div>
+                    <div className="text-xs font-semibold text-stone-900 font-sans">Alexander Rheindorf</div>
+                    <div className="text-[10px] font-mono text-emerald-700 font-medium">Webdesign &amp; Automation</div>
                   </div>
-                  <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.8)]" />
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-2">
-                <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
-                  „In 2 bis 4 Wochen zur schlüsselfertigen Website – 100 % DSGVO-konform und ohne versteckte Folgekosten."
+              <div className="mt-4 pt-4 border-t border-[#e7e3d8] space-y-2">
+                <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
+                  „In 2 bis 4 Wochen zur schlüsselfertigen Website – 100 % DSGVO-konform, blitzschnell und ohne versteckte Folgekosten.“
                 </p>
-                <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 pt-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span className="font-semibold">Verfügbar für neue Projekte</span>
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald-700 pt-1 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                  <span>Verfügbar für neue Projekte</span>
                 </div>
               </div>
             </div>

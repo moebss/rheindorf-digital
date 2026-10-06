@@ -32,18 +32,20 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
   ];
 
   return (
-    <section id="angebot" className="py-24 sm:py-32 border-b border-white/[0.04] bg-[#09090b]">
+    <section id="angebot" className="py-24 sm:py-32 border-b border-[#e7e3d8] bg-[#fbf9f5]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Angebot &amp; Kompetenzen</span>
-            <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-white">
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+              Angebot &amp; Schwerpunkte
+            </span>
+            <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-stone-900">
               Was ich für dich baue.
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
+          <p className="max-w-md text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
             Zwei eigenständige Disziplinen. Du buchst genau das, was du brauchst: eine performante Website, reine Prozess-Automation für bestehende Tools oder beides im Paket.
           </p>
         </div>
@@ -52,26 +54,26 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         <div className="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           
           {/* Pillar 1: Webdesign */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 hover:border-emerald-500/30 hover:bg-[#151518] hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] transition-all flex flex-col justify-between group">
+          <div className="rounded-2xl border border-[#e7e3d8] bg-white p-6 sm:p-8 hover:border-emerald-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all flex flex-col justify-between group shadow-xs">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-6 shadow-xs">
                 <Layout className="w-5 h-5" />
               </div>
 
-              <h3 className="mt-2 text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
+              <h3 className="mt-2 text-xl sm:text-2xl font-display font-bold text-stone-900 tracking-tight">
                 Webdesign &amp; Web-Apps
               </h3>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
                 Moderne, kompromisslos schnelle Websites für Unternehmen und Selbstständige. Handgeschriebener Code, gestochen scharfe Typografie und optimiert für Mobilgeräte.
               </p>
 
-              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.06]">
+              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-[#e7e3d8]">
                 {webDesignFeatures.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-4 h-4 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                    <div className="w-4 h-4 rounded-full bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
                       <Check className="w-2.5 h-2.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-zinc-300 font-sans">
+                    <span className="text-xs sm:text-sm text-stone-700 font-sans">
                       {feat}
                     </span>
                   </div>
@@ -79,13 +81,13 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
               </div>
             </div>
 
-            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-              <span className="text-xs font-mono text-zinc-500">
+            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-[#e7e3d8] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <span className="text-xs font-mono text-stone-500">
                 Stack: React &bull; Tailwind &bull; TypeScript
               </span>
               <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center justify-center gap-1.5 border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 hover:text-emerald-200 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 hover:border-emerald-300 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
               >
                 <span>Anfragen</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -94,26 +96,26 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
           </div>
 
           {/* Pillar 2: Prozesse & Automation */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 hover:border-emerald-500/30 hover:bg-[#151518] hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] transition-all flex flex-col justify-between group">
+          <div className="rounded-2xl border border-[#e7e3d8] bg-white p-6 sm:p-8 hover:border-emerald-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all flex flex-col justify-between group shadow-xs">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-6 shadow-xs">
                 <GitBranch className="w-5 h-5" />
               </div>
 
-              <h3 className="mt-2 text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
+              <h3 className="mt-2 text-xl sm:text-2xl font-display font-bold text-stone-900 tracking-tight">
                 Prozess-Automation &amp; n8n
               </h3>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
                 Automatisierung deiner internen Unternehmensabläufe. Ich verbinde deine bestehende Software (CRM, Buchhaltung, E-Mail, Cloud-Tools) – ganz ohne neue Website.
               </p>
 
-              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-white/[0.06]">
+              <div className="mt-6 sm:mt-8 space-y-3 pt-5 sm:pt-6 border-t border-[#e7e3d8]">
                 {processFeatures.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-4 h-4 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                    <div className="w-4 h-4 rounded-full bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
                       <Check className="w-2.5 h-2.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-zinc-300 font-sans">
+                    <span className="text-xs sm:text-sm text-stone-700 font-sans">
                       {feat}
                     </span>
                   </div>
@@ -121,13 +123,13 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
               </div>
             </div>
 
-            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-              <span className="text-xs font-mono text-zinc-500">
+            <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-[#e7e3d8] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <span className="text-xs font-mono text-stone-500">
                 Toolchain: n8n &bull; REST-APIs &bull; Webhooks
               </span>
               <button 
                 onClick={onOpenContact}
-                className="inline-flex items-center justify-center gap-1.5 border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:bg-emerald-900/40 hover:text-emerald-200 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
+                className="inline-flex items-center justify-center gap-1.5 border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 hover:border-emerald-300 font-sans font-medium text-sm px-4 py-2.5 rounded-lg transition-colors cursor-pointer min-h-[44px]"
               >
                 <span>Anfragen</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -138,34 +140,34 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         </div>
 
         {/* Maintenance & Retainer Banner */}
-        <div className="mt-8 p-5 sm:p-6 rounded-2xl border border-white/[0.06] bg-[#111113] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-8 p-5 sm:p-6 rounded-2xl border border-[#e7e3d8] bg-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-sans text-zinc-300 font-medium">
+              <span className="text-xs font-sans text-stone-900 font-semibold">
                 Laufende Wartung &amp; technischer Support
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-zinc-400 font-sans">
+            <p className="text-xs sm:text-sm text-stone-600 font-sans">
               Für beide Bereiche buchbar: Regelmäßige Updates, Sicherheits-Checks, Monitoring und kontinuierliche Optimierung deiner Website oder deiner Automations-Workflows.
             </p>
           </div>
           <button
             onClick={onOpenContact}
-            className="shrink-0 px-4 py-2.5 rounded-lg border border-white/[0.1] bg-transparent hover:bg-white/[0.04] text-zinc-300 hover:text-white text-sm font-sans font-medium transition-colors cursor-pointer min-h-[44px]"
+            className="shrink-0 px-4 py-2.5 rounded-lg border border-[#e7e3d8] bg-[#fbf9f5] hover:bg-stone-100 text-stone-800 text-sm font-sans font-medium transition-colors cursor-pointer min-h-[44px]"
           >
             Wartung anfragen
           </button>
         </div>
 
         {/* The No-Go List */}
-        <div className="mt-8 p-6 sm:p-8 rounded-2xl border border-white/[0.06] bg-[#111113]">
-          <span className="text-xs font-mono uppercase tracking-wider text-zinc-500 block mb-4">
+        <div className="mt-8 p-6 sm:p-8 rounded-2xl border border-[#e7e3d8] bg-white shadow-xs">
+          <span className="text-xs font-mono uppercase tracking-wider text-stone-500 block mb-4 font-semibold">
             Was ich NICHT anbiete:
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {noGos.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-400 font-sans">
-                <div className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-zinc-500 shrink-0 mt-0.5">
+              <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-stone-600 font-sans">
+                <div className="w-4 h-4 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-500 shrink-0 mt-0.5">
                   <X className="w-2.5 h-2.5" />
                 </div>
                 <span>{item}</span>

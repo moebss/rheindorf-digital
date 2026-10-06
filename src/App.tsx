@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-emerald-400 selection:text-zinc-950 overflow-x-hidden">
+    <div className="min-h-screen bg-[#fbf9f5] text-stone-900 flex flex-col font-sans selection:bg-emerald-600 selection:text-white overflow-x-hidden">
       
       {/* Navigation */}
       <MinimalNavbar onOpenContact={() => scrollToContact()} />

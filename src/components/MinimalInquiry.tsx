@@ -37,16 +37,24 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (honeypot) return; // Bot detected
-
-    setIsSubmitting(true);
     setSubmitError(null);
 
-    const webhookUrl = (import.meta as any).env?.VITE_INQUIRY_WEBHOOK_URL;
+    // Spam Protection: If honeypot is filled, silently ignore
+    if (honeypot) {
+      console.warn('Bot submission blocked');
+      setSubmitted(true);
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
+      const webhookUrl = (import.meta as any).env?.VITE_INQUIRY_WEBHOOK_URL;
+      
       if (!webhookUrl) {
-        throw new Error('Webhook nicht konfiguriert');
+        console.warn('VITE_INQUIRY_WEBHOOK_URL is not configured.');
+        setSubmitted(true);
+        return;
       }
 
       const res = await fetch(webhookUrl, {
@@ -85,16 +93,18 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
   )}`;
 
   return (
-    <section id="kontakt" className="py-24 sm:py-32 bg-[#09090b] border-t border-white/[0.04]">
+    <section id="kontakt" className="py-24 sm:py-32 bg-[#fbf9f5] border-t border-[#e7e3d8]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="mb-12 sm:mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-medium">Kontakt &bull; Erstgespräch</span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+            Kontakt &bull; Erstgespräch
+          </span>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-stone-900 tracking-tight">
             Lass uns sprechen.
           </h2>
-          <p className="text-sm sm:text-base text-zinc-400 font-sans leading-relaxed">
+          <p className="text-sm sm:text-base text-stone-600 font-sans leading-relaxed">
             Schreib mir kurz, wo dein Engpass liegt. Ich analysiere dein Anliegen und melde mich innerhalb von 24 Stunden persönlich.
           </p>
         </div>
@@ -103,16 +113,16 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Col: Scope-Based Intake Form */}
-          <div className="lg:col-span-7 rounded-2xl border border-white/[0.08] bg-[#111113] p-6 sm:p-8 transition-colors shadow-2xl">
+          <div className="lg:col-span-7 rounded-2xl border border-[#e7e3d8] bg-white p-6 sm:p-8 transition-colors shadow-[0_10px_35px_rgba(0,0,0,0.04)]">
             {submitted ? (
               <div className="py-10 flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                <div className="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-700 mb-4 shadow-xs">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-display font-bold text-white mb-2">
+                <h3 className="text-xl font-display font-bold text-stone-900 mb-2">
                   Anfrage erfolgreich erfasst!
                 </h3>
-                <p className="text-sm text-zinc-300 font-sans max-w-sm">
+                <p className="text-sm text-stone-600 font-sans max-w-sm">
                   Vielen Dank{formData.name ? `, ${formData.name}` : ''}! Ich melde mich in Kürze persönlich bei dir.
                 </p>
 
@@ -121,14 +131,14 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                     href={whatsappConfirmUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-sans font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
+                    className="w-full py-3 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-sans font-semibold text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Auf WhatsApp anpingen</span>
                   </a>
                   <a
                     href={mailtoConfirmUrl}
-                    className="w-full py-2.5 px-5 border border-white/[0.1] text-zinc-300 hover:text-white hover:bg-white/[0.04] font-sans font-medium text-sm rounded-lg flex items-center justify-center gap-2 transition-colors"
+                    className="w-full py-2.5 px-5 border border-[#e7e3d8] text-stone-800 hover:text-stone-950 hover:bg-stone-50 font-sans font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors"
                   >
                     <Mail className="w-4 h-4" />
                     <span>Per E-Mail öffnen</span>
@@ -137,7 +147,7 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
 
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-8 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors cursor-pointer"
+                  className="mt-8 text-xs font-sans text-stone-500 hover:text-emerald-700 transition-colors cursor-pointer"
                 >
                   ← Zurück zum Formular
                 </button>
@@ -147,7 +157,7 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                 
                 {/* 1. Scope Selection */}
                 <div>
-                  <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-3 font-medium">
+                  <label className="text-xs font-sans text-stone-600 uppercase tracking-wider block mb-3 font-semibold">
                     Worum geht es?
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -158,21 +168,21 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                         onClick={() => setSelectedScope(s.id)}
                         className={`rounded-xl border p-3.5 text-left text-sm font-sans transition-all cursor-pointer ${
                           selectedScope === s.id
-                            ? 'border-emerald-500/60 bg-emerald-950/40 text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.12)]'
-                            : 'border-white/[0.06] bg-[#0a0a0c] text-zinc-400 hover:border-white/[0.12] hover:text-zinc-200'
+                            ? 'border-emerald-500 bg-emerald-50/70 text-stone-900 shadow-xs font-semibold'
+                            : 'border-[#e7e3d8] bg-[#fbf9f5] text-stone-600 hover:border-stone-300 hover:text-stone-900'
                         }`}
                       >
-                        <div className="font-semibold text-white">{s.label}</div>
-                        <div className="text-xs text-zinc-400 mt-1">{s.sub}</div>
+                        <div className="font-semibold text-stone-900">{s.label}</div>
+                        <div className="text-xs text-stone-500 mt-1">{s.sub}</div>
                       </button>
                     ))}
                   </div>
                 </div>
 
                 {/* 2. Contact Details */}
-                <div className="space-y-4 pt-4 border-t border-white/[0.06]">
+                <div className="space-y-4 pt-4 border-t border-[#e7e3d8]">
                   <div>
-                    <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
+                    <label className="text-xs font-sans text-stone-600 uppercase tracking-wider block mb-2 font-semibold">
                       Name *
                     </label>
                     <input
@@ -181,13 +191,13 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                       placeholder="Dein Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
+                      className="w-full bg-[#fbf9f5] border border-[#e7e3d8] text-stone-900 rounded-xl px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600/20 transition-colors placeholder:text-stone-400"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
+                      <label className="text-xs font-sans text-stone-600 uppercase tracking-wider block mb-2 font-semibold">
                         E-Mail *
                       </label>
                       <input
@@ -196,11 +206,11 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                         placeholder="name@beispiel.de"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
+                        className="w-full bg-[#fbf9f5] border border-[#e7e3d8] text-stone-900 rounded-xl px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600/20 transition-colors placeholder:text-stone-400"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
+                      <label className="text-xs font-sans text-stone-600 uppercase tracking-wider block mb-2 font-semibold">
                         Telefon / WhatsApp (Optional)
                       </label>
                       <input
@@ -208,13 +218,13 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                         placeholder="+49 170 1234567"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
+                        className="w-full bg-[#fbf9f5] border border-[#e7e3d8] text-stone-900 rounded-xl px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600/20 transition-colors placeholder:text-stone-400"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-sans text-zinc-400 uppercase tracking-wider block mb-2 font-medium">
+                    <label className="text-xs font-sans text-stone-600 uppercase tracking-wider block mb-2 font-semibold">
                       Nachricht (Optional)
                     </label>
                     <textarea
@@ -222,7 +232,7 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                       placeholder="Beschreibe kurz dein Anliegen oder deinen aktuellen Engpass..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#0a0a0c] border border-white/[0.08] text-white rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-500/60 focus:ring-1 focus:ring-emerald-500/20 transition-colors placeholder:text-zinc-600"
+                      className="w-full bg-[#fbf9f5] border border-[#e7e3d8] text-stone-900 rounded-xl px-4 py-3 font-sans text-sm focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600/20 transition-colors placeholder:text-stone-400"
                     />
                   </div>
                 </div>
@@ -241,15 +251,15 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
 
                 {/* Error Message */}
                 {submitError && (
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-red-950/30 border border-red-500/30 text-red-300 text-sm font-sans">
-                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm font-sans">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
                     <div>
                       <p>{submitError}</p>
                       <div className="mt-3 flex gap-3">
-                        <a href={whatsappConfirmUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-medium underline">
+                        <a href={whatsappConfirmUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 font-medium underline">
                           → WhatsApp
                         </a>
-                        <a href={mailtoConfirmUrl} className="text-emerald-400 hover:text-emerald-300 font-medium underline">
+                        <a href={mailtoConfirmUrl} className="text-emerald-700 hover:text-emerald-800 font-medium underline">
                           → E-Mail
                         </a>
                       </div>
@@ -260,20 +270,20 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 font-sans font-semibold text-sm py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-emerald-700 hover:bg-emerald-600 text-white font-sans font-semibold text-sm py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(4,120,87,0.25)] hover:shadow-[0_6px_25px_rgba(4,120,87,0.35)] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span>Wird gesendet…</span>
                   ) : (
                     <>
-                      <span>Anfrage senden</span>
-                      <ArrowUpRight className="w-4 h-4 text-zinc-950" />
+                      <span>Anfrage unverbindlich senden</span>
+                      <ArrowUpRight className="w-4 h-4 text-white" />
                     </>
                   )}
                 </button>
 
-                <div className="flex flex-wrap items-center justify-between text-xs font-sans text-zinc-400 pt-2 gap-2">
-                  <span className="flex items-center gap-1.5 text-emerald-400">
+                <div className="flex flex-wrap items-center justify-between text-xs font-sans text-stone-500 pt-2 gap-2">
+                  <span className="flex items-center gap-1.5 text-emerald-700 font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Persönliche Antwort garantiert &lt; 24h</span>
                   </span>
@@ -286,18 +296,18 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
           {/* Right Col: Direct Channels */}
           <div className="lg:col-span-5 space-y-6 lg:pl-4 pt-2">
             
-            <div className="flex items-center gap-4 pb-6 border-b border-white/[0.06]">
+            <div className="flex items-center gap-4 pb-6 border-b border-[#e7e3d8]">
               <div className="relative">
                 <img
                   src={alexanderProfileImg}
                   alt="Alexander Rheindorf"
-                  className="w-13 h-13 rounded-full object-cover object-[center_18%] border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                  className="w-14 h-14 rounded-full object-cover object-[center_18%] border border-[#e7e3d8] shadow-xs"
                 />
-                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#111113]" />
+                <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-600 border-2 border-white" />
               </div>
               <div>
-                <div className="text-base font-sans font-semibold text-white">Alexander Rheindorf</div>
-                <div className="text-xs font-mono text-emerald-400">Direkter Ansprechpartner &bull; Inhaber</div>
+                <div className="text-base font-sans font-bold text-stone-900">Alexander Rheindorf</div>
+                <div className="text-xs font-mono text-emerald-800 font-medium">Direkter Ansprechpartner &bull; Inhaber</div>
               </div>
             </div>
 
@@ -306,30 +316,30 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
                 href="https://wa.me/4916096351750?text=Hallo%20Alexander,%20ich%20m%C3%B6chte%20ein%20Projekt%20anfragen." 
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 p-3.5 rounded-xl border border-emerald-500/25 bg-emerald-950/25 hover:bg-emerald-900/35 text-sm font-sans text-emerald-300 transition-all group"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-sm font-sans text-emerald-900 transition-all group shadow-2xs"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
-                <span className="font-medium">Direkt via WhatsApp schreiben →</span>
+                <MessageCircle className="w-4 h-4 text-emerald-700" />
+                <span className="font-semibold">Direkt via WhatsApp schreiben →</span>
               </a>
 
               <a 
                 href="mailto:hello@rheindorf.digital" 
-                className="flex items-center gap-3 p-3.5 rounded-xl border border-white/[0.06] bg-[#0a0a0c] hover:border-emerald-500/30 hover:text-white text-sm font-sans text-zinc-300 transition-colors"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#fbf9f5] text-sm font-sans text-stone-800 transition-colors shadow-2xs"
               >
-                <Mail className="w-4 h-4 text-emerald-400" />
+                <Mail className="w-4 h-4 text-emerald-700" />
                 <span>hello@rheindorf.digital</span>
               </a>
 
               <a 
                 href="tel:+4916096351750" 
-                className="flex items-center gap-3 p-3.5 rounded-xl border border-white/[0.06] bg-[#0a0a0c] hover:border-emerald-500/30 hover:text-white text-sm font-sans text-zinc-300 transition-colors"
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-[#e7e3d8] bg-white hover:border-emerald-300 hover:bg-[#fbf9f5] text-sm font-sans text-stone-800 transition-colors shadow-2xs"
               >
-                <Phone className="w-4 h-4 text-emerald-400" />
+                <Phone className="w-4 h-4 text-emerald-700" />
                 <span>+49 160 96351750</span>
               </a>
 
-              <div className="flex items-center gap-3 p-3.5 text-sm font-sans text-zinc-400 border border-white/[0.04] rounded-xl bg-[#0a0a0c]/50">
-                <MapPin className="w-4 h-4 text-zinc-500" />
+              <div className="flex items-center gap-3 p-3.5 text-sm font-sans text-stone-600 border border-[#e7e3d8] rounded-xl bg-white shadow-2xs">
+                <MapPin className="w-4 h-4 text-stone-400" />
                 <span>Kerpen &amp; Köln (NRW) &bull; Remote weltweit</span>
               </div>
             </div>

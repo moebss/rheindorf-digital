@@ -12,7 +12,7 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
   };
 
   return (
-    <footer className="py-16 bg-[#09090b] border-t border-white/[0.04] text-zinc-400">
+    <footer className="py-16 bg-[#f5f2eb] border-t border-[#e7e3d8] text-stone-600">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
@@ -20,23 +20,23 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
           {/* Brand Info */}
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-white tracking-tight">
+              <span className="font-display font-bold text-stone-900 tracking-tight text-lg">
                 Alexander Rheindorf
               </span>
             </div>
-            <p className="mt-1 text-sm font-sans text-zinc-500">
+            <p className="mt-1 text-sm font-sans text-stone-600">
               Webdesign & Intelligente Prozesse • Kerpen, Köln & NRW
             </p>
 
             {/* Quick Contact */}
             <div className="mt-4 space-y-1.5">
-              <a href="mailto:hello@rheindorf.digital" className="flex items-center gap-2 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors">
-                <Mail className="w-3.5 h-3.5" />
+              <a href="mailto:hello@rheindorf.digital" className="flex items-center gap-2 text-xs font-sans text-stone-600 hover:text-emerald-700 transition-colors">
+                <Mail className="w-3.5 h-3.5 text-emerald-600" />
                 <span>hello@rheindorf.digital</span>
               </a>
-              <a href="tel:+4916096351750" className="flex items-center gap-2 text-xs font-sans text-zinc-500 hover:text-emerald-400 transition-colors">
-                <Phone className="w-3.5 h-3.5" />
-                <span>+49 160 96351750</span>
+              <a href="tel:+4916096351750" className="flex items-center gap-2 text-xs font-sans text-stone-600 hover:text-emerald-700 transition-colors">
+                <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                <span className="font-semibold">+49 160 96351750</span>
               </a>
             </div>
           </div>
@@ -45,19 +45,19 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-xs font-sans">
             <button 
               onClick={onOpenImpressum} 
-              className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
+              className="text-stone-600 hover:text-stone-900 font-medium transition-colors cursor-pointer"
             >
               Impressum
             </button>
             <button 
               onClick={onOpenDatenschutz} 
-              className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
+              className="text-stone-600 hover:text-stone-900 font-medium transition-colors cursor-pointer"
             >
               Datenschutz
             </button>
             <button
               onClick={scrollToTop}
-              className="text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
+              className="text-stone-600 hover:text-stone-900 font-medium transition-colors cursor-pointer"
               aria-label="Nach oben scrollen"
             >
               Nach oben ↑
@@ -67,11 +67,11 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
         </div>
 
         {/* Bottom Baseline */}
-        <div className="mt-12 pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between text-xs font-sans text-zinc-600 gap-4">
+        <div className="mt-12 pt-6 border-t border-[#e7e3d8] flex flex-col sm:flex-row items-center justify-between text-xs font-sans text-stone-500 gap-4">
           <div>
             © {new Date().getFullYear()} Alexander Rheindorf. Alle Rechte vorbehalten.
           </div>
-          <div>
+          <div className="text-stone-500">
             Handcodiert mit React & Tailwind.
           </div>
         </div>
