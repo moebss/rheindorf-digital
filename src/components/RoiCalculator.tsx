@@ -28,31 +28,31 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
   const [maintenancePlan, setMaintenancePlan] = useState<'none' | 'basis' | 'sorglos'>('basis');
 
   const projectTypes = {
-    onepage: { name: 'Onepage / Landingpage', base: 1490, desc: 'Fokussierte Einzelseite für schnellen Einstieg' },
-    business: { name: 'Unternehmenswebsite', base: 2490, desc: 'Mehrseitiger Firmenauftritt mit klarer Struktur' },
-    relaunch: { name: 'Relaunch & Speed-Upgrade', base: 1990, desc: 'Bestehende WordPress/Wix-Seite ablösen' },
-    custom: { name: 'Plattform & n8n-Automation', base: 3890, desc: 'Web-Plattform + automatisierte Backend-Pipelines' }
+    onepage: { name: 'Onepage / Landingpage', base: 490, desc: 'Fokussierte Einzelseite für schnellen Einstieg' },
+    business: { name: 'Unternehmenswebsite', base: 890, desc: 'Mehrseitiger Firmenauftritt mit klarer Struktur' },
+    relaunch: { name: 'Relaunch & Speed-Upgrade', base: 590, desc: 'Bestehende WordPress/Wix-Seite ablösen' },
+    custom: { name: 'Plattform & Automation', base: 1290, desc: 'Web-Plattform + automatisierte Backend-Workflows' }
   };
 
   const pageCountOptions = {
     '1': { label: '1 Seite', price: 0 },
-    '3-5': { label: '3–5 Seiten', price: 400 },
-    '6-10': { label: '6–10 Seiten', price: 800 },
-    '10+': { label: '10+ Seiten', price: 1400 }
+    '3-5': { label: '3–5 Seiten', price: 150 },
+    '6-10': { label: '6–10 Seiten', price: 300 },
+    '10+': { label: '10+ Seiten', price: 500 }
   };
 
   const featureOptions = [
-    { id: 'form', label: 'Digitale Vorqualifizierung / Anfrageformular', price: 250, desc: 'Filtert unvollständige Anfragen aus' },
-    { id: 'automation', label: 'n8n Workflow-Pipeline (WhatsApp/CRM)', price: 450, desc: 'Sofortige Lead-Meldung & CRM-Eintrag' },
-    { id: 'booking', label: 'Online-Terminbuchung (Cal.com)', price: 290, desc: 'Kunden buchen direkt freie Termine' },
-    { id: 'seo', label: 'Local-SEO & Schema.org Google-Maps-Optimierung', price: 350, desc: 'Top-Platzierung im Erftkreis/Köln' },
-    { id: 'catalog', label: 'Produktkatalog / Speisekarte', price: 550, desc: 'Interaktive Übersicht ohne langes Suchen' }
+    { id: 'form', label: 'Digitale Vorqualifizierung / Anfrageformular', price: 90, desc: 'Filtert unvollständige Anfragen aus' },
+    { id: 'automation', label: 'Workflow-Pipeline (WhatsApp/CRM)', price: 150, desc: 'Sofortige Lead-Meldung & CRM-Eintrag' },
+    { id: 'booking', label: 'Online-Terminbuchung (Cal.com)', price: 120, desc: 'Kunden buchen direkt freie Termine' },
+    { id: 'seo', label: 'Local-SEO & Google-Maps-Optimierung', price: 140, desc: 'Top-Platzierung im Erftkreis & Köln' },
+    { id: 'catalog', label: 'Produktkatalog / Speisekarte', price: 180, desc: 'Interaktive Übersicht ohne langes Suchen' }
   ];
 
   const maintenanceOptions = {
     none: { label: 'Keine laufenden Kosten', pricePerMonth: 0, desc: 'Code & Hosting gehören zu 100% dir' },
-    basis: { label: 'Basis-Monitoring & Updates', pricePerMonth: 49, desc: 'Sicherheits-Checks, SSL & Server-Monitoring' },
-    sorglos: { label: 'Rundum-Sorglos-Pflege', pricePerMonth: 99, desc: 'Laufende Pflege, Textänderungen & Prio-Support' }
+    basis: { label: 'Basis-Monitoring & Updates', pricePerMonth: 29, desc: 'Sicherheits-Checks, SSL & Server-Monitoring' },
+    sorglos: { label: 'Rundum-Sorglos-Pflege', pricePerMonth: 49, desc: 'Laufende Pflege, Textänderungen & Support' }
   };
 
   const toggleFeature = (id: string) => {

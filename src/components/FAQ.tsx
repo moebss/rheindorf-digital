@@ -15,7 +15,7 @@ export default function FAQ() {
     },
     {
       q: 'Ab welchem Budget starten Projekte?',
-      a: 'Onepages starten ab 1.490 €, vollwertige mehrseitige Firmen-Websites ab ca. 2.490 € und reine Prozess-Automationen ab 1.500 €. Im unverbindlichen Erstgespräch klären wir deinen genauen Bedarf und du bekommst ein verbindliches Festpreis-Angebot – ohne Überraschungen.'
+      a: 'Onepages starten ab 490 €, vollwertige mehrseitige Firmen-Websites ab ca. 890 € und Workflows/Automation ab 390 €. Im unverbindlichen Erstgespräch klären wir deinen genauen Bedarf und du bekommst ein verbindliches Festpreis-Angebot – ohne Überraschungen.'
     },
     {
       q: 'Was muss ich als Kunde vorbereiten? Was ist, wenn ich keine Texte habe?',
@@ -39,7 +39,7 @@ export default function FAQ() {
     },
     {
       q: 'Was passiert nach dem Launch?',
-      a: 'Ich biete optionale monatliche Pflegepakete (ab 49 €/Monat) für Updates, Sicherheits-Checks und Monitoring an. Du kannst die Website aber auch komplett eigenständig betreiben – der gesamte Code gehört dir.'
+      a: 'Ich biete optionale monatliche Pflegepakete (ab 29 €/Monat) für Updates, Sicherheits-Checks und Monitoring an. Du kannst die Website aber auch komplett eigenständig betreiben – der gesamte Code gehört dir.'
     }
   ];
 

@@ -103,30 +103,36 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
 
           {/* Profile Card */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end mt-4 lg:mt-0">
-            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl border border-[#e7e3d8] bg-white p-5 sm:p-6 hover:border-emerald-300 transition-all shadow-[0_10px_35px_rgba(0,0,0,0.04)]">
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-stone-100 border border-[#e7e3d8]">
+            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl border border-[#e7e3d8] bg-white p-4 sm:p-5 hover:border-emerald-300 transition-all shadow-[0_10px_35px_rgba(0,0,0,0.04)]">
+              {/* Natural Portrait Frame without intrusive overlay */}
+              <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-stone-100 border border-[#e7e3d8]">
                 <img 
                   src={heroPortrait} 
                   alt="Alexander Rheindorf" 
-                  className="w-full h-full object-cover object-[center_18%]"
+                  className="w-full h-full object-cover object-[center_25%]"
                 />
-                
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between p-2.5 rounded-lg bg-white/95 backdrop-blur-md border border-[#e7e3d8] shadow-sm">
-                  <div>
-                    <div className="text-xs font-semibold text-stone-900 font-sans">Alexander Rheindorf</div>
-                    <div className="text-[10px] font-mono text-emerald-700 font-medium">Webdesign &amp; Automation</div>
-                  </div>
-                  <div className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.8)]" />
-                </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-[#e7e3d8] space-y-2">
-                <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
-                  „In 2 bis 4 Wochen zur schlüsselfertigen Website – 100 % DSGVO-konform, blitzschnell und ohne versteckte Folgekosten.“
-                </p>
-                <div className="flex items-center gap-2 text-xs font-mono text-emerald-700 pt-1 font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                  <span>Verfügbar für neue Projekte</span>
+              {/* Clean Caption Below Photo */}
+              <div className="mt-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm font-semibold text-stone-900 font-sans">Alexander Rheindorf</div>
+                    <div className="text-xs font-mono text-emerald-700 font-medium">Webdesign &amp; Automation</div>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-medium shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                    <span>Verfügbar</span>
+                  </span>
+                </div>
+
+                <div className="pt-3 border-t border-[#e7e3d8] space-y-1">
+                  <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
+                    „In 2 bis 3 Wochen zur schlüsselfertigen Website – 100 % DSGVO-konform, blitzschnell und ohne versteckte Folgekosten.“
+                  </p>
+                  <div className="text-[11px] font-mono text-stone-500 pt-0.5">
+                    Kerpen &bull; Köln &bull; NRW &bull; Remote
+                  </div>
                 </div>
               </div>
             </div>
