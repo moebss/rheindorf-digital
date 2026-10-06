@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Space Grotesk", var(--font-sans);
+  --font-display: "Plus Jakarta Sans", var(--font-sans);
   --font-mono: "Space Mono", monospace;
   
   --color-canvas: #fbf9f5;
