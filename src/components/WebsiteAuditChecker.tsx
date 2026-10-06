@@ -55,7 +55,7 @@ export default function WebsiteAuditChecker() {
   };
 
   return (
-    <section id="website-check" className="py-20 sm:py-32 border-b border-[#e7e3d8] bg-[#f5f2eb]/70 relative overflow-hidden">
+    <section id="website-check" className="py-20 sm:py-32 border-b border-[#e7e3d8] bg-[#fbf9f5] relative overflow-hidden">
       
       {/* Warm Ambient glow */}
       <div 

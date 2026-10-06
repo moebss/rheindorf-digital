@@ -93,7 +93,7 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
   )}`;
 
   return (
-    <section id="kontakt" className="py-24 sm:py-32 bg-[#fbf9f5] border-t border-[#e7e3d8]">
+    <section id="kontakt" className="py-24 sm:py-32 bg-[#f8f5ee] border-t border-[#ded7c8]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}

@@ -244,12 +244,15 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
   };
 
   return (
-    <section id="architektur" className="py-24 sm:py-32 border-b border-[#e7e3d8] bg-[#fbf9f5] relative overflow-hidden">
+    <section id="architektur" className="py-24 sm:py-32 border-b border-[#e2dcd0] bg-[#f6f1e7] relative overflow-hidden">
       
+      {/* Background Architectural Accent */}
+      <div className="absolute inset-0 bg-grid-stone opacity-30 pointer-events-none" />
+
       {/* Warm Light Field */}
       <div 
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-500/[0.05] rounded-full blur-[140px] pointer-events-none -z-10" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-500/[0.06] rounded-full blur-[140px] pointer-events-none -z-10" 
       />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">

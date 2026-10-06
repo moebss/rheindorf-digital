@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MinimalNavbar from './components/MinimalNavbar';
 import MinimalHero from './components/MinimalHero';
 import DualOffering from './components/DualOffering';
+import BeforeAfterComparison from './components/BeforeAfterComparison';
 import WebsiteAuditChecker from './components/WebsiteAuditChecker';
 import PhilosophyManifesto from './components/PhilosophyManifesto';
 import NeoCaseStudy from './components/NeoCaseStudy';
@@ -66,7 +67,10 @@ export default function App() {
         {/* 2. Dual Offering (Webdesign vs. Automation) */}
         <DualOffering onOpenContact={() => scrollToContact()} />
 
-        {/* 3. Website Audit & Speed Check (Lead Magnet) */}
+        {/* 3. Before vs. After Reality Check (WordPress vs. Handcrafted Code) */}
+        <BeforeAfterComparison />
+
+        {/* 4. Website Audit & Speed Check (Lead Magnet) */}
         <WebsiteAuditChecker />
 
         {/* 4. Philosophy & Core Principles */}

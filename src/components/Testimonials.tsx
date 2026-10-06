@@ -55,7 +55,7 @@ export default function Testimonials() {
           </div>
 
           {/* Right Card: Next Project */}
-          <div className="lg:col-span-5 rounded-2xl border border-[#e7e3d8] bg-white p-6 sm:p-8 flex flex-col justify-center space-y-6 hover:border-emerald-300 transition-all shadow-xs">
+          <div className="lg:col-span-5 rounded-2xl border border-[#ded7c8] bg-[#f8f5ee] p-6 sm:p-8 flex flex-col justify-center space-y-6 hover:border-emerald-300 transition-all shadow-xs">
             <div className="space-y-4">
               <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-semibold w-fit block">
                 Nächstes Quartal
