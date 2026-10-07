@@ -134,8 +134,8 @@ export default function MinimalInquiry({ prefill }: MinimalInquiryProps = {}) {
         </div>
 
         {/* Small Trust Seal under Card */}
-        <div className="mt-8 text-center text-xs font-sans text-stone-500">
-          💡 Keine versteckten Kosten &bull; Erstes Beratungsgespräch immer 100% kostenfrei und unverbindlich.
+        <div className="mt-8 text-center text-xs font-mono text-stone-500">
+          Keine versteckten Kosten &bull; Erstgespr&auml;ch 100% kostenfrei &bull; 1:1 Direkter Draht
         </div>
 
       </div>

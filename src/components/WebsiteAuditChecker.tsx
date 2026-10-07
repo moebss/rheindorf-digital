@@ -74,7 +74,7 @@ export default function WebsiteAuditChecker() {
 
           <h2 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-stone-900 leading-tight">
             Wie wirkt deine Website <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-700">
+            <span className="text-emerald-800">
               auf Neukunden &amp; Google?
             </span>
           </h2>

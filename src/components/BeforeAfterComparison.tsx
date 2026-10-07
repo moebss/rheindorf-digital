@@ -42,7 +42,7 @@ export default function BeforeAfterComparison() {
       },
       after: {
         title: '0.35 Sekunden Ladezeit',
-        description: 'Handcodierter React 19 Code, serverseitige Optimierung, Next-Gen Bildformate. Lädt auf jedem Smartphone im Bruchteil eines Wimpernschlags.',
+        description: 'Handgeschriebener, sauberer Code ohne Plugin-Ballast. Lädt auf jedem Smartphone im Bruchteil eines Wimpernschlags.',
         badge: 'Sofort einsatzbereit',
         score: '100/100'
       }
@@ -69,7 +69,7 @@ export default function BeforeAfterComparison() {
       },
       after: {
         title: '1-Klick WhatsApp & Direkt-Anruf',
-        description: 'Klar strukturierte Kontaktpfade. Anfragen werden per n8n in Sekundenschnelle dedupliziert und direkt als Benachrichtigung auf dein Handy gesendet.',
+        description: 'Klar strukturierte Kontaktpfade. Eingehende Anfragen landen in Sekundenschnelle mit allen Infos direkt als Meldung auf deinem Smartphone.',
         badge: 'Mehr Termine & Kunden'
       }
     },
@@ -229,7 +229,7 @@ export default function BeforeAfterComparison() {
                     <TrendingUp className="w-3.5 h-3.5" />
                   </div>
                   <span className="font-display font-bold text-stone-900 text-sm sm:text-base">
-                    Rheindorf Digital (React &amp; n8n)
+                    Rheindorf Digital (Handcodiert)
                   </span>
                 </div>
                 <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-2xs">
