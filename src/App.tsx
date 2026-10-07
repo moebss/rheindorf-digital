@@ -9,7 +9,6 @@ import NeoCaseStudy from './components/NeoCaseStudy';
 import RoiCalculator from './components/RoiCalculator';
 import InteractiveProcessVisualizer from './components/InteractiveProcessVisualizer';
 import ProcessRoadmap from './components/ProcessRoadmap';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import MinimalInquiry from './components/MinimalInquiry';
 import MinimalFooter from './components/MinimalFooter';
@@ -88,10 +87,7 @@ export default function App() {
         {/* 8. Collaboration Roadmap (4-Week Schedule) */}
         <ProcessRoadmap />
 
-        {/* 9. Client Testimonials */}
-        <Testimonials />
-
-        {/* 10. FAQ Section */}
+        {/* 9. FAQ Section */}
         <FAQ />
 
         {/* 11. Inquiry / Contact Form */}

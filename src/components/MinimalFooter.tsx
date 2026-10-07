@@ -67,12 +67,12 @@ export default function MinimalFooter({ onOpenImpressum, onOpenDatenschutz }: Mi
         </div>
 
         {/* Bottom Baseline */}
-        <div className="mt-12 pt-6 border-t border-[#e7e3d8] flex flex-col sm:flex-row items-center justify-between text-xs font-sans text-stone-500 gap-4">
+        <div className="mt-12 pt-6 border-t border-stone-900/[0.08] flex flex-col sm:flex-row items-center justify-between text-xs font-sans text-stone-500 gap-4">
           <div>
-            © {new Date().getFullYear()} Alexander Rheindorf. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} Alexander Rheindorf. Alle Rechte vorbehalten.
           </div>
-          <div className="text-stone-500">
-            Handcodiert mit React & Tailwind.
+          <div className="font-mono text-[11px] text-stone-500">
+            Handcodiert &bull; 0% Tracking &bull; Kerpen / Rheinland
           </div>
         </div>
 

@@ -44,143 +44,143 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
   const scenarios: Scenario[] = [
     {
       id: 'crm-sync',
-      title: 'CRM- & Lead-Automation',
-      tag: 'Echtzeit-Pipeline & Lead-Intake',
-      description: 'Jeder neue Kontakt aus Webformular, Terminkalender oder Mail wird in Millisekunden dedupliziert, im CRM angelegt und als Vorab-Dossier direkt auf dein Smartphone gesendet.',
+      title: 'Kundenanfrage & WhatsApp-Alarm',
+      tag: 'Neukunden & Schneller Rückruf',
+      description: 'Sobald ein Interessent auf deiner Website anfragt oder einen Termin bucht, liegt der fertige Kontakt sofort mit Name, Telefon und Anliegen auf deinem Smartphone – ohne dass du im Postfach suchen musst.',
       nodes: [
         {
           step: '01 / Eingang',
-          system: 'Web-Formular / Cal.com',
+          system: 'Website & Kalender',
           iconName: 'trigger',
-          action: 'Eingehende Anfrage oder Terminbuchung eines Neukunden',
+          action: 'Kunde fragt über Website oder Buchungskalender an',
           badge: 'Eingegangen'
         },
         {
           step: '02 / Prüfung',
-          system: 'Smarte n8n-Logik',
+          system: 'Automatische Vorprüfung',
           iconName: 'logic',
-          action: 'Duplikatsprüfung, Spamfilter & automatische Datenanreicherung',
-          badge: 'Sofort geprüft'
+          action: 'Prüft Telefonnummer, Adresse & Anliegen vor',
+          badge: 'Geprüft'
         },
         {
-          step: '03 / Datenbank',
-          system: 'Notion / HubSpot CRM',
+          step: '03 / Ablage',
+          system: 'Kundenkartei & CRM',
           iconName: 'database',
-          action: 'Automatisches Anlegen von Kundenkarte & Anfragedetails',
+          action: 'Kontaktdaten werden sauber im System abgespeichert',
           badge: 'Gespeichert'
         },
         {
-          step: '04 / Benachrichtigung',
+          step: '04 / Alarm',
           system: 'WhatsApp & Smartphone',
           iconName: 'notification',
-          action: 'Sofortiger Alarm mit One-Click-Rückruf auf dein Handy',
-          badge: 'Direkt-Alert'
+          action: 'Sofortige Meldung mit 1-Klick-Rückruf auf dein Handy',
+          badge: 'Auf dem Handy'
         }
       ],
       terminalLogs: [
-        '[19:54:02.112] ⚡ WEBHOOK_IN: POST /api/v1/inbound-lead',
-        '[19:54:02.134] ⚙️ n8n_ROUTER: payload validated (score: 98/100, spam: false)',
-        '[19:54:02.189] 🗄️ CRM_SYNC: Notion DB updated -> Customer record #4812 created',
-        '[19:54:02.241] 📱 DISPATCH: WhatsApp message dispatched via Business API -> 100% delivered'
+        '[19:54:02] ⚡ Neue Anfrage: Familie Schneider (Dachsanierung Kerpen)',
+        '[19:54:02] ⚙️ Automatisch geprüft: Telefonnummer & PLZ gültig',
+        '[19:54:02] 🗄️ Ablage synchronisiert: Kundenkartei #4812 angelegt',
+        '[19:54:02] 📱 WhatsApp-Meldung: Sofort auf Meisterhandy gesendet'
       ],
       mockToast: {
-        app: 'WhatsApp Business',
-        title: 'Neuer qualifizierter Lead eingegangen',
-        body: 'Alexander Rheindorf • Webdesign & n8n Automation angefragt. Klicke zum Antworten.'
+        app: 'WhatsApp',
+        title: 'Neue qualifizierte Anfrage eingegangen',
+        body: 'Familie Schneider • Dachsanierung Kerpen. Klicke für direkten Rückruf.'
       }
     },
     {
       id: 'invoice-flow',
-      title: 'Beleg- & Buchhaltungs-Flow',
+      title: 'Belege & Buchhaltung',
       tag: 'Büro-Entlastung',
-      description: 'Eingangsrechnungen aus Mails oder Cloud-Ordnern werden automatisch ausgelesen, verbucht und steuerfertig im Monatsarchiv abgelegt.',
+      description: 'Eingangsrechnungen aus E-Mails oder gescannten Belegen werden automatisch ausgelesen und steuerfertig für Lexoffice oder SevDesk vorbereitet.',
       nodes: [
         {
           step: '01 / Eingang',
-          system: 'Mail-Inbox & Drive',
+          system: 'E-Mail & Cloud',
           iconName: 'trigger',
-          action: 'Eingangsrechnung (PDF) wird erkannt',
+          action: 'Eingangsrechnung (PDF) geht im Postfach ein',
           badge: 'Erkannt'
         },
         {
-          step: '02 / Texterkennung',
-          system: 'Automatische Belegerkennung',
+          step: '02 / Erkennung',
+          system: 'Automatische Texterkennung',
           iconName: 'logic',
-          action: 'Extraktion von IBAN, Betrag, Datum & Rechnungsnummer',
+          action: 'Extrahiert Betrag, Lieferant, Datum & IBAN',
           badge: 'Ausgelesen'
         },
         {
           step: '03 / Buchhaltung',
           system: 'Lexoffice / SevDesk',
           iconName: 'database',
-          action: 'Automatischer Entwurf zur Freigabe erstellt',
-          badge: 'Übertragen'
+          action: 'Buchungsentwurf wird automatisch angelegt',
+          badge: 'Vorbereitet'
         },
         {
           step: '04 / Freigabe',
-          system: 'Push-Nachricht',
+          system: 'Smartphone-Hinweis',
           iconName: 'notification',
-          action: 'Bestätigung mit Direktlink zum Zahlungsabgleich',
+          action: 'Kurze Meldung zur 1-Klick-Freigabe',
           badge: 'Fertig'
         }
       ],
       terminalLogs: [
-        '[14:12:44.005] ⚡ DRIVE_TRIGGER: New PDF detected -> invoice_49201.pdf (142 KB)',
-        '[14:12:44.089] ⚙️ OCR_NODE: extracted: "Rechnungsbetrag: 1.450,00 €", IBAN: DE89...',
-        '[14:12:44.201] 🗄️ ACCOUNTING_API: Lexoffice voucher created with ID #voc_89321',
-        '[14:12:44.240] 📱 NOTIFY: Telegram confirmation alert dispatched to accounting'
+        '[14:12:44] ⚡ Neue Rechnung im Postfach: Material_Dach.pdf (142 KB)',
+        '[14:12:44] ⚙️ Betrag & Daten erkannt: 1.450,00 € • Baustoffhandel Rheinland',
+        '[14:12:44] 🗄️ Buchhaltung vorbereitet: Entwurf in Lexoffice / SevDesk angelegt',
+        '[14:12:44] 📱 Bestätigung gesendet: Bereit zur Freigabe mit 1 Klick'
       ],
       mockToast: {
         app: 'Lexoffice',
-        title: 'Eingangsrechnung verbucht (1.450,00 €)',
-        body: 'Beleg #49201 automatisch extrahiert und zur Freigabe bereitgestellt.'
+        title: 'Eingangsrechnung vorbereitet (1.450,00 €)',
+        body: 'Baustoffhandel Rheinland automatisch erfasst und bereitgestellt.'
       }
     },
     {
       id: 'member-onboarding',
-      title: 'Kunden-Onboarding & Verträge',
-      tag: 'Kundenaufnahme ohne Papierkram',
-      description: 'Sobald ein Neukunde unterschreibt, werden automatisch Projektordner angelegt, Zugangsdaten generiert, Willkommenspakete versendet und der Kickoff vorbereitet.',
+      title: 'Auftragsstart & Vorlagen',
+      tag: 'Papierloser Start',
+      description: 'Sobald ein Auftrag erteilt wird, werden Kundenordner, Checklisten und Begrüßungs-Infos automatisch angelegt – ohne händisches Copy-Paste.',
       nodes: [
         {
           step: '01 / Zusage',
-          system: 'Digitale Signatur / Angebot',
+          system: 'Auftragsbestätigung',
           iconName: 'trigger',
-          action: 'Digitale Signatur oder Angebotsannahme des Kunden',
+          action: 'Kunde bestätigt das Angebot digital',
           badge: 'Bestätigt'
         },
         {
-          step: '02 / Projektraum',
-          system: 'Automatische Ordnerstruktur',
+          step: '02 / Ordner',
+          system: 'Cloud & Projektraum',
           iconName: 'logic',
-          action: 'Kundenordner, Checklisten & Projekt-Board anlegen',
+          action: 'Kundenordner und Checkliste automatisch anlegen',
           badge: 'Erstellt'
         },
         {
-          step: '03 / Zugänge',
-          system: 'Cloud & Dokumente',
+          step: '03 / Unterlagen',
+          system: 'Kundenportal',
           iconName: 'database',
-          action: 'Sicherer Upload-Link für Kundenunterlagen versendet',
-          badge: 'Sicher'
+          action: 'Vorab-Informationen für den Kunden bereitstellen',
+          badge: 'Bereit'
         },
         {
-          step: '04 / Willkommen',
+          step: '04 / Start',
           system: 'E-Mail & SMS',
           iconName: 'notification',
-          action: 'Persönlicher Onboarding-Guide mit Terminlink',
+          action: 'Bestätigung mit Baustellen-Starttermin an Kunden',
           badge: 'Versendet'
         }
       ],
       terminalLogs: [
-        '[09:22:18.502] ⚡ WEBHOOK_CONTRACT: "Status: Fully Signed" (Contract ID: #cnt_1082)',
-        '[09:22:18.571] ⚙️ DRIVE_API: Created folder "/Clients/2026/Projekt_Rheinland"',
-        '[09:22:18.630] 🗄️ NOTION_API: Onboarding dashboard initialized with client checklist',
-        '[09:22:18.705] 📱 RESEND_API: Personalized welcome email dispatched to client'
+        '[09:22:18] ⚡ Auftrag bestätigt: Sanierungsprojekt Rheinland',
+        '[09:22:18] ⚙️ Projektordner & Vorlagen automatisch in Cloud angelegt',
+        '[09:22:18] 🗄️ Willkommens-Nachricht mit Vorab-Infos an Kunden versendet',
+        '[09:22:18] 📱 Kalender aktualisiert: Montag 08:00 Uhr Baustellen-Start'
       ],
       mockToast: {
-        app: 'Projekt-Zentrale',
-        title: 'Neues Projekt schlüsselfertig initialisiert',
-        body: 'Ordner, Checkliste & Willkommens-Mail für Neukunden automatisch aktiviert.'
+        app: 'Betriebs-Zentrale',
+        title: 'Neuer Auftrag startklar',
+        body: 'Ordner, Checkliste & Starttermin automatisch im Kalender reserviert.'
       }
     }
   ];
@@ -467,14 +467,14 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
           )}
 
           {/* Real-Time Live Execution Terminal (High-Contrast Luxury Dark Console) */}
-          <div className="mt-6 rounded-xl bg-[#18181b] border border-stone-800 p-4 font-[ui-monospace,monospace] text-xs overflow-hidden shadow-sm">
+          <div className="mt-6 rounded-xl bg-[#18181b] border border-stone-800 p-4 font-mono text-xs overflow-hidden shadow-sm">
             <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-stone-800 text-stone-400 text-[11px]">
               <div className="flex items-center gap-2">
                 <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-stone-200 font-semibold">Live Event Log Stream</span>
+                <span className="text-stone-200 font-semibold font-mono">Live-Ablauf &bull; Schritt-für-Schritt</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
               </div>
-              <span className="text-stone-500">n8n Execution Engine v1.82</span>
+              <span className="text-stone-400 font-mono">Laufzeit: &lt; 0.2s</span>
             </div>
 
             <div className="space-y-1.5 font-[ui-monospace,monospace] text-[11px] leading-relaxed">
