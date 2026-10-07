@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import aboutMeImg from '../images/about-me.jpg';
 
 export default function PhilosophyManifesto() {
   const principles = [
@@ -55,6 +56,24 @@ export default function PhilosophyManifesto() {
               <div className="flex items-center gap-3 text-xs font-mono text-stone-500">
                 <span className="w-2 h-2 rounded-full bg-emerald-600" />
                 <span>1:1 Senior-Verantwortung &bull; Kerpen / Rheinland</span>
+              </div>
+            </div>
+
+            {/* Visual Anchor Photo on the Left */}
+            <div className="pt-2">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-900/[0.08] shadow-xs bg-stone-100 group">
+                <img 
+                  src={aboutMeImg} 
+                  alt="Alexander Rheindorf – Entwickler & Inhaber" 
+                  className="w-full h-full object-cover object-[center_28%] group-hover:scale-102 transition-transform duration-500" 
+                />
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-stone-900/[0.08] text-xs font-sans text-stone-800 flex items-center justify-between shadow-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                    <span className="font-semibold text-stone-900">Alexander Rheindorf</span>
+                  </div>
+                  <span className="text-[11px] font-mono text-stone-500">Inhaber &bull; Entwickler</span>
+                </div>
               </div>
             </div>
           </div>
