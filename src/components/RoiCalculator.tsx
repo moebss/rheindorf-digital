@@ -104,7 +104,7 @@ export default function RoiCalculator({ onOpenContact }: RoiCalculatorProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-[11px] font-mono tracking-widest uppercase mb-4 shadow-xs font-semibold">
+          <div className="inline-flex items-center gap-2 text-emerald-800 text-[11px] font-mono tracking-[0.16em] uppercase mb-4 font-medium">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Transparenz &bull; Kalkulator</span>
           </div>

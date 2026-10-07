@@ -20,7 +20,7 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
               <span>Angebot &bull; Handwerk &amp; Code</span>
             </div>
@@ -40,8 +40,8 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
           <div className="lg:col-span-6 rounded-3xl border border-stone-900/[0.08] bg-white p-7 sm:p-9 flex flex-col justify-between shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:border-emerald-300 transition-all">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="font-mono text-xs uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-bold">
-                  [Bereich 01] Vorne
+                <span className="font-mono text-xs uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+                  01 / Webauftritt &bull; Schaufenster
                 </span>
                 <span className="font-mono text-xs text-stone-400">Neukunden &bull; Google</span>
               </div>
@@ -63,15 +63,15 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
                   <span className="text-emerald-700 font-bold">100 / 100</span>
                 </div>
                 <div className="grid grid-cols-3 gap-2 pt-1 text-center">
-                  <div className="bg-white p-2 rounded-lg border border-stone-900/[0.06]">
+                  <div className="bg-white p-2.5 rounded-lg border border-stone-900/[0.06]">
                     <div className="text-emerald-700 font-bold font-mono text-sm">0.3s</div>
                     <div className="text-[10px] text-stone-500 uppercase mt-0.5">Ladezeit</div>
                   </div>
-                  <div className="bg-white p-2 rounded-lg border border-stone-900/[0.06]">
+                  <div className="bg-white p-2.5 rounded-lg border border-stone-900/[0.06]">
                     <div className="text-emerald-700 font-bold font-mono text-sm">0 %</div>
                     <div className="text-[10px] text-stone-500 uppercase mt-0.5">Cookie-Zwang</div>
                   </div>
-                  <div className="bg-white p-2 rounded-lg border border-stone-900/[0.06]">
+                  <div className="bg-white p-2.5 rounded-lg border border-stone-900/[0.06]">
                     <div className="text-emerald-700 font-bold font-mono text-sm">0 €</div>
                     <div className="text-[10px] text-stone-500 uppercase mt-0.5">Plugin-Abos</div>
                   </div>
@@ -125,8 +125,8 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
           <div className="lg:col-span-6 rounded-3xl border border-[#ded7c8] bg-[#f7f3ea] p-7 sm:p-9 flex flex-col justify-between shadow-[0_4px_20px_rgba(28,25,23,0.03)] hover:border-emerald-400 transition-all">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="font-mono text-xs uppercase tracking-widest text-emerald-900 bg-emerald-100/80 border border-emerald-300 px-2.5 py-1 rounded-md font-bold">
-                  [Bereich 02] Hinten
+                <span className="font-mono text-xs uppercase tracking-widest text-emerald-900 bg-emerald-100/80 border border-emerald-300 px-2.5 py-1 rounded-md font-semibold">
+                  02 / Büro-Prozesse &bull; Zeitersparnis
                 </span>
                 <span className="font-mono text-xs text-stone-500">Zeit &bull; Feierabend</span>
               </div>
@@ -147,17 +147,18 @@ export default function DualOffering({ onOpenContact }: DualOfferingProps) {
                   </span>
                   <span className="text-emerald-700 font-medium">Reaktionszeit &lt; 1 Sekunde</span>
                 </div>
-                <div className="pt-1 flex items-center justify-between gap-1 text-[11px]">
-                  <div className="px-2.5 py-1.5 rounded-lg bg-[#f7f3ea] border border-[#ded7c8] text-stone-800 font-medium truncate">
-                    1. Kunde fragt an
+                <div className="grid grid-cols-3 gap-2 pt-1 text-center">
+                  <div className="bg-[#f7f3ea] p-2.5 rounded-lg border border-[#ded7c8]">
+                    <div className="text-stone-900 font-bold font-mono text-sm">Schritt 1</div>
+                    <div className="text-[10px] text-stone-600 uppercase mt-0.5">Anfrage online</div>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-stone-400 shrink-0" />
-                  <div className="px-2.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold truncate">
-                    2. WhatsApp-Alarm
+                  <div className="bg-emerald-50 p-2.5 rounded-lg border border-emerald-200">
+                    <div className="text-emerald-800 font-bold font-mono text-sm">Schritt 2</div>
+                    <div className="text-[10px] text-emerald-700 uppercase mt-0.5">WhatsApp-Alarm</div>
                   </div>
-                  <ArrowRight className="w-3 h-3 text-stone-400 shrink-0" />
-                  <div className="px-2.5 py-1.5 rounded-lg bg-stone-900 text-white font-medium truncate">
-                    3. Im Kalender
+                  <div className="bg-stone-900 p-2.5 rounded-lg border border-stone-800">
+                    <div className="text-white font-bold font-mono text-sm">Schritt 3</div>
+                    <div className="text-[10px] text-stone-300 uppercase mt-0.5">Im Kalender</div>
                   </div>
                 </div>
               </div>

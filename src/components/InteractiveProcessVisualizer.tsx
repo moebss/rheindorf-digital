@@ -260,7 +260,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shadow-[0_0_8px_rgba(5,150,105,0.8)]" />
               <span>Echte Praxis &bull; Büro-Automation</span>
             </div>
@@ -477,7 +477,7 @@ export default function InteractiveProcessVisualizer({ onOpenContact }: Interact
               <span className="text-stone-400 font-mono">Laufzeit: &lt; 0.2s</span>
             </div>
 
-            <div className="space-y-1.5 font-[ui-monospace,monospace] text-[11px] leading-relaxed">
+            <div className="space-y-1.5 font-mono text-[11px] leading-relaxed">
               {currentScenario.terminalLogs.slice(0, logIndex).map((log, lIdx) => (
                 <div 
                   key={lIdx} 

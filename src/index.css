@@ -3,7 +3,7 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "Plus Jakarta Sans", var(--font-sans);
-  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   
   --color-canvas: #fbf9f5;
   --color-canvas-alt: #f3efe6;
@@ -39,6 +39,37 @@ h1, h2, h3, h4 {
 ::selection {
   background: #059669;
   color: #ffffff;
+}
+
+/* Mono = only for small labels, metadata and logs.
+   Bold mono looks clunky -> cap at 500. */
+.font-mono {
+  font-feature-settings: "zero" 0, "calt" 0;
+  letter-spacing: -0.01em;
+}
+.font-mono.font-bold,
+.font-mono.font-semibold,
+.font-mono .font-bold,
+.font-mono .font-semibold {
+  font-weight: 500;
+}
+
+/* Large numbers/values: never mono. Use the sans with tabular figures. */
+.font-mono[class*="text-lg"],
+.font-mono[class*="text-xl"],
+.font-mono[class*="text-2xl"],
+.font-mono[class*="text-3xl"],
+.font-mono[class*="text-4xl"],
+.font-mono[class*="text-5xl"],
+.font-mono[class*="text-6xl"] {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Custom Minimal Scrollbar */

@@ -102,7 +102,7 @@ export default function BeforeAfterComparison() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-100/80 border border-emerald-300 px-2.5 py-1 rounded-md font-semibold">
+            <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium">
               Der Unterschied &bull; Handwerk vs. Stange
             </span>
             <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-display font-bold tracking-tight text-stone-900 leading-tight">
@@ -187,25 +187,24 @@ export default function BeforeAfterComparison() {
               <div className="mt-6 space-y-6">
                 {filteredMetrics.map((item, idx) => (
                   <div key={idx} className="space-y-1.5 pb-5 border-b border-stone-200/80 last:border-0 last:pb-0">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-rose-500" />
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-start gap-2">
+                        <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 mt-1.5" />
                         <span>{item.before.title}</span>
                       </h4>
-                      {item.before.score && (
-                        <span className="text-xs font-mono font-bold text-rose-800 bg-rose-100 border border-rose-300 px-2 py-0.5 rounded">
+                      {item.before.score ? (
+                        <span className="text-xs font-mono font-bold text-rose-800 bg-rose-100 border border-rose-300 px-2 py-0.5 rounded shrink-0">
                           {item.before.score}
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-mono text-rose-800 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded font-medium shrink-0">
+                          {item.before.badge}
                         </span>
                       )}
                     </div>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
                       {item.before.description}
                     </p>
-                    <div className="pt-1">
-                      <span className="inline-block text-[10px] font-mono text-rose-800 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded font-medium">
-                        {item.before.badge}
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>
@@ -241,25 +240,24 @@ export default function BeforeAfterComparison() {
               <div className="mt-6 space-y-6">
                 {filteredMetrics.map((item, idx) => (
                   <div key={idx} className="space-y-1.5 pb-5 border-b border-stone-100 last:border-0 last:pb-0">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                    <div className="flex items-start justify-between gap-3">
+                      <h4 className="font-sans font-bold text-stone-900 text-sm sm:text-base flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                         <span>{item.after.title}</span>
                       </h4>
-                      {item.after.score && (
-                        <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                      {item.after.score ? (
+                        <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded shrink-0">
                           {item.after.score}
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-medium shrink-0">
+                          {item.after.badge}
                         </span>
                       )}
                     </div>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
                       {item.after.description}
                     </p>
-                    <div className="pt-1">
-                      <span className="inline-block text-[10px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-medium">
-                        {item.after.badge}
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>

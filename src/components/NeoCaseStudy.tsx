@@ -29,10 +29,10 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         { value: '0 € Abo', label: 'Keine Plugin-Kosten', highlight: false },
       ],
       blueprint: [
-        'React 19 Frontend',
-        'Schema.org LocalBusiness',
-        'Digitaler Produktkatalog',
-        'Vorbestell-Workflow'
+        'Mobil-Speed (< 0.35s)',
+        'Google Maps Platz #1',
+        'Digitales Sortiments-Schaufenster',
+        'WhatsApp Vorbestellung'
       ],
       challenge: 'Das Ladenlokal an der Bahnhofstraße in Kerpen-Horrem verfügte über keine eigene Homepage. Lokale Google-Suchen liefen ins Leere, und wiederkehrende Sortiments- und Verfügbarkeitsfragen banden im Tagesgeschäft viel Zeit.',
       solution: 'Entwicklung einer blitzschnellen Web-Plattform im edlen Dark-Smoke-Design. Vollständige Schema.org-Integration für Google Maps, interaktiver Produktkatalog sowie Vorbestell-Workflows zur Entlastung des Personals.',
@@ -57,10 +57,10 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         { value: '0 Zettel', label: 'Direkt im Meisterhandy', highlight: false },
       ],
       blueprint: [
-        'Handgeschriebener Code',
+        'Baustellen-Speed (< 0.30s)',
         '1-Klick Notdienst-Knopf',
         'Schadens-Foto via WhatsApp',
-        'Kalender-Synchronisation'
+        'Automatische Kalender-Ablage'
       ],
       challenge: 'Wenn nach einem Unwetter das Dach leckt, sucht der Kunde auf dem Smartphone nach einem Dachdecker. Lädt die Seite länger als 3 Sekunden oder hat ein unübersichtliches Formular, ruft der Kunde sofort den nächsten Betrieb an.',
       solution: 'Schlanke, extrem schnelle Website mit prominentem 1-Klick-Notdienst. Der Kunde kann Schadensfotos direkt per WhatsApp senden. Die Anfrage landet sofort mit Adresse und Telefonnummer auf dem Smartphone des Meisters.',
@@ -85,8 +85,8 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         { value: '24h Alarm', label: 'Automatische Erinnerung', highlight: false },
       ],
       blueprint: [
-        'Warme Naturstein-Optik',
-        'Verlustfreie Galerien',
+        'Edles Studio-Design (< 0.28s)',
+        'Verlustfreie Vorher-Nachher-Galerie',
         'Vorlagen-Check via WhatsApp',
         'Automatische Terminerinnerung'
       ],
@@ -110,7 +110,7 @@ export default function NeoCaseStudy({ onOpenContact }: NeoCaseStudyProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
               <span>Praxis &bull; Echte Ergebnisse &amp; Demos</span>
             </div>

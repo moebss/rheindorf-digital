@@ -39,7 +39,7 @@ export default function PhilosophyManifesto() {
           
           {/* Left Sticky Column */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
               <span>Haltung &bull; Mein Versprechen</span>
             </div>

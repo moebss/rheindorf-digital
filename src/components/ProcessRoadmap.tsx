@@ -44,7 +44,7 @@ export default function ProcessRoadmap() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
               <span>Zusammenarbeit &bull; 4-Wochen-Fahrplan</span>
             </div>

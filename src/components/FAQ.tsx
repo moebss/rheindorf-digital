@@ -49,7 +49,7 @@ export default function FAQ() {
         
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 space-y-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md font-semibold">
+          <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium">
             FAQ &bull; Transparenz
           </span>
 

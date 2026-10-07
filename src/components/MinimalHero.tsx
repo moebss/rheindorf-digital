@@ -22,7 +22,7 @@ export default function MinimalHero({ onOpenContact }: MinimalHeroProps) {
           
           {/* Main Statement */}
           <div className="lg:col-span-8 flex flex-col">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 px-3 py-1.5 rounded-full font-semibold mb-6 sm:mb-8 w-fit shadow-xs">
+            <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-emerald-800 font-medium mb-6 sm:mb-8 w-fit shadow-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.7)]" />
               <span>Webdesign &amp; Prozesse • Kerpen, Köln &amp; Rheinland</span>
             </div>

@@ -69,28 +69,28 @@ export default function App() {
         {/* 3. Before vs. After Reality Check (WordPress vs. Handcrafted Code) */}
         <BeforeAfterComparison />
 
-        {/* 4. Website Audit & Speed Check (Lead Magnet) */}
-        <WebsiteAuditChecker />
-
-        {/* 4. Philosophy & Core Principles */}
-        <PhilosophyManifesto />
-
-        {/* 5. Real Verified Case Study */}
+        {/* 4. Real Verified Case Study & Branch Demos */}
         <NeoCaseStudy onOpenContact={() => scrollToContact()} />
 
-        {/* 6. ROI, Price Configurator & Impact Calculator */}
-        <RoiCalculator onOpenContact={scrollToContact} />
+        {/* 5. Website Audit & Speed Check (Lead Magnet) */}
+        <WebsiteAuditChecker />
 
-        {/* 7. Interactive Process & Pipeline Visualizer */}
+        {/* 6. Interactive Process & Pipeline Visualizer (Automation Proof) */}
         <InteractiveProcessVisualizer onOpenContact={() => scrollToContact('automation', 'Ich möchte meine internen Workflows und Schnittstellen automatisieren.')} />
 
-        {/* 8. Collaboration Roadmap (4-Week Schedule) */}
+        {/* 7. ROI, Price Configurator & Impact Calculator */}
+        <RoiCalculator onOpenContact={scrollToContact} />
+
+        {/* 8. Philosophy & Core Principles (Craftsman Stance) */}
+        <PhilosophyManifesto />
+
+        {/* 9. Collaboration Roadmap (4-Week Schedule) */}
         <ProcessRoadmap />
 
-        {/* 9. FAQ Section */}
+        {/* 10. FAQ Section */}
         <FAQ />
 
-        {/* 11. Inquiry / Contact Form */}
+        {/* 11. Inquiry / Direct Contact */}
         <MinimalInquiry prefill={inquiryPrefill} />
 
       </main>
